@@ -174,11 +174,21 @@ def home():
 
     videos = get_latest_videos()
 
+    vlogs = []
+    shorts = []
+
+    for video in videos:
+
+        title = video["title"].lower()
+
+        if "#shorts" in title or "#youtubeshorts" in title:
+            shorts.append(video)
+
+        else:
+            vlogs.append(video)
+
     return render_template(
         "index.html",
-        videos=videos
+        vlogs=vlogs,
+        shorts=shorts
     )
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
