@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Raj Raushan Official</title>
 
@@ -12,9 +15,12 @@
         rel="stylesheet"
         href="{{ url_for('static', filename='css/style.css') }}"
     >
+
 </head>
 
+
 <body>
+
 
     <!-- ================= NAVBAR ================= -->
 
@@ -26,17 +32,18 @@
 
             <a href="/">Home</a>
 
-            <a href="#latest-videos">Vlogs</a>
+            <a href="#vlogs">Vlogs</a>
 
-            <a href="#">Shorts</a>
+            <a href="#shorts">Shorts</a>
 
-            <a href="#">Explore</a>
+            <a href="#explore">Explore</a>
 
-            <a href="#">About</a>
+            <a href="#about">About</a>
 
         </div>
 
     </nav>
+
 
 
     <!-- ================= HERO SECTION ================= -->
@@ -47,33 +54,43 @@
 
         <p>Explore • Watch • Connect</p>
 
-        <a href="#latest-videos">
-            <button>Watch Latest Vlog</button>
+        <a href="#vlogs">
+
+            <button>
+                Watch Latest Vlog
+            </button>
+
         </a>
 
     </section>
 
 
-    <!-- ================= LATEST VIDEOS ================= -->
 
-    <section class="videos" id="latest-videos">
+    <!-- ================= VLOG SECTION ================= -->
 
-        <h2>Latest Videos</h2>
+    <section class="videos" id="vlogs">
+
+        <h2>🎬 Latest Vlogs</h2>
+
 
         <div class="video-container">
 
-            <!-- Agar YouTube videos available hain -->
 
-            {% if videos %}
+            {% if vlogs %}
 
 
-                {% for video in videos %}
+                {% for video in vlogs %}
+
 
                 <div class="video-card">
 
-                    <!-- Video Thumbnail -->
 
-                    <a href="{{ video.url }}" target="_blank">
+                    <!-- Thumbnail -->
+
+                    <a
+                        href="{{ video.url }}"
+                        target="_blank"
+                    >
 
                         <img
                             src="{{ video.thumbnail }}"
@@ -83,123 +100,325 @@
                     </a>
 
 
+
                     <!-- Video Information -->
 
                     <div class="video-info">
+
 
                         <h3>
                             {{ video.title }}
                         </h3>
 
+
                         <p>
                             Raj Raushan Official
                         </p>
 
+
+
+                        <!-- Views + Date -->
+
                         <div class="video-meta">
 
-                        <span>
-                            👁 {{ "{:,}".format(video.views|int) }} views
-                        </span>
 
-                        <span>
-                            📅 {{ video.published_at }}
-                        </span>
+                            <span>
 
-                    </div>
+                                👁
+                                {{ "{:,}".format(video.views|int) }}
+                                views
+
+                            </span>
+
+
+                            <span>
+
+                                📅
+                                {{ video.published_at }}
+
+                            </span>
+
+
+                        </div>
+
+
+
+                        <!-- Watch Button -->
 
                         <a
                             href="{{ video.url }}"
                             target="_blank"
                             class="watch-btn"
                         >
-                            Watch Video
+
+                            Watch Vlog
+
                         </a>
+
 
                     </div>
 
+
                 </div>
+
 
                 {% endfor %}
 
 
-            <!-- Agar abhi YouTube API connected nahi hai -->
-
             {% else %}
+
 
                 <div class="no-videos">
 
-                    <h3>🎬 Videos Coming Soon</h3>
+                    <h3>
+                        🎬 No Vlogs Found
+                    </h3>
 
                     <p>
-                        YouTube videos will automatically appear here
-                        after connecting the YouTube API.
+                        New vlogs will appear here automatically.
                     </p>
 
                 </div>
 
+
             {% endif %}
+
 
         </div>
 
     </section>
 
 
-    <!-- ================= SOCIAL SECTION ================= -->
 
-    <section class="social-section">
+    <!-- ================= SHORTS SECTION ================= -->
 
-        <h2>Connect With Me</h2>
+    <section
+        class="videos shorts-section"
+        id="shorts"
+    >
+
+        <h2>📱 Latest Shorts</h2>
+
+
+        <div class="video-container">
+
+
+            {% if shorts %}
+
+
+                {% for video in shorts %}
+
+
+                <div class="video-card">
+
+
+                    <!-- Thumbnail -->
+
+                    <a
+                        href="{{ video.url }}"
+                        target="_blank"
+                    >
+
+                        <img
+                            src="{{ video.thumbnail }}"
+                            alt="{{ video.title }}"
+                        >
+
+                    </a>
+
+
+
+                    <!-- Short Information -->
+
+                    <div class="video-info">
+
+
+                        <h3>
+                            {{ video.title }}
+                        </h3>
+
+
+                        <p>
+                            Raj Raushan Official
+                        </p>
+
+
+
+                        <!-- Views + Date -->
+
+                        <div class="video-meta">
+
+
+                            <span>
+
+                                👁
+                                {{ "{:,}".format(video.views|int) }}
+                                views
+
+                            </span>
+
+
+                            <span>
+
+                                📅
+                                {{ video.published_at }}
+
+                            </span>
+
+
+                        </div>
+
+
+
+                        <!-- Watch Button -->
+
+                        <a
+                            href="{{ video.url }}"
+                            target="_blank"
+                            class="watch-btn"
+                        >
+
+                            Watch Short
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+                {% endfor %}
+
+
+            {% else %}
+
+
+                <div class="no-videos">
+
+                    <h3>
+                        📱 No Shorts Found
+                    </h3>
+
+                    <p>
+                        New Shorts will appear here automatically.
+                    </p>
+
+                </div>
+
+
+            {% endif %}
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= EXPLORE SECTION ================= -->
+
+    <section
+        class="social-section"
+        id="explore"
+    >
+
+        <h2>
+            Explore Raj Raushan Official
+        </h2>
+
+        <p>
+            Travel • Vlogs • Shorts • Life • Adventures
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= SOCIAL MEDIA ================= -->
+
+    <section
+        class="social-section"
+        id="about"
+    >
+
+        <h2>
+            Connect With Me
+        </h2>
 
         <p>
             Follow Raj Raushan Official on social media.
         </p>
 
+
         <div class="social-links">
 
+
             <a
-                href="http://www.youtube.com/@rajraushanofficial"
+                href="https://www.youtube.com/@rajraushanofficial"
                 target="_blank"
             >
                 YouTube
             </a>
 
-            <a href="#" target="_blank">
+
+            <a
+                href="https://www.instagram.com/rajraushanofficial"
+                target="_blank"
+            >
                 Instagram
             </a>
 
-            <a href="#" target="_blank">
+
+            <a
+                href="#"
+                target="_blank"
+            >
                 Facebook
             </a>
 
-            <a href="#" target="_blank">
+
+            <a
+                href="#"
+                target="_blank"
+            >
                 LinkedIn
             </a>
+
 
         </div>
 
     </section>
+
 
 
     <!-- ================= FOOTER ================= -->
 
     <footer>
 
+
         <p>
             © 2026 Raj Raushan Official
         </p>
+
 
         <p>
             Explore • Watch • Connect
         </p>
 
+
     </footer>
 
 
-    <!-- JavaScript -->
+
+    <!-- ================= JAVASCRIPT ================= -->
 
     <script
         src="{{ url_for('static', filename='js/script.js') }}">
     </script>
 
+
 </body>
-</html>
+
+</html>1
