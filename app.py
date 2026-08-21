@@ -15,7 +15,8 @@ load_dotenv()
 app = Flask(__name__)
 
 API_KEY = os.getenv("YOUTUBE_API_KEY")
-CHANNEL_HANDLE = "@rajraushanofficial"
+MAIN_CHANNEL = "@rajraushanofficial"
+SECOND_CHANNEL = "@rajraushanofficial02"
 
 
 # =========================
@@ -35,7 +36,7 @@ def get_latest_videos():
 
         channel_params = {
             "part": "contentDetails",
-            "forHandle": CHANNEL_HANDLE,
+           "forHandle": MAIN_CHANNEL,
             "key": API_KEY
         }
 
@@ -185,18 +186,14 @@ def get_latest_videos():
 # GET CHANNEL INFORMATION
 # =========================
 
-def get_channel_info():
-
-    if not API_KEY:
-        return None
+def get_channel_info(channel_handle):
 
     try:
-
         url = "https://www.googleapis.com/youtube/v3/channels"
 
         params = {
             "part": "snippet,statistics",
-            "forHandle": CHANNEL_HANDLE,
+            "forHandle": channel_handle,
             "key": API_KEY
         }
 
@@ -216,6 +213,8 @@ def get_channel_info():
         return {
             "name": channel["snippet"]["title"],
 
+            "handle": channel_handle,
+
             "profile_image":
                 channel["snippet"]["thumbnails"]["high"]["url"],
 
@@ -226,26 +225,28 @@ def get_channel_info():
                 channel["statistics"].get("viewCount", "0"),
 
             "videos":
-                channel["statistics"].get("videoCount", "0")
-        }
+                channel["statistics"].get("videoCount", "0"),
 
+            "url":
+                f"https://www.youtube.com/{channel_handle}"
+        }
 
     except Exception as error:
 
-        print("Channel Error:", error)
+        print("CHANNEL ERROR:", error)
 
         return None
-
-
+    
 # =========================
 # HOME PAGE
 # =========================
-
 @app.route("/")
 def home():
 
     videos = get_latest_videos()
-    channel = get_channel_info()
+
+    channel1 = get_channel_info(MAIN_CHANNEL)
+    channel2 = get_channel_info(SECOND_CHANNEL)
 
     vlogs = []
     shorts = []
@@ -260,15 +261,13 @@ def home():
         else:
             vlogs.append(video)
 
-
     return render_template(
         "index.html",
         vlogs=vlogs,
         shorts=shorts,
-        channel=channel
+        channel1=channel1,
+        channel2=channel2
     )
-
-
 # =========================
 # RUN WEBSITE
 # =========================

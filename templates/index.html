@@ -67,6 +67,123 @@
 
     </section>
 
+    <!-- ================= MY YOUTUBE CHANNELS ================= -->
+
+<section class="channels-section">
+
+    <h2>My YouTube Channels</h2>
+
+    <div class="channels-container">
+
+        <!-- FIRST CHANNEL -->
+        {% if channel1 %}
+
+        <div class="channel-card">
+
+            <img
+                src="{{ channel1.profile_image }}"
+                alt="{{ channel1.name }}"
+                class="channel-image"
+            >
+
+            <h2>{{ channel1.name }}</h2>
+
+            <p>{{ channel1.handle }}</p>
+
+            <div class="channel-stats">
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel1.subscribers|int) }}
+                    </strong>
+                    <span>Subscribers</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel1.views|int) }}
+                    </strong>
+                    <span>Total Views</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel1.videos|int) }}
+                    </strong>
+                    <span>Videos</span>
+                </div>
+
+            </div>
+
+            <a
+                href="{{ channel1.url }}"
+                target="_blank"
+                class="channel-btn"
+            >
+                Visit Channel
+            </a>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- SECOND CHANNEL -->
+        {% if channel2 %}
+
+        <div class="channel-card">
+
+            <img
+                src="{{ channel2.profile_image }}"
+                alt="{{ channel2.name }}"
+                class="channel-image"
+            >
+
+            <h2>{{ channel2.name }}</h2>
+
+            <p>{{ channel2.handle }}</p>
+
+            <div class="channel-stats">
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel2.subscribers|int) }}
+                    </strong>
+                    <span>Subscribers</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel2.views|int) }}
+                    </strong>
+                    <span>Total Views</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel2.videos|int) }}
+                    </strong>
+                    <span>Videos</span>
+                </div>
+
+            </div>
+
+            <a
+                href="{{ channel2.url }}"
+                target="_blank"
+                class="channel-btn"
+            >
+                Visit Channel
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
 
 
     <!-- ================= CHANNEL PROFILE ================= -->
