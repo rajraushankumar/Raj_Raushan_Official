@@ -10,7 +10,6 @@
 
     <title>Raj Raushan Official</title>
 
-    <!-- CSS File -->
     <link
         rel="stylesheet"
         href="{{ url_for('static', filename='css/style.css') }}"
@@ -46,13 +45,17 @@
 
 
 
-    <!-- ================= HERO SECTION ================= -->
+    <!-- ================= HERO ================= -->
 
     <section class="hero">
 
-        <h1>Welcome to Raj Raushan Official</h1>
+        <h1>
+            Welcome to Raj Raushan Official
+        </h1>
 
-        <p>Explore • Watch • Connect</p>
+        <p>
+            Explore • Watch • Connect
+        </p>
 
         <a href="#vlogs">
 
@@ -66,11 +69,101 @@
 
 
 
-    <!-- ================= VLOG SECTION ================= -->
+    <!-- ================= CHANNEL PROFILE ================= -->
 
-    <section class="videos" id="vlogs">
+    {% if channel %}
 
-        <h2>🎬 Latest Vlogs</h2>
+    <section class="channel-profile">
+
+        <img
+            src="{{ channel.profile_image }}"
+            alt="Raj Raushan Official"
+            class="channel-image"
+        >
+
+
+        <div class="channel-details">
+
+            <h2>
+                {{ channel.name }}
+            </h2>
+
+            <p>
+                @rajraushanofficial
+            </p>
+
+
+            <div class="channel-stats">
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.subscribers|int) }}
+                    </strong>
+
+                    <span>
+                        Subscribers
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.views|int) }}
+                    </strong>
+
+                    <span>
+                        Total Views
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.videos|int) }}
+                    </strong>
+
+                    <span>
+                        Videos
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <a
+                href="https://www.youtube.com/@rajraushanofficial"
+                target="_blank"
+                class="channel-btn"
+            >
+                Visit YouTube Channel
+            </a>
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+
+    <!-- ================= VLOGS ================= -->
+
+    <section
+        class="videos"
+        id="vlogs"
+    >
+
+        <h2>
+            🎬 Latest Vlogs
+        </h2>
 
 
         <div class="video-container">
@@ -85,8 +178,6 @@
                 <div class="video-card">
 
 
-                    <!-- Thumbnail -->
-
                     <a
                         href="{{ video.url }}"
                         target="_blank"
@@ -99,9 +190,6 @@
 
                     </a>
 
-
-
-                    <!-- Video Information -->
 
                     <div class="video-info">
 
@@ -116,43 +204,28 @@
                         </p>
 
 
-
-                        <!-- Views + Date -->
-
                         <div class="video-meta">
 
-
                             <span>
-
                                 👁
                                 {{ "{:,}".format(video.views|int) }}
                                 views
-
                             </span>
-
 
                             <span>
-
                                 📅
                                 {{ video.published_at }}
-
                             </span>
-
 
                         </div>
 
-
-
-                        <!-- Watch Button -->
 
                         <a
                             href="{{ video.url }}"
                             target="_blank"
                             class="watch-btn"
                         >
-
                             Watch Vlog
-
                         </a>
 
 
@@ -190,14 +263,16 @@
 
 
 
-    <!-- ================= SHORTS SECTION ================= -->
+    <!-- ================= SHORTS ================= -->
 
     <section
         class="videos shorts-section"
         id="shorts"
     >
 
-        <h2>📱 Latest Shorts</h2>
+        <h2>
+            📱 Latest Shorts
+        </h2>
 
 
         <div class="video-container">
@@ -212,8 +287,6 @@
                 <div class="video-card">
 
 
-                    <!-- Thumbnail -->
-
                     <a
                         href="{{ video.url }}"
                         target="_blank"
@@ -226,9 +299,6 @@
 
                     </a>
 
-
-
-                    <!-- Short Information -->
 
                     <div class="video-info">
 
@@ -243,43 +313,28 @@
                         </p>
 
 
-
-                        <!-- Views + Date -->
-
                         <div class="video-meta">
 
-
                             <span>
-
                                 👁
                                 {{ "{:,}".format(video.views|int) }}
                                 views
-
                             </span>
-
 
                             <span>
-
                                 📅
                                 {{ video.published_at }}
-
                             </span>
-
 
                         </div>
 
-
-
-                        <!-- Watch Button -->
 
                         <a
                             href="{{ video.url }}"
                             target="_blank"
                             class="watch-btn"
                         >
-
                             Watch Short
-
                         </a>
 
 
@@ -317,7 +372,7 @@
 
 
 
-    <!-- ================= EXPLORE SECTION ================= -->
+    <!-- ================= EXPLORE ================= -->
 
     <section
         class="social-section"
@@ -371,18 +426,12 @@
             </a>
 
 
-            <a
-                href="#"
-                target="_blank"
-            >
+            <a href="#">
                 Facebook
             </a>
 
 
-            <a
-                href="#"
-                target="_blank"
-            >
+            <a href="#">
                 LinkedIn
             </a>
 
@@ -397,16 +446,13 @@
 
     <footer>
 
-
         <p>
             © 2026 Raj Raushan Official
         </p>
 
-
         <p>
             Explore • Watch • Connect
         </p>
-
 
     </footer>
 
@@ -421,4 +467,5 @@
 
 </body>
 
-</html>1
+</html>
+

@@ -10,18 +10,29 @@ body {
 }
 
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 18px 8%;
     background: #111;
     color: white;
 }
 
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
-    margin-left: 25px;
 }
 
 .hero {
@@ -239,4 +250,138 @@ html {
 
 .watch-btn:hover {
     background: #333;
+}
+
+.channel-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 45px;
+    padding: 45px 20px;
+
+    background: white;
+}
+
+.channel-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.channel-details {
+    text-align: center;
+}
+
+.channel-details h2 {
+    margin-bottom: 5px;
+}
+
+.channel-details p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.channel-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 60px;
+    margin: 20px 0;
+}
+
+.channel-stats div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 100px;
+}
+
+.channel-stats strong {
+    font-size: 25px;
+}
+
+.channel-stats span {
+    color: #666;
+}
+
+.channel-btn {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    background: #111;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* FIXED NAVBAR */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 8%;
+    background: #111;
+    color: white;
+}
+
+body {
+    padding-top: 72px;
+}
+
+
+/* CHANNEL PROFILE */
+
+.channel-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+
+    padding: 45px 8%;
+    background: white;
+}
+
+.channel-details {
+    text-align: center;
+}
+
+.channel-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 20px 0;
+}
+
+.channel-stats div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.channel-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#vlogs,
+#shorts,
+#explore,
+#about {
+    scroll-margin-top: 90px;
 }

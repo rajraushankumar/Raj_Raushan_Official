@@ -6,6 +6,10 @@ from flask import Flask, render_template
 from dotenv import load_dotenv
 
 
+# =========================
+# BASIC SETUP
+# =========================
+
 load_dotenv()
 
 app = Flask(__name__)
@@ -13,6 +17,10 @@ app = Flask(__name__)
 API_KEY = os.getenv("YOUTUBE_API_KEY")
 CHANNEL_HANDLE = "@rajraushanofficial"
 
+
+# =========================
+# GET LATEST VIDEOS
+# =========================
 
 def get_latest_videos():
 
@@ -22,7 +30,7 @@ def get_latest_videos():
 
     try:
 
-        # Channel details
+        # Get channel uploads playlist
         channel_url = "https://www.googleapis.com/youtube/v3/channels"
 
         channel_params = {
@@ -43,7 +51,6 @@ def get_latest_videos():
             print("Channel not found")
             return []
 
-        # Upload playlist ID
         playlist_id = (
             channel_data["items"][0]
             ["contentDetails"]
@@ -51,13 +58,14 @@ def get_latest_videos():
             ["uploads"]
         )
 
-        # Latest videos
+
+        # Get latest uploads
         playlist_url = "https://www.googleapis.com/youtube/v3/playlistItems"
 
         playlist_params = {
             "part": "snippet",
             "playlistId": playlist_id,
-            "maxResults": 6,
+            "maxResults": 12,
             "key": API_KEY
         }
 
@@ -81,7 +89,8 @@ def get_latest_videos():
 
             video_ids.append(video_id)
 
-            # Date
+
+            # Upload date
             raw_date = snippet.get("publishedAt", "")
 
             try:
@@ -90,7 +99,7 @@ def get_latest_videos():
                     "%Y-%m-%dT%H:%M:%SZ"
                 ).strftime("%d %b %Y")
 
-            except:
+            except ValueError:
                 upload_date = raw_date
 
 
@@ -120,7 +129,10 @@ def get_latest_videos():
             })
 
 
-        # Get views
+        # =========================
+        # GET VIDEO VIEWS
+        # =========================
+
         if video_ids:
 
             stats_url = "https://www.googleapis.com/youtube/v3/videos"
@@ -169,10 +181,71 @@ def get_latest_videos():
         return []
 
 
+# =========================
+# GET CHANNEL INFORMATION
+# =========================
+
+def get_channel_info():
+
+    if not API_KEY:
+        return None
+
+    try:
+
+        url = "https://www.googleapis.com/youtube/v3/channels"
+
+        params = {
+            "part": "snippet,statistics",
+            "forHandle": CHANNEL_HANDLE,
+            "key": API_KEY
+        }
+
+        response = requests.get(
+            url,
+            params=params,
+            timeout=10
+        )
+
+        data = response.json()
+
+        if not data.get("items"):
+            return None
+
+        channel = data["items"][0]
+
+        return {
+            "name": channel["snippet"]["title"],
+
+            "profile_image":
+                channel["snippet"]["thumbnails"]["high"]["url"],
+
+            "subscribers":
+                channel["statistics"].get("subscriberCount", "0"),
+
+            "views":
+                channel["statistics"].get("viewCount", "0"),
+
+            "videos":
+                channel["statistics"].get("videoCount", "0")
+        }
+
+
+    except Exception as error:
+
+        print("Channel Error:", error)
+
+        return None
+
+
+# =========================
+# HOME PAGE
+# =========================
+
 @app.route("/")
 def home():
 
     videos = get_latest_videos()
+    channel = get_channel_info()
 
     vlogs = []
     shorts = []
@@ -187,8 +260,21 @@ def home():
         else:
             vlogs.append(video)
 
+
     return render_template(
         "index.html",
         vlogs=vlogs,
-        shorts=shorts
+        shorts=shorts,
+        channel=channel
     )
+
+
+# =========================
+# RUN WEBSITE
+# =========================
+
+if __name__ == "__main__":
+
+    print("Starting Raj Raushan Official...")
+
+    app.run(debug=True)
