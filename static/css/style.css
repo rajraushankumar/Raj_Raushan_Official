@@ -484,3 +484,88 @@ body {
         gap: 15px;
     }
 }
+
+/* ================= SOCIAL MEDIA HUB ================= */
+
+.social-hub {
+    padding: 70px 8%;
+    background: #111;
+    color: white;
+}
+
+.social-hub > h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.social-subtitle {
+    text-align: center;
+    color: #bbb;
+    margin-bottom: 40px;
+}
+
+.social-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+.social-card {
+    display: block;
+
+    background: #1d1d1d;
+    color: white;
+
+    padding: 30px;
+
+    border-radius: 14px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.social-card:hover {
+    transform: translateY(-6px);
+
+    background: #292929;
+}
+
+.social-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.social-card p {
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.social-card span {
+    font-size: 14px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .social-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+}
