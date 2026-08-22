@@ -1,334 +1,226 @@
-<!DOCTYPE html>
-<html lang="en">
+@app.route("/dashboard")
+def dashboard():
 
-<head>
-    <meta charset="UTF-8">
+    videos = get_latest_videos()
+    channel = get_channel_info(MAIN_CHANNEL)
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    vlogs = []
+    shorts = []
 
-    <title>Creator Dashboard | Raj Raushan Official</title>
+    for video in videos:
 
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}"
-    >
-</head>
+        title = video["title"].lower()
 
+        if "#shorts" in title or "#youtubeshorts" in title:
+            shorts.append(video)
+        else:
+            vlogs.append(video)
 
-<body class="dashboard-body">
 
+    # =========================
+    # DATA SCIENCE VARIABLES
+    # =========================
 
-    <!-- ================= HEADER ================= -->
+    recent_total_views = 0
+    average_views = 0
 
-    <header class="dashboard-header">
+    vlog_average_views = 0
+    short_average_views = 0
 
-        <div>
-            <h1>📊 Creator Analytics Dashboard</h1>
-            <p>Raj Raushan Official</p>
-        </div>
+    best_content_type = "No Data"
 
-        <a href="/" class="dashboard-home-btn">
-            ← Back to Website
-        </a>
+    views_chart = None
+    content_chart = None
 
-    </header>
+    top_video = None
 
 
-    <!-- ================= CHANNEL PROFILE ================= -->
+    # =========================
+    # DATA SCIENCE ANALYSIS
+    # =========================
 
-    {% if channel %}
+    if videos:
 
-    <section class="dashboard-channel">
+        # YouTube data -> Pandas DataFrame
+        df = pd.DataFrame(videos)
 
-        <img
-            src="{{ channel.profile_image }}"
-            alt="{{ channel.name }}"
-        >
 
-        <div>
-            <h2>{{ channel.name }}</h2>
-            <p>{{ channel.handle }}</p>
-        </div>
+        # Views ko numeric banana
+        df["views"] = pd.to_numeric(
+            df["views"],
+            errors="coerce"
+        ).fillna(0)
 
-    </section>
 
-    {% endif %}
+        # Total recent views
+        recent_total_views = int(
+            df["views"].sum()
+        )
 
 
-    <!-- ================= ANALYTICS CARDS ================= -->
+        # Average views
+        average_views = int(
+            df["views"].mean()
+        )
 
-    {% if channel %}
 
-    <section class="analytics-cards">
+        # =========================
+        # VLOG / SHORT CLASSIFICATION
+        # =========================
 
-        <div class="analytics-card">
-            <h3>Subscribers</h3>
+        df["content_type"] = df["title"].apply(
+            lambda title:
+                "Short"
+                if "#shorts" in title.lower()
+                or "#youtubeshorts" in title.lower()
+                else "Vlog"
+        )
 
-            <strong>
-                {{ "{:,}".format(channel.subscribers|int) }}
-            </strong>
 
-            <p>YouTube Subscribers</p>
-        </div>
+        vlog_data = df[
+            df["content_type"] == "Vlog"
+        ]
 
+        short_data = df[
+            df["content_type"] == "Short"
+        ]
 
-        <div class="analytics-card">
-            <h3>Total Views</h3>
 
-            <strong>
-                {{ "{:,}".format(channel.views|int) }}
-            </strong>
+        # Vlog average
+        if not vlog_data.empty:
 
-            <p>Channel Views</p>
-        </div>
+            vlog_average_views = int(
+                vlog_data["views"].mean()
+            )
 
 
-        <div class="analytics-card">
-            <h3>Total Videos</h3>
+        # Shorts average
+        if not short_data.empty:
 
-            <strong>
-                {{ "{:,}".format(channel.videos|int) }}
-            </strong>
+            short_average_views = int(
+                short_data["views"].mean()
+            )
 
-            <p>Published Videos</p>
-        </div>
 
+        # Best content type
+        if vlog_average_views > short_average_views:
 
-        <div class="analytics-card">
-            <h3>Latest Vlogs</h3>
+            best_content_type = "Vlogs"
 
-            <strong>
-                {{ vlogs|length }}
-            </strong>
+        elif short_average_views > vlog_average_views:
 
-            <p>Recent Vlogs</p>
-        </div>
+            best_content_type = "Shorts"
 
+        else:
 
-        <div class="analytics-card">
-            <h3>Latest Shorts</h3>
+            best_content_type = "Equal Performance"
 
-            <strong>
-                {{ shorts|length }}
-            </strong>
 
-            <p>Recent Shorts</p>
-        </div>
+        # =========================
+        # RECENT VIDEO CHART
+        # =========================
 
+        df["short_title"] = (
+            df["title"]
+            .str.slice(0, 35)
+        )
 
-        <div class="analytics-card">
-            <h3>Recent Views</h3>
 
-            <strong>
-                {{ "{:,}".format(recent_total_views) }}
-            </strong>
+        chart_data = df.sort_values(
+            "views",
+            ascending=True
+        )
 
-            <p>Recent Video Views</p>
-        </div>
 
+        views_fig = px.bar(
+            chart_data,
+            x="views",
+            y="short_title",
+            orientation="h",
+            title="Recent Video Views",
+            labels={
+                "views": "Views",
+                "short_title": "Video"
+            }
+        )
 
-        <div class="analytics-card">
-            <h3>Average Views</h3>
 
-            <strong>
-                {{ "{:,}".format(average_views) }}
-            </strong>
+        views_chart = views_fig.to_html(
+            full_html=False,
+            include_plotlyjs="cdn"
+        )
 
-            <p>Average Per Video</p>
-        </div>
 
-    </section>
+        # =========================
+        # VLOGS VS SHORTS CHART
+        # =========================
 
-    {% endif %}
+        comparison_data = pd.DataFrame({
 
+            "Content Type": [
+                "Vlogs",
+                "Shorts"
+            ],
 
-    <!-- ================= VIEWS CHART ================= -->
+            "Average Views": [
+                vlog_average_views,
+                short_average_views
+            ]
+        })
 
-    {% if views_chart %}
 
-    <section class="chart-section">
+        content_fig = px.bar(
+            comparison_data,
+            x="Content Type",
+            y="Average Views",
+            title="Vlogs vs Shorts Performance"
+        )
 
-        <div class="section-heading">
-            <h2>📈 Recent Video Performance</h2>
 
-            <p>
-                Views analysis using Pandas and Plotly
-            </p>
-        </div>
+        content_chart = content_fig.to_html(
+            full_html=False,
+            include_plotlyjs=False
+        )
 
-        <div class="chart-box">
-            {{ views_chart|safe }}
-        </div>
 
-    </section>
+        # =========================
+        # TOP VIDEO
+        # =========================
 
-    {% endif %}
+        top_video = max(
+            videos,
+            key=lambda video: int(video["views"])
+        )
 
 
-    <!-- ================= TOP VIDEO ================= -->
+    # =========================
+    # SEND DATA TO DASHBOARD
+    # =========================
 
-    {% if top_video %}
+    return render_template(
+        "dashboard.html",
 
-    <section class="top-video-section">
+        channel=channel,
 
-        <div class="section-heading">
-            <h2>🏆 Top Performing Recent Video</h2>
+        videos=videos,
 
-            <p>
-                Highest viewed video among recent uploads
-            </p>
-        </div>
+        vlogs=vlogs,
 
+        shorts=shorts,
 
-        <div class="top-video-card">
+        top_video=top_video,
 
-            <img
-                src="{{ top_video.thumbnail }}"
-                alt="{{ top_video.title }}"
-            >
+        recent_total_views=recent_total_views,
 
+        average_views=average_views,
 
-            <div class="top-video-info">
+        views_chart=views_chart,
 
-                <h3>
-                    {{ top_video.title }}
-                </h3>
+        vlog_average_views=vlog_average_views,
 
-                <p>
-                    👁
-                    {{ "{:,}".format(top_video.views|int) }}
-                    Views
-                </p>
+        short_average_views=short_average_views,
 
-                <p>
-                    📅 {{ top_video.published_at }}
-                </p>
+        best_content_type=best_content_type,
 
-                <a
-                    href="{{ top_video.url }}"
-                    target="_blank"
-                    class="channel-btn"
-                >
-                    Watch Video
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    {% endif %}
-
-
-    <!-- ================= RECENT VIDEO DATA ================= -->
-
-    {% if videos %}
-
-    <section class="recent-data-section">
-
-        <div class="section-heading">
-            <h2>📋 Recent Video Data</h2>
-
-            <p>
-                Data collected automatically from YouTube API
-            </p>
-        </div>
-
-
-        <div class="video-table-wrapper">
-
-            <table class="video-table">
-
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Video</th>
-                        <th>Views</th>
-                        <th>Published</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-
-
-                <tbody>
-
-                    {% for video in videos %}
-
-                    <tr>
-
-                        <td>
-                            {{ loop.index }}
-                        </td>
-
-
-                        <td class="table-video">
-
-                            <img
-                                src="{{ video.thumbnail }}"
-                                alt="{{ video.title }}"
-                            >
-
-                            <span>
-                                {{ video.title }}
-                            </span>
-
-                        </td>
-
-
-                        <td>
-                            {{ "{:,}".format(video.views|int) }}
-                        </td>
-
-
-                        <td>
-                            {{ video.published_at }}
-                        </td>
-
-
-                        <td>
-
-                            <a
-                                href="{{ video.url }}"
-                                target="_blank"
-                                class="table-watch-btn"
-                            >
-                                Watch
-                            </a>
-
-                        </td>
-
-                    </tr>
-
-                    {% endfor %}
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </section>
-
-    {% endif %}
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer class="dashboard-footer">
-
-        <p>
-            Raj Raushan Official • Creator Analytics Dashboard
-        </p>
-
-        <p>
-            Python • Flask • Pandas • Plotly • YouTube Data API
-        </p>
-
-    </footer>
-
-
-</body>
-
-</html>
+        content_chart=content_chart
+    )

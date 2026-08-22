@@ -442,163 +442,157 @@ def home():
 def dashboard():
 
     videos = get_latest_videos()
-
-    channel = get_channel_info(
-        MAIN_CHANNEL
-    )
-
+    channel = get_channel_info(MAIN_CHANNEL)
 
     vlogs = []
     shorts = []
 
-
     for video in videos:
-
         title = video["title"].lower()
 
-        if (
-            "#shorts" in title
-            or "#youtubeshorts" in title
-        ):
-
+        if "#shorts" in title or "#youtubeshorts" in title:
             shorts.append(video)
-
         else:
-
             vlogs.append(video)
-
 
     # ======================================
     # DATA SCIENCE ANALYSIS
     # ======================================
 
     recent_total_views = 0
-
     average_views = 0
-
     views_chart = None
-
     top_video = None
 
+    vlog_average_views = 0
+    short_average_views = 0
+    content_chart = None
+    best_content_type = "No Data"
 
     if videos:
 
-        # Convert API data into DataFrame
-
+        # Convert API data into Pandas DataFrame
         df = pd.DataFrame(videos)
 
-
-        # Convert views column into numeric
-
+        # Convert views into numeric values
         df["views"] = pd.to_numeric(
             df["views"],
             errors="coerce"
         ).fillna(0)
 
+        # -------------------------------
+        # BASIC ANALYTICS
+        # -------------------------------
+
+        recent_total_views = int(df["views"].sum())
+        average_views = int(df["views"].mean())
 
         # -------------------------------
-        # TOTAL RECENT VIEWS
+        # VLOGS VS SHORTS ANALYSIS
         # -------------------------------
 
-        recent_total_views = int(
-            df["views"].sum()
+        df["content_type"] = df["title"].apply(
+            lambda title: "Short"
+            if "#shorts" in title.lower()
+            or "#youtubeshorts" in title.lower()
+            else "Vlog"
         )
 
+        vlog_data = df[df["content_type"] == "Vlog"]
+        short_data = df[df["content_type"] == "Short"]
 
-        # -------------------------------
-        # AVERAGE VIDEO VIEWS
-        # -------------------------------
-
-        average_views = int(
-            df["views"].mean()
-        )
-
-
-        # -------------------------------
-        # SHORT TITLES FOR CHART
-        # -------------------------------
-
-        df["short_title"] = (
-            df["title"]
-            .str.slice(
-                0,
-                35
+        if not vlog_data.empty:
+            vlog_average_views = int(
+                vlog_data["views"].mean()
             )
-        )
 
+        if not short_data.empty:
+            short_average_views = int(
+                short_data["views"].mean()
+            )
+
+        if vlog_average_views > short_average_views:
+            best_content_type = "Vlogs"
+        elif short_average_views > vlog_average_views:
+            best_content_type = "Shorts"
+        else:
+            best_content_type = "Equal Performance"
 
         # -------------------------------
-        # VIDEO VIEWS CHART
+        # RECENT VIDEO VIEWS CHART
         # -------------------------------
+
+        df["short_title"] = df["title"].str.slice(0, 35)
 
         chart_data = df.sort_values(
             "views",
             ascending=True
         )
 
-
-        chart = px.bar(
-
+        views_fig = px.bar(
             chart_data,
-
             x="views",
-
             y="short_title",
-
             orientation="h",
-
             title="Recent Video Views",
-
             labels={
                 "views": "Views",
                 "short_title": "Video"
             }
         )
 
-
-        views_chart = chart.to_html(
-
+        views_chart = views_fig.to_html(
             full_html=False,
-
             include_plotlyjs="cdn"
         )
 
+        # -------------------------------
+        # VLOGS VS SHORTS CHART
+        # -------------------------------
+
+        comparison_data = pd.DataFrame({
+            "Content Type": ["Vlogs", "Shorts"],
+            "Average Views": [
+                vlog_average_views,
+                short_average_views
+            ]
+        })
+
+        content_fig = px.bar(
+            comparison_data,
+            x="Content Type",
+            y="Average Views",
+            title="Vlogs vs Shorts Performance"
+        )
+
+        content_chart = content_fig.to_html(
+            full_html=False,
+            include_plotlyjs=False
+        )
 
         # -------------------------------
-        # TOP PERFORMING VIDEO
+        # TOP PERFORMING RECENT VIDEO
         # -------------------------------
 
         top_video = max(
-
             videos,
-
-            key=lambda video:
-                int(video["views"])
+            key=lambda video: int(video["views"])
         )
 
-
     return render_template(
-
         "dashboard.html",
-
         channel=channel,
-
         videos=videos,
-
         vlogs=vlogs,
-
         shorts=shorts,
-
         top_video=top_video,
-
-        recent_total_views=
-            recent_total_views,
-
-        average_views=
-            average_views,
-
-        views_chart=
-            views_chart
+        recent_total_views=recent_total_views,
+        average_views=average_views,
+        views_chart=views_chart,
+        vlog_average_views=vlog_average_views,
+        short_average_views=short_average_views,
+        best_content_type=best_content_type,
+        content_chart=content_chart
     )
 
 
