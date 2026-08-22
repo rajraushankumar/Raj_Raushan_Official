@@ -1,1 +1,120 @@
-<h1>Dashboard Working</h1>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Analytics Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 25px 8%;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 40px 8%;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #666;
+        }
+
+        .card strong {
+            font-size: 28px;
+        }
+
+        .chart {
+            margin: 20px 8% 50px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .back {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📊 Creator Analytics Dashboard</h1>
+    <p>Raj Raushan Official</p>
+    <a class="back" href="/">← Back to Website</a>
+</header>
+
+{% if channel %}
+
+<section class="cards">
+
+    <div class="card">
+        <h3>Subscribers</h3>
+        <strong>{{ "{:,}".format(channel.subscribers|int) }}</strong>
+    </div>
+
+    <div class="card">
+        <h3>Total Views</h3>
+        <strong>{{ "{:,}".format(channel.views|int) }}</strong>
+    </div>
+
+    <div class="card">
+        <h3>Total Videos</h3>
+        <strong>{{ "{:,}".format(channel.videos|int) }}</strong>
+    </div>
+
+    <div class="card">
+        <h3>Latest Vlogs</h3>
+        <strong>{{ vlogs|length }}</strong>
+    </div>
+
+    <div class="card">
+        <h3>Latest Shorts</h3>
+        <strong>{{ shorts|length }}</strong>
+    </div>
+
+    <div class="card">
+        <h3>Recent Views</h3>
+        <strong>{{ "{:,}".format(recent_total_views) }}</strong>
+    </div>
+
+    <div class="card">
+        <h3>Average Views</h3>
+        <strong>{{ "{:,}".format(average_views) }}</strong>
+    </div>
+
+</section>
+
+{% endif %}
+
+{% if views_chart %}
+
+<section class="chart">
+
+    <h2>📈 Recent Video Performance</h2>
+
+    {{ views_chart|safe }}
+
+</section>
+
+{% endif %}
+
+</body>
+</html>

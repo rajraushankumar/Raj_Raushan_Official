@@ -35,7 +35,7 @@
     </header>
 
 
-    <!-- ================= CHANNEL ================= -->
+    <!-- ================= CHANNEL PROFILE ================= -->
 
     {% if channel %}
 
@@ -47,11 +47,8 @@
         >
 
         <div>
-
             <h2>{{ channel.name }}</h2>
-
             <p>{{ channel.handle }}</p>
-
         </div>
 
     </section>
@@ -65,9 +62,7 @@
 
     <section class="analytics-cards">
 
-
         <div class="analytics-card">
-
             <h3>Subscribers</h3>
 
             <strong>
@@ -75,12 +70,10 @@
             </strong>
 
             <p>YouTube Subscribers</p>
-
         </div>
 
 
         <div class="analytics-card">
-
             <h3>Total Views</h3>
 
             <strong>
@@ -88,12 +81,10 @@
             </strong>
 
             <p>Channel Views</p>
-
         </div>
 
 
         <div class="analytics-card">
-
             <h3>Total Videos</h3>
 
             <strong>
@@ -101,12 +92,10 @@
             </strong>
 
             <p>Published Videos</p>
-
         </div>
 
 
         <div class="analytics-card">
-
             <h3>Latest Vlogs</h3>
 
             <strong>
@@ -114,12 +103,10 @@
             </strong>
 
             <p>Recent Vlogs</p>
-
         </div>
 
 
         <div class="analytics-card">
-
             <h3>Latest Shorts</h3>
 
             <strong>
@@ -127,12 +114,10 @@
             </strong>
 
             <p>Recent Shorts</p>
-
         </div>
 
 
         <div class="analytics-card">
-
             <h3>Recent Views</h3>
 
             <strong>
@@ -140,12 +125,10 @@
             </strong>
 
             <p>Recent Video Views</p>
-
         </div>
 
 
         <div class="analytics-card">
-
             <h3>Average Views</h3>
 
             <strong>
@@ -153,9 +136,7 @@
             </strong>
 
             <p>Average Per Video</p>
-
         </div>
-
 
     </section>
 
@@ -169,20 +150,15 @@
     <section class="chart-section">
 
         <div class="section-heading">
-
             <h2>📈 Recent Video Performance</h2>
 
             <p>
-                Analysis using Pandas and Plotly
+                Views analysis using Pandas and Plotly
             </p>
-
         </div>
 
-
         <div class="chart-box">
-
             {{ views_chart|safe }}
-
         </div>
 
     </section>
@@ -197,13 +173,11 @@
     <section class="top-video-section">
 
         <div class="section-heading">
-
             <h2>🏆 Top Performing Recent Video</h2>
 
             <p>
-                Highest viewed recent upload
+                Highest viewed video among recent uploads
             </p>
-
         </div>
 
 
@@ -248,20 +222,18 @@
     {% endif %}
 
 
-    <!-- ================= RECENT VIDEO TABLE ================= -->
+    <!-- ================= RECENT VIDEO DATA ================= -->
 
     {% if videos %}
 
     <section class="recent-data-section">
 
         <div class="section-heading">
-
             <h2>📋 Recent Video Data</h2>
 
             <p>
-                Data collected from YouTube API
+                Data collected automatically from YouTube API
             </p>
-
         </div>
 
 
@@ -270,7 +242,6 @@
             <table class="video-table">
 
                 <thead>
-
                     <tr>
                         <th>#</th>
                         <th>Video</th>
@@ -278,7 +249,6 @@
                         <th>Published</th>
                         <th>Action</th>
                     </tr>
-
                 </thead>
 
 
