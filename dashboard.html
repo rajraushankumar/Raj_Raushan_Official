@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Creator Dashboard | Raj Raushan Official</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+
+<body class="dashboard-body">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="dashboard-header">
+
+        <div>
+            <h1>📊 Creator Analytics Dashboard</h1>
+            <p>Raj Raushan Official</p>
+        </div>
+
+        <a href="/" class="dashboard-home-btn">
+            ← Back to Website
+        </a>
+
+    </header>
+
+
+    <!-- ================= CHANNEL ================= -->
+
+    {% if channel %}
+
+    <section class="dashboard-channel">
+
+        <img
+            src="{{ channel.profile_image }}"
+            alt="{{ channel.name }}"
+        >
+
+        <div>
+
+            <h2>{{ channel.name }}</h2>
+
+            <p>{{ channel.handle }}</p>
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- ================= ANALYTICS CARDS ================= -->
+
+    {% if channel %}
+
+    <section class="analytics-cards">
+
+
+        <div class="analytics-card">
+
+            <h3>Subscribers</h3>
+
+            <strong>
+                {{ "{:,}".format(channel.subscribers|int) }}
+            </strong>
+
+            <p>YouTube Subscribers</p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <h3>Total Views</h3>
+
+            <strong>
+                {{ "{:,}".format(channel.views|int) }}
+            </strong>
+
+            <p>Channel Views</p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <h3>Total Videos</h3>
+
+            <strong>
+                {{ "{:,}".format(channel.videos|int) }}
+            </strong>
+
+            <p>Published Videos</p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <h3>Latest Vlogs</h3>
+
+            <strong>
+                {{ vlogs|length }}
+            </strong>
+
+            <p>Recent Vlogs</p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <h3>Latest Shorts</h3>
+
+            <strong>
+                {{ shorts|length }}
+            </strong>
+
+            <p>Recent Shorts</p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <h3>Recent Views</h3>
+
+            <strong>
+                {{ "{:,}".format(recent_total_views) }}
+            </strong>
+
+            <p>Recent Video Views</p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <h3>Average Views</h3>
+
+            <strong>
+                {{ "{:,}".format(average_views) }}
+            </strong>
+
+            <p>Average Per Video</p>
+
+        </div>
+
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- ================= VIEWS CHART ================= -->
+
+    {% if views_chart %}
+
+    <section class="chart-section">
+
+        <div class="section-heading">
+
+            <h2>📈 Recent Video Performance</h2>
+
+            <p>
+                Analysis using Pandas and Plotly
+            </p>
+
+        </div>
+
+
+        <div class="chart-box">
+
+            {{ views_chart|safe }}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- ================= TOP VIDEO ================= -->
+
+    {% if top_video %}
+
+    <section class="top-video-section">
+
+        <div class="section-heading">
+
+            <h2>🏆 Top Performing Recent Video</h2>
+
+            <p>
+                Highest viewed recent upload
+            </p>
+
+        </div>
+
+
+        <div class="top-video-card">
+
+            <img
+                src="{{ top_video.thumbnail }}"
+                alt="{{ top_video.title }}"
+            >
+
+
+            <div class="top-video-info">
+
+                <h3>
+                    {{ top_video.title }}
+                </h3>
+
+                <p>
+                    👁
+                    {{ "{:,}".format(top_video.views|int) }}
+                    Views
+                </p>
+
+                <p>
+                    📅 {{ top_video.published_at }}
+                </p>
+
+                <a
+                    href="{{ top_video.url }}"
+                    target="_blank"
+                    class="channel-btn"
+                >
+                    Watch Video
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- ================= RECENT VIDEO TABLE ================= -->
+
+    {% if videos %}
+
+    <section class="recent-data-section">
+
+        <div class="section-heading">
+
+            <h2>📋 Recent Video Data</h2>
+
+            <p>
+                Data collected from YouTube API
+            </p>
+
+        </div>
+
+
+        <div class="video-table-wrapper">
+
+            <table class="video-table">
+
+                <thead>
+
+                    <tr>
+                        <th>#</th>
+                        <th>Video</th>
+                        <th>Views</th>
+                        <th>Published</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for video in videos %}
+
+                    <tr>
+
+                        <td>
+                            {{ loop.index }}
+                        </td>
+
+
+                        <td class="table-video">
+
+                            <img
+                                src="{{ video.thumbnail }}"
+                                alt="{{ video.title }}"
+                            >
+
+                            <span>
+                                {{ video.title }}
+                            </span>
+
+                        </td>
+
+
+                        <td>
+                            {{ "{:,}".format(video.views|int) }}
+                        </td>
+
+
+                        <td>
+                            {{ video.published_at }}
+                        </td>
+
+
+                        <td>
+
+                            <a
+                                href="{{ video.url }}"
+                                target="_blank"
+                                class="table-watch-btn"
+                            >
+                                Watch
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="dashboard-footer">
+
+        <p>
+            Raj Raushan Official • Creator Analytics Dashboard
+        </p>
+
+        <p>
+            Python • Flask • Pandas • Plotly • YouTube Data API
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

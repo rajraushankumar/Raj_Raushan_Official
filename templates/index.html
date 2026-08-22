@@ -27,20 +27,17 @@
 
         <h2>Raj Raushan Official</h2>
 
-        <div class="nav-links">
+      <div class="nav-links">
 
-            <a href="/">Home</a>
+    <a href="/">Home</a>
+    <a href="#vlogs">Vlogs</a>
+    <a href="#shorts">Shorts</a>
+    <a href="#explore">Explore</a>
+    <a href="#about">About</a>
 
-            <a href="#vlogs">Vlogs</a>
+    <a href="/dashboard">Dashboard</a>
 
-            <a href="#shorts">Shorts</a>
-
-            <a href="#explore">Explore</a>
-
-            <a href="#about">About</a>
-
-        </div>
-
+</div>
     </nav>
 
 
@@ -380,114 +377,80 @@
 
 
 
-    <!-- ================= SHORTS ================= -->
+   <!-- ================= SHORTS ================= -->
 
-    <section
-        class="videos shorts-section"
-        id="shorts"
-    >
+<section class="shorts-section" id="shorts">
 
-        <h2>
-            📱 Latest Shorts
-        </h2>
+    <h2>📱 Latest Shorts</h2>
 
+    <div class="shorts-container">
 
-        <div class="video-container">
+        {% if shorts %}
 
+            {% for video in shorts %}
 
-            {% if shorts %}
+            <div class="short-card">
 
+                <a
+                    href="{{ video.url }}"
+                    target="_blank"
+                    class="short-thumbnail"
+                >
 
-                {% for video in shorts %}
-
-
-                <div class="video-card">
-
-
-                    <a
-                        href="{{ video.url }}"
-                        target="_blank"
+                    <img
+                        src="{{ video.thumbnail }}"
+                        alt="{{ video.title }}"
                     >
 
-                        <img
-                            src="{{ video.thumbnail }}"
-                            alt="{{ video.title }}"
-                        >
+                    <div class="short-play">
+                        ▶
+                    </div>
 
-                    </a>
-
-
-                    <div class="video-info">
+                </a>
 
 
-                        <h3>
-                            {{ video.title }}
-                        </h3>
+                <div class="short-info">
 
+                    <h3>
+                        {{ video.title }}
+                    </h3>
 
-                        <p>
-                            Raj Raushan Official
-                        </p>
+                    <div class="short-meta">
 
+                        <span>
+                            👁 {{ "{:,}".format(video.views|int) }}
+                        </span>
 
-                        <div class="video-meta">
-
-                            <span>
-                                👁
-                                {{ "{:,}".format(video.views|int) }}
-                                views
-                            </span>
-
-                            <span>
-                                📅
-                                {{ video.published_at }}
-                            </span>
-
-                        </div>
-
-
-                        <a
-                            href="{{ video.url }}"
-                            target="_blank"
-                            class="watch-btn"
-                        >
-                            Watch Short
-                        </a>
-
+                        <span>
+                            📅 {{ video.published_at }}
+                        </span>
 
                     </div>
 
-
                 </div>
 
+            </div>
 
-                {% endfor %}
-
-
-            {% else %}
+            {% endfor %}
 
 
-                <div class="no-videos">
+        {% else %}
 
-                    <h3>
-                        📱 No Shorts Found
-                    </h3>
+            <div class="no-videos">
 
-                    <p>
-                        New Shorts will appear here automatically.
-                    </p>
+                <h3>📱 No Shorts Found</h3>
 
-                </div>
+                <p>
+                    New Shorts will appear here automatically.
+                </p>
 
+            </div>
 
-            {% endif %}
+        {% endif %}
 
+    </div>
 
-        </div>
-
-    </section>
-
-
+</section>
 
     <!-- ================= EXPLORE ================= -->
 
