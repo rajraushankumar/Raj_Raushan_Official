@@ -23,7 +23,7 @@ SECOND_CHANNEL = "@rajraushanofficial02"
 
 
 # ==========================================
-# GET LATEST VIDEOS FROM MAIN CHANNEL
+# GET LATEST VIDEOS
 # ==========================================
 
 def get_latest_videos():
@@ -34,9 +34,9 @@ def get_latest_videos():
 
     try:
 
-        # -------------------------------
-        # 1. GET CHANNEL UPLOAD PLAYLIST
-        # -------------------------------
+        # ----------------------------------
+        # GET CHANNEL UPLOAD PLAYLIST
+        # ----------------------------------
 
         channel_url = (
             "https://www.googleapis.com/youtube/v3/channels"
@@ -57,7 +57,9 @@ def get_latest_videos():
         channel_data = channel_response.json()
 
         if not channel_data.get("items"):
+
             print("Main channel not found")
+
             return []
 
 
@@ -69,9 +71,9 @@ def get_latest_videos():
         )
 
 
-        # -------------------------------
-        # 2. GET LATEST VIDEOS
-        # -------------------------------
+        # ----------------------------------
+        # GET LATEST 12 VIDEOS
+        # ----------------------------------
 
         playlist_url = (
             "https://www.googleapis.com/youtube/v3/playlistItems"
@@ -99,26 +101,33 @@ def get_latest_videos():
 
         for item in playlist_data.get("items", []):
 
-            snippet = item.get("snippet", {})
+            snippet = item.get(
+                "snippet",
+                {}
+            )
 
             resource_id = snippet.get(
                 "resourceId",
                 {}
             )
 
-            video_id = resource_id.get("videoId")
+            video_id = resource_id.get(
+                "videoId"
+            )
 
 
             if not video_id:
                 continue
 
 
-            video_ids.append(video_id)
+            video_ids.append(
+                video_id
+            )
 
 
-            # -------------------------------
+            # ------------------------------
             # UPLOAD DATE
-            # -------------------------------
+            # ------------------------------
 
             raw_date = snippet.get(
                 "publishedAt",
@@ -139,14 +148,15 @@ def get_latest_videos():
                 upload_date = raw_date
 
 
-            # -------------------------------
+            # ------------------------------
             # THUMBNAIL
-            # -------------------------------
+            # ------------------------------
 
             thumbnails = snippet.get(
                 "thumbnails",
                 {}
             )
+
 
             if "high" in thumbnails:
 
@@ -171,9 +181,9 @@ def get_latest_videos():
                 thumbnail = ""
 
 
-            # -------------------------------
-            # ADD VIDEO DATA
-            # -------------------------------
+            # ------------------------------
+            # SAVE VIDEO DATA
+            # ------------------------------
 
             videos.append({
 
@@ -201,7 +211,7 @@ def get_latest_videos():
 
 
         # ==================================
-        # 3. GET VIDEO VIEW COUNTS
+        # GET VIDEO VIEW COUNTS
         # ==================================
 
         if video_ids:
@@ -211,10 +221,17 @@ def get_latest_videos():
             )
 
             stats_params = {
-                "part": "statistics",
-                "id": ",".join(video_ids),
-                "key": API_KEY
+
+                "part":
+                    "statistics",
+
+                "id":
+                    ",".join(video_ids),
+
+                "key":
+                    API_KEY
             }
+
 
             stats_response = requests.get(
                 stats_url,
@@ -224,10 +241,14 @@ def get_latest_videos():
 
             stats_data = stats_response.json()
 
+
             views_map = {}
 
 
-            for item in stats_data.get("items", []):
+            for item in stats_data.get(
+                "items",
+                []
+            ):
 
                 statistics = item.get(
                     "statistics",
@@ -242,7 +263,7 @@ def get_latest_videos():
                 )
 
 
-            # Add views to each video
+            # Add views to videos
 
             for video in videos:
 
@@ -256,6 +277,7 @@ def get_latest_videos():
             "Total videos fetched:",
             len(videos)
         )
+
 
         return videos
 
@@ -279,16 +301,24 @@ def get_channel_info(channel_handle):
     if not API_KEY:
         return None
 
+
     try:
 
         url = (
             "https://www.googleapis.com/youtube/v3/channels"
         )
 
+
         params = {
-            "part": "snippet,statistics",
-            "forHandle": channel_handle,
-            "key": API_KEY
+
+            "part":
+                "snippet,statistics",
+
+            "forHandle":
+                channel_handle,
+
+            "key":
+                API_KEY
         }
 
 
@@ -297,6 +327,7 @@ def get_channel_info(channel_handle):
             params=params,
             timeout=10
         )
+
 
         data = response.json()
 
@@ -313,10 +344,12 @@ def get_channel_info(channel_handle):
 
         channel = data["items"][0]
 
+
         snippet = channel.get(
             "snippet",
             {}
         )
+
 
         statistics = channel.get(
             "statistics",
@@ -389,9 +422,11 @@ def home():
 
     videos = get_latest_videos()
 
+
     channel1 = get_channel_info(
         MAIN_CHANNEL
     )
+
 
     channel2 = get_channel_info(
         SECOND_CHANNEL
@@ -402,22 +437,29 @@ def home():
     shorts = []
 
 
-    # Separate Vlogs and Shorts
+    # ======================================
+    # SEPARATE VLOGS AND SHORTS
+    # ======================================
 
     for video in videos:
 
         title = video["title"].lower()
+
 
         if (
             "#shorts" in title
             or "#youtubeshorts" in title
         ):
 
-            shorts.append(video)
+            shorts.append(
+                video
+            )
 
         else:
 
-            vlogs.append(video)
+            vlogs.append(
+                video
+            )
 
 
     return render_template(
@@ -435,171 +477,449 @@ def home():
 
 
 # ==========================================
-# PRIVATE CREATOR ANALYTICS DASHBOARD
+# CREATOR ANALYTICS DASHBOARD
 # ==========================================
 
 @app.route("/dashboard")
 def dashboard():
 
     videos = get_latest_videos()
-    channel = get_channel_info(MAIN_CHANNEL)
+
+
+    channel = get_channel_info(
+        MAIN_CHANNEL
+    )
+
 
     vlogs = []
     shorts = []
 
+
+    # ======================================
+    # VLOGS / SHORTS SEPARATION
+    # ======================================
+
     for video in videos:
+
         title = video["title"].lower()
 
-        if "#shorts" in title or "#youtubeshorts" in title:
-            shorts.append(video)
+
+        if (
+            "#shorts" in title
+            or "#youtubeshorts" in title
+        ):
+
+            shorts.append(
+                video
+            )
+
         else:
-            vlogs.append(video)
+
+            vlogs.append(
+                video
+            )
+
+
+    # ======================================
+    # DATA SCIENCE VARIABLES
+    # ======================================
+
+    recent_total_views = 0
+
+    average_views = 0
+
+
+    vlog_average_views = 0
+
+    short_average_views = 0
+
+
+    best_content_type = "No Data"
+
+
+    views_chart = None
+
+    content_chart = None
+
+
+    top_video = None
+
+    top_5_videos = []
+
 
     # ======================================
     # DATA SCIENCE ANALYSIS
     # ======================================
 
-    recent_total_views = 0
-    average_views = 0
-    views_chart = None
-    top_video = None
-
-    vlog_average_views = 0
-    short_average_views = 0
-    content_chart = None
-    best_content_type = "No Data"
-
     if videos:
 
-        # Convert API data into Pandas DataFrame
-        df = pd.DataFrame(videos)
 
-        # Convert views into numeric values
-        df["views"] = pd.to_numeric(
-            df["views"],
-            errors="coerce"
-        ).fillna(0)
+        # ==================================
+        # API DATA -> PANDAS DATAFRAME
+        # ==================================
 
-        # -------------------------------
-        # BASIC ANALYTICS
-        # -------------------------------
-
-        recent_total_views = int(df["views"].sum())
-        average_views = int(df["views"].mean())
-
-        # -------------------------------
-        # VLOGS VS SHORTS ANALYSIS
-        # -------------------------------
-
-        df["content_type"] = df["title"].apply(
-            lambda title: "Short"
-            if "#shorts" in title.lower()
-            or "#youtubeshorts" in title.lower()
-            else "Vlog"
+        df = pd.DataFrame(
+            videos
         )
 
-        vlog_data = df[df["content_type"] == "Vlog"]
-        short_data = df[df["content_type"] == "Short"]
+
+        # ==================================
+        # CLEAN VIEW DATA
+        # ==================================
+
+        df["views"] = pd.to_numeric(
+
+            df["views"],
+
+            errors="coerce"
+
+        ).fillna(
+            0
+        )
+
+
+        # ==================================
+        # BASIC STATISTICS
+        # ==================================
+
+        recent_total_views = int(
+            df["views"].sum()
+        )
+
+
+        average_views = int(
+            df["views"].mean()
+        )
+
+
+        # ==================================
+        # CLASSIFY VLOGS AND SHORTS
+        # ==================================
+
+        df["content_type"] = df[
+            "title"
+        ].apply(
+
+            lambda title:
+
+                "Short"
+
+                if (
+                    "#shorts" in title.lower()
+                    or
+                    "#youtubeshorts" in title.lower()
+                )
+
+                else "Vlog"
+        )
+
+
+        # ==================================
+        # VLOG DATA
+        # ==================================
+
+        vlog_data = df[
+            df["content_type"] == "Vlog"
+        ]
+
+
+        # ==================================
+        # SHORT DATA
+        # ==================================
+
+        short_data = df[
+            df["content_type"] == "Short"
+        ]
+
+
+        # ==================================
+        # VLOG AVERAGE VIEWS
+        # ==================================
 
         if not vlog_data.empty:
+
             vlog_average_views = int(
-                vlog_data["views"].mean()
+                vlog_data[
+                    "views"
+                ].mean()
             )
+
+
+        # ==================================
+        # SHORTS AVERAGE VIEWS
+        # ==================================
 
         if not short_data.empty:
+
             short_average_views = int(
-                short_data["views"].mean()
+                short_data[
+                    "views"
+                ].mean()
             )
 
-        if vlog_average_views > short_average_views:
+
+        # ==================================
+        # BEST CONTENT TYPE
+        # ==================================
+
+        if (
+            vlog_average_views
+            >
+            short_average_views
+        ):
+
             best_content_type = "Vlogs"
-        elif short_average_views > vlog_average_views:
+
+
+        elif (
+            short_average_views
+            >
+            vlog_average_views
+        ):
+
             best_content_type = "Shorts"
+
+
         else:
-            best_content_type = "Equal Performance"
 
-        # -------------------------------
-        # RECENT VIDEO VIEWS CHART
-        # -------------------------------
+            best_content_type = (
+                "Equal Performance"
+            )
 
-        df["short_title"] = df["title"].str.slice(0, 35)
+
+        # ==================================
+        # SHORT VIDEO TITLES FOR CHART
+        # ==================================
+
+        df["short_title"] = (
+
+            df["title"]
+
+            .str.slice(
+                0,
+                35
+            )
+        )
+
+
+        # ==================================
+        # RECENT VIDEO PERFORMANCE CHART
+        # ==================================
 
         chart_data = df.sort_values(
+
             "views",
+
             ascending=True
         )
 
+
         views_fig = px.bar(
+
             chart_data,
+
             x="views",
+
             y="short_title",
+
             orientation="h",
+
             title="Recent Video Views",
+
             labels={
-                "views": "Views",
-                "short_title": "Video"
+
+                "views":
+                    "Views",
+
+                "short_title":
+                    "Video"
             }
         )
 
+
         views_chart = views_fig.to_html(
+
             full_html=False,
+
             include_plotlyjs="cdn"
         )
 
-        # -------------------------------
+
+        # ==================================
         # VLOGS VS SHORTS CHART
-        # -------------------------------
+        # ==================================
 
         comparison_data = pd.DataFrame({
-            "Content Type": ["Vlogs", "Shorts"],
+
+            "Content Type": [
+
+                "Vlogs",
+
+                "Shorts"
+            ],
+
             "Average Views": [
+
                 vlog_average_views,
+
                 short_average_views
             ]
         })
 
+
         content_fig = px.bar(
+
             comparison_data,
+
             x="Content Type",
+
             y="Average Views",
-            title="Vlogs vs Shorts Performance"
+
+            title=(
+                "Vlogs vs Shorts Performance"
+            )
         )
+
 
         content_chart = content_fig.to_html(
+
             full_html=False,
-            include_plotlyjs=False
+
+            include_plotlyjs="cdn"
         )
 
-        # -------------------------------
-        # TOP PERFORMING RECENT VIDEO
-        # -------------------------------
+
+        # ==================================
+        # TOP PERFORMING VIDEO
+        # ==================================
 
         top_video = max(
+
             videos,
-            key=lambda video: int(video["views"])
+
+            key=lambda video:
+                int(
+                    video["views"]
+                )
         )
 
+
+        # ==================================
+        # TOP 5 VIDEO RANKING
+        # ==================================
+
+        top_5_df = (
+
+            df.sort_values(
+
+                "views",
+
+                ascending=False
+            )
+
+            .head(5)
+
+            .copy()
+        )
+
+
+        # Rank 1 - 5
+
+        top_5_df["rank"] = range(
+
+            1,
+
+            len(top_5_df) + 1
+        )
+
+
+        # Views into integer
+
+        top_5_df["views"] = (
+
+            top_5_df["views"]
+
+            .astype(int)
+        )
+
+
+        # ==================================
+        # DATAFRAME -> DICTIONARY
+        # ==================================
+
+        top_5_videos = (
+
+            top_5_df[
+
+                [
+                    "rank",
+
+                    "title",
+
+                    "thumbnail",
+
+                    "url",
+
+                    "published_at",
+
+                    "views"
+                ]
+            ]
+
+            .to_dict(
+                orient="records"
+            )
+        )
+
+
+    # ======================================
+    # SEND DATA TO DASHBOARD
+    # ======================================
+
     return render_template(
+
         "dashboard.html",
+
         channel=channel,
+
         videos=videos,
+
         vlogs=vlogs,
+
         shorts=shorts,
-        top_video=top_video,
-        recent_total_views=recent_total_views,
-        average_views=average_views,
-        views_chart=views_chart,
-        vlog_average_views=vlog_average_views,
-        short_average_views=short_average_views,
-        best_content_type=best_content_type,
-        content_chart=content_chart
+
+        recent_total_views=
+            recent_total_views,
+
+        average_views=
+            average_views,
+
+        vlog_average_views=
+            vlog_average_views,
+
+        short_average_views=
+            short_average_views,
+
+        best_content_type=
+            best_content_type,
+
+        views_chart=
+            views_chart,
+
+        content_chart=
+            content_chart,
+
+        top_video=
+            top_video,
+
+        top_5_videos=
+            top_5_videos
     )
 
 
 # ==========================================
 # RUN FLASK WEBSITE
 # ==========================================
-
 
 if __name__ == "__main__":
 
