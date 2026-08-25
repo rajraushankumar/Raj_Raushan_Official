@@ -1132,3 +1132,279 @@ body {
         text-align: center;
     }
 }
+
+/* ==========================================
+   BEST UPLOAD DAY & TIME ANALYSIS
+========================================== */
+
+.upload-analysis {
+    padding: 20px 8% 50px;
+}
+
+.upload-analysis h2 {
+    margin-bottom: 8px;
+}
+
+.upload-analysis-subtitle {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+
+/* BEST DAY / TIME CARDS */
+
+.upload-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.upload-card {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.upload-card:hover {
+    transform: translateY(-5px);
+}
+
+.upload-card h3 {
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.upload-card strong {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.upload-card p {
+    color: #888;
+    margin: 0;
+}
+
+
+/* UPLOAD CHARTS */
+
+.upload-chart {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    overflow-x: auto;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .upload-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .upload-analysis {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+/* BEST UPLOAD DAY & TIME */
+
+.section {
+    padding: 20px 8% 50px;
+}
+
+.comparison-cards {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(220px, 1fr)
+    );
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.comparison-card {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.comparison-card:hover {
+    transform: translateY(-5px);
+}
+
+.comparison-card h3 {
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.comparison-card strong {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.comparison-card p {
+    color: #888;
+}
+
+.chart-box {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    overflow-x: auto;
+}
+
+/* =========================
+   MODERN DASHBOARD THEME
+========================= */
+
+body {
+    background: #eef2f7;
+    color: #1f2937;
+}
+
+header {
+    background: linear-gradient(135deg, #111827, #1f2937);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.card,
+.comparison-card,
+.top5-card,
+.chart-box,
+.chart {
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e5e7eb;
+}
+
+.card:hover,
+.comparison-card:hover,
+.top5-card:hover {
+    transform: translateY(-4px);
+    transition: 0.25s;
+}
+
+.card h3,
+.comparison-card h3,
+.top5-card h3 {
+    color: #374151;
+}
+
+.card strong,
+.comparison-card strong {
+    color: #111827;
+}
+
+/* Section headings */
+
+.section h2,
+.chart h2 {
+    color: #111827;
+    font-size: 28px;
+}
+
+/* Top 5 cards */
+
+.top5-card {
+    border-left: 5px solid #2563eb;
+}
+
+.top5-card a {
+    background: #2563eb;
+}
+
+.top5-card a:hover {
+    background: #1d4ed8;
+}
+
+/* Best upload cards */
+
+.comparison-card {
+    background: linear-gradient(
+        180deg,
+        #ffffff,
+        #f8fafc
+    );
+}
+
+/* First card accent */
+
+.comparison-card:nth-child(1) {
+    border-top: 4px solid #2563eb;
+}
+
+/* Second card accent */
+
+.comparison-card:nth-child(2) {
+    border-top: 4px solid #7c3aed;
+}
+
+/* Third card accent */
+
+.comparison-card:nth-child(3) {
+    border-top: 4px solid #059669;
+}
+
+/* Main analytics cards */
+
+.cards .card:nth-child(1) {
+    border-top: 4px solid #ef4444;
+}
+
+.cards .card:nth-child(2) {
+    border-top: 4px solid #2563eb;
+}
+
+.cards .card:nth-child(3) {
+    border-top: 4px solid #7c3aed;
+}
+
+.cards .card:nth-child(4) {
+    border-top: 4px solid #059669;
+}
+
+.cards .card:nth-child(5) {
+    border-top: 4px solid #f59e0b;
+}
+
+.cards .card:nth-child(6) {
+    border-top: 4px solid #0ea5e9;
+}
+
+.cards .card:nth-child(7) {
+    border-top: 4px solid #10b981;
+}
+
+/* Charts */
+
+.chart-box,
+.chart {
+    background: #ffffff;
+}
+
+/* Back button */
+
+.back {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 9px 16px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.back:hover {
+    background: rgba(255,255,255,0.08);
+}
