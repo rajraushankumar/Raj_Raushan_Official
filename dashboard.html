@@ -7,12 +7,17 @@ def dashboard():
     vlogs = []
     shorts = []
 
+    # =========================
+    # VLOGS / SHORTS SEPARATION
+    # =========================
+
     for video in videos:
 
         title = video["title"].lower()
 
         if "#shorts" in title or "#youtubeshorts" in title:
             shorts.append(video)
+
         else:
             vlogs.append(video)
 
@@ -33,6 +38,13 @@ def dashboard():
     content_chart = None
 
     top_video = None
+    top_5_videos = []
+
+    best_upload_day = "No Data"
+    best_upload_time = "No Data"
+
+    day_chart = None
+    time_chart = None
 
 
     # =========================
@@ -41,24 +53,178 @@ def dashboard():
 
     if videos:
 
-        # YouTube data -> Pandas DataFrame
+        # YouTube API data -> Pandas DataFrame
         df = pd.DataFrame(videos)
 
 
-        # Views ko numeric banana
+        # =========================
+        # CLEAN VIEW DATA
+        # =========================
+
         df["views"] = pd.to_numeric(
             df["views"],
             errors="coerce"
         ).fillna(0)
 
+        # =========================
+# BEST UPLOAD DAY / TIME
+# =========================
 
-        # Total recent views
+df["published_datetime"] = pd.to_datetime(
+    df["published_raw"],
+    errors="coerce",
+    utc=True
+)
+
+df["published_datetime"] = (
+    df["published_datetime"]
+    .dt.tz_convert("Asia/Kolkata")
+)
+
+date_data = df.dropna(
+    subset=["published_datetime"]
+).copy()
+
+
+if not date_data.empty:
+
+    # BEST UPLOAD DAY
+
+    date_data["upload_day"] = (
+        date_data["published_datetime"]
+        .dt.day_name()
+    )
+
+    day_analysis = (
+        date_data
+        .groupby("upload_day")["views"]
+        .mean()
+        .reset_index()
+    )
+
+    day_analysis.columns = [
+        "Upload Day",
+        "Average Views"
+    ]
+
+    day_analysis["Average Views"] = (
+        day_analysis["Average Views"]
+        .round()
+        .astype(int)
+    )
+
+    best_day_row = (
+        day_analysis
+        .sort_values(
+            "Average Views",
+            ascending=False
+        )
+        .iloc[0]
+    )
+
+    best_upload_day = (
+        best_day_row["Upload Day"]
+    )
+
+
+    # DAY CHART
+
+    day_fig = px.bar(
+        day_analysis,
+        x="Upload Day",
+        y="Average Views",
+        title="Average Views by Upload Day"
+    )
+
+    day_chart = day_fig.to_html(
+        full_html=False,
+        include_plotlyjs=False
+    )
+
+
+    # BEST UPLOAD TIME
+
+    date_data["upload_hour"] = (
+        date_data["published_datetime"]
+        .dt.hour
+    )
+
+    time_analysis = (
+        date_data
+        .groupby("upload_hour")["views"]
+        .mean()
+        .reset_index()
+    )
+
+    time_analysis.columns = [
+        "Upload Hour",
+        "Average Views"
+    ]
+
+    time_analysis["Average Views"] = (
+        time_analysis["Average Views"]
+        .round()
+        .astype(int)
+    )
+
+    best_time_row = (
+        time_analysis
+        .sort_values(
+            "Average Views",
+            ascending=False
+        )
+        .iloc[0]
+    )
+
+    best_hour = int(
+        best_time_row["Upload Hour"]
+    )
+
+    best_upload_time = datetime.strptime(
+        str(best_hour),
+        "%H"
+    ).strftime(
+        "%I:00 %p"
+    )
+
+
+    # TIME LABEL
+
+    time_analysis["Upload Time"] = (
+        time_analysis["Upload Hour"]
+        .apply(
+            lambda hour:
+            datetime.strptime(
+                str(int(hour)),
+                "%H"
+            ).strftime("%I %p")
+        )
+    )
+
+
+    # TIME CHART
+
+    time_fig = px.bar(
+        time_analysis,
+        x="Upload Time",
+        y="Average Views",
+        title="Average Views by Upload Time"
+    )
+
+    time_chart = time_fig.to_html(
+        full_html=False,
+        include_plotlyjs=False
+    )
+
+
+        # =========================
+        # BASIC ANALYTICS
+        # =========================
+
         recent_total_views = int(
             df["views"].sum()
         )
 
-
-        # Average views
         average_views = int(
             df["views"].mean()
         )
@@ -86,7 +252,10 @@ def dashboard():
         ]
 
 
-        # Vlog average
+        # =========================
+        # VLOG AVERAGE
+        # =========================
+
         if not vlog_data.empty:
 
             vlog_average_views = int(
@@ -94,7 +263,10 @@ def dashboard():
             )
 
 
-        # Shorts average
+        # =========================
+        # SHORTS AVERAGE
+        # =========================
+
         if not short_data.empty:
 
             short_average_views = int(
@@ -102,7 +274,10 @@ def dashboard():
             )
 
 
-        # Best content type
+        # =========================
+        # BEST CONTENT TYPE
+        # =========================
+
         if vlog_average_views > short_average_views:
 
             best_content_type = "Vlogs"
@@ -193,6 +368,230 @@ def dashboard():
         )
 
 
+        # =========================
+        # TOP 5 VIDEO RANKING
+        # =========================
+
+        top_5_df = (
+            df.sort_values(
+                "views",
+                ascending=False
+            )
+            .head(5)
+            .copy()
+        )
+
+
+        top_5_df["rank"] = range(
+            1,
+            len(top_5_df) + 1
+        )
+
+
+        top_5_df["views"] = (
+            top_5_df["views"]
+            .astype(int)
+        )
+
+
+        top_5_videos = (
+            top_5_df[
+                [
+                    "rank",
+                    "title",
+                    "thumbnail",
+                    "url",
+                    "published_at",
+                    "views"
+                ]
+            ]
+            .to_dict(
+                orient="records"
+            )
+        )
+
+
+        # =========================
+        # BEST UPLOAD DAY / TIME
+        # =========================
+
+        if "published_raw" in df.columns:
+
+            df["published_datetime"] = pd.to_datetime(
+                df["published_raw"],
+                errors="coerce",
+                utc=True
+            )
+
+
+            # UTC -> India Time
+            df["published_datetime"] = (
+                df["published_datetime"]
+                .dt.tz_convert("Asia/Kolkata")
+            )
+
+
+            date_data = df.dropna(
+                subset=["published_datetime"]
+            ).copy()
+
+
+            if not date_data.empty:
+
+                # =========================
+                # BEST UPLOAD DAY
+                # =========================
+
+                date_data["upload_day"] = (
+                    date_data["published_datetime"]
+                    .dt.day_name()
+                )
+
+
+                day_analysis = (
+                    date_data.groupby(
+                        "upload_day"
+                    )["views"]
+                    .mean()
+                    .reset_index()
+                )
+
+
+                day_analysis.columns = [
+                    "Upload Day",
+                    "Average Views"
+                ]
+
+
+                day_analysis["Average Views"] = (
+                    day_analysis["Average Views"]
+                    .round()
+                    .astype(int)
+                )
+
+
+                best_day_row = (
+                    day_analysis.sort_values(
+                        "Average Views",
+                        ascending=False
+                    )
+                    .iloc[0]
+                )
+
+
+                best_upload_day = (
+                    best_day_row["Upload Day"]
+                )
+
+
+                # =========================
+                # DAY CHART
+                # =========================
+
+                day_fig = px.bar(
+                    day_analysis,
+                    x="Upload Day",
+                    y="Average Views",
+                    title="Average Views by Upload Day"
+                )
+
+
+                day_chart = day_fig.to_html(
+                    full_html=False,
+                    include_plotlyjs=False
+                )
+
+
+                # =========================
+                # BEST UPLOAD TIME
+                # =========================
+
+                date_data["upload_hour"] = (
+                    date_data["published_datetime"]
+                    .dt.hour
+                )
+
+
+                time_analysis = (
+                    date_data.groupby(
+                        "upload_hour"
+                    )["views"]
+                    .mean()
+                    .reset_index()
+                )
+
+
+                time_analysis.columns = [
+                    "Upload Hour",
+                    "Average Views"
+                ]
+
+
+                time_analysis["Average Views"] = (
+                    time_analysis["Average Views"]
+                    .round()
+                    .astype(int)
+                )
+
+
+                best_time_row = (
+                    time_analysis.sort_values(
+                        "Average Views",
+                        ascending=False
+                    )
+                    .iloc[0]
+                )
+
+
+                best_hour = int(
+                    best_time_row["Upload Hour"]
+                )
+
+
+                best_upload_time = datetime.strptime(
+                    str(best_hour),
+                    "%H"
+                ).strftime(
+                    "%I:00 %p"
+                )
+
+
+                # =========================
+                # TIME LABELS
+                # =========================
+
+                time_analysis["Upload Time"] = (
+                    time_analysis["Upload Hour"]
+                    .apply(
+                        lambda hour:
+                        datetime.strptime(
+                            str(int(hour)),
+                            "%H"
+                        ).strftime(
+                            "%I %p"
+                        )
+                    )
+                )
+
+
+                # =========================
+                # TIME CHART
+                # =========================
+
+                time_fig = px.bar(
+                    time_analysis,
+                    x="Upload Time",
+                    y="Average Views",
+                    title="Average Views by Upload Time"
+                )
+
+
+                time_chart = time_fig.to_html(
+                    full_html=False,
+                    include_plotlyjs=False
+                )
+
+
     # =========================
     # SEND DATA TO DASHBOARD
     # =========================
@@ -210,6 +609,8 @@ def dashboard():
 
         top_video=top_video,
 
+        top_5_videos=top_5_videos,
+
         recent_total_views=recent_total_views,
 
         average_views=average_views,
@@ -222,5 +623,13 @@ def dashboard():
 
         best_content_type=best_content_type,
 
-        content_chart=content_chart
+        content_chart=content_chart,
+
+        best_upload_day=best_upload_day,
+
+        best_upload_time=best_upload_time,
+
+        day_chart=day_chart,
+
+        time_chart=time_chart
     )

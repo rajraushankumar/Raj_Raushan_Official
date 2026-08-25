@@ -205,6 +205,10 @@ def get_latest_videos():
                 "published_at":
                     upload_date,
 
+                                
+                "published_raw":
+                    raw_date,   
+
                 "views":
                     "0"
             })
