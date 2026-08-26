@@ -531,6 +531,9 @@ def dashboard():
     day_chart = None
     time_chart = None
 
+    trend_chart = None
+    trend_status = "No Data"
+
 
     # ======================================
     # DATA SCIENCE ANALYSIS
@@ -638,7 +641,7 @@ def dashboard():
 
         content_chart = content_fig.to_html(
             full_html=False,
-            include_plotlyjs=False
+            include_plotlyjs="cdn"
         )
 
         # ==================================
@@ -688,6 +691,87 @@ def dashboard():
                 orient="records"
             )
         )
+
+        # ==================================
+        # RECENT UPLOAD PERFORMANCE TREND
+        # ==================================
+
+        if "published_raw" in df.columns:
+
+            trend_data = df.copy()
+
+            trend_data["upload_date"] = pd.to_datetime(
+                trend_data["published_raw"],
+                errors="coerce",
+                utc=True
+            )
+
+            trend_data = trend_data.dropna(
+                subset=["upload_date"]
+            ).sort_values(
+                "upload_date"
+            )
+
+            if not trend_data.empty:
+
+                trend_data["date_label"] = (
+                    trend_data["upload_date"]
+                    .dt.strftime("%d %b")
+                )
+
+                trend_fig = px.line(
+                    trend_data,
+                    x="date_label",
+                    y="views",
+                    markers=True,
+                    title="Recent Upload Performance Trend",
+                    labels={
+                        "date_label": "Upload Date",
+                        "views": "Current Views"
+                    }
+                )
+
+                trend_fig.update_layout(
+                    height=420,
+                    margin=dict(
+                        l=40,
+                        r=40,
+                        t=70,
+                        b=40
+                    )
+                )
+
+                trend_chart = trend_fig.to_html(
+                    full_html=False,
+                    include_plotlyjs=False
+                )
+
+                if len(trend_data) >= 2:
+
+                    middle = len(trend_data) // 2
+
+                    old_average = (
+                        trend_data.iloc[:middle]["views"]
+                        .mean()
+                    )
+
+                    recent_average = (
+                        trend_data.iloc[middle:]["views"]
+                        .mean()
+                    )
+
+                    if recent_average > old_average:
+                        trend_status = "Improving 📈"
+
+                    elif recent_average < old_average:
+                        trend_status = "Declining 📉"
+
+                    else:
+                        trend_status = "Stable ➡️"
+
+                else:
+                    trend_status = "Stable ➡️"
+
 
         # ==================================
         # BEST UPLOAD DAY / TIME ANALYSIS
@@ -854,7 +938,9 @@ def dashboard():
         best_upload_day=best_upload_day,
         best_upload_time=best_upload_time,
         day_chart=day_chart,
-        time_chart=time_chart
+        time_chart=time_chart,
+        trend_chart=trend_chart,
+        trend_status=trend_status
     )
 
 

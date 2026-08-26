@@ -245,7 +245,183 @@
 
         }
 
-    </style>
+    
+/* FINAL MODERN CREATOR ANALYTICS THEME */
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+header {
+    background: linear-gradient(135deg, #111827, #1e293b);
+    padding: 35px 7%;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0 0 10px;
+}
+
+header p {
+    color: #cbd5e1;
+}
+
+.cards {
+    gap: 22px;
+    padding: 38px 6%;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 22px rgba(15,23,42,0.08);
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #64748b;
+}
+
+.card strong {
+    color: #0f172a;
+    font-size: 32px;
+}
+
+.cards .card:nth-child(1) {
+    border-top: 5px solid #ef4444;
+}
+
+.cards .card:nth-child(2) {
+    border-top: 5px solid #3b82f6;
+}
+
+.cards .card:nth-child(3) {
+    border-top: 5px solid #8b5cf6;
+}
+
+.cards .card:nth-child(4) {
+    border-top: 5px solid #10b981;
+}
+
+.cards .card:nth-child(5) {
+    border-top: 5px solid #f59e0b;
+}
+
+.cards .card:nth-child(6) {
+    border-top: 5px solid #06b6d4;
+}
+
+.cards .card:nth-child(7) {
+    border-top: 5px solid #22c55e;
+}
+
+.section {
+    width: 90%;
+    max-width: 1500px;
+    margin: 25px auto 45px;
+    padding: 30px;
+    background: #e9eef5;
+    border-radius: 20px;
+}
+
+.section h2 {
+    color: #0f172a;
+    font-size: 28px;
+}
+
+.comparison-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.comparison-card {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 22px rgba(15,23,42,0.07);
+}
+
+.comparison-card:nth-child(1) {
+    border-top: 5px solid #3b82f6;
+}
+
+.comparison-card:nth-child(2) {
+    border-top: 5px solid #8b5cf6;
+}
+
+.comparison-card:nth-child(3) {
+    border-top: 5px solid #10b981;
+}
+
+.chart,
+.chart-box {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 22px rgba(15,23,42,0.07);
+}
+
+.chart {
+    width: 90%;
+    margin: 25px auto 45px;
+    padding: 25px;
+}
+
+.chart-box {
+    padding: 15px;
+}
+
+.top5-card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    border-left: 6px solid #f59e0b;
+    box-shadow: 0 7px 20px rgba(15,23,42,0.07);
+}
+
+.top5-card a {
+    display: inline-block;
+    background: #ef4444;
+    color: white;
+    padding: 9px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.back {
+    display: inline-block;
+    padding: 9px 15px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 700px) {
+    .section,
+    .chart {
+        width: 94%;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+}
+
+</style>
 
 </head>
 
@@ -598,6 +774,45 @@
 {% if views_chart %}
 
 <section class="chart">
+
+    <!-- =========================
+     RECENT UPLOAD TREND
+========================= -->
+
+<section class="section">
+
+    <h2>📈 Recent Upload Performance Trend</h2>
+
+    <div class="comparison-cards">
+
+        <div class="comparison-card">
+
+            <h3>Performance Status</h3>
+
+            <strong>
+                {{ trend_status }}
+            </strong>
+
+            <p>
+                Recent uploads vs older uploads
+            </p>
+
+        </div>
+
+    </div>
+
+
+    {% if trend_chart %}
+
+    <div class="chart-box">
+
+        {{ trend_chart|safe }}
+
+    </div>
+
+    {% endif %}
+
+</section>
 
     <h2>
         📈 Recent Video Performance
