@@ -783,6 +783,44 @@ header p {
 
     <h2>📈 Recent Upload Performance Trend</h2>
 
+    <!-- ==========================================
+     HASHTAG PERFORMANCE ANALYSIS
+=========================================== -->
+
+<section class="section">
+
+    <h2>🏷️ Hashtag Performance Analysis</h2>
+
+    <p>
+        Analysis based on hashtags used in recent YouTube video titles
+    </p>
+
+    <div class="comparison-cards">
+
+        <div class="comparison-card">
+            <h3>Top Performing Hashtag</h3>
+            <strong>{{ top_hashtag }}</strong>
+            <p>Best average performance</p>
+        </div>
+
+        <div class="comparison-card">
+            <h3>Average Views</h3>
+            <strong>{{ "{:,}".format(top_hashtag_views) }}</strong>
+            <p>Average views for top hashtag</p>
+        </div>
+
+    </div>
+
+    {% if hashtag_chart %}
+
+        <div class="chart-box">
+            {{ hashtag_chart|safe }}
+        </div>
+
+    {% endif %}
+
+</section>
+
     <div class="comparison-cards">
 
         <div class="comparison-card">
