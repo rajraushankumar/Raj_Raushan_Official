@@ -863,8 +863,9 @@ header p {
 
         <div class="comparison-card">
             <h3>Fastest Performing Video</h3>
-            <strong>{{ fastest_video }}</strong>
-            <p>Highest current views growth rate</p>
+            <strong class="video-title">
+                {{ fastest_video[:55] }}{% if fastest_video|length > 55 %}...{% endif %}
+            </strong>            <p>Highest current views growth rate</p>
         </div>
 
         <div class="comparison-card">

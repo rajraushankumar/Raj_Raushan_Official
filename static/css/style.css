@@ -2049,3 +2049,13 @@ header p {
         font-size: 29px;
     }
 }
+
+/* VELOCITY VIDEO TITLE */
+
+.video-title {
+    font-size: 24px !important;
+    line-height: 1.35;
+    max-width: 520px;
+    margin: 0 auto 12px;
+    word-break: normal;
+}
