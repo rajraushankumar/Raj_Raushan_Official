@@ -784,12 +784,141 @@ header p {
     <h2>📈 Recent Upload Performance Trend</h2>
 
     <!-- ==========================================
+     RECENT UPLOAD PERFORMANCE TREND
+=========================================== -->
+
+<section class="section">
+
+    <h2>📈 Recent Upload Performance Trend</h2>
+
+    <div class="comparison-cards">
+
+        <div class="comparison-card">
+            <h3>Performance Status</h3>
+            <strong>{{ trend_status }}</strong>
+            <p>Recent uploads vs older uploads</p>
+        </div>
+
+    </div>
+
+    {% if trend_chart %}
+        <div class="chart-box">
+            {{ trend_chart|safe }}
+        </div>
+    {% endif %}
+
+</section>
+
+
+<!-- ==========================================
      HASHTAG PERFORMANCE ANALYSIS
 =========================================== -->
 
 <section class="section">
 
     <h2>🏷️ Hashtag Performance Analysis</h2>
+
+    <p>
+        Analysis based on hashtags used in recent YouTube video titles
+    </p>
+
+    <div class="comparison-cards">
+
+        <div class="comparison-card">
+            <h3>Top Performing Hashtag</h3>
+            <strong>{{ top_hashtag }}</strong>
+            <p>Best average performance</p>
+        </div>
+
+        <div class="comparison-card">
+            <h3>Average Views</h3>
+            <strong>{{ "{:,}".format(top_hashtag_views) }}</strong>
+            <p>Average views for top hashtag</p>
+        </div>
+
+    </div>
+
+    {% if hashtag_chart %}
+        <div class="chart-box">
+            {{ hashtag_chart|safe }}
+        </div>
+    {% endif %}
+
+</section>
+
+
+<!-- ==========================================
+     VIDEO PERFORMANCE VELOCITY
+=========================================== -->
+
+<section class="section">
+
+    <h2>🚀 Video Performance Velocity</h2>
+
+    <p>
+        Shows which recent videos are gaining views fastest based on Views Per Day
+    </p>
+
+    <div class="comparison-cards">
+
+        <div class="comparison-card">
+            <h3>Fastest Performing Video</h3>
+            <strong>{{ fastest_video }}</strong>
+            <p>Highest current views growth rate</p>
+        </div>
+
+        <div class="comparison-card">
+            <h3>Views Per Day</h3>
+            <strong>{{ fastest_views_per_day }}</strong>
+            <p>Average views gained per day</p>
+        </div>
+
+    </div>
+
+    {% if velocity_chart %}
+        <div class="chart-box">
+            {{ velocity_chart|safe }}
+        </div>
+    {% endif %}
+
+</section>
+    <!-- ==========================================
+     VIDEO PERFORMANCE VELOCITY
+=========================================== -->
+
+<section class="section">
+
+    <h2>🚀 Video Performance Velocity</h2>
+
+    <p>
+        Shows which recent videos are gaining views fastest based on Views Per Day
+    </p>
+
+    <div class="comparison-cards">
+
+        <div class="comparison-card">
+            <h3>Fastest Performing Video</h3>
+            <strong>{{ fastest_video }}</strong>
+            <p>Highest current views growth rate</p>
+        </div>
+
+        <div class="comparison-card">
+            <h3>Views Per Day</h3>
+            <strong>{{ fastest_views_per_day }}</strong>
+            <p>Average views gained per day</p>
+        </div>
+
+    </div>
+
+    {% if velocity_chart %}
+
+        <div class="chart-box">
+            {{ velocity_chart|safe }}
+        </div>
+
+    {% endif %}
+
+</section>
 
     <p>
         Analysis based on hashtags used in recent YouTube video titles
