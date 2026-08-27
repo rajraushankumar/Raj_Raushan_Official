@@ -722,6 +722,104 @@ def dashboard():
                 include_plotlyjs=False
             )
 
+                # ==================================
+        # VIDEO PERFORMANCE VELOCITY
+        # ==================================
+
+        if "published_raw" in df.columns:
+
+            velocity_data = df.copy()
+
+            velocity_data["published_datetime"] = pd.to_datetime(
+                velocity_data["published_raw"],
+                errors="coerce",
+                utc=True
+            )
+
+            velocity_data = velocity_data.dropna(
+                subset=["published_datetime"]
+            )
+
+            if not velocity_data.empty:
+
+                now_utc = pd.Timestamp.now(tz="UTC")
+
+                velocity_data["age_days"] = (
+                    (
+                        now_utc
+                        - velocity_data["published_datetime"]
+                    ).dt.total_seconds()
+                    / 86400
+                ).clip(lower=1)
+
+                velocity_data["views_per_day"] = (
+                    velocity_data["views"]
+                    / velocity_data["age_days"]
+                )
+
+                fastest_row = (
+                    velocity_data
+                    .sort_values(
+                        "views_per_day",
+                        ascending=False
+                    )
+                    .iloc[0]
+                )
+
+                fastest_video = fastest_row["title"]
+
+                fastest_views_per_day = round(
+                    float(fastest_row["views_per_day"]),
+                    1
+                )
+
+                velocity_data["short_velocity_title"] = (
+                    velocity_data["title"]
+                    .str.slice(0, 35)
+                )
+
+                velocity_chart_data = (
+                    velocity_data
+                    .sort_values(
+                        "views_per_day",
+                        ascending=False
+                    )
+                    .head(10)
+                    .sort_values(
+                        "views_per_day",
+                        ascending=True
+                    )
+                )
+
+                velocity_fig = px.bar(
+                    velocity_chart_data,
+                    x="views_per_day",
+                    y="short_velocity_title",
+                    orientation="h",
+                    title="Recent Videos - Views Per Day",
+                    labels={
+                        "views_per_day": "Views Per Day",
+                        "short_velocity_title": "Video"
+                    }
+                )
+
+                velocity_fig.update_layout(
+                    height=480,
+                    margin=dict(
+                        l=40,
+                        r=40,
+                        t=70,
+                        b=40
+                    )
+                )
+
+                velocity_chart = velocity_fig.to_html(
+                    full_html=False,
+                    include_plotlyjs=False
+                )    
+
+            
+
         # ==================================
         # VLOGS VS SHORTS CHART
         # ==================================
@@ -1048,7 +1146,11 @@ def dashboard():
 
         hashtag_chart=hashtag_chart,
         top_hashtag=top_hashtag,
-        top_hashtag_views=top_hashtag_views
+        top_hashtag_views=top_hashtag_views,
+
+        velocity_chart=velocity_chart,
+        fastest_video=fastest_video,
+        fastest_views_per_day=fastest_views_per_day
     )
 
 # ==========================================
