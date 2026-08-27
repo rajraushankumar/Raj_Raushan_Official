@@ -533,7 +533,14 @@ def dashboard():
 
     trend_chart = None
     trend_status = "No Data"
+
+    hashtag_chart = None
+    top_hashtag = "No Data"
     top_hashtag_views = 0
+
+    velocity_chart = None
+    fastest_video = "No Data"
+    fastest_views_per_day = 0
 
 
     # ======================================
