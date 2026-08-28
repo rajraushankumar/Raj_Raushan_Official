@@ -625,7 +625,7 @@ def dashboard():
             include_plotlyjs="cdn"
         )
 
-                # ==================================
+        # ==================================
         # HASHTAG PERFORMANCE ANALYSIS
         # ==================================
 
@@ -946,7 +946,7 @@ def dashboard():
 
                 trend_chart = trend_fig.to_html(
                     full_html=False,
-                    include_plotlyjs=False
+                    include_plotlyjs="cdn"
                 )
 
                 if len(trend_data) >= 2:
