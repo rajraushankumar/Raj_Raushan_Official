@@ -542,6 +542,9 @@ def dashboard():
     fastest_video = "No Data"
     fastest_views_per_day = 0
 
+    creator_recommendation = "Not enough data yet"
+    recommendation_score = 0
+
 
     # ======================================
     # DATA SCIENCE ANALYSIS
@@ -847,6 +850,53 @@ def dashboard():
             include_plotlyjs="cdn"
         )
 
+                # ==================================
+        # SMART CREATOR RECOMMENDATION
+        # ==================================
+
+        recommendation_parts = []
+
+        if best_content_type != "No Data":
+            recommendation_parts.append(
+                f"Focus more on {best_content_type}"
+            )
+
+        if best_upload_day != "No Data":
+            recommendation_parts.append(
+                f"upload on {best_upload_day}"
+            )
+
+        if best_upload_time != "No Data":
+            recommendation_parts.append(
+                f"around {best_upload_time}"
+            )
+
+        if top_hashtag != "No Data":
+            recommendation_parts.append(
+                f"use {top_hashtag}"
+            )
+
+        if recommendation_parts:
+            creator_recommendation = " • ".join(
+                recommendation_parts
+            )
+
+        score = 0
+
+        if best_content_type != "No Data":
+            score += 25
+
+        if best_upload_day != "No Data":
+            score += 25
+
+        if best_upload_time != "No Data":
+            score += 25
+
+        if top_hashtag != "No Data":
+            score += 25
+
+        recommendation_score = score
+
         # ==================================
         # TOP VIDEO
         # ==================================
@@ -1151,6 +1201,17 @@ def dashboard():
         velocity_chart=velocity_chart,
         fastest_video=fastest_video,
         fastest_views_per_day=fastest_views_per_day
+
+        hashtag_chart=hashtag_chart,
+        top_hashtag=top_hashtag,
+        top_hashtag_views=top_hashtag_views,
+
+        velocity_chart=velocity_chart,
+        fastest_video=fastest_video,
+        fastest_views_per_day=fastest_views_per_day,
+
+        creator_recommendation=creator_recommendation,
+        recommendation_score=recommendation_score
     )
 
 # ==========================================

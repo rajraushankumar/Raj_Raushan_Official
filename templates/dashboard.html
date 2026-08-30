@@ -903,6 +903,44 @@ header p {
 
 </section>
 
+<!-- ==========================================
+     SMART CREATOR RECOMMENDATION
+=========================================== -->
+
+<section class="section">
+
+    <h2>🧠 Smart Creator Recommendation</h2>
+
+    <p>
+        Recommendation generated from your recent YouTube performance data
+    </p>
+
+    <div class="comparison-cards">
+
+        <div class="comparison-card">
+            <h3>Recommended Strategy</h3>
+
+            <strong style="font-size: 22px; line-height: 1.5;">
+                {{ creator_recommendation }}
+            </strong>
+
+            <p>
+                Based on content type, upload day, time and hashtag performance
+            </p>
+        </div>
+
+        <div class="comparison-card">
+            <h3>Recommendation Confidence</h3>
+
+            <strong>{{ recommendation_score }}%</strong>
+
+            <p>Based on available recent analytics</p>
+        </div>
+
+    </div>
+
+</section>
+
 
 <!-- ==========================================
      RECENT VIDEO PERFORMANCE
