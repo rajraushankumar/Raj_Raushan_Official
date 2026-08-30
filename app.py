@@ -1196,6 +1196,14 @@ def dashboard():
 
        
 
+        hashtag_chart=hashtag_chart,
+        top_hashtag=top_hashtag,
+        top_hashtag_views=top_hashtag_views,
+
+        velocity_chart=velocity_chart,
+        fastest_video=fastest_video,
+        fastest_views_per_day=fastest_views_per_day,
+
         creator_recommendation=creator_recommendation,
         recommendation_score=recommendation_score
     )

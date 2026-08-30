@@ -848,7 +848,7 @@ header p {
 
         <div class="comparison-card">
             <h3>Average Views</h3>
-            <strong>{{ "{:,}".format(top_hashtag_views) }}</strong>
+            <strong>{{ "{:,}".format(top_hashtag_views|default(0)|int) }}</strong>
             <p>Average views for top hashtag</p>
         </div>
 
@@ -963,3 +963,4 @@ header p {
 </body>
 
 </html>
+
