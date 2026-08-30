@@ -913,74 +913,51 @@ header p {
     <h2>&#10084;&#65039; YouTube Engagement Analysis</h2>
 
     <p>
-        Likes, comments and engagement from recent YouTube uploads
+        Likes, comments and interaction performance from recent YouTube uploads
     </p>
 
     <div class="comparison-cards">
 
         <div class="comparison-card">
             <h3>Total Likes</h3>
-
             <strong>
                 {{ "{:,}".format(total_likes|default(0)|int) }}
             </strong>
-
             <p>Likes on recent videos</p>
         </div>
 
-
         <div class="comparison-card">
             <h3>Total Comments</h3>
-
             <strong>
                 {{ "{:,}".format(total_comments|default(0)|int) }}
             </strong>
-
             <p>Comments on recent videos</p>
         </div>
 
-
         <div class="comparison-card">
             <h3>Engagement Rate</h3>
-
             <strong>
                 {{ engagement_rate|default(0) }}%
             </strong>
-
             <p>Likes + comments compared with views</p>
         </div>
 
-
         <div class="comparison-card">
-
             <h3>Best Engaging Video</h3>
 
-            {% set engaging_title =
-                best_engaging_video|default("No Data") %}
-
             <strong class="video-title">
-
-                {{ engaging_title[:55] }}
-
-                {% if engaging_title|length > 55 %}
-                    ...
-                {% endif %}
-
+                {{ best_engaging_video[:55] }}{% if best_engaging_video|length > 55 %}...{% endif %}
             </strong>
 
             <p>Highest likes + comments</p>
-
         </div>
 
     </div>
 
-
     {% if engagement_chart %}
-
     <div class="chart-box">
         {{ engagement_chart|safe }}
     </div>
-
     {% endif %}
 
 </section>

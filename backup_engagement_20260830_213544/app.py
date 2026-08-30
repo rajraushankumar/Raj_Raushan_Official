@@ -210,12 +210,6 @@ def get_latest_videos():
                     raw_date,   
 
                 "views":
-                    "0",
-
-                "likes":
-                    "0",
-
-                "comments":
                     "0"
             })
 
@@ -253,8 +247,6 @@ def get_latest_videos():
 
 
             views_map = {}
-            likes_map = {}
-            comments_map = {}
 
 
             for item in stats_data.get(
@@ -274,21 +266,6 @@ def get_latest_videos():
                     )
                 )
 
-                likes_map[item["id"]] = (
-                    statistics.get(
-                        "likeCount",
-                        "0"
-                    )
-                )
-
-                comments_map[item["id"]] = (
-                    statistics.get(
-                        "commentCount",
-                        "0"
-                    )
-                )
-
-
 
             # Add views to videos
 
@@ -298,17 +275,6 @@ def get_latest_videos():
                     video["video_id"],
                     "0"
                 )
-
-                video["likes"] = likes_map.get(
-                    video["video_id"],
-                    "0"
-                )
-
-                video["comments"] = comments_map.get(
-                    video["video_id"],
-                    "0"
-                )
-
 
 
         print(
@@ -579,12 +545,6 @@ def dashboard():
     creator_recommendation = "Not enough data yet"
     recommendation_score = 0
 
-    total_likes = 0
-    total_comments = 0
-    engagement_rate = 0
-    best_engaging_video = "No Data"
-    engagement_chart = None
-
 
     # ======================================
     # DATA SCIENCE ANALYSIS
@@ -604,108 +564,6 @@ def dashboard():
         # BASIC ANALYTICS
         recent_total_views = int(df["views"].sum())
         average_views = int(df["views"].mean())
-
-        # ==================================
-        # YOUTUBE ENGAGEMENT ANALYSIS
-        # ==================================
-
-        df["likes"] = pd.to_numeric(
-            df["likes"],
-            errors="coerce"
-        ).fillna(0)
-
-        df["comments"] = pd.to_numeric(
-            df["comments"],
-            errors="coerce"
-        ).fillna(0)
-
-        total_likes = int(
-            df["likes"].sum()
-        )
-
-        total_comments = int(
-            df["comments"].sum()
-        )
-
-        total_views_for_engagement = float(
-            df["views"].sum()
-        )
-
-        if total_views_for_engagement > 0:
-
-            engagement_rate = round(
-                (
-                    (
-                        total_likes
-                        + total_comments
-                    )
-                    / total_views_for_engagement
-                ) * 100,
-                2
-            )
-
-        df["engagement"] = (
-            df["likes"]
-            + df["comments"]
-        )
-
-        if not df.empty:
-
-            engaging_row = (
-                df.sort_values(
-                    "engagement",
-                    ascending=False
-                )
-                .iloc[0]
-            )
-
-            best_engaging_video = str(
-                engaging_row["title"]
-            )
-
-            engagement_data = (
-                df.sort_values(
-                    "engagement",
-                    ascending=True
-                )
-                .tail(10)
-                .copy()
-            )
-
-            engagement_data["short_engagement_title"] = (
-                engagement_data["title"]
-                .str.slice(0, 35)
-            )
-
-            engagement_fig = px.bar(
-                engagement_data,
-                x="engagement",
-                y="short_engagement_title",
-                orientation="h",
-                title="Recent Video Engagement",
-                labels={
-                    "engagement": "Likes + Comments",
-                    "short_engagement_title": "Video"
-                }
-            )
-
-            engagement_fig.update_layout(
-                height=480,
-                margin=dict(
-                    l=40,
-                    r=40,
-                    t=70,
-                    b=40
-                )
-            )
-
-            engagement_chart = (
-                engagement_fig.to_html(
-                    full_html=False,
-                    include_plotlyjs="cdn"
-                )
-            )
-
 
         # ==================================
         # VLOG / SHORT CLASSIFICATION
@@ -1345,12 +1203,6 @@ def dashboard():
         velocity_chart=velocity_chart,
         fastest_video=fastest_video,
         fastest_views_per_day=fastest_views_per_day,
-
-        total_likes=total_likes,
-        total_comments=total_comments,
-        engagement_rate=engagement_rate,
-        best_engaging_video=best_engaging_video,
-        engagement_chart=engagement_chart,
 
         creator_recommendation=creator_recommendation,
         recommendation_score=recommendation_score
