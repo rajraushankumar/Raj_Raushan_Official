@@ -1191,29 +1191,14 @@ def dashboard():
         best_upload_time=best_upload_time,
         day_chart=day_chart,
         time_chart=time_chart,
-        trend_chart=trend_chart,
+               trend_chart=trend_chart,
         trend_status=trend_status,
 
-        hashtag_chart=hashtag_chart,
-        top_hashtag=top_hashtag,
-        top_hashtag_views=top_hashtag_views,
-
-        velocity_chart=velocity_chart,
-        fastest_video=fastest_video,
-        fastest_views_per_day=fastest_views_per_day
-
-        hashtag_chart=hashtag_chart,
-        top_hashtag=top_hashtag,
-        top_hashtag_views=top_hashtag_views,
-
-        velocity_chart=velocity_chart,
-        fastest_video=fastest_video,
-        fastest_views_per_day=fastest_views_per_day,
+       
 
         creator_recommendation=creator_recommendation,
         recommendation_score=recommendation_score
     )
-
 # ==========================================
 # RUN FLASK WEBSITE
 # ==========================================
