@@ -421,6 +421,92 @@ header p {
     }
 }
 
+
+
+/* =========================================================
+   FINAL DASHBOARD RESPONSIVE POLISH
+   ========================================================= */
+
+.dashboard-final-note {
+    width: 90%;
+    max-width: 1500px;
+    margin: 30px auto 45px;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+    text-align: center;
+}
+
+.dashboard-final-note strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.dashboard-final-note span {
+    font-size: 13px;
+    opacity: 0.72;
+}
+
+.analytics-note {
+    padding: 22px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    margin-top: 18px;
+}
+
+.chart-box {
+    overflow-x: auto;
+}
+
+.comparison-card {
+    min-width: 0;
+}
+
+.comparison-card strong {
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+
+    .section {
+        width: 94% !important;
+    }
+
+    .comparison-cards {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .comparison-cards {
+        grid-template-columns:
+            1fr !important;
+    }
+
+    .video-title {
+        font-size: 19px !important;
+        max-width: 100% !important;
+    }
+
+    .section h2 {
+        font-size: 22px;
+    }
+
+    .dashboard-final-note {
+        width: 94%;
+    }
+
+}
+
+/* FINAL DASHBOARD RESPONSIVE POLISH */
+
 </style>
 
 </head>
@@ -548,6 +634,20 @@ header p {
 
 </section>
 {% endif %}
+
+
+<!-- DASHBOARD DATA NOTE -->
+
+<section class="dashboard-final-note">
+
+    <strong>Raj Raushan Official ? Creator Analytics Dashboard</strong>
+
+    <span>
+        Performance insights are primarily based on recently fetched YouTube uploads.
+        Historical channel growth is collected from the date tracking begins.
+    </span>
+
+</section>
 
 </body>
 </html>
@@ -1123,6 +1223,64 @@ header p {
 
     <div class="chart-box">
         {{ performance_score_chart|safe }}
+    </div>
+
+    {% endif %}
+
+</section>
+
+
+
+<!-- ==========================================
+     CHANNEL HISTORICAL GROWTH
+=========================================== -->
+
+<section class="section">
+
+    <h2>?? Channel Historical Growth</h2>
+
+    <p class="section-description">
+        Daily channel snapshots saved automatically for long-term growth tracking
+    </p>
+
+    <div class="comparison-cards">
+
+        <div class="comparison-card">
+            <h3>Tracked Days</h3>
+            <strong>
+                {{ history_days|default(0) }}
+            </strong>
+            <p>Daily snapshots stored locally</p>
+        </div>
+
+        <div class="comparison-card">
+            <h3>Subscriber Growth</h3>
+            <strong>
+                {% if history_subscriber_growth|default(0)|int >= 0 %}+{% endif %}{{ history_subscriber_growth|default(0)|int }}
+            </strong>
+            <p>Since historical tracking started</p>
+        </div>
+
+        <div class="comparison-card">
+            <h3>Channel View Growth</h3>
+            <strong>
+                {% if history_view_growth|default(0)|int >= 0 %}+{% endif %}{{ "{:,}".format(history_view_growth|default(0)|int) }}
+            </strong>
+            <p>Views gained during tracked history</p>
+        </div>
+
+    </div>
+
+    {% if history_views_chart %}
+
+    <div class="chart-box">
+        {{ history_views_chart|safe }}
+    </div>
+
+    {% else %}
+
+    <div class="analytics-note">
+        Historical tracking has started. Growth becomes more useful after multiple daily snapshots.
     </div>
 
     {% endif %}

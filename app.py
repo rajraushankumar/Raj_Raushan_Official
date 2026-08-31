@@ -6,6 +6,7 @@ import plotly.express as px
 from datetime import datetime
 from flask import Flask, render_template
 from dotenv import load_dotenv
+import sqlite3
 
 
 # ==========================================
@@ -518,6 +519,149 @@ def home():
 # CREATOR ANALYTICS DASHBOARD
 # ==========================================
 
+
+
+# ============================================================
+# CREATOR ANALYTICS HISTORY
+# ============================================================
+
+ANALYTICS_DB = "creator_analytics.db"
+
+
+def init_creator_analytics_db():
+
+    with sqlite3.connect(ANALYTICS_DB) as connection:
+
+        connection.execute(
+            """
+            CREATE TABLE IF NOT EXISTS daily_channel_stats (
+                snapshot_date TEXT PRIMARY KEY,
+                subscribers INTEGER DEFAULT 0,
+                total_views INTEGER DEFAULT 0,
+                total_videos INTEGER DEFAULT 0
+            )
+            """
+        )
+
+        connection.commit()
+
+
+def fetch_channel_history_snapshot():
+
+    try:
+
+        response = requests.get(
+            "https://www.googleapis.com/youtube/v3/channels",
+            params={
+                "part": "statistics",
+                "forHandle": MAIN_CHANNEL,
+                "key": API_KEY
+            },
+            timeout=15
+        )
+
+        response.raise_for_status()
+
+        data = response.json()
+
+        items = data.get("items", [])
+
+        if not items:
+            return None
+
+        statistics = items[0].get(
+            "statistics",
+            {}
+        )
+
+        return {
+            "subscribers": int(
+                statistics.get(
+                    "subscriberCount",
+                    0
+                )
+            ),
+            "total_views": int(
+                statistics.get(
+                    "viewCount",
+                    0
+                )
+            ),
+            "total_videos": int(
+                statistics.get(
+                    "videoCount",
+                    0
+                )
+            )
+        }
+
+    except Exception as error:
+
+        print(
+            "Historical snapshot error:",
+            error
+        )
+
+        return None
+
+
+def save_channel_history_snapshot(snapshot):
+
+    if not snapshot:
+        return
+
+    init_creator_analytics_db()
+
+    today = datetime.now().strftime(
+        "%Y-%m-%d"
+    )
+
+    with sqlite3.connect(ANALYTICS_DB) as connection:
+
+        connection.execute(
+            """
+            INSERT OR REPLACE INTO daily_channel_stats
+            (
+                snapshot_date,
+                subscribers,
+                total_views,
+                total_videos
+            )
+            VALUES (?, ?, ?, ?)
+            """,
+            (
+                today,
+                snapshot["subscribers"],
+                snapshot["total_views"],
+                snapshot["total_videos"]
+            )
+        )
+
+        connection.commit()
+
+
+def load_channel_history():
+
+    init_creator_analytics_db()
+
+    with sqlite3.connect(ANALYTICS_DB) as connection:
+
+        rows = connection.execute(
+            """
+            SELECT
+                snapshot_date,
+                subscribers,
+                total_views,
+                total_videos
+            FROM daily_channel_stats
+            ORDER BY snapshot_date
+            """
+        ).fetchall()
+
+    return rows
+
+
+
 @app.route("/dashboard")
 def dashboard():
 
@@ -597,6 +741,11 @@ def dashboard():
     best_performance_video = "No Data"
     best_performance_score = 0
     performance_score_chart = None
+
+    history_views_chart = None
+    history_subscriber_growth = 0
+    history_view_growth = 0
+    history_days = 0
 
 
     # ======================================
@@ -1735,6 +1884,250 @@ def dashboard():
     # ======================================
     # SEND DATA TO DASHBOARD
     # ======================================
+    # ========================================================
+    # FINAL DASHBOARD ANALYTICS
+    # ========================================================
+
+    try:
+
+        snapshot = (
+            fetch_channel_history_snapshot()
+        )
+
+        if snapshot:
+
+            save_channel_history_snapshot(
+                snapshot
+            )
+
+        history_rows = (
+            load_channel_history()
+        )
+
+        history_days = len(
+            history_rows
+        )
+
+        if history_rows:
+
+            history_df = pd.DataFrame(
+                history_rows,
+                columns=[
+                    "date",
+                    "subscribers",
+                    "total_views",
+                    "total_videos"
+                ]
+            )
+
+            history_df["date"] = pd.to_datetime(
+                history_df["date"],
+                errors="coerce"
+            )
+
+            history_df = (
+                history_df
+                .dropna(subset=["date"])
+                .sort_values("date")
+            )
+
+            if not history_df.empty:
+
+                history_df["date_label"] = (
+                    history_df["date"]
+                    .dt.strftime("%d %b")
+                )
+
+                history_fig = px.line(
+                    history_df,
+                    x="date_label",
+                    y="total_views",
+                    markers=True,
+                    title="Channel View Growth History",
+                    labels={
+                        "date_label": "Date",
+                        "total_views": "Total Channel Views"
+                    }
+                )
+
+                history_fig.update_layout(
+                    height=430,
+                    margin=dict(
+                        l=40,
+                        r=40,
+                        t=70,
+                        b=40
+                    )
+                )
+
+                history_views_chart = (
+                    history_fig.to_html(
+                        full_html=False,
+                        include_plotlyjs="cdn"
+                    )
+                )
+
+                if len(history_df) >= 2:
+
+                    history_subscriber_growth = int(
+                        history_df.iloc[-1][
+                            "subscribers"
+                        ]
+                        -
+                        history_df.iloc[0][
+                            "subscribers"
+                        ]
+                    )
+
+                    history_view_growth = int(
+                        history_df.iloc[-1][
+                            "total_views"
+                        ]
+                        -
+                        history_df.iloc[0][
+                            "total_views"
+                        ]
+                    )
+
+    except Exception as error:
+
+        print(
+            "Historical analytics error:",
+            error
+        )
+
+
+    # ========================================================
+    # ADVANCED SMART CREATOR RECOMMENDATION
+    # ========================================================
+
+    recommendation_parts = []
+
+    if (
+        "best_content_type" in locals()
+        and best_content_type != "No Data"
+    ):
+
+        recommendation_parts.append(
+            f"Prioritize {best_content_type}"
+        )
+
+
+    if (
+        "best_upload_day" in locals()
+        and best_upload_day != "No Data"
+    ):
+
+        upload_message = (
+            f"upload on {best_upload_day}"
+        )
+
+        if (
+            "best_upload_time" in locals()
+            and best_upload_time != "No Data"
+        ):
+
+            upload_message += (
+                f" around {best_upload_time}"
+            )
+
+        recommendation_parts.append(
+            upload_message
+        )
+
+
+    if (
+        "top_hashtag" in locals()
+        and top_hashtag != "No Data"
+    ):
+
+        recommendation_parts.append(
+            f"reuse strong hashtag {top_hashtag}"
+        )
+
+
+    if (
+        "top_keyword" in locals()
+        and top_keyword != "No Data"
+    ):
+
+        recommendation_parts.append(
+            f"consider '{top_keyword}' in relevant titles"
+        )
+
+
+    if (
+        "consistency_status" in locals()
+        and consistency_status == "Irregular"
+    ):
+
+        recommendation_parts.append(
+            "reduce the gap between uploads"
+        )
+
+
+    if (
+        "engagement_rate" in locals()
+        and engagement_rate > 0
+    ):
+
+        recommendation_parts.append(
+            f"current interaction rate is {engagement_rate}%"
+        )
+
+
+    if recommendation_parts:
+
+        creator_recommendation = (
+            " ? ".join(
+                recommendation_parts
+            )
+        )
+
+
+    recommendation_signals = [
+        (
+            "best_content_type" in locals()
+            and best_content_type != "No Data"
+        ),
+        (
+            "best_upload_day" in locals()
+            and best_upload_day != "No Data"
+        ),
+        (
+            "best_upload_time" in locals()
+            and best_upload_time != "No Data"
+        ),
+        (
+            "top_hashtag" in locals()
+            and top_hashtag != "No Data"
+        ),
+        (
+            "top_keyword" in locals()
+            and top_keyword != "No Data"
+        ),
+        (
+            "consistency_status" in locals()
+            and consistency_status != "No Data"
+        ),
+        (
+            "engagement_rate" in locals()
+            and engagement_rate > 0
+        ),
+        (
+            "best_performance_score" in locals()
+            and best_performance_score > 0
+        )
+    ]
+
+    recommendation_score = round(
+        (
+            sum(recommendation_signals)
+            / len(recommendation_signals)
+        )
+        * 100
+    )
+
     return render_template(
         "dashboard.html",
         channel=channel,
@@ -1785,6 +2178,11 @@ def dashboard():
         best_performance_video=best_performance_video,
         best_performance_score=best_performance_score,
         performance_score_chart=performance_score_chart,
+
+        history_views_chart=history_views_chart,
+        history_subscriber_growth=history_subscriber_growth,
+        history_view_growth=history_view_growth,
+        history_days=history_days,
 
         creator_recommendation=creator_recommendation,
         recommendation_score=recommendation_score

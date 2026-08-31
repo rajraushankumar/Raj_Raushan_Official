@@ -34,4 +34,11 @@ Thumbs.db
 
 # SQLite temporary files
 *.db-journal
-*.sqlite-journal
+*.sqlite-journal# Local creator analytics data
+creator_analytics.db
+# Local development backups
+app_before_*.py
+app_broken_*.py
+backup_*/
+templates/dashboard_before_*.html
+templates/dashboard_broken_*.html
