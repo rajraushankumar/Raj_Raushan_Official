@@ -594,10 +594,6 @@ def dashboard():
     consistency_status = "No Data"
     consistency_chart = None
 
-    best_performance_video = "No Data"
-    best_performance_score = 0
-    performance_score_chart = None
-
 
     # ======================================
     # DATA SCIENCE ANALYSIS
@@ -946,186 +942,6 @@ def dashboard():
                             include_plotlyjs="cdn"
                         )
                     )
-
-
-        # ==================================
-        # VIDEO PERFORMANCE SCORE
-        # ==================================
-
-        performance_data = df.copy()
-
-        performance_data["views"] = pd.to_numeric(
-            performance_data["views"],
-            errors="coerce"
-        ).fillna(0)
-
-        performance_data["likes"] = pd.to_numeric(
-            performance_data["likes"],
-            errors="coerce"
-        ).fillna(0)
-
-        performance_data["comments"] = pd.to_numeric(
-            performance_data["comments"],
-            errors="coerce"
-        ).fillna(0)
-
-        performance_data["interactions"] = (
-            performance_data["likes"]
-            + performance_data["comments"]
-        )
-
-        performance_data["interaction_rate"] = (
-            performance_data["interactions"]
-            / performance_data["views"].replace(0, pd.NA)
-            * 100
-        ).fillna(0)
-
-        if "published_raw" in performance_data.columns:
-
-            performance_data["published_datetime"] = pd.to_datetime(
-                performance_data["published_raw"],
-                errors="coerce",
-                utc=True
-            )
-
-            now_utc = pd.Timestamp.now(tz="UTC")
-
-            performance_data["age_days"] = (
-                (
-                    now_utc
-                    - performance_data["published_datetime"]
-                )
-                .dt.total_seconds()
-                / 86400
-            ).clip(lower=1)
-
-            performance_data["views_per_day"] = (
-                performance_data["views"]
-                / performance_data["age_days"]
-            ).fillna(0)
-
-        else:
-
-            performance_data["views_per_day"] = 0
-
-
-        max_views = performance_data["views"].max()
-        max_interaction_rate = (
-            performance_data["interaction_rate"].max()
-        )
-        max_velocity = (
-            performance_data["views_per_day"].max()
-        )
-
-
-        if max_views > 0:
-            performance_data["views_score"] = (
-                performance_data["views"]
-                / max_views
-                * 100
-            )
-        else:
-            performance_data["views_score"] = 0
-
-
-        if max_interaction_rate > 0:
-            performance_data["engagement_score"] = (
-                performance_data["interaction_rate"]
-                / max_interaction_rate
-                * 100
-            )
-        else:
-            performance_data["engagement_score"] = 0
-
-
-        if max_velocity > 0:
-            performance_data["velocity_score"] = (
-                performance_data["views_per_day"]
-                / max_velocity
-                * 100
-            )
-        else:
-            performance_data["velocity_score"] = 0
-
-
-        performance_data["performance_score"] = (
-            performance_data["views_score"] * 0.50
-            + performance_data["engagement_score"] * 0.30
-            + performance_data["velocity_score"] * 0.20
-        ).round(1)
-
-
-        if not performance_data.empty:
-
-            best_score_row = (
-                performance_data
-                .sort_values(
-                    "performance_score",
-                    ascending=False
-                )
-                .iloc[0]
-            )
-
-            best_performance_video = str(
-                best_score_row["title"]
-            )
-
-            best_performance_score = float(
-                best_score_row["performance_score"]
-            )
-
-
-            performance_plot = (
-                performance_data
-                .sort_values(
-                    "performance_score",
-                    ascending=False
-                )
-                .head(10)
-                .copy()
-            )
-
-            performance_plot["short_title"] = (
-                performance_plot["title"]
-                .str.slice(0, 38)
-            )
-
-            performance_plot = (
-                performance_plot
-                .sort_values(
-                    "performance_score",
-                    ascending=True
-                )
-            )
-
-            performance_fig = px.bar(
-                performance_plot,
-                x="performance_score",
-                y="short_title",
-                orientation="h",
-                title="Recent Video Performance Score",
-                labels={
-                    "performance_score": "Performance Score",
-                    "short_title": "Video"
-                }
-            )
-
-            performance_fig.update_layout(
-                height=480,
-                margin=dict(
-                    l=40,
-                    r=40,
-                    t=70,
-                    b=40
-                )
-            )
-
-            performance_score_chart = (
-                performance_fig.to_html(
-                    full_html=False,
-                    include_plotlyjs="cdn"
-                )
-            )
 
 
         # ==================================
@@ -1781,10 +1597,6 @@ def dashboard():
         latest_upload_gap=latest_upload_gap,
         consistency_status=consistency_status,
         consistency_chart=consistency_chart,
-
-        best_performance_video=best_performance_video,
-        best_performance_score=best_performance_score,
-        performance_score_chart=performance_score_chart,
 
         creator_recommendation=creator_recommendation,
         recommendation_score=recommendation_score

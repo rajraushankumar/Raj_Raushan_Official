@@ -1070,66 +1070,6 @@ header p {
 </section>
 
 
-
-<!-- ==========================================
-     VIDEO PERFORMANCE SCORE ANALYSIS
-=========================================== -->
-
-<section class="section">
-
-    <h2>?? Video Performance Score</h2>
-
-    <p>
-        Custom score combining views, engagement and upload velocity
-    </p>
-
-    <div class="comparison-cards">
-
-        <div class="comparison-card">
-
-            <h3>Best Overall Video</h3>
-
-            {% set performance_title =
-                best_performance_video|default("No Data") %}
-
-            <strong class="video-title">
-                {{ performance_title[:55] }}
-                {% if performance_title|length > 55 %}...{% endif %}
-            </strong>
-
-            <p>Best recent overall performer</p>
-
-        </div>
-
-
-        <div class="comparison-card">
-
-            <h3>Performance Score</h3>
-
-            <strong>
-                {{ best_performance_score|default(0) }}/100
-            </strong>
-
-            <p>
-                50% Views ? 30% Engagement ? 20% Velocity
-            </p>
-
-        </div>
-
-    </div>
-
-
-    {% if performance_score_chart %}
-
-    <div class="chart-box">
-        {{ performance_score_chart|safe }}
-    </div>
-
-    {% endif %}
-
-</section>
-
-
 <!-- ==========================================
      SMART CREATOR RECOMMENDATION
 =========================================== -->
