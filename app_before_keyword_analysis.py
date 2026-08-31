@@ -585,10 +585,6 @@ def dashboard():
     best_engaging_video = "No Data"
     engagement_chart = None
 
-    keyword_chart = None
-    top_keyword = "No Data"
-    top_keyword_views = 0
-
 
     # ======================================
     # DATA SCIENCE ANALYSIS
@@ -708,136 +704,6 @@ def dashboard():
                     full_html=False,
                     include_plotlyjs="cdn"
                 )
-            )
-
-
-        # ==================================
-        # TITLE KEYWORD PERFORMANCE ANALYSIS
-        # ==================================
-
-        stop_words = {
-            "the", "a", "an", "and", "or", "to", "of", "in",
-            "on", "at", "for", "with", "is", "are", "this",
-            "that", "my", "our", "your", "video", "vlog",
-            "shorts", "short", "youtube"
-        }
-
-        keyword_rows = []
-
-        for _, row in df.iterrows():
-
-            words = (
-                str(row["title"])
-                .lower()
-                .replace("|", " ")
-                .replace("-", " ")
-                .replace(":", " ")
-                .split()
-            )
-
-            clean_words = []
-
-            for word in words:
-
-                word = (
-                    word
-                    .strip(".,!?()[]{}'\"")
-                )
-
-                if (
-                    len(word) >= 3
-                    and not word.startswith("#")
-                    and word not in stop_words
-                    and not word.isdigit()
-                ):
-                    clean_words.append(word)
-
-            for word in set(clean_words):
-
-                keyword_rows.append({
-                    "Keyword": word,
-                    "Views": int(row["views"])
-                })
-
-        if keyword_rows:
-
-            keyword_df = pd.DataFrame(keyword_rows)
-
-            keyword_analysis = (
-                keyword_df
-                .groupby("Keyword", as_index=False)
-                .agg(
-                    Average_Views=("Views", "mean"),
-                    Videos=("Views", "count")
-                )
-            )
-
-            # Ignore keywords appearing in only one video
-            repeated_keywords = keyword_analysis[
-                keyword_analysis["Videos"] >= 2
-            ].copy()
-
-            if repeated_keywords.empty:
-                repeated_keywords = keyword_analysis.copy()
-
-            repeated_keywords["Average_Views"] = (
-                repeated_keywords["Average_Views"]
-                .round()
-                .astype(int)
-            )
-
-            repeated_keywords = (
-                repeated_keywords
-                .sort_values(
-                    "Average_Views",
-                    ascending=False
-                )
-            )
-
-            best_keyword_row = repeated_keywords.iloc[0]
-
-            top_keyword = str(
-                best_keyword_row["Keyword"]
-            )
-
-            top_keyword_views = int(
-                best_keyword_row["Average_Views"]
-            )
-
-            keyword_plot_data = (
-                repeated_keywords
-                .head(10)
-                .sort_values(
-                    "Average_Views",
-                    ascending=True
-                )
-            )
-
-            keyword_fig = px.bar(
-                keyword_plot_data,
-                x="Average_Views",
-                y="Keyword",
-                orientation="h",
-                title="Top Title Keywords by Average Views",
-                labels={
-                    "Average_Views": "Average Views",
-                    "Keyword": "Title Keyword"
-                }
-            )
-
-            keyword_fig.update_layout(
-                height=460,
-                margin=dict(
-                    l=40,
-                    r=40,
-                    t=70,
-                    b=40
-                )
-            )
-
-            keyword_chart = keyword_fig.to_html(
-                full_html=False,
-                include_plotlyjs="cdn"
             )
 
 
@@ -1485,10 +1351,6 @@ def dashboard():
         engagement_rate=engagement_rate,
         best_engaging_video=best_engaging_video,
         engagement_chart=engagement_chart,
-
-        keyword_chart=keyword_chart,
-        top_keyword=top_keyword,
-        top_keyword_views=top_keyword_views,
 
         creator_recommendation=creator_recommendation,
         recommendation_score=recommendation_score

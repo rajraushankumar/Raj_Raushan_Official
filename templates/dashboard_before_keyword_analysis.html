@@ -986,46 +986,6 @@ header p {
 </section>
 
 
-
-<!-- ==========================================
-     TITLE KEYWORD PERFORMANCE ANALYSIS
-=========================================== -->
-
-<section class="section">
-
-    <h2>?? Title Keyword Performance Analysis</h2>
-
-    <p>
-        Finds words in recent video titles associated with higher average views
-    </p>
-
-    <div class="comparison-cards">
-
-        <div class="comparison-card">
-            <h3>Top Performing Keyword</h3>
-            <strong>{{ top_keyword|default("No Data") }}</strong>
-            <p>Best-performing title keyword</p>
-        </div>
-
-        <div class="comparison-card">
-            <h3>Average Views</h3>
-            <strong>
-                {{ "{:,}".format(top_keyword_views|default(0)|int) }}
-            </strong>
-            <p>Average views for this keyword</p>
-        </div>
-
-    </div>
-
-    {% if keyword_chart %}
-    <div class="chart-box">
-        {{ keyword_chart|safe }}
-    </div>
-    {% endif %}
-
-</section>
-
-
 <!-- ==========================================
      SMART CREATOR RECOMMENDATION
 =========================================== -->
