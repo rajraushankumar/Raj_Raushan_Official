@@ -1026,50 +1026,6 @@ header p {
 </section>
 
 
-
-<!-- ==========================================
-     UPLOAD CONSISTENCY ANALYSIS
-=========================================== -->
-
-<section class="section">
-
-    <h2>?? Upload Consistency Analysis</h2>
-
-    <p>
-        Measures the time gap between recent YouTube uploads
-    </p>
-
-    <div class="comparison-cards">
-
-        <div class="comparison-card">
-            <h3>Average Upload Gap</h3>
-            <strong>{{ average_upload_gap|default(0) }} Days</strong>
-            <p>Average gap between recent uploads</p>
-        </div>
-
-        <div class="comparison-card">
-            <h3>Latest Upload Gap</h3>
-            <strong>{{ latest_upload_gap|default(0) }} Days</strong>
-            <p>Gap before your latest upload</p>
-        </div>
-
-        <div class="comparison-card">
-            <h3>Consistency Status</h3>
-            <strong>{{ consistency_status|default("No Data") }}</strong>
-            <p>Based on recent upload frequency</p>
-        </div>
-
-    </div>
-
-    {% if consistency_chart %}
-    <div class="chart-box">
-        {{ consistency_chart|safe }}
-    </div>
-    {% endif %}
-
-</section>
-
-
 <!-- ==========================================
      SMART CREATOR RECOMMENDATION
 =========================================== -->

@@ -589,11 +589,6 @@ def dashboard():
     top_keyword = "No Data"
     top_keyword_views = 0
 
-    average_upload_gap = 0
-    latest_upload_gap = 0
-    consistency_status = "No Data"
-    consistency_chart = None
-
 
     # ======================================
     # DATA SCIENCE ANALYSIS
@@ -844,104 +839,6 @@ def dashboard():
                 full_html=False,
                 include_plotlyjs="cdn"
             )
-
-
-        # ==================================
-        # UPLOAD CONSISTENCY ANALYSIS
-        # ==================================
-
-        if "published_raw" in df.columns:
-
-            consistency_data = df.copy()
-
-            consistency_data["upload_datetime"] = pd.to_datetime(
-                consistency_data["published_raw"],
-                errors="coerce",
-                utc=True
-            )
-
-            consistency_data = (
-                consistency_data
-                .dropna(subset=["upload_datetime"])
-                .sort_values("upload_datetime")
-            )
-
-            if len(consistency_data) >= 2:
-
-                consistency_data["gap_days"] = (
-                    consistency_data["upload_datetime"]
-                    .diff()
-                    .dt.total_seconds()
-                    / 86400
-                )
-
-                valid_gaps = (
-                    consistency_data["gap_days"]
-                    .dropna()
-                )
-
-                if not valid_gaps.empty:
-
-                    average_upload_gap = round(
-                        float(valid_gaps.mean()),
-                        1
-                    )
-
-                    latest_upload_gap = round(
-                        float(valid_gaps.iloc[-1]),
-                        1
-                    )
-
-                    if average_upload_gap <= 2:
-                        consistency_status = "Very Consistent"
-
-                    elif average_upload_gap <= 4:
-                        consistency_status = "Consistent"
-
-                    elif average_upload_gap <= 7:
-                        consistency_status = "Moderate"
-
-                    else:
-                        consistency_status = "Irregular"
-
-                    consistency_plot = (
-                        consistency_data
-                        .dropna(subset=["gap_days"])
-                        .copy()
-                    )
-
-                    consistency_plot["date_label"] = (
-                        consistency_plot["upload_datetime"]
-                        .dt.strftime("%d %b")
-                    )
-
-                    consistency_fig = px.bar(
-                        consistency_plot,
-                        x="date_label",
-                        y="gap_days",
-                        title="Upload Gap Between Recent Videos",
-                        labels={
-                            "date_label": "Upload Date",
-                            "gap_days": "Gap in Days"
-                        }
-                    )
-
-                    consistency_fig.update_layout(
-                        height=430,
-                        margin=dict(
-                            l=40,
-                            r=40,
-                            t=70,
-                            b=40
-                        )
-                    )
-
-                    consistency_chart = (
-                        consistency_fig.to_html(
-                            full_html=False,
-                            include_plotlyjs="cdn"
-                        )
-                    )
 
 
         # ==================================
@@ -1592,11 +1489,6 @@ def dashboard():
         keyword_chart=keyword_chart,
         top_keyword=top_keyword,
         top_keyword_views=top_keyword_views,
-
-        average_upload_gap=average_upload_gap,
-        latest_upload_gap=latest_upload_gap,
-        consistency_status=consistency_status,
-        consistency_chart=consistency_chart,
 
         creator_recommendation=creator_recommendation,
         recommendation_score=recommendation_score
