@@ -1,8 +1,13 @@
 ﻿import os
-import requests
-import pandas as pd
-from dotenv import load_dotenv
+import time
 from pathlib import Path
+
+import pandas as pd
+import requests
+
+from dotenv import load_dotenv
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 
 load_dotenv()
@@ -15,41 +20,137 @@ OUTPUT_FILE = Path(
 )
 
 
+# ============================================================
+# REQUEST SESSION WITH RETRY
+# ============================================================
+
+session = requests.Session()
+
+retry_strategy = Retry(
+    total=3,
+    connect=3,
+    read=3,
+    backoff_factor=2,
+    status_forcelist=[
+        429,
+        500,
+        502,
+        503,
+        504
+    ],
+    allowed_methods=[
+        "GET"
+    ]
+)
+
+adapter = HTTPAdapter(
+    max_retries=retry_strategy
+)
+
+session.mount(
+    "https://",
+    adapter
+)
+
+
+def youtube_get(url, params):
+
+    try:
+
+        response = session.get(
+            url,
+            params=params,
+
+            # 7 sec connection,
+            # 20 sec response wait
+            timeout=(7, 20)
+        )
+
+        response.raise_for_status()
+
+        return response.json()
+
+    except requests.exceptions.Timeout:
+
+        raise RuntimeError(
+            "YouTube API timeout. "
+            "Internet connection slow hai ya Google API response nahi de raha."
+        )
+
+    except requests.exceptions.ConnectionError as error:
+
+        raise RuntimeError(
+            f"YouTube API connection failed: {error}"
+        )
+
+    except requests.exceptions.HTTPError as error:
+
+        try:
+            details = response.json()
+        except Exception:
+            details = response.text
+
+        raise RuntimeError(
+            f"YouTube API HTTP error: {error}\n{details}"
+        )
+
+
+# ============================================================
+# GET UPLOAD PLAYLIST
+# ============================================================
+
 def get_upload_playlist():
 
-    response = requests.get(
+    print(
+        "[1/3] Finding YouTube channel..."
+    )
+
+    data = youtube_get(
         "https://www.googleapis.com/youtube/v3/channels",
-        params={
+        {
             "part": "contentDetails",
             "forHandle": CHANNEL_HANDLE,
             "key": API_KEY
-        },
-        timeout=20
+        }
     )
 
-    response.raise_for_status()
-
-    data = response.json()
-
-    items = data.get("items", [])
+    items = data.get(
+        "items",
+        []
+    )
 
     if not items:
+
         raise RuntimeError(
             "YouTube channel not found."
         )
 
-    return (
+    playlist_id = (
         items[0]
         ["contentDetails"]
         ["relatedPlaylists"]
         ["uploads"]
     )
 
+    print(
+        "Channel found."
+    )
+
+    return playlist_id
+
+
+# ============================================================
+# GET VIDEO IDS
+# ============================================================
 
 def get_video_ids(
     playlist_id,
     limit=100
 ):
+
+    print(
+        "[2/3] Fetching video IDs..."
+    )
 
     video_ids = []
     page_token = None
@@ -64,17 +165,14 @@ def get_video_ids(
         }
 
         if page_token:
-            params["pageToken"] = page_token
+            params["pageToken"] = (
+                page_token
+            )
 
-        response = requests.get(
+        data = youtube_get(
             "https://www.googleapis.com/youtube/v3/playlistItems",
-            params=params,
-            timeout=20
+            params
         )
-
-        response.raise_for_status()
-
-        data = response.json()
 
         for item in data.get(
             "items",
@@ -93,12 +191,17 @@ def get_video_ids(
             )
 
             if video_id:
+
                 video_ids.append(
                     video_id
                 )
 
             if len(video_ids) >= limit:
                 break
+
+        print(
+            f"Video IDs collected: {len(video_ids)}"
+        )
 
         page_token = data.get(
             "nextPageToken"
@@ -110,33 +213,54 @@ def get_video_ids(
     return video_ids
 
 
-def fetch_video_data(video_ids):
+# ============================================================
+# FETCH VIDEO DETAILS
+# ============================================================
+
+def fetch_video_data(
+    video_ids
+):
+
+    print(
+        "[3/3] Fetching video statistics..."
+    )
 
     records = []
 
-    for start in range(
-        0,
-        len(video_ids),
-        50
+    batches = list(
+        range(
+            0,
+            len(video_ids),
+            50
+        )
+    )
+
+    for number, start in enumerate(
+        batches,
+        start=1
     ):
 
         batch = video_ids[
             start:start + 50
         ]
 
-        response = requests.get(
-            "https://www.googleapis.com/youtube/v3/videos",
-            params={
-                "part": "snippet,statistics,contentDetails",
-                "id": ",".join(batch),
-                "key": API_KEY
-            },
-            timeout=20
+        print(
+            f"Fetching batch {number}/{len(batches)}..."
         )
 
-        response.raise_for_status()
+        data = youtube_get(
+            "https://www.googleapis.com/youtube/v3/videos",
+            {
+                "part":
+                    "snippet,statistics,contentDetails",
 
-        data = response.json()
+                "id":
+                    ",".join(batch),
+
+                "key":
+                    API_KEY
+            }
+        )
 
         for item in data.get(
             "items",
@@ -163,7 +287,9 @@ def fetch_video_data(video_ids):
                 ""
             )
 
-            title_lower = title.lower()
+            title_lower = (
+                title.lower()
+            )
 
             records.append(
                 {
@@ -222,27 +348,44 @@ def fetch_video_data(video_ids):
                         ),
 
                     "url":
-                        "https://www.youtube.com/watch?v="
-                        + item.get(
-                            "id",
-                            ""
+                        (
+                            "https://www.youtube.com/watch?v="
+                            + item.get(
+                                "id",
+                                ""
+                            )
                         )
                 }
             )
 
+        time.sleep(0.5)
+
     return records
 
+
+# ============================================================
+# BUILD DATASET
+# ============================================================
 
 def build_dataset():
 
     if not API_KEY:
+
         raise RuntimeError(
             "YOUTUBE_API_KEY missing from .env"
         )
 
+    print()
     print(
-        "Fetching YouTube data..."
+        "========================================"
     )
+    print(
+        " YOUTUBE DATASET BUILDER"
+    )
+    print(
+        "========================================"
+    )
+    print()
 
     playlist_id = (
         get_upload_playlist()
@@ -253,17 +396,20 @@ def build_dataset():
         limit=100
     )
 
-    print(
-        f"Videos found: {len(video_ids)}"
-    )
+    if not video_ids:
+
+        raise RuntimeError(
+            "No videos found."
+        )
 
     records = fetch_video_data(
         video_ids
     )
 
     if not records:
+
         raise RuntimeError(
-            "No video data returned."
+            "No video statistics returned."
         )
 
     df = pd.DataFrame(
@@ -283,13 +429,18 @@ def build_dataset():
         + df["comments"]
     )
 
+    safe_views = (
+        df["views"]
+        .replace(
+            0,
+            pd.NA
+        )
+    )
+
     df["engagement_rate"] = (
         (
             df["engagement"]
-            / df["views"].replace(
-                0,
-                pd.NA
-            )
+            / safe_views
         )
         * 100
     ).fillna(0).round(2)
@@ -311,18 +462,48 @@ def build_dataset():
 
     print()
     print(
-        "YOUTUBE DATASET CREATED SUCCESSFULLY"
+        "========================================"
     )
     print(
-        f"Rows: {len(df)}"
+        " DATASET CREATED SUCCESSFULLY"
     )
+    print(
+        "========================================"
+    )
+
+    print(
+        f"Videos : {len(df)}"
+    )
+
     print(
         f"Columns: {len(df.columns)}"
     )
+
     print(
-        f"Saved: {OUTPUT_FILE}"
+        f"Saved  : {OUTPUT_FILE}"
     )
 
 
 if __name__ == "__main__":
-    build_dataset()
+
+    try:
+
+        build_dataset()
+
+    except KeyboardInterrupt:
+
+        print()
+        print(
+            "Process manually stopped."
+        )
+
+    except Exception as error:
+
+        print()
+        print(
+            "DATASET BUILD FAILED"
+        )
+
+        print(
+            error
+        )
