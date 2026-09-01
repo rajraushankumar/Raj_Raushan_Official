@@ -1,10 +1,11 @@
+import joblib
 import os
 import requests
 import pandas as pd
 import plotly.express as px
 
 from datetime import datetime
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from dotenv import load_dotenv
 import sqlite3
 
@@ -2190,6 +2191,123 @@ def dashboard():
 # ==========================================
 # RUN FLASK WEBSITE
 # ==========================================
+
+
+
+# ============================================================
+# ML VIDEO PERFORMANCE PREDICTOR
+# ============================================================
+
+@app.route("/predict", methods=["GET", "POST"])
+def predict_video_performance():
+
+    prediction = None
+    probabilities = None
+    prediction_error = None
+
+    title = ""
+    upload_day = "Sunday"
+    upload_hour = 18
+    duration_seconds = 60
+    has_short_tag = False
+
+    if request.method == "POST":
+
+        try:
+
+            title = request.form.get(
+                "title",
+                ""
+            ).strip()
+
+            upload_day = request.form.get(
+                "upload_day",
+                "Sunday"
+            )
+
+            upload_hour = int(
+                request.form.get(
+                    "upload_hour",
+                    18
+                )
+            )
+
+            duration_seconds = int(
+                request.form.get(
+                    "duration_seconds",
+                    60
+                )
+            )
+
+            has_short_tag = (
+                request.form.get(
+                    "has_short_tag"
+                )
+                == "on"
+            )
+
+            if not title:
+                raise ValueError(
+                    "Please enter a video title."
+                )
+
+            model_package = joblib.load(
+                "models/video_performance_model.joblib"
+            )
+
+            model = model_package["model"]
+
+            prediction_data = pd.DataFrame([
+                {
+                    "title": title,
+                    "upload_day": upload_day,
+                    "upload_hour": upload_hour,
+                    "duration_seconds": duration_seconds,
+                    "has_short_tag": int(has_short_tag)
+                }
+            ])
+
+            prediction = str(
+                model.predict(
+                    prediction_data
+                )[0]
+            )
+
+            if hasattr(model, "predict_proba"):
+
+                values = model.predict_proba(
+                    prediction_data
+                )[0]
+
+                probabilities = {
+                    str(label): round(
+                        float(value) * 100,
+                        1
+                    )
+                    for label, value
+                    in zip(
+                        model.classes_,
+                        values
+                    )
+                }
+
+        except Exception as error:
+
+            prediction_error = str(error)
+
+
+    return render_template(
+        "predictor.html",
+        prediction=prediction,
+        probabilities=probabilities,
+        prediction_error=prediction_error,
+        title=title,
+        upload_day=upload_day,
+        upload_hour=upload_hour,
+        duration_seconds=duration_seconds,
+        has_short_tag=has_short_tag
+    )
+
 
 if __name__ == "__main__":
 

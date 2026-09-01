@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Video Performance Predictor</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6fa;
+    color: #172033;
+}
+
+header {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.container {
+    width: 92%;
+    max-width: 900px;
+    margin: 35px auto;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #243b55;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d9deea;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.check input {
+    width: auto;
+}
+
+button {
+    padding: 14px 24px;
+    border: 0;
+    border-radius: 10px;
+    background: #243b55;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 30px;
+    background: #f5f7ff;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.prediction {
+    font-size: 38px;
+    font-weight: bold;
+    margin: 12px 0 20px;
+}
+
+.probabilities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.probability {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.probability strong {
+    display: block;
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+.error {
+    margin-top: 25px;
+    padding: 15px;
+    background: #fff1f1;
+    color: #a60000;
+    border-radius: 12px;
+}
+
+.note {
+    margin-top: 25px;
+    font-size: 13px;
+    opacity: .7;
+    line-height: 1.6;
+}
+
+@media(max-width: 650px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+    .probabilities {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<header>
+
+<h1>?? AI Video Performance Predictor</h1>
+
+<p>Raj Raushan Official ? Creator Analytics</p>
+
+</header>
+
+
+<main class="container">
+
+<a class="back" href="/dashboard">
+? Back to Dashboard
+</a>
+
+
+<div class="card">
+
+<h2>Predict Your Next Video</h2>
+
+
+<form method="POST">
+
+<div class="grid">
+
+<div class="full">
+
+<label>Video Title</label>
+
+<input
+    type="text"
+    name="title"
+    value="{{ title }}"
+    placeholder="Example: Exploring Sasaram Bihar"
+    required
+>
+
+</div>
+
+
+<div>
+
+<label>Upload Day</label>
+
+<select name="upload_day">
+
+{% for day in [
+"Monday",
+"Tuesday",
+"Wednesday",
+"Thursday",
+"Friday",
+"Saturday",
+"Sunday"
+] %}
+
+<option
+    value="{{ day }}"
+    {% if upload_day == day %}selected{% endif %}
+>
+{{ day }}
+</option>
+
+{% endfor %}
+
+</select>
+
+</div>
+
+
+<div>
+
+<label>Upload Hour (0-23)</label>
+
+<input
+    type="number"
+    name="upload_hour"
+    min="0"
+    max="23"
+    value="{{ upload_hour }}"
+    required
+>
+
+</div>
+
+
+<div>
+
+<label>Duration (seconds)</label>
+
+<input
+    type="number"
+    name="duration_seconds"
+    min="1"
+    value="{{ duration_seconds }}"
+    required
+>
+
+</div>
+
+
+<div class="check">
+
+<input
+    type="checkbox"
+    id="has_short_tag"
+    name="has_short_tag"
+    {% if has_short_tag %}checked{% endif %}
+>
+
+<label
+    for="has_short_tag"
+    style="margin:0;"
+>
+#Shorts Video
+</label>
+
+</div>
+
+
+<div class="full">
+
+<button type="submit">
+?? Predict Performance
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+
+{% if prediction %}
+
+<div class="result">
+
+<div>Predicted Performance</div>
+
+<div class="prediction">
+{{ prediction }}
+</div>
+
+
+{% if probabilities %}
+
+<div class="probabilities">
+
+{% for label, value in probabilities.items() %}
+
+<div class="probability">
+
+{{ label }}
+
+<strong>
+{{ value }}%
+</strong>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+</div>
+
+{% endif %}
+
+
+{% if prediction_error %}
+
+<div class="error">
+{{ prediction_error }}
+</div>
+
+{% endif %}
+
+
+<div class="note">
+
+This is a prototype ML prediction based on your collected
+YouTube channel data. Low, Medium and High describe relative
+performance within the training dataset and do not guarantee
+future views.
+
+</div>
+
+</div>
+
+</main>
+
+</body>
+
+</html>
