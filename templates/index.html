@@ -3041,6 +3041,73 @@ body .rr-premium-hero a {
 
 </style>
 
+
+
+<style>
+
+/* =========================================================
+   RR CLICKABLE HIGHLIGHT CARDS
+========================================================= */
+
+.rr-clickable-card {
+    cursor: pointer;
+}
+
+.rr-clickable-card:hover {
+    transform: translateY(-8px) !important;
+
+    border-color:
+        rgba(49,87,213,.40) !important;
+
+    box-shadow:
+        0 24px 55px
+        rgba(15,23,42,.14) !important;
+}
+
+.rr-clickable-card:focus {
+    outline:
+        3px solid
+        rgba(49,87,213,.28);
+
+    outline-offset: 4px;
+}
+
+/* small arrow */
+
+.rr-clickable-card::before {
+    content: "?";
+
+    position: absolute;
+
+    right: 24px;
+    bottom: 20px;
+
+    color: #3157d5;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    opacity: 0;
+
+    transform:
+        translate(-5px, 5px);
+
+    transition:
+        all .2s ease;
+}
+
+.rr-clickable-card:hover::before {
+    opacity: 1;
+
+    transform:
+        translate(0, 0);
+}
+
+/* RR CLICKABLE HIGHLIGHT CARDS */
+
+</style>
+
 </head>
 
 
@@ -3207,7 +3274,7 @@ body .rr-premium-hero a {
         <div class="rr-highlight-grid">
 
 
-            <article class="rr-highlight-card">
+            <article class="rr-highlight-card rr-clickable-card" data-href="#vlogs" tabindex="0" role="link">
 
                 <div class="rr-highlight-icon">
                     &#127909;
@@ -3229,7 +3296,7 @@ body .rr-premium-hero a {
             </article>
 
 
-            <article class="rr-highlight-card">
+            <article class="rr-highlight-card rr-clickable-card" data-href="#destinations" tabindex="0" role="link">
 
                 <div class="rr-highlight-icon">
                     &#128205;
@@ -3251,7 +3318,7 @@ body .rr-premium-hero a {
             </article>
 
 
-            <article class="rr-highlight-card">
+            <article class="rr-highlight-card rr-clickable-card" data-href="#creator-about" tabindex="0" role="link">
 
                 <div class="rr-highlight-icon">
                     &#127758;
@@ -3273,7 +3340,7 @@ body .rr-premium-hero a {
             </article>
 
 
-            <article class="rr-highlight-card">
+            <article class="rr-highlight-card rr-clickable-card" data-href="/dashboard" tabindex="0" role="link">
 
                 <div class="rr-highlight-icon">
                     &#129302;
@@ -4742,6 +4809,93 @@ body #creator-about .creator-identity-card a {
 /* FORCED ABOUT CARD FINAL FIX */
 
 </style>
+
+
+
+<script>
+
+/* RR CLICKABLE CARD SCRIPT */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        document
+            .querySelectorAll(
+                ".rr-clickable-card"
+            )
+            .forEach(function(card) {
+
+                function openCard() {
+
+                    const target =
+                        card.dataset.href;
+
+                    if (!target) {
+                        return;
+                    }
+
+                    if (
+                        target.startsWith("#")
+                    ) {
+
+                        const section =
+                            document.querySelector(
+                                target
+                            );
+
+                        if (section) {
+
+                            section.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+
+                        }
+
+                    } else {
+
+                        window.location.href =
+                            target;
+
+                    }
+
+                }
+
+
+                card.addEventListener(
+                    "click",
+                    openCard
+                );
+
+
+                card.addEventListener(
+                    "keydown",
+                    function(event) {
+
+                        if (
+                            event.key === "Enter"
+                            ||
+                            event.key === " "
+                        ) {
+
+                            event.preventDefault();
+
+                            openCard();
+
+                        }
+
+                    }
+                );
+
+            });
+
+    }
+);
+
+/* RR CLICKABLE CARD SCRIPT */
+
+</script>
 
 </body>
 
