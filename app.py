@@ -2309,6 +2309,20 @@ def predict_video_performance():
     )
 
 
+
+
+# ============================================================
+# PUBLIC COLLABORATION PAGE
+# ============================================================
+
+@app.route("/collaborate")
+def collaboration_page():
+
+    return render_template(
+        "collaborate.html"
+    )
+
+
 if __name__ == "__main__":
 
     print(
