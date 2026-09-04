@@ -2323,6 +2323,20 @@ def collaboration_page():
     )
 
 
+
+
+# ============================================================
+# PUBLIC ABOUT PAGE
+# ============================================================
+
+@app.route("/about")
+def about_page():
+
+    return render_template(
+        "about.html"
+    )
+
+
 if __name__ == "__main__":
 
     print(
