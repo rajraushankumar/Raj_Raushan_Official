@@ -763,6 +763,177 @@ body {
 
 </style>
 
+
+
+<style>
+
+/* =========================================================
+   ABOUT CLICKABLE ELEMENTS STYLE
+========================================================= */
+
+
+/* PROFILE TAGS */
+
+.identity-tags a {
+
+    display: inline-flex;
+
+    padding:
+        8px 11px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    color:
+        #ffffff;
+
+    text-decoration:
+        none;
+
+    font-size:
+        11px;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+
+.identity-tags a:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(255,255,255,.14);
+
+    border-color:
+        rgba(255,255,255,.35);
+}
+
+
+/* CLICKABLE CARDS */
+
+.about-clickable-card {
+
+    position:
+        relative;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
+}
+
+
+.about-clickable-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 20px 48px
+        rgba(15,23,42,.12);
+}
+
+
+/* ARROW */
+
+.about-clickable-card::after {
+
+    content:
+        "?";
+
+    position:
+        absolute;
+
+    right:
+        22px;
+
+    bottom:
+        18px;
+
+    color:
+        #3554d1;
+
+    font-size:
+        18px;
+
+    font-weight:
+        900;
+
+    opacity:
+        0;
+
+    transform:
+        translate(-5px,5px);
+
+    transition:
+        all .2s ease;
+}
+
+
+.about-clickable-card:hover::after {
+
+    opacity:
+        1;
+
+    transform:
+        translate(0,0);
+}
+
+
+.about-clickable-card:focus {
+
+    outline:
+        3px solid
+        rgba(53,84,209,.25);
+
+    outline-offset:
+        4px;
+}
+
+
+/* JOURNEY HOVER */
+
+.journey-item.about-clickable-card {
+
+    padding-left:
+        18px;
+
+    padding-right:
+        18px;
+
+    border-radius:
+        14px;
+}
+
+
+.journey-item.about-clickable-card:hover {
+
+    background:
+        #f6f8fc;
+}
+
+
+/* ABOUT CLICKABLE ELEMENTS STYLE */
+
+</style>
+
 </head>
 
 
@@ -924,12 +1095,12 @@ body {
 
             <div class="identity-tags">
 
-                <span>Travel</span>
-                <span>Vlogs</span>
-                <span>Shorts</span>
-                <span>Heritage</span>
-                <span>Nature</span>
-                <span>Technology</span>
+                <a href="/#vlogs">Travel</a>
+                <a href="/#vlogs">Vlogs</a>
+                <a href="/#shorts">Shorts</a>
+                <a href="/#destinations">Heritage</a>
+                <a href="/#destinations">Nature</a>
+                <a href="/dashboard">Technology</a>
 
             </div>
 
@@ -965,7 +1136,7 @@ body {
 
     <div class="pillars-grid">
 
-        <article class="pillar-card">
+        <article class="pillar-card about-clickable-card" data-href="/#vlogs" role="link" tabindex="0">
 
             <span class="pillar-number">
                 01
@@ -984,7 +1155,7 @@ body {
         </article>
 
 
-        <article class="pillar-card">
+        <article class="pillar-card about-clickable-card" data-href="/#destinations" role="link" tabindex="0">
 
             <span class="pillar-number">
                 02
@@ -1003,7 +1174,7 @@ body {
         </article>
 
 
-        <article class="pillar-card">
+        <article class="pillar-card about-clickable-card" data-href="/#vlogs" role="link" tabindex="0">
 
             <span class="pillar-number">
                 03
@@ -1022,7 +1193,7 @@ body {
         </article>
 
 
-        <article class="pillar-card">
+        <article class="pillar-card about-clickable-card" data-href="/dashboard" role="link" tabindex="0">
 
             <span class="pillar-number">
                 04
@@ -1062,7 +1233,7 @@ body {
 
         <div class="journey-list">
 
-            <div class="journey-item">
+            <div class="journey-item about-clickable-card" data-href="/#destinations" role="link" tabindex="0">
 
                 <span>
                     DISCOVER
@@ -1085,7 +1256,7 @@ body {
             </div>
 
 
-            <div class="journey-item">
+            <div class="journey-item about-clickable-card" data-href="/#vlogs" role="link" tabindex="0">
 
                 <span>
                     CREATE
@@ -1108,7 +1279,7 @@ body {
             </div>
 
 
-            <div class="journey-item">
+            <div class="journey-item about-clickable-card" data-href="/dashboard" role="link" tabindex="0">
 
                 <span>
                     GROW
@@ -1132,7 +1303,7 @@ body {
             </div>
 
 
-            <div class="journey-item">
+            <div class="journey-item about-clickable-card" data-href="https://www.youtube.com/@RajRaushanOfficial" role="link" tabindex="0">
 
                 <span>
                     GLOBAL
@@ -1216,6 +1387,89 @@ body {
 
 </footer>
 
+
+
+
+<script>
+
+/* ABOUT CLICKABLE ELEMENTS SCRIPT */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        document
+            .querySelectorAll(
+                ".about-clickable-card"
+            )
+            .forEach(
+                function(card) {
+
+                    function openTarget() {
+
+                        const target =
+                            card.dataset.href;
+
+                        if (!target) {
+                            return;
+                        }
+
+                        if (
+                            target.startsWith(
+                                "http"
+                            )
+                        ) {
+
+                            window.open(
+                                target,
+                                "_blank",
+                                "noopener"
+                            );
+
+                        } else {
+
+                            window.location.href =
+                                target;
+
+                        }
+
+                    }
+
+
+                    card.addEventListener(
+                        "click",
+                        openTarget
+                    );
+
+
+                    card.addEventListener(
+                        "keydown",
+                        function(event) {
+
+                            if (
+                                event.key === "Enter"
+                                ||
+                                event.key === " "
+                            ) {
+
+                                event.preventDefault();
+
+                                openTarget();
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+    }
+);
+
+/* ABOUT CLICKABLE ELEMENTS SCRIPT */
+
+</script>
 
 </body>
 
