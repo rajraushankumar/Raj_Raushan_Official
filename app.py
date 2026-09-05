@@ -2553,6 +2553,143 @@ def get_all_youtube_playlists():
 
 
 
+
+
+# ============================================================
+# TRAVEL DESTINATION GUIDES
+# ============================================================
+
+TRAVEL_DESTINATION_GUIDES = {
+
+    "sasaram-rohtas": {
+
+        "title":
+            "Sasaram & Rohtas",
+
+        "region":
+            "Bihar, India",
+
+        "category":
+            "Heritage & Nature",
+
+        "intro":
+            (
+                "Explore heritage, landscapes and "
+                "travel stories from Sasaram and "
+                "the wider Rohtas region."
+            ),
+
+        "story":
+            (
+                "This destination collection focuses "
+                "on local history, architecture, hills, "
+                "roads and authentic travel experiences "
+                "from the Rohtas region."
+            ),
+
+        "highlights": [
+            "Heritage",
+            "Historic Places",
+            "Nature",
+            "Local Travel",
+            "Road Journeys"
+        ],
+
+        "keywords": [
+            "sasaram",
+            "rohtas",
+            "shergarh",
+            "gupta dham",
+            "rohtasgarh"
+        ]
+    },
+
+
+    "ranchi": {
+
+        "title":
+            "Ranchi",
+
+        "region":
+            "Jharkhand, India",
+
+        "category":
+            "City, Nature & Culture",
+
+        "intro":
+            (
+                "Explore Ranchi through city experiences, "
+                "nature, attractions and local journeys."
+            ),
+
+        "story":
+            (
+                "Ranchi offers a mix of urban exploration, "
+                "hills, cultural landmarks and outdoor "
+                "experiences featured through real journeys."
+            ),
+
+        "highlights": [
+            "City Travel",
+            "Nature",
+            "Culture",
+            "Local Attractions",
+            "Travel Vlogs"
+        ],
+
+        "keywords": [
+            "ranchi",
+            "tagore",
+            "jagannath",
+            "zoo",
+            "museum"
+        ]
+    },
+
+
+    "ayodhya": {
+
+        "title":
+            "Ayodhya",
+
+        "region":
+            "Uttar Pradesh, India",
+
+        "category":
+            "Spiritual & Cultural Journey",
+
+        "intro":
+            (
+                "Discover travel, culture and spiritual "
+                "experiences connected with Ayodhya."
+            ),
+
+        "story":
+            (
+                "The Ayodhya journey focuses on destination "
+                "exploration, cultural experiences and "
+                "visual travel storytelling."
+            ),
+
+        "highlights": [
+            "Spiritual Travel",
+            "Culture",
+            "Architecture",
+            "City Exploration",
+            "Travel Stories"
+        ],
+
+        "keywords": [
+            "ayodhya",
+            "ram",
+            "temple"
+        ]
+    }
+
+}
+
+
+
 @app.route("/destinations")
 def destinations_page():
 
@@ -2592,6 +2729,133 @@ def playlists_page():
             total_playlist_videos
         )
     )
+
+
+
+
+# ============================================================
+# DESTINATION DETAIL PAGE
+# ============================================================
+
+@app.route("/destination/<slug>")
+def destination_detail_page(slug):
+
+    destination = (
+        TRAVEL_DESTINATION_GUIDES.get(
+            slug
+        )
+    )
+
+    if not destination:
+
+        return render_template(
+            "404.html"
+        ), 404
+
+
+    related_videos = []
+
+    try:
+
+        videos = get_latest_videos()
+
+        keywords = [
+            keyword.lower()
+            for keyword
+            in destination.get(
+                "keywords",
+                []
+            )
+        ]
+
+
+        for video in videos:
+
+            title = str(
+                video.get(
+                    "title",
+                    ""
+                )
+            ).lower()
+
+            if any(
+                keyword in title
+                for keyword
+                in keywords
+            ):
+
+                related_videos.append(
+                    video
+                )
+
+
+    except Exception as error:
+
+        print(
+            "Destination related videos error:",
+            error
+        )
+
+
+    return render_template(
+        "destination_detail.html",
+
+        destination=destination,
+
+        destination_slug=slug,
+
+        related_videos=(
+            related_videos[:6]
+        )
+    )
+
+
+
+
+# ============================================================
+# TRAVEL GALLERY
+# ============================================================
+
+@app.route("/gallery")
+def travel_gallery_page():
+
+    gallery_videos = []
+
+    try:
+
+        gallery_videos = (
+            get_latest_videos()
+        )
+
+    except Exception as error:
+
+        print(
+            "Gallery fetch error:",
+            error
+        )
+
+
+    return render_template(
+        "gallery.html",
+
+        gallery_videos=(
+            gallery_videos[:18]
+        )
+    )
+
+
+
+
+# ============================================================
+# PROFESSIONAL 404
+# ============================================================
+
+@app.errorhandler(404)
+def page_not_found(error):
+
+    return render_template(
+        "404.html"
+    ), 404
 
 
 if __name__ == "__main__":

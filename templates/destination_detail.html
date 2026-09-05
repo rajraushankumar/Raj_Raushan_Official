@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    {{ destination.title }} | Raj Raushan Official
+</title>
+
+<meta
+    name="description"
+    content="{{ destination.intro }}"
+>
+
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/favicon.svg"
+>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #f4f7fb;
+
+    color:
+        #101827;
+
+    overflow-x:
+        hidden;
+}
+
+
+/* NAV */
+
+.travel-nav {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(8,13,23,.98);
+}
+
+.travel-nav-inner {
+    width: 92%;
+
+    max-width: 1280px;
+
+    min-height: 70px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+}
+
+.travel-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    color: white;
+
+    text-decoration: none;
+}
+
+.travel-logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        #eef3ff;
+
+    color:
+        #101827;
+
+    font-weight: 900;
+}
+
+.travel-brand strong {
+    display: block;
+}
+
+.travel-brand small {
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        #e2e8f0;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.travel-links {
+    display: flex;
+
+    gap: 21px;
+}
+
+.travel-links a {
+    color:
+        #d8dee9;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* HERO */
+
+.destination-detail-hero {
+    padding:
+        95px 20px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(75,120,205,.28),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #09101a,
+            #172b45
+        );
+}
+
+.detail-hero-inner {
+    width: 92%;
+
+    max-width: 1150px;
+
+    margin: auto;
+}
+
+.detail-region {
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    padding:
+        8px 13px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    border-radius: 999px;
+
+    color:
+        #d8e1ed;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.destination-detail-hero h1 {
+    margin:
+        0 0 17px;
+
+    font-size:
+        clamp(
+            48px,
+            7vw,
+            82px
+        );
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.destination-detail-hero p {
+    max-width: 720px;
+
+    margin: 0;
+
+    color:
+        #c6d0de;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* STORY */
+
+.detail-section {
+    padding:
+        80px 20px;
+
+    background:
+        #ffffff;
+}
+
+.detail-container {
+    width: 92%;
+
+    max-width: 1150px;
+
+    margin: auto;
+}
+
+.detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.15fr .85fr;
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+.detail-copy span {
+    color: #3554d1;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2.3px;
+}
+
+.detail-copy h2 {
+    margin:
+        10px 0 18px;
+
+    font-size:
+        clamp(
+            32px,
+            4vw,
+            48px
+        );
+}
+
+.detail-copy p {
+    color:
+        #5f6a7d;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* HIGHLIGHTS */
+
+.detail-highlights {
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background:
+        #eef3ff;
+
+    border:
+        1px solid
+        #dce5fa;
+}
+
+.detail-highlights h3 {
+    margin:
+        0 0 20px;
+
+    font-size: 21px;
+}
+
+.highlight-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+.highlight-tags span {
+    padding:
+        9px 12px;
+
+    border-radius: 999px;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid
+        #dae2ef;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* RELATED VIDEOS */
+
+.related-section {
+    padding:
+        80px 20px;
+
+    background:
+        #f4f7fb;
+}
+
+.related-header {
+    width: 92%;
+
+    max-width: 1150px;
+
+    margin:
+        0 auto 35px;
+}
+
+.related-header span {
+    color:
+        #3554d1;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.related-header h2 {
+    margin:
+        10px 0 0;
+
+    font-size:
+        clamp(
+            31px,
+            4vw,
+            46px
+        );
+}
+
+.related-grid {
+    width: 92%;
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+
+    gap: 18px;
+}
+
+.related-card {
+    overflow: hidden;
+
+    border-radius: 19px;
+
+    background:
+        #ffffff;
+
+    color:
+        #101827;
+
+    text-decoration: none;
+
+    border:
+        1px solid
+        #e3e8f0;
+
+    box-shadow:
+        0 12px 34px
+        rgba(15,23,42,.06);
+
+    transition:
+        transform .2s ease;
+}
+
+.related-card:hover {
+    transform:
+        translateY(-6px);
+}
+
+.related-card img {
+    width: 100%;
+
+    aspect-ratio:
+        16 / 9;
+
+    object-fit: cover;
+}
+
+.related-card-content {
+    padding: 19px;
+}
+
+.related-card h3 {
+    margin:
+        0 0 10px;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+}
+
+.related-card small {
+    color:
+        #748095;
+}
+
+
+/* EMPTY */
+
+.related-empty {
+    width: 92%;
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    background:
+        #ffffff;
+
+    text-align: center;
+}
+
+
+/* CTA */
+
+.detail-cta {
+    padding:
+        75px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        #09101a;
+}
+
+.detail-cta h2 {
+    margin:
+        0 0 12px;
+
+    color: white;
+
+    font-size:
+        clamp(
+            31px,
+            4vw,
+            46px
+        );
+}
+
+.detail-cta p {
+    color:
+        #b9c4d2;
+}
+
+.detail-cta a {
+    display: inline-flex;
+
+    margin-top: 15px;
+
+    padding:
+        13px 19px;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #101827;
+
+    text-decoration: none;
+
+    font-weight: 800;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .travel-links {
+        display: none;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .related-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .destination-detail-hero {
+        padding:
+            65px 18px;
+    }
+
+    .destination-detail-hero h1 {
+        font-size: 44px;
+    }
+
+    .detail-section,
+    .related-section {
+        padding:
+            60px 18px;
+    }
+
+    .detail-container,
+    .related-header,
+    .related-grid {
+        width: 100%;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="travel-nav">
+
+<div class="travel-nav-inner">
+
+    <a
+        href="/"
+        class="travel-brand"
+    >
+
+        <span class="travel-logo">
+            RR
+        </span>
+
+        <span>
+
+            <strong>
+                Raj Raushan
+            </strong>
+
+            <small>
+                OFFICIAL
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <nav class="travel-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/destinations">
+            Destinations
+        </a>
+
+        <a href="/playlists">
+            Playlists
+        </a>
+
+        <a href="/gallery">
+            Gallery
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+<section class="destination-detail-hero">
+
+<div class="detail-hero-inner">
+
+    <span class="detail-region">
+
+        {{ destination.region }}
+        &bull;
+        {{ destination.category }}
+
+    </span>
+
+    <h1>
+        {{ destination.title }}
+    </h1>
+
+    <p>
+        {{ destination.intro }}
+    </p>
+
+</div>
+
+</section>
+
+
+<section class="detail-section">
+
+<div class="detail-container detail-grid">
+
+
+    <div class="detail-copy">
+
+        <span>
+            DESTINATION STORY
+        </span>
+
+        <h2>
+            Explore the Journey
+        </h2>
+
+        <p>
+            {{ destination.story }}
+        </p>
+
+    </div>
+
+
+    <div class="detail-highlights">
+
+        <h3>
+            Explore
+        </h3>
+
+        <div class="highlight-tags">
+
+            {% for item
+               in destination.highlights %}
+
+            <span>
+                {{ item }}
+            </span>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<section class="related-section">
+
+<div class="related-header">
+
+    <span>
+        RELATED VIDEOS
+    </span>
+
+    <h2>
+        Watch Stories from
+        {{ destination.title }}
+    </h2>
+
+</div>
+
+
+{% if related_videos %}
+
+<div class="related-grid">
+
+    {% for video in related_videos %}
+
+    <a
+        href="{{ video.url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="related-card"
+    >
+
+        <img
+            src="{{ video.thumbnail }}"
+            alt="{{ video.title }}"
+            loading="lazy"
+        >
+
+        <div class="related-card-content">
+
+            <h3>
+                {{ video.title }}
+            </h3>
+
+            <small>
+                {{ video.views|default("0") }}
+                views
+            </small>
+
+        </div>
+
+    </a>
+
+    {% endfor %}
+
+</div>
+
+
+{% else %}
+
+<div class="related-empty">
+
+    New related travel stories will
+    appear here automatically.
+
+</div>
+
+{% endif %}
+
+</section>
+
+
+<section class="detail-cta">
+
+    <h2>
+        Continue Exploring
+    </h2>
+
+    <p>
+        Discover more travel destinations
+        with Raj Raushan Official.
+    </p>
+
+    <a href="/destinations">
+        Explore All Destinations
+    </a>
+
+</section>
+
+
+</body>
+
+</html>
