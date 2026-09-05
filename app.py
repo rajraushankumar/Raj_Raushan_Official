@@ -2858,6 +2858,96 @@ def page_not_found(error):
     ), 404
 
 
+
+
+# ============================================================
+# TRAVEL MAP EXPLORER
+# ============================================================
+
+
+
+
+
+# ============================================================
+# TRAVEL MAP
+# ============================================================
+
+@app.route("/travel-map")
+def travel_map_page():
+
+    destinations = [
+
+        {
+            "slug": "ranchi",
+            "title": "Ranchi",
+            "region": "Jharkhand, India",
+            "category": "City & Nature",
+            "lat": 23.3441,
+            "lng": 85.3096
+        },
+
+        {
+            "slug": "aurangabad-bihar",
+            "title": "Aurangabad",
+            "region": "Bihar, India",
+            "category": "Local Travel",
+            "lat": 24.7457,
+            "lng": 84.3802
+        },
+
+        {
+            "slug": "sasaram-rohtas",
+            "title": "Sasaram & Rohtas",
+            "region": "Bihar, India",
+            "category": "Heritage & Nature",
+            "lat": 24.9539,
+            "lng": 84.0145
+        },
+
+        {
+            "slug": "patna",
+            "title": "Patna",
+            "region": "Bihar, India",
+            "category": "City Travel",
+            "lat": 25.5941,
+            "lng": 85.1376
+        },
+
+        {
+            "slug": "varanasi",
+            "title": "Varanasi",
+            "region": "Uttar Pradesh, India",
+            "category": "Culture & Spiritual",
+            "lat": 25.3176,
+            "lng": 82.9739
+        },
+
+        {
+            "slug": "lucknow",
+            "title": "Lucknow",
+            "region": "Uttar Pradesh, India",
+            "category": "City & Culture",
+            "lat": 26.8467,
+            "lng": 80.9462
+        },
+
+        {
+            "slug": "bodhgaya",
+            "title": "Bodhgaya",
+            "region": "Bihar, India",
+            "category": "Spiritual & Heritage",
+            "lat": 24.6950,
+            "lng": 84.9914
+        }
+
+    ]
+
+    return render_template(
+        "travel_map.html",
+        destinations=destinations
+    )
+
+
 if __name__ == "__main__":
 
     print(

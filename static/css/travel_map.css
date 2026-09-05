@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #101827;
+}
+
+.travel-nav {
+    min-height: 72px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #090f19;
+}
+
+.travel-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: white;
+    text-decoration: none;
+}
+
+.travel-logo {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #eef3ff;
+    color: #101827;
+    font-weight: 900;
+}
+
+.travel-brand strong,
+.travel-brand small {
+    display: block;
+}
+
+.travel-brand small {
+    color: #e5e7eb;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.travel-nav nav {
+    display: flex;
+    gap: 20px;
+}
+
+.travel-nav nav a {
+    color: #d8dee9;
+    text-decoration: none;
+}
+
+.map-hero {
+    padding: 70px 20px;
+    color: white;
+    background: linear-gradient(135deg,#09101a,#19314f);
+}
+
+.map-hero > div {
+    width: 92%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.eyebrow,
+.section-label {
+    color: #93a4ff;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.map-hero h1 {
+    margin: 12px 0 15px;
+    font-size: clamp(42px,6vw,68px);
+}
+
+.map-hero p {
+    max-width: 680px;
+    color: #c5d0dd;
+    line-height: 1.7;
+}
+
+.map-layout {
+    width: 92%;
+    max-width: 1250px;
+    margin: 65px auto 85px;
+    display: grid;
+    grid-template-columns: 330px minmax(0,1fr);
+    gap: 18px;
+}
+
+.map-sidebar {
+    padding: 24px;
+    border-radius: 20px;
+    background: white;
+}
+
+.map-sidebar h2 {
+    margin-top: 8px;
+}
+
+.map-place-card {
+    width: 100%;
+    margin-bottom: 9px;
+    padding: 15px;
+    display: block;
+    text-align: left;
+    border: 1px solid #e2e8f1;
+    border-radius: 12px;
+    background: #f8fafc;
+    cursor: pointer;
+}
+
+.map-place-card.active {
+    background: #eef3ff;
+    border-color: #9aabef;
+}
+
+.map-place-card strong,
+.map-place-card small {
+    display: block;
+}
+
+.map-place-card small {
+    margin-top: 4px;
+    color: #687386;
+}
+
+.all-destinations {
+    display: inline-flex;
+    margin-top: 12px;
+    color: #101827;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.map-panel {
+    overflow: hidden;
+    min-height: 560px;
+    border-radius: 22px;
+}
+
+#travelMap {
+    width: 100%;
+    height: 560px;
+}
+
+@media (max-width: 850px) {
+
+    .travel-nav nav {
+        display: none;
+    }
+
+    .map-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .map-layout {
+        width: 100%;
+        margin: 45px 0 65px;
+        padding: 0 18px;
+    }
+
+    #travelMap,
+    .map-panel {
+        height: 430px;
+        min-height: 430px;
+    }
+
+}
