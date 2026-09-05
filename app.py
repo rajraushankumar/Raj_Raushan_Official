@@ -2337,6 +2337,263 @@ def about_page():
     )
 
 
+
+
+# ============================================================
+# PUBLIC DESTINATIONS PAGE
+# ============================================================
+
+
+
+# ============================================================
+# YOUTUBE PUBLIC PLAYLISTS
+# ============================================================
+
+def get_all_youtube_playlists():
+
+    playlists = []
+
+    if not API_KEY:
+        return playlists
+
+    try:
+
+        # ----------------------------------------------------
+        # Resolve channel ID from handle
+        # ----------------------------------------------------
+
+        channel_response = requests.get(
+            "https://www.googleapis.com/youtube/v3/channels",
+            params={
+                "part": "snippet",
+                "forHandle": MAIN_CHANNEL,
+                "key": API_KEY
+            },
+            timeout=(7, 20)
+        )
+
+        channel_response.raise_for_status()
+
+        channel_data = channel_response.json()
+
+        channel_items = channel_data.get(
+            "items",
+            []
+        )
+
+        if not channel_items:
+            return playlists
+
+        channel_id = channel_items[0].get(
+            "id"
+        )
+
+        if not channel_id:
+            return playlists
+
+
+        # ----------------------------------------------------
+        # Fetch ALL public playlists
+        # ----------------------------------------------------
+
+        next_page_token = None
+
+        while True:
+
+            params = {
+                "part": "snippet,contentDetails",
+                "channelId": channel_id,
+                "maxResults": 50,
+                "key": API_KEY
+            }
+
+            if next_page_token:
+
+                params["pageToken"] = (
+                    next_page_token
+                )
+
+
+            response = requests.get(
+                "https://www.googleapis.com/youtube/v3/playlists",
+                params=params,
+                timeout=(7, 20)
+            )
+
+            response.raise_for_status()
+
+            data = response.json()
+
+
+            for item in data.get(
+                "items",
+                []
+            ):
+
+                snippet = item.get(
+                    "snippet",
+                    {}
+                )
+
+                details = item.get(
+                    "contentDetails",
+                    {}
+                )
+
+                thumbnails = snippet.get(
+                    "thumbnails",
+                    {}
+                )
+
+                thumbnail = (
+                    thumbnails.get(
+                        "maxres",
+                        {}
+                    ).get("url")
+                    or
+                    thumbnails.get(
+                        "standard",
+                        {}
+                    ).get("url")
+                    or
+                    thumbnails.get(
+                        "high",
+                        {}
+                    ).get("url")
+                    or
+                    thumbnails.get(
+                        "medium",
+                        {}
+                    ).get("url")
+                    or
+                    thumbnails.get(
+                        "default",
+                        {}
+                    ).get("url")
+                    or
+                    ""
+                )
+
+                playlist_id = item.get(
+                    "id",
+                    ""
+                )
+
+                playlists.append(
+                    {
+                        "playlist_id":
+                            playlist_id,
+
+                        "title":
+                            snippet.get(
+                                "title",
+                                "Untitled Playlist"
+                            ),
+
+                        "description":
+                            snippet.get(
+                                "description",
+                                ""
+                            ),
+
+                        "thumbnail":
+                            thumbnail,
+
+                        "video_count":
+                            int(
+                                details.get(
+                                    "itemCount",
+                                    0
+                                )
+                            ),
+
+                        "published_at":
+                            snippet.get(
+                                "publishedAt",
+                                ""
+                            ),
+
+                        "url":
+                            (
+                                "https://www.youtube.com/"
+                                "playlist?list="
+                                + playlist_id
+                            )
+                    }
+                )
+
+
+            next_page_token = data.get(
+                "nextPageToken"
+            )
+
+            if not next_page_token:
+                break
+
+
+        playlists.sort(
+            key=lambda item:
+                item.get(
+                    "published_at",
+                    ""
+                ),
+            reverse=True
+        )
+
+
+    except Exception as error:
+
+        print(
+            "Playlist fetch error:",
+            error
+        )
+
+
+    return playlists
+
+
+
+@app.route("/destinations")
+def destinations_page():
+
+    return render_template(
+        "destinations.html"
+    )
+
+
+
+
+# ============================================================
+# PUBLIC YOUTUBE PLAYLIST EXPLORER
+# ============================================================
+
+@app.route("/playlists")
+def playlists_page():
+
+    playlists = (
+        get_all_youtube_playlists()
+    )
+
+    total_playlist_videos = sum(
+        playlist.get(
+            "video_count",
+            0
+        )
+        for playlist in playlists
+    )
+
+    return render_template(
+        "playlists.html",
+        playlists=playlists,
+        playlist_count=len(
+            playlists
+        ),
+        total_playlist_videos=(
+            total_playlist_videos
+        )
+    )
+
+
 if __name__ == "__main__":
 
     print(

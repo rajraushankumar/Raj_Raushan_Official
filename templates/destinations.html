@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="Explore travel destinations, heritage, nature and journey stories with Raj Raushan Official."
+>
+
+<title>
+    Destinations | Raj Raushan Official
+</title>
+
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/favicon.svg"
+>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #101827;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+.destination-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background:
+        rgba(8,13,23,.97);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+.destination-nav-inner {
+    width: 92%;
+    max-width: 1280px;
+
+    min-height: 72px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.destination-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    color: white;
+    text-decoration: none;
+}
+
+.destination-logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eef3ff;
+
+    color: #101827;
+
+    font-weight: 900;
+}
+
+.destination-brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.destination-brand-text strong {
+    font-size: 15px;
+}
+
+.destination-brand-text small {
+    margin-top: 4px;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #e2e8f0;
+}
+
+.destination-links {
+    display: flex;
+    align-items: center;
+
+    gap: 21px;
+}
+
+.destination-links a {
+    color: #d8dee9;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.destination-links a:hover {
+    color: #ffffff;
+}
+
+.destination-subscribe {
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #101827 !important;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.destination-hero {
+    padding:
+        90px 20px;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(54,119,160,.24),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            #09101a,
+            #14273d
+        );
+}
+
+.destination-hero-inner {
+    width: 92%;
+    max-width: 1150px;
+
+    margin: auto;
+}
+
+.destination-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 17px;
+
+    padding: 8px 13px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    border-radius: 999px;
+
+    color: #d7e0ec;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 2.4px;
+}
+
+.destination-hero h1 {
+    max-width: 900px;
+
+    margin:
+        0 0 20px;
+
+    font-size:
+        clamp(
+            45px,
+            6vw,
+            74px
+        );
+
+    line-height: 1.03;
+
+    letter-spacing: -2px;
+}
+
+.destination-hero p {
+    max-width: 720px;
+
+    margin: 0;
+
+    color: #c6d0dd;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   EXPLORER
+========================================================= */
+
+.explorer-section {
+    padding:
+        75px 20px 95px;
+}
+
+.explorer-container {
+    width: 92%;
+    max-width: 1250px;
+
+    margin: auto;
+}
+
+.explorer-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 32px;
+}
+
+.explorer-top h2 {
+    margin:
+        0 0 8px;
+
+    font-size:
+        clamp(
+            31px,
+            4vw,
+            48px
+        );
+}
+
+.explorer-top p {
+    margin: 0;
+
+    color: #667286;
+
+    line-height: 1.6;
+}
+
+
+/* FILTERS */
+
+.destination-filters {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 32px;
+}
+
+.destination-filter {
+    padding:
+        10px 15px;
+
+    border:
+        1px solid #dfe5ee;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    color: #354052;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        all .2s ease;
+}
+
+.destination-filter:hover,
+.destination-filter.active {
+    background: #101827;
+    color: #ffffff;
+
+    border-color: #101827;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.destination-explorer-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap: 20px;
+}
+
+.travel-destination-card {
+    position: relative;
+
+    min-height: 310px;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    border-radius: 24px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111827,
+            #203755
+        );
+
+    box-shadow:
+        0 16px 42px
+        rgba(15,23,42,.13);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.travel-destination-card:hover {
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 24px 55px
+        rgba(15,23,42,.22);
+}
+
+.travel-destination-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(86,130,220,.25),
+            transparent 40%
+        );
+
+    pointer-events: none;
+}
+
+.travel-card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.travel-category {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    padding:
+        7px 10px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    color: #dce5f1;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: 1.7px;
+}
+
+.travel-destination-card h3 {
+    margin:
+        0 0 11px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(
+            27px,
+            3vw,
+            38px
+        );
+
+    line-height: 1.08;
+}
+
+.travel-destination-card p {
+    max-width: 530px;
+
+    margin:
+        0 0 23px;
+
+    color: #cad4e1;
+
+    line-height: 1.65;
+}
+
+.travel-explore-link {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.11);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TRAVEL CTA
+========================================================= */
+
+.travel-cta {
+    padding:
+        80px 20px;
+
+    text-align: center;
+
+    background: #ffffff;
+}
+
+.travel-cta-inner {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.travel-cta h2 {
+    margin:
+        0 0 14px;
+
+    font-size:
+        clamp(
+            32px,
+            4vw,
+            48px
+        );
+}
+
+.travel-cta p {
+    max-width: 650px;
+
+    margin:
+        0 auto 25px;
+
+    color: #687386;
+
+    line-height: 1.7;
+}
+
+.travel-cta a {
+    display: inline-flex;
+
+    min-height: 48px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        0 20px;
+
+    border-radius: 11px;
+
+    background: #101827;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .destination-links {
+        display: none;
+    }
+
+    .destination-explorer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .explorer-top {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .destination-nav-inner {
+        min-height: 64px;
+    }
+
+    .destination-hero {
+        padding:
+            65px 18px;
+    }
+
+    .destination-hero h1 {
+        font-size: 42px;
+    }
+
+    .explorer-section {
+        padding:
+            58px 18px 70px;
+    }
+
+    .explorer-container {
+        width: 100%;
+    }
+
+    .travel-destination-card {
+        min-height: 270px;
+
+        padding: 24px;
+
+        border-radius: 19px;
+    }
+
+    .destination-filters {
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+
+        padding-bottom: 6px;
+    }
+
+    .destination-filter {
+        flex-shrink: 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="destination-nav">
+
+<div class="destination-nav-inner">
+
+    <a
+        class="destination-brand"
+        href="/"
+    >
+
+        <span class="destination-logo">
+            RR
+        </span>
+
+        <span class="destination-brand-text">
+
+            <strong>
+                Raj Raushan
+            </strong>
+
+            <small>
+                OFFICIAL
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <nav class="destination-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/#vlogs">
+            Vlogs
+        </a>
+
+        <a href="/#shorts">
+            Shorts
+        </a>
+
+        <a href="/playlists">
+                Playlists
+            </a>
+
+            <a href="/about">
+            About
+        </a>
+
+        <a href="/collaborate">
+            Collaborate
+        </a>
+
+        <a
+            href="https://www.youtube.com/@RajRaushanOfficial?sub_confirmation=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="destination-subscribe"
+        >
+            Subscribe
+        </a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+<section class="destination-hero">
+
+<div class="destination-hero-inner">
+
+    <span class="destination-eyebrow">
+        TRAVEL DESTINATIONS
+    </span>
+
+    <h1>
+        Explore Places.
+        Discover Stories.
+    </h1>
+
+    <p>
+        A growing collection of destinations,
+        journeys, culture, heritage and travel
+        experiences featured by Raj Raushan Official.
+    </p>
+
+</div>
+
+</section>
+
+
+<section class="explorer-section">
+
+<div class="explorer-container">
+
+    <div class="explorer-top">
+
+        <div>
+
+            <h2>
+                Destination Explorer
+            </h2>
+
+            <p>
+                Browse travel stories by destination
+                and experience.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="destination-filters">
+
+        <button
+            class="destination-filter active"
+            data-filter="all"
+        >
+            All
+        </button>
+
+        <button
+            class="destination-filter"
+            data-filter="bihar"
+        >
+            Bihar
+        </button>
+
+        <button
+            class="destination-filter"
+            data-filter="heritage"
+        >
+            Heritage
+        </button>
+
+        <button
+            class="destination-filter"
+            data-filter="nature"
+        >
+            Nature
+        </button>
+
+        <button
+            class="destination-filter"
+            data-filter="spiritual"
+        >
+            Spiritual
+        </button>
+
+    </div>
+
+
+    <div class="destination-explorer-grid">
+
+
+        <a
+            class="travel-destination-card"
+            data-category="bihar heritage"
+            href="/#vlogs"
+        >
+
+            <div class="travel-card-content">
+
+                <span class="travel-category">
+                    BIHAR
+                </span>
+
+                <h3>
+                    Sasaram & Rohtas
+                </h3>
+
+                <p>
+                    Travel stories shaped by local
+                    heritage, landscapes and journeys.
+                </p>
+
+                <div class="travel-explore-link">
+
+                    <span>
+                        Explore Stories
+                    </span>
+
+                    <span>
+                        &nearr;
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <a
+            class="travel-destination-card"
+            data-category="bihar nature"
+            href="/#vlogs"
+        >
+
+            <div class="travel-card-content">
+
+                <span class="travel-category">
+                    JHARKHAND & EASTERN INDIA
+                </span>
+
+                <h3>
+                    Ranchi
+                </h3>
+
+                <p>
+                    City experiences, nature,
+                    local attractions and travel
+                    moments.
+                </p>
+
+                <div class="travel-explore-link">
+
+                    <span>
+                        Explore Stories
+                    </span>
+
+                    <span>
+                        &nearr;
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <a
+            class="travel-destination-card"
+            data-category="spiritual heritage"
+            href="/#vlogs"
+        >
+
+            <div class="travel-card-content">
+
+                <span class="travel-category">
+                    SPIRITUAL JOURNEYS
+                </span>
+
+                <h3>
+                    Ayodhya
+                </h3>
+
+                <p>
+                    A destination centered around
+                    travel, culture and spiritual
+                    experiences.
+                </p>
+
+                <div class="travel-explore-link">
+
+                    <span>
+                        Explore Stories
+                    </span>
+
+                    <span>
+                        &nearr;
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <a
+            class="travel-destination-card"
+            data-category="heritage nature"
+            href="https://www.youtube.com/@RajRaushanOfficial"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="travel-card-content">
+
+                <span class="travel-category">
+                    INDIA & BEYOND
+                </span>
+
+                <h3>
+                    The Journey Continues
+                </h3>
+
+                <p>
+                    New destinations and stories
+                    will continue to join the
+                    Raj Raushan Official journey.
+                </p>
+
+                <div class="travel-explore-link">
+
+                    <span>
+                        Follow New Journeys
+                    </span>
+
+                    <span>
+                        &nearr;
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section class="travel-cta">
+
+<div class="travel-cta-inner">
+
+    <h2>
+        Watch the Journey
+    </h2>
+
+    <p>
+        Discover the latest travel videos,
+        Shorts and destinations from
+        Raj Raushan Official.
+    </p>
+
+    <a
+        href="https://www.youtube.com/@RajRaushanOfficial?sub_confirmation=1"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Explore on YouTube
+    </a>
+
+</div>
+
+</section>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const buttons =
+            document.querySelectorAll(
+                ".destination-filter"
+            );
+
+        const cards =
+            document.querySelectorAll(
+                ".travel-destination-card"
+            );
+
+
+        buttons.forEach(
+            function (button) {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        const filter =
+                            button.dataset.filter;
+
+
+                        buttons.forEach(
+                            function (item) {
+
+                                item.classList.remove(
+                                    "active"
+                                );
+
+                            }
+                        );
+
+
+                        button.classList.add(
+                            "active"
+                        );
+
+
+                        cards.forEach(
+                            function (card) {
+
+                                const categories =
+                                    card.dataset.category
+                                    || "";
+
+
+                                if (
+                                    filter === "all"
+                                    ||
+                                    categories.includes(
+                                        filter
+                                    )
+                                ) {
+
+                                    card.style.display =
+                                        "flex";
+
+                                } else {
+
+                                    card.style.display =
+                                        "none";
+
+                                }
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
