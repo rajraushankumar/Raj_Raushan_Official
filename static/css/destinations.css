@@ -321,3 +321,181 @@ body {
     }
 
 }
+
+
+/* ==========================================================
+   CLICKABLE PLAYLIST SYNC CARDS
+========================================================== */
+
+.playlist-sync-card {
+    min-height: 100px;
+
+    padding: 20px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    color: #101827;
+
+    text-decoration: none;
+
+    border: 1px solid #e4e9f1;
+
+    box-shadow:
+        0 12px 35px
+        rgba(15, 23, 42, .08);
+
+    cursor: pointer;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
+}
+
+
+.playlist-sync-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(53, 84, 209, .28);
+
+    box-shadow:
+        0 18px 42px
+        rgba(15, 23, 42, .13);
+}
+
+
+.playlist-sync-card span {
+    display: block;
+
+    color: #758096;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+
+.playlist-sync-card strong {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #101827;
+
+    font-size: 28px;
+}
+
+
+.playlist-sync-card small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #748095;
+
+    font-size: 11px;
+}
+
+
+.playlist-sync-card b {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef3ff;
+
+    color: #3554d1;
+
+    font-size: 18px;
+
+    transition:
+        transform .22s ease;
+}
+
+
+.playlist-sync-card:hover b {
+    transform:
+        translate(
+            2px,
+            -2px
+        );
+}
+
+
+@media (max-width: 600px) {
+
+    .playlist-sync-card {
+        min-height: 92px;
+
+        padding: 17px 19px;
+    }
+
+}
+
+
+/* ==========================================================
+   DESTINATION STAT CARDS - GUARANTEED CLICKABLE
+========================================================== */
+
+.playlist-sync {
+    position: relative;
+    z-index: 20;
+}
+
+.playlist-sync-card {
+    position: relative;
+    z-index: 21;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    cursor: pointer !important;
+
+    pointer-events: auto !important;
+
+    text-decoration: none !important;
+
+    color: #101827;
+}
+
+.playlist-sync-card * {
+    pointer-events: none;
+}
+
+.playlist-sync-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(15, 23, 42, .14);
+}
+
+.playlist-sync-card:active {
+    transform: translateY(-2px);
+}
+
+#destinationGrid {
+    scroll-margin-top: 110px;
+}

@@ -2690,11 +2690,378 @@ TRAVEL_DESTINATION_GUIDES = {
 
 
 
+
+
+# ============================================================
+# REAL YOUTUBE PLAYLIST DESTINATION CATALOG
+# ============================================================
+
+TRAVEL_DESTINATION_CATALOG = {
+
+    "ranchi": {
+        "title": "Ranchi",
+        "region": "Jharkhand, India",
+        "category": "City & Nature",
+        "intro": "Travel stories and experiences from Ranchi.",
+        "story": "Explore Ranchi through Raj Raushan Official travel videos.",
+        "highlights": [
+            "Ranchi",
+            "Jharkhand",
+            "City Travel",
+            "Nature"
+        ],
+        "playlist_terms": [
+            "ranchi"
+        ],
+        "filter_tags": [
+            "jharkhand",
+            "city",
+            "nature"
+        ],
+        "lat": 23.3441,
+        "lng": 85.3096
+    },
+
+
+    "aurangabad-bihar": {
+        "title": "Aurangabad",
+        "region": "Bihar, India",
+        "category": "Local Travel",
+        "intro": "Travel stories from Aurangabad, Bihar.",
+        "story": "Explore local journeys and experiences from Aurangabad.",
+        "highlights": [
+            "Aurangabad",
+            "Bihar",
+            "Local Travel"
+        ],
+        "playlist_terms": [
+            "aurangabad bihar"
+        ],
+        "filter_tags": [
+            "bihar",
+            "local"
+        ],
+        "lat": 24.7457,
+        "lng": 84.3802
+    },
+
+
+    "sasaram-rohtas": {
+        "title": "Sasaram & Rohtas",
+        "region": "Bihar, India",
+        "category": "Heritage & Nature",
+        "intro": "Explore Sasaram, Rohtas and Manjhar Kund.",
+        "story": "Travel stories covering Sasaram, Rohtas and nearby natural destinations.",
+        "highlights": [
+            "Sasaram",
+            "Rohtas",
+            "Manjhar Kund",
+            "Heritage",
+            "Nature"
+        ],
+        "playlist_terms": [
+            "sasaram",
+            "rohtas all videos",
+            "manjhar kund"
+        ],
+        "filter_tags": [
+            "bihar",
+            "heritage",
+            "nature"
+        ],
+        "lat": 24.9539,
+        "lng": 84.0145
+    },
+
+
+    "indrapuri-tutla-bhavani": {
+        "title": "Indrapuri & Maa Tutla Bhavani",
+        "region": "Rohtas, Bihar",
+        "category": "Nature & Spiritual",
+        "intro": "Explore Indrapuri and Maa Tutla Bhavani.",
+        "story": "Travel and spiritual experiences from the Rohtas region.",
+        "highlights": [
+            "Indrapuri",
+            "Tutla Bhavani",
+            "Nature",
+            "Spiritual"
+        ],
+        "playlist_terms": [
+            "indrapuri",
+            "tutla bhavani"
+        ],
+        "filter_tags": [
+            "bihar",
+            "nature",
+            "spiritual"
+        ],
+        "lat": None,
+        "lng": None
+    },
+
+
+    "patna": {
+        "title": "Patna",
+        "region": "Bihar, India",
+        "category": "City Travel",
+        "intro": "Explore Patna through Shorts and long travel videos.",
+        "story": "Raj Raushan Official travel collections from Patna.",
+        "highlights": [
+            "Patna",
+            "City",
+            "Shorts",
+            "Long Videos"
+        ],
+        "playlist_terms": [
+            "patna"
+        ],
+        "filter_tags": [
+            "bihar",
+            "city"
+        ],
+        "lat": 25.5941,
+        "lng": 85.1376
+    },
+
+
+    "mundeshwari": {
+        "title": "Maa Mundeshwari Mandir",
+        "region": "Bihar, India",
+        "category": "Spiritual & Heritage",
+        "intro": "Explore the Maa Mundeshwari Mandir journey.",
+        "story": "A spiritual travel collection from Raj Raushan Official.",
+        "highlights": [
+            "Mundeshwari",
+            "Temple",
+            "Spiritual",
+            "Heritage"
+        ],
+        "playlist_terms": [
+            "mundeshwari"
+        ],
+        "filter_tags": [
+            "bihar",
+            "spiritual",
+            "heritage"
+        ],
+        "lat": None,
+        "lng": None
+    },
+
+
+    "varanasi": {
+        "title": "Varanasi",
+        "region": "Uttar Pradesh, India",
+        "category": "Culture & Spiritual",
+        "intro": "Explore Varanasi through Shorts and long-form videos.",
+        "story": "Travel, culture and spiritual experiences from Varanasi.",
+        "highlights": [
+            "Varanasi",
+            "Culture",
+            "Spiritual",
+            "Shorts",
+            "Long Videos"
+        ],
+        "playlist_terms": [
+            "varanasi"
+        ],
+        "filter_tags": [
+            "uttar-pradesh",
+            "heritage",
+            "spiritual"
+        ],
+        "lat": 25.3176,
+        "lng": 82.9739
+    },
+
+
+    "lucknow": {
+        "title": "Lucknow",
+        "region": "Uttar Pradesh, India",
+        "category": "City & Culture",
+        "intro": "Explore Lucknow through Shorts and long videos.",
+        "story": "Travel and city experiences from Lucknow.",
+        "highlights": [
+            "Lucknow",
+            "Culture",
+            "City",
+            "Shorts",
+            "Long Videos"
+        ],
+        "playlist_terms": [
+            "lucknow"
+        ],
+        "filter_tags": [
+            "uttar-pradesh",
+            "city"
+        ],
+        "lat": 26.8467,
+        "lng": 80.9462
+    },
+
+
+    "bodhgaya": {
+        "title": "Bodhgaya",
+        "region": "Bihar, India",
+        "category": "Spiritual & Heritage",
+        "intro": "Explore Bodhgaya travel stories.",
+        "story": "Travel and destination experiences from Bodhgaya.",
+        "highlights": [
+            "Bodhgaya",
+            "Bihar",
+            "Spiritual",
+            "Heritage"
+        ],
+        "playlist_terms": [
+            "bodhgaya"
+        ],
+        "filter_tags": [
+            "bihar",
+            "spiritual",
+            "heritage"
+        ],
+        "lat": 24.6950,
+        "lng": 84.9914
+    },
+
+
+    "gnsu": {
+        "title": "GNSU Campus Stories",
+        "region": "Bihar, India",
+        "category": "Campus & Events",
+        "intro": "GNSU functions, events and college videos.",
+        "story": "Campus and event stories from Gopal Narayan Singh University.",
+        "highlights": [
+            "GNSU",
+            "Campus",
+            "Events",
+            "Functions"
+        ],
+        "playlist_terms": [
+            "gopal narayan singh university",
+            "gnsu college"
+        ],
+        "filter_tags": [
+            "bihar",
+            "campus"
+        ],
+        "lat": None,
+        "lng": None
+    },
+
+
+    "our-village": {
+        "title": "Our Village",
+        "region": "Bihar, India",
+        "category": "Village & Local Life",
+        "intro": "Village life and original local stories.",
+        "story": "Explore everyday village experiences through original videos.",
+        "highlights": [
+            "Village",
+            "Local Life",
+            "Original Stories",
+            "Bihar"
+        ],
+        "playlist_terms": [
+            "our village"
+        ],
+        "filter_tags": [
+            "bihar",
+            "village",
+            "local"
+        ],
+        "lat": None,
+        "lng": None
+    }
+
+}
+
+
 @app.route("/destinations")
 def destinations_page():
 
+    playlists = get_all_youtube_playlists()
+
+    destinations = []
+
+    matched_playlist_ids = set()
+
+    for slug, destination in TRAVEL_DESTINATION_CATALOG.items():
+
+        terms = [
+            term.lower()
+            for term in destination.get(
+                "playlist_terms",
+                []
+            )
+        ]
+
+        destination_playlists = []
+
+        for playlist in playlists:
+
+            title = str(
+                playlist.get(
+                    "title",
+                    ""
+                )
+            ).lower()
+
+            if any(
+                term in title
+                for term in terms
+            ):
+                destination_playlists.append(
+                    playlist
+                )
+
+                playlist_id = playlist.get(
+                    "playlist_id"
+                )
+
+                if playlist_id:
+                    matched_playlist_ids.add(
+                        playlist_id
+                    )
+
+
+        item = dict(destination)
+
+        item["slug"] = slug
+
+        item["playlist_count"] = len(
+            destination_playlists
+        )
+
+        item["video_count"] = sum(
+            int(
+                playlist.get(
+                    "video_count",
+                    0
+                )
+                or 0
+            )
+            for playlist
+            in destination_playlists
+        )
+
+        destinations.append(
+            item
+        )
+
+
     return render_template(
-        "destinations.html"
+        "destinations.html",
+
+        destinations=destinations,
+
+        public_playlist_count=len(
+            playlists
+        ),
+
+        matched_playlist_count=len(
+            matched_playlist_ids
+        )
     )
 
 

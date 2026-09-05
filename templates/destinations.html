@@ -107,29 +107,64 @@
 
 <section class="playlist-sync">
 
-    <div>
+    <a
+        href="/playlists"
+        class="playlist-sync-card"
+        id="publicPlaylistsCard"
+        aria-label="Open all public YouTube playlists"
+    >
 
-        <span>
-            PUBLIC PLAYLISTS
-        </span>
+        <div>
 
-        <strong>
-            {{ public_playlist_count }}
-        </strong>
+            <span>
+                PUBLIC PLAYLISTS
+            </span>
 
-    </div>
+            <strong>
+                {{ public_playlist_count }}
+            </strong>
 
-    <div>
+            <small>
+                Explore all YouTube playlists
+            </small>
 
-        <span>
-            CONNECTED TO DESTINATIONS
-        </span>
+        </div>
 
-        <strong>
-            {{ matched_playlist_count }}
-        </strong>
+        <b aria-hidden="true">
+            &nearr;
+        </b>
 
-    </div>
+    </a>
+
+
+    <a
+        href="#destinationGrid"
+        class="playlist-sync-card"
+        id="connectedDestinationsCard"
+        aria-label="Explore connected destinations"
+    >
+
+        <div>
+
+            <span>
+                CONNECTED TO DESTINATIONS
+            </span>
+
+            <strong>
+                {{ matched_playlist_count }}
+            </strong>
+
+            <small>
+                Explore travel collections
+            </small>
+
+        </div>
+
+        <b aria-hidden="true">
+            &darr;
+        </b>
+
+    </a>
 
 </section>
 

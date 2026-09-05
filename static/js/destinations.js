@@ -152,3 +152,75 @@ document.addEventListener(
 
     }
 );
+
+
+// ==========================================================
+// DESTINATION STAT CARD CLICK FALLBACK
+// ==========================================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const publicCard =
+            document.getElementById(
+                "publicPlaylistsCard"
+            );
+
+        const connectedCard =
+            document.getElementById(
+                "connectedDestinationsCard"
+            );
+
+
+        if (publicCard) {
+
+            publicCard.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    window.location.href =
+                        "/playlists";
+
+                }
+            );
+
+        }
+
+
+        if (connectedCard) {
+
+            connectedCard.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    const grid =
+                        document.getElementById(
+                            "destinationGrid"
+                        );
+
+                    if (grid) {
+
+                        grid.scrollIntoView(
+                            {
+                                behavior:
+                                    "smooth",
+
+                                block:
+                                    "start"
+                            }
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+    }
+);
