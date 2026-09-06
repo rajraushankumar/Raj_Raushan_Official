@@ -184,3 +184,92 @@ document.addEventListener(
 
     }
 );
+
+
+// ==========================================================
+// ALL DESTINATION CARDS CLICKABLE
+// ==========================================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const destinationCards =
+            document.querySelectorAll(
+                ".destination-result"
+            );
+
+
+        destinationCards.forEach(
+            function (card) {
+
+                card.setAttribute(
+                    "tabindex",
+                    "0"
+                );
+
+
+                card.addEventListener(
+                    "click",
+                    function (event) {
+
+                        const url =
+                            card.dataset.url
+                            ||
+                            card.getAttribute(
+                                "href"
+                            );
+
+
+                        if (!url) {
+                            return;
+                        }
+
+
+                        event.preventDefault();
+
+                        window.location.href =
+                            url;
+
+                    }
+                );
+
+
+                card.addEventListener(
+                    "keydown",
+                    function (event) {
+
+                        if (
+                            event.key === "Enter"
+                            ||
+                            event.key === " "
+                        ) {
+
+                            event.preventDefault();
+
+                            const url =
+                                card.dataset.url
+                                ||
+                                card.getAttribute(
+                                    "href"
+                                );
+
+
+                            if (url) {
+
+                                window.location.href =
+                                    url;
+
+                            }
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+

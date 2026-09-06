@@ -35,6 +35,8 @@
     href="/static/css/public_mobile_nav.css"
 >
 
+
+<link rel="stylesheet" href="/static/css/explore_premium.css">
 </head>
 
 
@@ -219,6 +221,7 @@
             <a
                 href="/destination/{{ destination.slug }}"
                 class="explore-card destination-result"
+                data-url="/destination/{{ destination.slug }}"
                 data-type="destination"
                 data-search="
                     {{ destination.title|lower }}

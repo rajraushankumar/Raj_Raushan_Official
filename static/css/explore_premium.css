@@ -1,0 +1,803 @@
+
+/* ==========================================================
+   RAJ RAUSHAN OFFICIAL
+   PREMIUM TRAVEL EXPLORER
+========================================================== */
+
+body {
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc 0%,
+            #f1f5f9 100%
+        );
+}
+
+
+/* ==========================================================
+   HERO POLISH
+========================================================== */
+
+.explore-hero {
+    position: relative;
+    overflow: hidden;
+
+    padding:
+        95px 20px 88px;
+
+    background:
+        radial-gradient(
+            circle at 82% 15%,
+            rgba(81, 116, 199, .30),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 10% 85%,
+            rgba(40, 73, 130, .22),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #07101c,
+            #12243a 52%,
+            #1b3658
+        );
+}
+
+
+.explore-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 340px;
+    height: 340px;
+
+    top: -170px;
+    left: -90px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+
+.explore-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -250px;
+    bottom: -300px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+.explore-hero-inner {
+    position: relative;
+    z-index: 2;
+}
+
+
+.explore-eyebrow {
+    display: inline-flex;
+
+    padding:
+        8px 13px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    border-radius:
+        999px;
+
+    color:
+        #dbe5ff;
+
+    background:
+        rgba(255,255,255,.05);
+
+    letter-spacing:
+        2.5px;
+}
+
+
+.explore-hero h1 {
+    max-width: 850px;
+
+    margin:
+        18px auto 16px;
+
+    font-size:
+        clamp(
+            50px,
+            7vw,
+            82px
+        );
+
+    letter-spacing:
+        -3px;
+
+    color:
+        #ffffff;
+}
+
+
+.explore-hero p {
+    font-size: 16px;
+
+    color:
+        #c6d2df;
+}
+
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+.explore-search-wrap {
+    position: relative;
+
+    max-width: 720px;
+
+    margin-top: 34px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255,255,255,.98);
+
+    box-shadow:
+        0 24px 60px
+        rgba(0,0,0,.28);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.explore-search-wrap:focus-within {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.32);
+}
+
+
+.explore-search-wrap input {
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+
+.explore-search-wrap > span {
+    min-width: 110px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #253c5e
+        );
+}
+
+
+/* ==========================================================
+   STATS
+========================================================== */
+
+.explore-stats {
+    margin-top: 32px;
+
+    gap: 15px;
+}
+
+
+.explore-stats div {
+    min-width: 150px;
+
+    padding:
+        12px 17px;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+.explore-stats strong {
+    color: #ffffff;
+}
+
+
+/* ==========================================================
+   MAIN
+========================================================== */
+
+.explore-main {
+    padding-top: 68px;
+}
+
+
+/* ==========================================================
+   FILTERS
+========================================================== */
+
+.explore-controls {
+    justify-content: center;
+
+    margin-bottom: 60px;
+}
+
+
+.explore-filter {
+    min-height: 44px;
+
+    padding:
+        0 19px;
+
+    border:
+        1px solid
+        #dce3ed;
+
+    background:
+        rgba(255,255,255,.88);
+
+    box-shadow:
+        0 5px 18px
+        rgba(15,23,42,.04);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.explore-filter:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(15,23,42,.08);
+}
+
+
+.explore-filter.active {
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #243b5a
+        );
+
+    border-color:
+        #111827;
+
+    box-shadow:
+        0 10px 25px
+        rgba(15,23,42,.18);
+}
+
+
+/* ==========================================================
+   SECTION HEADINGS
+========================================================== */
+
+.explore-heading {
+    margin-bottom: 30px;
+}
+
+
+.explore-heading span {
+    display: inline-block;
+
+    color:
+        #4f6df5;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2.5px;
+}
+
+
+.explore-heading h2 {
+    margin-top: 10px;
+
+    font-size:
+        clamp(
+            36px,
+            4vw,
+            54px
+        );
+
+    letter-spacing:
+        -1.5px;
+}
+
+
+/* ==========================================================
+   DESTINATION GRID
+========================================================== */
+
+.explore-grid {
+    gap: 24px;
+}
+
+
+/* ==========================================================
+   PREMIUM DESTINATION CARDS
+========================================================== */
+
+.destination-result {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 360px;
+
+    padding: 31px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:
+        25px;
+
+    background:
+        radial-gradient(
+            circle at 88% 10%,
+            rgba(91,132,215,.28),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            #0d1726,
+            #172c47
+        );
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 16px 45px
+        rgba(15,23,42,.13);
+
+    transition:
+        transform .28s ease,
+        box-shadow .28s ease,
+        border-color .28s ease;
+}
+
+
+.destination-result::before {
+    content: "";
+
+    position: absolute;
+
+    width: 210px;
+    height: 210px;
+
+    right: -105px;
+    bottom: -105px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.06);
+
+    border-radius: 50%;
+}
+
+
+.destination-result:hover {
+    transform:
+        translateY(-9px);
+
+    border-color:
+        rgba(130,160,235,.36);
+
+    box-shadow:
+        0 30px 65px
+        rgba(15,23,42,.22);
+}
+
+
+.destination-result
+.explore-card-top {
+    position: relative;
+    z-index: 2;
+}
+
+
+.destination-result
+.explore-type {
+    color:
+        #a9b9ff;
+}
+
+
+.destination-result
+.explore-arrow {
+    width: 42px;
+    height: 42px;
+
+    background:
+        rgba(255,255,255,.09);
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    color:
+        #ffffff;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+
+.destination-result:hover
+.explore-arrow {
+    transform:
+        translate(
+            3px,
+            -3px
+        );
+
+    background:
+        #ffffff;
+
+    color:
+        #111827;
+}
+
+
+.destination-result small {
+    color:
+        #b9c6d8;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.destination-result h3 {
+    margin:
+        9px 0 14px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        clamp(
+            28px,
+            2.4vw,
+            38px
+        );
+
+    letter-spacing:
+        -.8px;
+}
+
+
+.destination-result p {
+    max-width: 90%;
+
+    color:
+        #c4cfdd;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* TAGS */
+
+.destination-result
+.explore-tags {
+    position: relative;
+    z-index: 2;
+
+    margin-top: auto;
+}
+
+
+.destination-result
+.explore-tags span {
+    padding:
+        8px 11px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    background:
+        rgba(255,255,255,.07);
+
+    color:
+        #e5ebf4;
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+/* ==========================================================
+   ALTERNATING DESTINATION ACCENTS
+========================================================== */
+
+.destination-result:nth-child(3n + 2) {
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(90,145,190,.28),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            #101927,
+            #24364b
+        );
+}
+
+
+.destination-result:nth-child(3n + 3) {
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(100,120,190,.26),
+            transparent 33%
+        ),
+        linear-gradient(
+            145deg,
+            #111827,
+            #263651
+        );
+}
+
+
+/* ==========================================================
+   PLAYLIST CARDS
+========================================================== */
+
+.playlist-result {
+    min-height: 360px;
+
+    border:
+        1px solid
+        #e0e6ef;
+
+    border-radius:
+        22px;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 13px 35px
+        rgba(15,23,42,.07);
+}
+
+
+.playlist-result:hover {
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 26px 55px
+        rgba(15,23,42,.14);
+}
+
+
+.explore-thumb {
+    position: relative;
+}
+
+
+.explore-thumb::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 50%,
+            rgba(5,10,18,.30)
+        );
+
+    pointer-events: none;
+}
+
+
+.playlist-result h3 {
+    font-size: 21px;
+
+    line-height: 1.4;
+}
+
+
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
+
+.explore-empty {
+    border:
+        1px solid
+        #e2e8f0;
+
+    box-shadow:
+        0 15px 40px
+        rgba(15,23,42,.08);
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .destination-result {
+        min-height: 330px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .explore-hero {
+        padding:
+            70px 18px 62px;
+    }
+
+    .explore-hero h1 {
+        font-size:
+            45px;
+
+        letter-spacing:
+            -1.5px;
+    }
+
+    .explore-stats {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .explore-stats div {
+        width: 100%;
+    }
+
+    .explore-controls {
+        justify-content:
+            flex-start;
+
+        overflow-x:
+            auto;
+
+        padding-bottom:
+            6px;
+    }
+
+    .destination-result {
+        min-height:
+            320px;
+
+        padding:
+            25px;
+    }
+
+    .destination-result h3 {
+        font-size:
+            30px;
+    }
+
+}
+
+
+/* ==========================================================
+   ALL DESTINATION CARDS CLICKABLE
+========================================================== */
+
+.destination-result {
+    position: relative;
+
+    cursor: pointer !important;
+
+    pointer-events: auto !important;
+}
+
+
+.destination-result * {
+    pointer-events: none;
+}
+
+
+.destination-result:hover {
+    cursor: pointer;
+}
+
+
+.destination-result:focus-visible {
+    outline: 3px solid #7991ff;
+
+    outline-offset: 4px;
+}
+
+
+.destination-result::after {
+    content: "Explore Destination";
+
+    position: absolute;
+
+    right: 28px;
+    bottom: 28px;
+
+    color:
+        rgba(255,255,255,.65);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    opacity: 0;
+
+    transform:
+        translateY(5px);
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
+}
+
+
+.destination-result:hover::after {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
