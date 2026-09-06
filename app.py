@@ -3315,6 +3315,49 @@ def travel_map_page():
     )
 
 
+
+
+# ============================================================
+# UNIVERSAL TRAVEL EXPLORER
+# ============================================================
+
+@app.route("/explore")
+def explore_page():
+
+    playlists = get_all_youtube_playlists()
+
+    destinations = []
+
+    for slug, destination in (
+        TRAVEL_DESTINATION_CATALOG.items()
+    ):
+
+        item = dict(destination)
+
+        item["slug"] = slug
+
+        destinations.append(
+            item
+        )
+
+
+    return render_template(
+        "explore.html",
+
+        destinations=destinations,
+
+        playlists=playlists,
+
+        destination_count=len(
+            destinations
+        ),
+
+        playlist_count=len(
+            playlists
+        )
+    )
+
+
 if __name__ == "__main__":
 
     print(
