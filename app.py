@@ -1,3 +1,4 @@
+import time
 import joblib
 import os
 import requests
@@ -5,7 +6,7 @@ import pandas as pd
 import plotly.express as px
 
 from datetime import datetime
-from flask import Flask, render_template, request
+from flask import jsonify, Flask, render_template, request
 from dotenv import load_dotenv
 import sqlite3
 
@@ -3108,71 +3109,108 @@ def playlists_page():
 def destination_detail_page(slug):
 
     destination = (
-        TRAVEL_DESTINATION_GUIDES.get(
+        TRAVEL_DESTINATION_CATALOG.get(
             slug
         )
     )
 
-    if not destination:
+
+    if destination is None:
 
         return render_template(
             "404.html"
         ), 404
 
 
-    related_videos = []
+    # --------------------------------------------------------
+    # Get actual YouTube playlists for this destination
+    # --------------------------------------------------------
+
+    playlists = []
 
     try:
 
-        videos = get_latest_videos()
-
-        keywords = [
-            keyword.lower()
-            for keyword
-            in destination.get(
-                "keywords",
-                []
-            )
-        ]
-
-
-        for video in videos:
-
-            title = str(
-                video.get(
-                    "title",
-                    ""
-                )
-            ).lower()
-
-            if any(
-                keyword in title
-                for keyword
-                in keywords
-            ):
-
-                related_videos.append(
-                    video
-                )
-
+        playlists = (
+            get_all_youtube_playlists()
+        )
 
     except Exception as error:
 
         print(
-            "Destination related videos error:",
+            "Destination playlist fetch error:",
             error
         )
+
+
+    terms = [
+        str(term).lower()
+        for term
+        in destination.get(
+            "playlist_terms",
+            []
+        )
+    ]
+
+
+    destination_playlists = []
+
+
+    for playlist in playlists:
+
+        playlist_title = str(
+            playlist.get(
+                "title",
+                ""
+            )
+        ).lower()
+
+
+        if any(
+            term in playlist_title
+            for term in terms
+        ):
+
+            destination_playlists.append(
+                playlist
+            )
+
+
+    # --------------------------------------------------------
+    # Safe destination copy
+    # --------------------------------------------------------
+
+    destination_data = dict(
+        destination
+    )
+
+    destination_data["slug"] = slug
 
 
     return render_template(
         "destination_detail.html",
 
-        destination=destination,
+        destination=destination_data,
 
         destination_slug=slug,
 
-        related_videos=(
-            related_videos[:6]
+        destination_playlists=(
+            destination_playlists
+        ),
+
+        playlist_count=len(
+            destination_playlists
+        ),
+
+        video_count=sum(
+            int(
+                playlist.get(
+                    "video_count",
+                    0
+                )
+                or 0
+            )
+            for playlist
+            in destination_playlists
         )
     )
 
@@ -3356,6 +3394,344 @@ def explore_page():
             playlists
         )
     )
+
+
+
+
+# ============================================================
+# TECHNICAL BACKEND LAYER
+# YouTube Cache + Travel API + Health Check
+# ============================================================
+
+YOUTUBE_CACHE = {
+    "playlists": None,
+    "timestamp": 0
+}
+
+YOUTUBE_CACHE_TTL = 900
+# 900 seconds = 15 minutes
+
+
+def get_cached_youtube_playlists():
+
+    current_time = time.time()
+
+    cached_data = YOUTUBE_CACHE.get(
+        "playlists"
+    )
+
+    cached_time = YOUTUBE_CACHE.get(
+        "timestamp",
+        0
+    )
+
+
+    cache_age = (
+        current_time
+        -
+        cached_time
+    )
+
+
+    if (
+        cached_data is not None
+        and
+        cache_age < YOUTUBE_CACHE_TTL
+    ):
+
+        return cached_data
+
+
+    try:
+
+        fresh_data = (
+            get_all_youtube_playlists()
+        )
+
+        YOUTUBE_CACHE["playlists"] = (
+            fresh_data
+        )
+
+        YOUTUBE_CACHE["timestamp"] = (
+            current_time
+        )
+
+        return fresh_data
+
+
+    except Exception as error:
+
+        print(
+            "YouTube cache refresh error:",
+            error
+        )
+
+
+        if cached_data is not None:
+
+            return cached_data
+
+
+        return []
+
+
+# ============================================================
+# API - TRAVEL STATS
+# ============================================================
+
+@app.route("/api/travel-stats")
+def api_travel_stats():
+
+    playlists = (
+        get_cached_youtube_playlists()
+    )
+
+    destination_count = 0
+
+    if "TRAVEL_DESTINATION_CATALOG" in globals():
+
+        destination_count = len(
+            TRAVEL_DESTINATION_CATALOG
+        )
+
+
+    total_playlist_videos = sum(
+        int(
+            playlist.get(
+                "video_count",
+                0
+            )
+            or 0
+        )
+        for playlist
+        in playlists
+    )
+
+
+    return jsonify(
+        {
+            "status":
+                "success",
+
+            "creator":
+                "Raj Raushan Official",
+
+            "destinations":
+                destination_count,
+
+            "public_playlists":
+                len(
+                    playlists
+                ),
+
+            "playlist_videos":
+                total_playlist_videos,
+
+            "cache_seconds":
+                YOUTUBE_CACHE_TTL,
+
+            "generated_at":
+                datetime.now()
+                .isoformat(
+                    timespec="seconds"
+                )
+        }
+    )
+
+
+# ============================================================
+# API - DESTINATIONS
+# ============================================================
+
+@app.route("/api/destinations")
+def api_destinations():
+
+    results = []
+
+
+    if "TRAVEL_DESTINATION_CATALOG" not in globals():
+
+        return jsonify(
+            {
+                "status":
+                    "success",
+
+                "count":
+                    0,
+
+                "destinations":
+                    []
+            }
+        )
+
+
+    for slug, destination in (
+        TRAVEL_DESTINATION_CATALOG.items()
+    ):
+
+        results.append(
+            {
+                "slug":
+                    slug,
+
+                "title":
+                    destination.get(
+                        "title",
+                        ""
+                    ),
+
+                "region":
+                    destination.get(
+                        "region",
+                        ""
+                    ),
+
+                "category":
+                    destination.get(
+                        "category",
+                        ""
+                    ),
+
+                "url":
+                    (
+                        "/destination/"
+                        + slug
+                    )
+            }
+        )
+
+
+    return jsonify(
+        {
+            "status":
+                "success",
+
+            "count":
+                len(
+                    results
+                ),
+
+            "destinations":
+                results
+        }
+    )
+
+
+# ============================================================
+# API - PLAYLISTS
+# ============================================================
+
+@app.route("/api/playlists")
+def api_playlists():
+
+    playlists = (
+        get_cached_youtube_playlists()
+    )
+
+
+    results = []
+
+
+    for playlist in playlists:
+
+        results.append(
+            {
+                "title":
+                    playlist.get(
+                        "title",
+                        ""
+                    ),
+
+                "video_count":
+                    int(
+                        playlist.get(
+                            "video_count",
+                            0
+                        )
+                        or 0
+                    ),
+
+                "thumbnail":
+                    playlist.get(
+                        "thumbnail",
+                        ""
+                    ),
+
+                "url":
+                    playlist.get(
+                        "url",
+                        ""
+                    )
+            }
+        )
+
+
+    return jsonify(
+        {
+            "status":
+                "success",
+
+            "count":
+                len(
+                    results
+                ),
+
+            "playlists":
+                results
+        }
+    )
+
+
+# ============================================================
+# HEALTH CHECK
+# ============================================================
+
+@app.route("/health")
+def health_check():
+
+    return jsonify(
+        {
+            "status":
+                "healthy",
+
+            "application":
+                "Raj Raushan Official",
+
+            "service":
+                "Flask Travel Platform"
+        }
+    )
+
+
+# ============================================================
+# MANUAL CACHE REFRESH
+# ============================================================
+
+@app.route("/api/cache/refresh")
+def refresh_youtube_cache():
+
+    YOUTUBE_CACHE["playlists"] = None
+
+    YOUTUBE_CACHE["timestamp"] = 0
+
+
+    playlists = (
+        get_cached_youtube_playlists()
+    )
+
+
+    return jsonify(
+        {
+            "status":
+                "refreshed",
+
+            "playlists":
+                len(
+                    playlists
+                )
+        }
+    )
+
 
 
 if __name__ == "__main__":

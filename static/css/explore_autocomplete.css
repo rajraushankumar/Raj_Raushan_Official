@@ -1,0 +1,187 @@
+
+/* ==========================================================
+   LIVE TRAVEL AUTOCOMPLETE
+========================================================== */
+
+.explore-search-wrap {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+
+.travel-search-suggestions {
+    position: absolute;
+
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+
+    z-index: 4000;
+
+    display: none;
+
+    max-height: 430px;
+
+    overflow-y: auto;
+
+    padding: 8px;
+
+    border:
+        1px solid
+        #e0e6ef;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,.98);
+
+    box-shadow:
+        0 24px 65px
+        rgba(0,0,0,.24);
+
+    backdrop-filter:
+        blur(18px);
+}
+
+
+.travel-search-suggestions.active {
+    display: block;
+}
+
+
+.travel-suggestion {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: 14px;
+
+    padding:
+        13px 14px;
+
+    border-radius: 11px;
+
+    color: #101827;
+
+    text-decoration: none;
+
+    transition:
+        background .18s ease,
+        transform .18s ease;
+}
+
+
+.travel-suggestion:hover,
+.travel-suggestion.keyboard-active {
+    background:
+        #eef3ff;
+
+    transform:
+        translateX(2px);
+}
+
+
+.travel-suggestion-main {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.travel-suggestion-type {
+    color:
+        #536dfe;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing:
+        1.6px;
+}
+
+
+.travel-suggestion-title {
+    overflow: hidden;
+
+    color:
+        #101827;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    text-overflow:
+        ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.travel-suggestion-meta {
+    color:
+        #758096;
+
+    font-size: 11px;
+}
+
+
+.travel-suggestion-arrow {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        #f1f4fa;
+
+    color:
+        #3554d1;
+
+    font-weight: 900;
+}
+
+
+.travel-search-state {
+    padding:
+        16px;
+
+    color:
+        #748095;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+
+@media (max-width: 650px) {
+
+    .travel-search-suggestions {
+        max-height: 350px;
+
+        border-radius: 14px;
+    }
+
+    .travel-suggestion {
+        padding:
+            12px;
+    }
+
+}
