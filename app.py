@@ -3957,6 +3957,274 @@ def api_search_analytics():
 
 
 
+
+
+# ============================================================
+# MONETIZATION / BUSINESS ENQUIRY SYSTEM
+# ============================================================
+
+MONETIZATION_DB = "creator_analytics.db"
+
+
+def init_monetization_database():
+
+    connection = sqlite3.connect(
+        MONETIZATION_DB
+    )
+
+    connection.execute(
+        """
+        CREATE TABLE IF NOT EXISTS brand_enquiries (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            email TEXT NOT NULL,
+            company TEXT,
+            service TEXT NOT NULL,
+            budget TEXT,
+            message TEXT NOT NULL,
+            status TEXT DEFAULT 'new',
+            created_at TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+        """
+    )
+
+    connection.commit()
+    connection.close()
+
+
+init_monetization_database()
+
+
+@app.route("/work-with-me")
+def work_with_me_page():
+
+    return render_template(
+        "work_with_me.html"
+    )
+
+
+@app.route(
+    "/api/brand-enquiry",
+    methods=["POST"]
+)
+def api_brand_enquiry():
+
+    data = (
+        request.get_json(
+            silent=True
+        )
+        or {}
+    )
+
+
+    name = str(
+        data.get(
+            "name",
+            ""
+        )
+    ).strip()[:100]
+
+
+    email = str(
+        data.get(
+            "email",
+            ""
+        )
+    ).strip()[:150]
+
+
+    company = str(
+        data.get(
+            "company",
+            ""
+        )
+    ).strip()[:150]
+
+
+    service = str(
+        data.get(
+            "service",
+            ""
+        )
+    ).strip()[:100]
+
+
+    budget = str(
+        data.get(
+            "budget",
+            ""
+        )
+    ).strip()[:100]
+
+
+    message = str(
+        data.get(
+            "message",
+            ""
+        )
+    ).strip()[:1500]
+
+
+    if (
+        not name
+        or
+        not email
+        or
+        not service
+        or
+        not message
+    ):
+
+        return jsonify(
+            {
+                "status":
+                    "error",
+
+                "message":
+                    "Please complete all required fields."
+            }
+        ), 400
+
+
+    if (
+        "@" not in email
+        or
+        "." not in email
+    ):
+
+        return jsonify(
+            {
+                "status":
+                    "error",
+
+                "message":
+                    "Please enter a valid email address."
+            }
+        ), 400
+
+
+    connection = sqlite3.connect(
+        MONETIZATION_DB
+    )
+
+    connection.execute(
+        """
+        INSERT INTO brand_enquiries
+        (
+            name,
+            email,
+            company,
+            service,
+            budget,
+            message
+        )
+        VALUES (?, ?, ?, ?, ?, ?)
+        """,
+        (
+            name,
+            email,
+            company,
+            service,
+            budget,
+            message
+        )
+    )
+
+    connection.commit()
+    connection.close()
+
+
+    return jsonify(
+        {
+            "status":
+                "success",
+
+            "message":
+                "Your collaboration enquiry has been received."
+        }
+    )
+
+
+@app.route("/api/monetization-stats")
+def api_monetization_stats():
+
+    connection = sqlite3.connect(
+        MONETIZATION_DB
+    )
+
+    connection.row_factory = (
+        sqlite3.Row
+    )
+
+
+    total = connection.execute(
+        """
+        SELECT COUNT(*) AS total
+        FROM brand_enquiries
+        """
+    ).fetchone()["total"]
+
+
+    new_leads = connection.execute(
+        """
+        SELECT COUNT(*) AS total
+        FROM brand_enquiries
+        WHERE status = 'new'
+        """
+    ).fetchone()["total"]
+
+
+    service_rows = connection.execute(
+        """
+        SELECT
+            service,
+            COUNT(*) AS enquiries
+        FROM brand_enquiries
+        GROUP BY service
+        ORDER BY enquiries DESC
+        LIMIT 10
+        """
+    ).fetchall()
+
+
+    connection.close()
+
+
+    return jsonify(
+        {
+            "status":
+                "success",
+
+            "total_enquiries":
+                total,
+
+            "new_enquiries":
+                new_leads,
+
+            "top_services":
+                [
+                    dict(row)
+                    for row
+                    in service_rows
+                ]
+        }
+    )
+
+
+
+
+
+# ============================================================
+# PRIVATE MONETIZATION ADMIN
+# ============================================================
+
+from monetization_admin import monetization_admin_bp
+
+app.register_blueprint(
+    monetization_admin_bp
+)
+
+
 if __name__ == "__main__":
 
     print(

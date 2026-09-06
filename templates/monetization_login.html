@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Monetization Login | Raj Raushan Official
+</title>
+
+<link
+    rel="icon"
+    href="/static/favicon.svg"
+>
+
+<link
+    rel="stylesheet"
+    href="/static/css/monetization_dashboard.css"
+>
+
+</head>
+
+
+<body class="money-login-body">
+
+<section class="login-card">
+
+    <div class="admin-logo">
+        RR
+    </div>
+
+    <span class="admin-label">
+        PRIVATE CREATOR DASHBOARD
+    </span>
+
+    <h1>
+        Monetization Login
+    </h1>
+
+    <p>
+        Access brand enquiries,
+        campaign pipeline and revenue data.
+    </p>
+
+
+    <form method="POST">
+
+        <label>
+
+            Admin Password
+
+            <input
+                type="password"
+                name="password"
+                required
+                autofocus
+            >
+
+        </label>
+
+
+        {% if error %}
+
+        <div class="login-error">
+            {{ error }}
+        </div>
+
+        {% endif %}
+
+
+        <button type="submit">
+            Open Dashboard
+        </button>
+
+    </form>
+
+
+    <a
+        href="/work-with-me"
+        class="public-link"
+    >
+        Back to Public Collaboration Page
+    </a>
+
+</section>
+
+</body>
+
+</html>

@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Monetization Dashboard | Raj Raushan Official
+</title>
+
+<link
+    rel="icon"
+    href="/static/favicon.svg"
+>
+
+<link
+    rel="stylesheet"
+    href="/static/css/monetization_dashboard.css"
+>
+
+<meta
+    name="csrf-token"
+    content="{{ csrf_token }}"
+>
+
+</head>
+
+
+<body>
+
+
+<header class="admin-nav">
+
+    <a href="/">
+        <strong>
+            RR
+        </strong>
+
+        <span>
+            Raj Raushan Official
+            <small>
+                MONETIZATION ADMIN
+            </small>
+        </span>
+    </a>
+
+
+    <div>
+
+        <a href="/work-with-me">
+            Public Page
+        </a>
+
+        <a href="/monetization-logout">
+            Logout
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="dashboard">
+
+
+<section class="dashboard-heading">
+
+    <div>
+
+        <span>
+            PRIVATE CREATOR ANALYTICS
+        </span>
+
+        <h1>
+            Monetization Dashboard
+        </h1>
+
+        <p>
+            Track brand leads,
+            campaign value and deal progress.
+        </p>
+
+    </div>
+
+
+    <input
+        id="leadSearch"
+        type="search"
+        placeholder="Search leads..."
+    >
+
+</section>
+
+
+<section class="stats-grid">
+
+    <article>
+        <span>TOTAL LEADS</span>
+        <strong>{{ total }}</strong>
+    </article>
+
+    <article>
+        <span>NEW</span>
+        <strong>{{ new_count }}</strong>
+    </article>
+
+    <article>
+        <span>CONTACTED</span>
+        <strong>{{ contacted_count }}</strong>
+    </article>
+
+    <article>
+        <span>NEGOTIATING</span>
+        <strong>{{ negotiating_count }}</strong>
+    </article>
+
+    <article>
+        <span>WON</span>
+        <strong>{{ won_count }}</strong>
+    </article>
+
+</section>
+
+
+<section class="money-grid">
+
+    <article>
+
+        <span>
+            POTENTIAL PIPELINE
+        </span>
+
+        <strong>
+            ₹{{ "{:,.0f}".format(potential_value) }}
+        </strong>
+
+    </article>
+
+
+    <article class="won-card">
+
+        <span>
+            WON VALUE
+        </span>
+
+        <strong>
+            ₹{{ "{:,.0f}".format(won_value) }}
+        </strong>
+
+    </article>
+
+
+    <article>
+
+        <span>
+            TOP SERVICE
+        </span>
+
+        {% if top_services %}
+
+        <strong class="service-name">
+            {{ top_services[0].service }}
+        </strong>
+
+        {% else %}
+
+        <strong class="service-name">
+            No data yet
+        </strong>
+
+        {% endif %}
+
+    </article>
+
+</section>
+
+
+<section class="leads-section">
+
+    <div class="leads-title">
+
+        <h2>
+            Brand Enquiries
+        </h2>
+
+
+        <select id="statusFilter">
+
+            <option value="all">
+                All Status
+            </option>
+
+            <option value="new">
+                New
+            </option>
+
+            <option value="contacted">
+                Contacted
+            </option>
+
+            <option value="negotiating">
+                Negotiating
+            </option>
+
+            <option value="won">
+                Won
+            </option>
+
+            <option value="closed">
+                Closed
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div id="leadList">
+
+
+        {% for lead in leads %}
+
+        <article
+            class="lead-card"
+            data-lead-id="{{ lead.id }}"
+            data-status="{{ lead.status }}"
+            data-search="
+                {{ lead.name|lower }}
+                {{ lead.email|lower }}
+                {{ lead.company|default('', true)|lower }}
+                {{ lead.service|lower }}
+            "
+        >
+
+
+            <div class="lead-header">
+
+                <div>
+
+                    <span>
+                        LEAD #{{ lead.id }}
+                    </span>
+
+                    <h3>
+                        {{ lead.name }}
+                    </h3>
+
+                    <p>
+                        {{ lead.company or "Company not specified" }}
+                    </p>
+
+                </div>
+
+
+                <b class="status status-{{ lead.status }}">
+                    {{ lead.status|upper }}
+                </b>
+
+            </div>
+
+
+            <div class="lead-info">
+
+                <div>
+
+                    <span>
+                        EMAIL
+                    </span>
+
+                    <a href="mailto:{{ lead.email }}">
+                        {{ lead.email }}
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        SERVICE
+                    </span>
+
+                    <strong>
+                        {{ lead.service }}
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        BUDGET
+                    </span>
+
+                    <strong>
+                        {{ lead.budget or "Not specified" }}
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        RECEIVED
+                    </span>
+
+                    <strong>
+                        {{ lead.created_at }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="campaign-message">
+
+                <span>
+                    CAMPAIGN DETAILS
+                </span>
+
+                <p>
+                    {{ lead.message }}
+                </p>
+
+            </div>
+
+
+            <div class="lead-controls">
+
+
+                <label>
+
+                    Status
+
+                    <select class="lead-status">
+
+                        {% for option in [
+                            "new",
+                            "contacted",
+                            "negotiating",
+                            "won",
+                            "closed"
+                        ] %}
+
+                        <option
+                            value="{{ option }}"
+                            {% if option == lead.status %}selected{% endif %}
+                        >
+                            {{ option|capitalize }}
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </label>
+
+
+                <label>
+
+                    Deal Value ₹
+
+                    <input
+                        class="lead-value"
+                        type="number"
+                        min="0"
+                        step="100"
+                        value="{{ lead.estimated_value or 0 }}"
+                    >
+
+                </label>
+
+
+                <label>
+
+                    Private Notes
+
+                    <textarea
+                        class="lead-notes"
+                        placeholder="Follow-up notes..."
+                    >{{ lead.notes or "" }}</textarea>
+
+                </label>
+
+
+                <button
+                    class="save-lead"
+                    type="button"
+                >
+                    Save Lead
+                </button>
+
+
+                <div class="save-status"></div>
+
+            </div>
+
+
+        </article>
+
+        {% else %}
+
+        <div class="empty-leads">
+
+            No brand enquiries yet.
+
+        </div>
+
+        {% endfor %}
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<script
+    src="/static/js/monetization_dashboard.js"
+></script>
+
+</body>
+
+</html>

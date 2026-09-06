@@ -42,3 +42,6 @@ app_broken_*.py
 backup_*/
 templates/dashboard_before_*.html
 templates/dashboard_broken_*.html
+
+# Private monetization admin auth
+.monetization_admin_auth

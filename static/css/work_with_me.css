@@ -1,0 +1,636 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #101827;
+}
+
+
+/* NAV */
+
+.money-nav {
+    min-height: 72px;
+    padding: 0 5%;
+
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #090f19;
+}
+
+.money-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: white;
+    text-decoration: none;
+}
+
+.money-logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eef3ff;
+    color: #101827;
+
+    font-weight: 900;
+}
+
+.money-brand strong,
+.money-brand small {
+    display: block;
+}
+
+.money-brand small {
+    margin-top: 4px;
+    color: #e5e7eb;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.money-nav nav {
+    display: flex;
+    gap: 22px;
+}
+
+.money-nav nav a {
+    color: #d7dfeb;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* HERO */
+
+.money-hero {
+    padding: 100px 20px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 82% 15%,
+            rgba(78,123,205,.32),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(40,80,140,.20),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #07101c,
+            #132842 55%,
+            #1d3c62
+        );
+}
+
+.money-hero-inner {
+    width: 92%;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.money-eyebrow {
+    display: inline-block;
+
+    padding: 8px 13px;
+
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 999px;
+
+    color: #dce5ff;
+
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2.2px;
+}
+
+.money-hero h1 {
+    max-width: 850px;
+
+    margin: 20px 0 18px;
+
+    font-size: clamp(48px, 7vw, 82px);
+
+    line-height: 1.02;
+
+    letter-spacing: -3px;
+}
+
+.money-hero p {
+    max-width: 680px;
+
+    color: #c5d0de;
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.money-primary-btn {
+    min-height: 50px;
+
+    margin-top: 22px;
+    padding: 0 21px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: white;
+    color: #101827;
+
+    text-decoration: none;
+    font-weight: 900;
+}
+
+
+/* TRUST */
+
+.trust-strip {
+    width: 92%;
+    max-width: 1150px;
+
+    margin: -30px auto 0;
+
+    position: relative;
+    z-index: 3;
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow: 0 18px 50px rgba(15,23,42,.11);
+}
+
+.trust-strip div {
+    padding: 23px;
+
+    border-right: 1px solid #edf0f5;
+}
+
+.trust-strip div:last-child {
+    border-right: 0;
+}
+
+.trust-strip strong,
+.trust-strip span {
+    display: block;
+}
+
+.trust-strip strong {
+    font-size: 16px;
+}
+
+.trust-strip span {
+    margin-top: 5px;
+
+    color: #738096;
+
+    font-size: 11px;
+}
+
+
+/* SERVICES */
+
+.services-section {
+    width: 92%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 90px 0;
+}
+
+.section-heading {
+    max-width: 680px;
+
+    margin-bottom: 35px;
+}
+
+.section-heading > span,
+.why-copy > span,
+.enquiry-copy > span {
+    color: #536dfe;
+
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2.2px;
+}
+
+.section-heading h2,
+.why-copy h2,
+.enquiry-copy h2 {
+    margin: 10px 0 13px;
+
+    font-size: clamp(34px,4vw,52px);
+
+    letter-spacing: -1.4px;
+}
+
+.section-heading p,
+.why-copy p,
+.enquiry-copy > p {
+    color: #677386;
+    line-height: 1.7;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.service-card {
+    min-height: 310px;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #e1e7ef;
+    border-radius: 21px;
+
+    background: white;
+
+    box-shadow: 0 12px 35px rgba(15,23,42,.06);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 25px 55px rgba(15,23,42,.13);
+}
+
+.service-number {
+    color: #536dfe;
+
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.service-card h3 {
+    margin: 25px 0 12px;
+
+    font-size: 23px;
+}
+
+.service-card p {
+    color: #687487;
+
+    line-height: 1.65;
+    font-size: 13px;
+}
+
+.service-card button {
+    margin-top: auto;
+
+    min-height: 44px;
+
+    border: 1px solid #dce3ed;
+    border-radius: 10px;
+
+    background: #f8fafc;
+    color: #101827;
+
+    cursor: pointer;
+
+    font-weight: 800;
+}
+
+.service-card.featured {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d1726,
+            #203b60
+        );
+
+    color: white;
+}
+
+.service-card.featured p {
+    color: #c4cfdd;
+}
+
+.service-card.featured button {
+    background: white;
+}
+
+.custom-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    padding: 6px 9px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.10);
+
+    font-size: 8px;
+    font-weight: 900;
+}
+
+
+/* WHY */
+
+.why-section {
+    padding: 85px 5%;
+
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 60px;
+
+    background: #eef3ff;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 13px;
+}
+
+.why-grid div {
+    padding: 25px;
+
+    border-radius: 17px;
+
+    background: white;
+}
+
+.why-grid strong,
+.why-grid span {
+    display: block;
+}
+
+.why-grid strong {
+    font-size: 20px;
+}
+
+.why-grid span {
+    margin-top: 5px;
+
+    color: #718096;
+
+    font-size: 12px;
+}
+
+
+/* ENQUIRY */
+
+.enquiry-section {
+    padding: 90px 20px;
+
+    background: #09101a;
+}
+
+.enquiry-layout {
+    width: 92%;
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 60px;
+}
+
+.enquiry-copy h2 {
+    color: white;
+}
+
+.enquiry-copy > p {
+    color: #b9c5d4;
+}
+
+.enquiry-note {
+    margin-top: 30px;
+
+    padding: 21px;
+
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 15px;
+
+    background: rgba(255,255,255,.05);
+
+    color: white;
+}
+
+.enquiry-note p {
+    color: #b8c3d2;
+    line-height: 1.6;
+}
+
+.brand-form {
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background: white;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 14px;
+}
+
+.brand-form label {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: #364152;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.brand-form input,
+.brand-form select,
+.brand-form textarea {
+    width: 100%;
+
+    margin-top: 7px;
+    padding: 13px 14px;
+
+    border: 1px solid #dce3ed;
+    border-radius: 10px;
+
+    background: #fafbfd;
+    color: #101827;
+
+    font: inherit;
+
+    outline: none;
+}
+
+.brand-form input:focus,
+.brand-form select:focus,
+.brand-form textarea:focus {
+    border-color: #6f83e8;
+
+    box-shadow: 0 0 0 3px rgba(83,109,254,.10);
+}
+
+.brand-form textarea {
+    min-height: 145px;
+    resize: vertical;
+}
+
+.submit-enquiry {
+    width: 100%;
+    min-height: 51px;
+
+    border: 0;
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #263d5e
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 900;
+}
+
+.submit-enquiry:disabled {
+    opacity: .65;
+    cursor: wait;
+}
+
+.form-status {
+    margin-top: 13px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.form-status.success {
+    color: #137a47;
+}
+
+.form-status.error {
+    color: #c33131;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .service-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .trust-strip {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .why-section,
+    .enquiry-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .money-nav nav {
+        display: none;
+    }
+
+    .money-hero {
+        padding: 70px 18px;
+    }
+
+    .money-hero h1 {
+        font-size: 45px;
+        letter-spacing: -1.7px;
+    }
+
+    .trust-strip {
+        width: calc(100% - 36px);
+        grid-template-columns: 1fr;
+    }
+
+    .trust-strip div {
+        border-right: 0;
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .services-section {
+        width: 100%;
+        padding: 65px 18px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-section {
+        padding: 65px 18px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .enquiry-section {
+        padding: 65px 18px;
+    }
+
+    .enquiry-layout {
+        width: 100%;
+    }
+
+    .brand-form {
+        padding: 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+}
