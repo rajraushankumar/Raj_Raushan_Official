@@ -1,0 +1,297 @@
+
+/* ==========================================================
+   RAJ RAUSHAN OFFICIAL - SHARED MOBILE NAVIGATION
+========================================================== */
+
+.rr-mobile-menu-btn,
+.rr-mobile-menu-panel,
+.rr-mobile-menu-backdrop {
+    display: none;
+}
+
+@media (max-width: 760px) {
+
+    body.rr-menu-open {
+        overflow: hidden;
+    }
+
+    /* Hide existing desktop menu links */
+    .rr-nav-mobile-ready nav {
+        display: none !important;
+    }
+
+    .playlist-nav-links {
+        display: none !important;
+    }
+
+    .gallery-nav > a:not(:first-child) {
+        display: none !important;
+    }
+
+
+    /* Hamburger */
+
+    .rr-mobile-menu-btn {
+        position: fixed;
+        top: 14px;
+        right: 17px;
+        z-index: 5005;
+
+        width: 45px;
+        height: 45px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 5px;
+
+        padding: 0;
+
+        border: 1px solid rgba(255,255,255,.14);
+        border-radius: 13px;
+
+        background: rgba(13, 20, 31, .96);
+
+        cursor: pointer;
+
+        box-shadow:
+            0 8px 24px rgba(0,0,0,.18);
+    }
+
+    .rr-mobile-menu-btn span {
+        width: 19px;
+        height: 2px;
+
+        display: block;
+
+        border-radius: 10px;
+
+        background: #ffffff;
+
+        transition:
+            transform .25s ease,
+            opacity .25s ease;
+    }
+
+    .rr-mobile-menu-btn.active span:nth-child(1) {
+        transform:
+            translateY(7px)
+            rotate(45deg);
+    }
+
+    .rr-mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .rr-mobile-menu-btn.active span:nth-child(3) {
+        transform:
+            translateY(-7px)
+            rotate(-45deg);
+    }
+
+
+    /* Backdrop */
+
+    .rr-mobile-menu-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 4998;
+
+        display: block;
+
+        background:
+            rgba(4, 8, 15, .62);
+
+        opacity: 0;
+        visibility: hidden;
+
+        backdrop-filter:
+            blur(3px);
+
+        transition:
+            opacity .25s ease,
+            visibility .25s ease;
+    }
+
+    .rr-mobile-menu-backdrop.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    /* Menu panel */
+
+    .rr-mobile-menu-panel {
+        position: fixed;
+        top: 0;
+        right: 0;
+
+        z-index: 5000;
+
+        width: min(86vw, 350px);
+        height: 100dvh;
+
+        display: flex;
+        flex-direction: column;
+
+        padding:
+            25px 22px 30px;
+
+        background:
+            linear-gradient(
+                160deg,
+                #09101a,
+                #13243a
+            );
+
+        box-shadow:
+            -20px 0 60px
+            rgba(0,0,0,.28);
+
+        transform:
+            translateX(105%);
+
+        transition:
+            transform .3s ease;
+    }
+
+    .rr-mobile-menu-panel.active {
+        transform:
+            translateX(0);
+    }
+
+
+    /* Mobile brand */
+
+    .rr-mobile-brand {
+        display: flex;
+        align-items: center;
+
+        gap: 11px;
+
+        padding-right: 55px;
+        padding-bottom: 23px;
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,.10);
+
+        color: #ffffff;
+
+        text-decoration: none;
+    }
+
+    .rr-mobile-logo {
+        width: 43px;
+        height: 43px;
+
+        flex-shrink: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 12px;
+
+        background: #eef3ff;
+        color: #101827;
+
+        font-weight: 900;
+        font-size: 16px;
+    }
+
+    .rr-mobile-brand strong {
+        display: block;
+
+        font-size: 15px;
+    }
+
+    .rr-mobile-brand small {
+        display: block;
+
+        margin-top: 4px;
+
+        color: #d7dfeb;
+
+        font-size: 9px;
+        font-weight: 700;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* Links */
+
+    .rr-mobile-links {
+        margin-top: 21px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 4px;
+    }
+
+    .rr-mobile-links a {
+        min-height: 48px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding:
+            0 14px;
+
+        border-radius: 11px;
+
+        color: #dce4ef;
+
+        text-decoration: none;
+
+        font-size: 14px;
+        font-weight: 700;
+
+        transition:
+            background .2s ease,
+            color .2s ease;
+    }
+
+    .rr-mobile-links a:hover,
+    .rr-mobile-links a.active {
+        background:
+            rgba(255,255,255,.09);
+
+        color: #ffffff;
+    }
+
+    .rr-mobile-links a::after {
+        content: "\2192";
+
+        color: #8396ff;
+    }
+
+
+    /* Subscribe */
+
+    .rr-mobile-subscribe {
+        margin-top: auto;
+
+        min-height: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 12px;
+
+        background: #ffffff;
+
+        color: #101827 !important;
+
+        text-decoration: none;
+
+        font-weight: 900;
+    }
+
+}

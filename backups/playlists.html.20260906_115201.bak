@@ -815,8 +815,6 @@ body {
 
 </style>
 
-<link rel="stylesheet" href="/static/css/public_mobile_nav.css">
-
 </head>
 
 
@@ -1162,8 +1160,6 @@ document.addEventListener(
 
 </script>
 
-
-<script src="/static/js/public_mobile_nav.js"></script>
 
 </body>
 

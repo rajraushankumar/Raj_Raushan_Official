@@ -940,8 +940,6 @@ body {
     type="image/svg+xml"
     href="/static/favicon.svg"
 >
-<link rel="stylesheet" href="/static/css/public_mobile_nav.css">
-
 </head>
 
 
@@ -1478,8 +1476,6 @@ document.addEventListener(
 /* ABOUT CLICKABLE ELEMENTS SCRIPT */
 
 </script>
-
-<script src="/static/js/public_mobile_nav.js"></script>
 
 </body>
 

@@ -30,8 +30,6 @@
     href="/static/css/travel_map.css"
 >
 
-<link rel="stylesheet" href="/static/css/public_mobile_nav.css">
-
 </head>
 
 
@@ -175,8 +173,6 @@
     src="/static/js/travel_map.js"
 ></script>
 
-
-<script src="/static/js/public_mobile_nav.js"></script>
 
 </body>
 </html>

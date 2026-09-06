@@ -2059,3 +2059,304 @@ header p {
     margin: 0 auto 12px;
     word-break: normal;
 }
+/* ==========================================================
+   HOMEPAGE NAVBAR STABILITY FIX
+========================================================== */
+
+.raj-navbar,
+.site-navbar,
+header {
+    box-sizing: border-box;
+}
+
+.raj-navbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 3000 !important;
+
+    min-height: 74px !important;
+    height: 74px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    background: #090f19 !important;
+}
+
+.raj-navbar-inner,
+.nav-container {
+    width: min(94%, 1380px) !important;
+    height: 74px !important;
+
+    margin: 0 auto !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    gap: 18px !important;
+}
+
+.raj-navbar nav,
+.raj-nav-links {
+    display: flex !important;
+    align-items: center !important;
+
+    gap: clamp(14px, 1.5vw, 26px) !important;
+
+    flex-wrap: nowrap !important;
+
+    white-space: nowrap !important;
+}
+
+.raj-navbar nav a,
+.raj-nav-links a {
+    white-space: nowrap !important;
+
+    line-height: 1 !important;
+
+    font-size: clamp(13px, .9vw, 16px) !important;
+}
+
+.raj-navbar nav a br,
+.raj-nav-links a br {
+    display: none !important;
+}
+
+.raj-logo,
+.raj-logo-text,
+.raj-brand {
+    flex-shrink: 0 !important;
+}
+
+.raj-subscribe,
+.subscribe-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+}
+
+
+/* HERO MUST START BELOW NAV */
+
+.hero,
+.hero-section,
+.raj-hero {
+    margin-top: 0 !important;
+}
+
+
+/* ==========================================================
+   SMALL DESKTOP / TABLET
+========================================================== */
+
+@media (max-width: 1180px) {
+
+    .raj-navbar nav,
+    .raj-nav-links {
+        gap: 12px !important;
+    }
+
+    .raj-navbar nav a,
+    .raj-nav-links a {
+        font-size: 13px !important;
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .raj-navbar {
+        min-height: 66px !important;
+        height: 66px !important;
+    }
+
+    .raj-navbar-inner,
+    .nav-container {
+        height: 66px !important;
+    }
+
+    .raj-navbar nav,
+    .raj-nav-links {
+        display: none !important;
+    }
+
+}
+
+
+/* ==========================================================
+   FINAL HOMEPAGE PROFESSIONAL NAVBAR FIX
+   Actual classes: raj-pro-header / raj-pro-nav / raj-pro-links
+========================================================== */
+
+.raj-pro-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 5000 !important;
+
+    width: 100% !important;
+
+    height: 74px !important;
+    min-height: 74px !important;
+    max-height: 74px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    background: #090f19 !important;
+}
+
+
+.raj-pro-nav {
+    width: min(94%, 1400px) !important;
+
+    height: 74px !important;
+    min-height: 74px !important;
+
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    gap: 18px !important;
+}
+
+
+.raj-pro-links {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: clamp(12px, 1.25vw, 22px) !important;
+
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+}
+
+
+.raj-pro-links a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex-shrink: 0 !important;
+
+    margin: 0 !important;
+
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+
+    line-height: 1 !important;
+
+    font-size: clamp(13px, .9vw, 16px) !important;
+}
+
+
+/* Travel Map / Media Kit ko 2 line me jane se roko */
+
+.raj-pro-links a br {
+    display: none !important;
+}
+
+
+.raj-nav-actions {
+    display: flex !important;
+    align-items: center !important;
+
+    flex-shrink: 0 !important;
+
+    margin: 0 !important;
+}
+
+
+.raj-subscribe-nav {
+    flex-shrink: 0 !important;
+
+    white-space: nowrap !important;
+
+    margin: 0 !important;
+}
+
+
+/* Logo stable */
+
+.raj-pro-nav > a:first-child,
+.raj-pro-logo,
+.raj-logo {
+    flex-shrink: 0 !important;
+}
+
+
+/* Scroll shadow only — size change nahi */
+
+.raj-pro-header.rr-nav-scrolled {
+    height: 74px !important;
+    min-height: 74px !important;
+
+    box-shadow:
+        0 8px 28px
+        rgba(0, 0, 0, .22) !important;
+}
+
+
+/* ==========================================================
+   MEDIUM DESKTOP
+========================================================== */
+
+@media (max-width: 1350px) {
+
+    .raj-pro-nav {
+        width: 96% !important;
+        gap: 12px !important;
+    }
+
+    .raj-pro-links {
+        gap: 11px !important;
+    }
+
+    .raj-pro-links a {
+        font-size: 13px !important;
+    }
+
+    .raj-subscribe-nav {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+}
+
+
+/* Existing mobile menu ko disturb nahi karna */
+
+@media (max-width: 950px) {
+
+    .raj-pro-header {
+        height: 66px !important;
+        min-height: 66px !important;
+        max-height: 66px !important;
+    }
+
+    .raj-pro-nav {
+        height: 66px !important;
+        min-height: 66px !important;
+    }
+
+    .raj-pro-header.rr-nav-scrolled {
+        height: 66px !important;
+        min-height: 66px !important;
+    }
+
+}
+
