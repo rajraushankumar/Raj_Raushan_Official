@@ -621,3 +621,107 @@
         }
     );
 });
+
+// ==========================================================
+// GLOBAL SEARCH ANALYTICS TRACKING
+// ==========================================================
+
+document.addEventListener(
+    "click",
+    function (event) {
+
+        const result =
+            event.target.closest(
+                ".rr-search-result"
+            );
+
+        if (!result) {
+            return;
+        }
+
+
+        const input =
+            document.getElementById(
+                "rrSearchInput"
+            );
+
+
+        const titleElement =
+            result.querySelector(
+                ".rr-result-title"
+            );
+
+
+        const typeElement =
+            result.querySelector(
+                ".rr-result-type"
+            );
+
+
+        const title =
+            titleElement
+            ? titleElement.textContent.trim()
+            : "";
+
+
+        const typeText =
+            typeElement
+            ? typeElement.textContent.trim()
+            : "";
+
+
+        const resultType =
+            typeText.includes(
+                "PLAYLIST"
+            )
+            ? "playlist"
+            : "destination";
+
+
+        const query =
+            input
+            ? input.value.trim()
+            : title;
+
+
+        fetch(
+            "/api/search-event",
+            {
+                method:
+                    "POST",
+
+                headers:
+                    {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                body:
+                    JSON.stringify(
+                        {
+                            query:
+                                query,
+
+                            result_type:
+                                resultType,
+
+                            result_title:
+                                title,
+
+                            result_url:
+                                result.getAttribute(
+                                    "href"
+                                )
+                                || ""
+                        }
+                    ),
+
+                keepalive:
+                    true
+            }
+        ).catch(
+            function () {}
+        );
+
+    }
+);

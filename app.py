@@ -1,3 +1,4 @@
+from flask import request
 import time
 import joblib
 import os
@@ -3729,6 +3730,228 @@ def refresh_youtube_cache():
                 len(
                     playlists
                 )
+        }
+    )
+
+
+
+
+
+# ============================================================
+# GLOBAL SEARCH ANALYTICS
+# ============================================================
+
+SEARCH_ANALYTICS_DB = "creator_analytics.db"
+
+
+def init_search_analytics():
+
+    connection = sqlite3.connect(
+        SEARCH_ANALYTICS_DB
+    )
+
+    connection.execute(
+        """
+        CREATE TABLE IF NOT EXISTS search_events (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            query TEXT NOT NULL,
+            result_type TEXT,
+            result_title TEXT,
+            result_url TEXT,
+            created_at TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+        """
+    )
+
+    connection.commit()
+    connection.close()
+
+
+init_search_analytics()
+
+
+@app.route(
+    "/api/search-event",
+    methods=["POST"]
+)
+def api_search_event():
+
+    data = (
+        request.get_json(
+            silent=True
+        )
+        or {}
+    )
+
+    query = str(
+        data.get(
+            "query",
+            ""
+        )
+    ).strip()[:80]
+
+    result_type = str(
+        data.get(
+            "result_type",
+            ""
+        )
+    ).strip()[:30]
+
+    result_title = str(
+        data.get(
+            "result_title",
+            ""
+        )
+    ).strip()[:150]
+
+    result_url = str(
+        data.get(
+            "result_url",
+            ""
+        )
+    ).strip()[:500]
+
+
+    if not query:
+
+        return jsonify(
+            {
+                "status":
+                    "ignored"
+            }
+        ), 400
+
+
+    connection = sqlite3.connect(
+        SEARCH_ANALYTICS_DB
+    )
+
+    connection.execute(
+        """
+        INSERT INTO search_events
+        (
+            query,
+            result_type,
+            result_title,
+            result_url
+        )
+        VALUES (?, ?, ?, ?)
+        """,
+        (
+            query,
+            result_type,
+            result_title,
+            result_url
+        )
+    )
+
+    connection.commit()
+    connection.close()
+
+
+    return jsonify(
+        {
+            "status":
+                "saved"
+        }
+    )
+
+
+@app.route("/api/search-analytics")
+def api_search_analytics():
+
+    connection = sqlite3.connect(
+        SEARCH_ANALYTICS_DB
+    )
+
+    connection.row_factory = (
+        sqlite3.Row
+    )
+
+
+    total = connection.execute(
+        """
+        SELECT COUNT(*) AS total
+        FROM search_events
+        """
+    ).fetchone()["total"]
+
+
+    top_queries = connection.execute(
+        """
+        SELECT
+            LOWER(query) AS query,
+            COUNT(*) AS searches
+        FROM search_events
+        GROUP BY LOWER(query)
+        ORDER BY searches DESC
+        LIMIT 10
+        """
+    ).fetchall()
+
+
+    top_results = connection.execute(
+        """
+        SELECT
+            result_title,
+            result_type,
+            COUNT(*) AS clicks
+        FROM search_events
+        WHERE result_title != ''
+        GROUP BY
+            result_title,
+            result_type
+        ORDER BY clicks DESC
+        LIMIT 10
+        """
+    ).fetchall()
+
+
+    recent = connection.execute(
+        """
+        SELECT
+            query,
+            result_title,
+            result_type,
+            created_at
+        FROM search_events
+        ORDER BY id DESC
+        LIMIT 10
+        """
+    ).fetchall()
+
+
+    connection.close()
+
+
+    return jsonify(
+        {
+            "status":
+                "success",
+
+            "total_search_actions":
+                total,
+
+            "top_queries":
+                [
+                    dict(row)
+                    for row
+                    in top_queries
+                ],
+
+            "top_results":
+                [
+                    dict(row)
+                    for row
+                    in top_results
+                ],
+
+            "recent":
+                [
+                    dict(row)
+                    for row
+                    in recent
+                ]
         }
     )
 
