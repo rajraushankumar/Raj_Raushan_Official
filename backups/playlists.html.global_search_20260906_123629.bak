@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -817,7 +817,6 @@ body {
 
 <link rel="stylesheet" href="/static/css/public_mobile_nav.css">
 
-<link rel="stylesheet" href="/static/css/global_search.css">
 </head>
 
 
@@ -1170,8 +1169,6 @@ document.addEventListener(
 
 <script src="/static/js/public_mobile_nav.js"></script>
 
-<script src="/static/js/global_search.js"></script>
 </body>
 
 </html>
-

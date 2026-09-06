@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -4998,7 +4998,6 @@ and
 >
 
 <link rel="stylesheet" href="/static/css/home_nav_lock.css">
-<link rel="stylesheet" href="/static/css/global_search.css">
 </head>
 
 
@@ -7544,9 +7543,7 @@ document.addEventListener(
 
 </script>
 
-<script src="/static/js/global_search.js"></script>
 </body>
 
 </html>
-
 

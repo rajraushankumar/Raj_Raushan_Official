@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -39,7 +39,6 @@
 <link rel="stylesheet" href="/static/css/explore_premium.css">
 
 <link rel="stylesheet" href="/static/css/explore_autocomplete.css">
-<link rel="stylesheet" href="/static/css/global_search.css">
 </head>
 
 
@@ -397,8 +396,6 @@
 
 
 <script src="/static/js/explore_autocomplete.js"></script>
-<script src="/static/js/global_search.js"></script>
 </body>
 
 </html>
-
