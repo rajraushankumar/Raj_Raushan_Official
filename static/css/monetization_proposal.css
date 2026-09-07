@@ -1,0 +1,294 @@
+﻿/* ==========================================================
+   AUTO PROPOSAL + QUOTATION GENERATOR
+========================================================== */
+
+.proposal-generator {
+    margin-top: 18px;
+
+    padding: 22px;
+
+    border:
+        1px solid #dfe6ef;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f5f8fd
+        );
+}
+
+
+.proposal-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 16px;
+}
+
+
+.proposal-heading > div > span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #536dfe;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.7px;
+}
+
+
+.proposal-heading strong {
+    font-size: 17px;
+}
+
+
+.proposal-badge {
+    padding: 7px 10px;
+
+    border-radius: 999px;
+
+    background: #eaf0ff;
+
+    color: #3554d1;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+.proposal-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+.proposal-summary > div {
+    padding: 14px;
+
+    border-radius: 11px;
+
+    background: #eef3f9;
+}
+
+
+.proposal-summary span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #758096;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.1px;
+}
+
+
+.proposal-summary strong {
+    color: #101827;
+
+    font-size: 15px;
+}
+
+
+.proposal-deliverables {
+    display: none;
+
+    margin-bottom: 12px;
+
+    padding: 15px;
+
+    border-radius: 11px;
+
+    background: #f8fafc;
+
+    color: #4d596b;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+.proposal-deliverables.active {
+    display: block;
+}
+
+
+.proposal-deliverables strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #101827;
+}
+
+
+.proposal-text {
+    width: 100%;
+
+    min-height: 330px;
+
+    padding: 17px;
+
+    border:
+        1px solid #dce3ed;
+
+    border-radius: 12px;
+
+    background: white;
+
+    color: #354052;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    resize: vertical;
+}
+
+
+.proposal-text:focus {
+    outline: 0;
+
+    border-color: #7589ea;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(83,109,254,.08);
+}
+
+
+.proposal-actions {
+    margin-top: 12px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.proposal-actions button {
+    min-height: 41px;
+
+    padding: 0 14px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+.generate-proposal {
+    background: #101827;
+
+    color: white;
+}
+
+
+.copy-proposal {
+    background: #eaf0ff;
+
+    color: #3554d1;
+}
+
+
+.print-proposal {
+    background: #eef2f6;
+
+    color: #354052;
+}
+
+
+.mark-proposal-sent {
+    background: #e5f8ec;
+
+    color: #137a47;
+}
+
+
+.proposal-actions button:disabled {
+    opacity: .45;
+
+    cursor: not-allowed;
+}
+
+
+.proposal-status {
+    min-height: 15px;
+
+    margin-top: 9px;
+
+    color: #667085;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+@media (max-width: 650px) {
+
+    .proposal-summary {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .proposal-actions {
+        display: grid;
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .proposal-actions button {
+        width: 100%;
+    }
+
+
+    .proposal-text {
+        min-height: 390px;
+    }
+
+}
