@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -30,7 +30,6 @@
 >
 
 <link rel="stylesheet" href="/static/css/monetization_reply.css">
-<link rel="stylesheet" href="/static/css/monetization_pro_v2.css">
 </head>
 
 
@@ -311,7 +310,7 @@
         </div>
 
 
-        <select id="statusFilter" autocomplete="off">
+        <select id="statusFilter">
 
             <option value="all">
                 All Status
@@ -350,7 +349,6 @@
         <article
             class="lead-card"
             data-lead-id="{{ lead.id }}"
-            data-lead-name="{{ lead.name }}"
             data-status="{{ lead.status }}"
             data-search="
                 {{ lead.name|lower }}
@@ -586,82 +584,6 @@
 
                 <div
                     class="reply-status"
-                ></div>
-
-            </section>
-
-
-
-
-            <section class="pro-lead-actions">
-
-                <div class="pro-action-heading">
-
-                    <div>
-
-                        <span>
-                            QUICK ACTIONS
-                        </span>
-
-                        <strong>
-                            Update this lead faster
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-                <div class="pro-action-buttons">
-
-                    <button
-                        type="button"
-                        class="quick-status"
-                        data-quick-status="contacted"
-                    >
-                        Contacted
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="quick-status"
-                        data-quick-status="negotiating"
-                    >
-                        Negotiating
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="quick-status quick-won"
-                        data-quick-status="won"
-                    >
-                        Won Deal
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="quick-status"
-                        data-quick-status="closed"
-                    >
-                        Closed
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="delete-lead"
-                    >
-                        Delete Lead
-                    </button>
-
-                </div>
-
-
-                <div
-                    class="pro-action-status"
                 ></div>
 
             </section>

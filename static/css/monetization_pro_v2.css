@@ -1,0 +1,285 @@
+﻿/* ==========================================================
+   RAJ RAUSHAN OFFICIAL
+   MONETIZATION DASHBOARD PRO V2
+========================================================== */
+
+
+/* QUICK ACTION BOX */
+
+.pro-lead-actions {
+    margin-top: 17px;
+
+    padding: 18px;
+
+    border:
+        1px solid #e1e7ef;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fafcff,
+            #f2f6fb
+        );
+}
+
+
+.pro-action-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 13px;
+}
+
+
+.pro-action-heading span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #536dfe;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.6px;
+}
+
+
+.pro-action-heading strong {
+    color: #101827;
+
+    font-size: 14px;
+}
+
+
+.pro-action-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.pro-action-buttons button {
+    min-height: 40px;
+
+    padding: 0 14px;
+
+    border:
+        1px solid #dce3ed;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #354052;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    transition:
+        transform .18s ease,
+        background .18s ease,
+        border-color .18s ease;
+}
+
+
+.pro-action-buttons button:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #a8b5ca;
+}
+
+
+.quick-status[data-quick-status="contacted"]:hover {
+    background: #e8f6ff;
+
+    color: #166487;
+}
+
+
+.quick-status[data-quick-status="negotiating"]:hover {
+    background: #fff7dd;
+
+    color: #8a6500;
+}
+
+
+.quick-won {
+    border-color:
+        #cce8d7 !important;
+
+    background:
+        #e9f8ef !important;
+
+    color:
+        #147a47 !important;
+}
+
+
+.quick-won:hover {
+    background:
+        #dff4e7 !important;
+}
+
+
+.quick-status[data-quick-status="closed"]:hover {
+    background: #edf0f4;
+
+    color: #667085;
+}
+
+
+.delete-lead {
+    margin-left: auto;
+
+    border-color:
+        #f1cccc !important;
+
+    color:
+        #b42318 !important;
+}
+
+
+.delete-lead:hover {
+    background:
+        #fff0ef !important;
+
+    border-color:
+        #e7a5a1 !important;
+}
+
+
+.pro-action-status {
+    min-height: 15px;
+
+    margin-top: 10px;
+
+    color: #667085;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+/* FILTER EMPTY STATE */
+
+#leadFilterEmpty {
+    padding: 45px !important;
+
+    border:
+        1px solid #e1e7ef;
+
+    border-radius: 18px !important;
+
+    background: white !important;
+
+    box-shadow:
+        0 10px 30px
+        rgba(15,23,42,.05);
+
+    color: #667085;
+
+    text-align: center;
+}
+
+
+/* IMPROVED LEAD CARD HOVER */
+
+.lead-card {
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.lead-card:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 17px 42px
+        rgba(15,23,42,.08);
+}
+
+
+/* SAVE BUTTON */
+
+.save-lead {
+    transition:
+        transform .18s ease,
+        opacity .18s ease;
+}
+
+
+.save-lead:hover {
+    transform:
+        translateY(-2px);
+}
+
+
+.save-lead:disabled {
+    opacity: .6;
+
+    cursor: wait;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .pro-action-buttons {
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+    }
+
+
+    .pro-action-buttons button {
+        width: 100%;
+    }
+
+
+    .delete-lead {
+        margin-left: 0;
+
+        grid-column:
+            1 / -1;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .pro-action-buttons {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .delete-lead {
+        grid-column: auto;
+    }
+
+}
