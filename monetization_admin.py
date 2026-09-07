@@ -1,9 +1,9 @@
-from werkzeug.security import check_password_hash
-from pathlib import Path
-import os
+﻿import os
 import hmac
 import secrets
 import sqlite3
+
+from datetime import datetime
 
 from dotenv import load_dotenv
 
@@ -17,7 +17,11 @@ from flask import (
     url_for,
 )
 
-load_dotenv(dotenv_path=".env", override=True)
+load_dotenv(
+    dotenv_path=".env",
+    override=True,
+)
+
 
 monetization_admin_bp = Blueprint(
     "monetization_admin",
@@ -37,7 +41,9 @@ def get_connection():
         DB_PATH
     )
 
-    connection.row_factory = sqlite3.Row
+    connection.row_factory = (
+        sqlite3.Row
+    )
 
     return connection
 
@@ -77,7 +83,8 @@ def ensure_schema():
         connection.execute(
             """
             ALTER TABLE brand_enquiries
-            ADD COLUMN estimated_value REAL DEFAULT 0
+            ADD COLUMN estimated_value
+            REAL DEFAULT 0
             """
         )
 
@@ -86,7 +93,8 @@ def ensure_schema():
         connection.execute(
             """
             ALTER TABLE brand_enquiries
-            ADD COLUMN notes TEXT DEFAULT ''
+            ADD COLUMN notes
+            TEXT DEFAULT ''
             """
         )
 
@@ -95,7 +103,8 @@ def ensure_schema():
         connection.execute(
             """
             ALTER TABLE brand_enquiries
-            ADD COLUMN updated_at TEXT
+            ADD COLUMN updated_at
+            TEXT
             """
         )
 
@@ -107,7 +116,7 @@ ensure_schema()
 
 
 # ============================================================
-# APP SECURITY
+# SESSION SECURITY
 # ============================================================
 
 @monetization_admin_bp.record_once
@@ -118,6 +127,7 @@ def configure_admin(state):
     )
 
     if secret:
+
         state.app.secret_key = secret
 
 
@@ -156,17 +166,15 @@ def valid_csrf():
 
 
 # ============================================================
-# LOGIN
+# LOCAL CREATOR ACCESS
 # ============================================================
 
 @monetization_admin_bp.route(
-    "/monetization-login",
-    methods=["GET", "POST"],
+    "/monetization-login"
 )
 def monetization_login():
 
-    # LOCAL DEVELOPMENT ONLY
-    # Auto-login works only from this computer.
+    # Local development only.
     if request.remote_addr in (
         "127.0.0.1",
         "::1",
@@ -193,28 +201,14 @@ def monetization_login():
         )
 
 
-    # Non-local access still stays protected.
-    if logged_in():
-
-        return redirect(
-            url_for(
-                "monetization_admin.monetization_dashboard"
-            )
-        )
-
-
     return render_template(
         "monetization_login.html",
         error=(
-            "Admin login is available "
+            "Creator dashboard is available "
             "only from the local creator system."
         ),
     )
 
-
-# ============================================================
-# LOGOUT
-# ============================================================
 
 @monetization_admin_bp.route(
     "/monetization-logout"
@@ -223,31 +217,426 @@ def monetization_logout():
 
     session.clear()
 
-    return redirect(
-        url_for(
-            "monetization_admin.monetization_login"
+    return redirect("/")
+
+
+# ============================================================
+# AUTO VALUE ESTIMATION
+# ============================================================
+
+def estimate_budget_value(
+    budget
+):
+
+    text = str(
+        budget
+        or ""
+    ).lower()
+
+
+    if "30,000+" in text:
+
+        return 45000
+
+
+    if (
+        "15,000" in text
+        and
+        "30,000" in text
+    ):
+
+        return 22500
+
+
+    if (
+        "5,000" in text
+        and
+        "15,000" in text
+    ):
+
+        return 10000
+
+
+    if "under" in text:
+
+        return 3500
+
+
+    if "discuss" in text:
+
+        return 12000
+
+
+    return 0
+
+
+# ============================================================
+# LEAD PRIORITY ENGINE
+# ============================================================
+
+def calculate_lead_intelligence(
+    lead
+):
+
+    budget = str(
+        lead.get(
+            "budget",
+            ""
+        )
+        or ""
+    )
+
+
+    service = str(
+        lead.get(
+            "service",
+            ""
+        )
+        or ""
+    ).lower()
+
+
+    status = str(
+        lead.get(
+            "status",
+            "new"
+        )
+        or "new"
+    ).lower()
+
+
+    message = str(
+        lead.get(
+            "message",
+            ""
+        )
+        or ""
+    )
+
+
+    manual_value = float(
+        lead.get(
+            "estimated_value",
+            0
+        )
+        or 0
+    )
+
+
+    automatic_value = (
+        estimate_budget_value(
+            budget
         )
     )
 
 
-# ============================================================
-# PRIVATE DASHBOARD
-# ============================================================
+    effective_value = (
+        manual_value
+        if manual_value > 0
+        else automatic_value
+    )
 
-@monetization_admin_bp.route(
-    "/monetization-dashboard"
-)
-def monetization_dashboard():
 
-    if not logged_in():
+    score = 10
 
-        return redirect(
-            url_for(
-                "monetization_admin.monetization_login"
-            )
+
+    # --------------------------------------------------------
+    # BUDGET SCORE
+    # --------------------------------------------------------
+
+    budget_lower = (
+        budget.lower()
+    )
+
+
+    if "30,000+" in budget_lower:
+
+        score += 40
+
+
+    elif (
+        "15,000" in budget_lower
+        and
+        "30,000" in budget_lower
+    ):
+
+        score += 30
+
+
+    elif (
+        "5,000" in budget_lower
+        and
+        "15,000" in budget_lower
+    ):
+
+        score += 20
+
+
+    elif "under" in budget_lower:
+
+        score += 10
+
+
+    elif "discuss" in budget_lower:
+
+        score += 15
+
+
+    else:
+
+        score += 5
+
+
+    # --------------------------------------------------------
+    # SERVICE SCORE
+    # --------------------------------------------------------
+
+    if "custom travel campaign" in service:
+
+        score += 25
+
+
+    elif "youtube" in service:
+
+        score += 20
+
+
+    elif (
+        "hotel" in service
+        or
+        "hospitality" in service
+    ):
+
+        score += 18
+
+
+    elif "destination" in service:
+
+        score += 18
+
+
+    elif "ugc" in service:
+
+        score += 16
+
+
+    elif "short" in service:
+
+        score += 15
+
+
+    else:
+
+        score += 10
+
+
+    # --------------------------------------------------------
+    # PIPELINE STATUS
+    # --------------------------------------------------------
+
+    if status == "negotiating":
+
+        score += 20
+
+
+    elif status == "contacted":
+
+        score += 12
+
+
+    elif status == "new":
+
+        score += 10
+
+
+    elif status in (
+        "won",
+        "closed",
+    ):
+
+        score = 0
+
+
+    # --------------------------------------------------------
+    # FRESHNESS
+    # --------------------------------------------------------
+
+    created_text = str(
+        lead.get(
+            "created_at",
+            ""
+        )
+        or ""
+    )
+
+
+    try:
+
+        created = datetime.fromisoformat(
+            created_text
         )
 
+        age_days = max(
+            0,
+            (
+                datetime.now()
+                -
+                created
+            ).days
+        )
+
+
+        if age_days <= 1:
+
+            score += 15
+
+
+        elif age_days <= 3:
+
+            score += 10
+
+
+        elif age_days <= 7:
+
+            score += 5
+
+
+    except (
+        ValueError,
+        TypeError,
+    ):
+
+        age_days = None
+
+
+    # --------------------------------------------------------
+    # CAMPAIGN DETAIL QUALITY
+    # --------------------------------------------------------
+
+    if len(message) >= 200:
+
+        score += 5
+
+
+    score = min(
+        100,
+        max(
+            0,
+            score
+        )
+    )
+
+
+    # --------------------------------------------------------
+    # PRIORITY LABEL
+    # --------------------------------------------------------
+
+    if status in (
+        "won",
+        "closed",
+    ):
+
+        priority = "complete"
+
+
+    elif score >= 70:
+
+        priority = "high"
+
+
+    elif score >= 45:
+
+        priority = "medium"
+
+
+    else:
+
+        priority = "low"
+
+
+    # --------------------------------------------------------
+    # NEXT ACTION
+    # --------------------------------------------------------
+
+    if status == "negotiating":
+
+        action = (
+            "Follow up and close the deal"
+        )
+
+
+    elif status == "contacted":
+
+        action = (
+            "Send a follow-up message"
+        )
+
+
+    elif (
+        status == "new"
+        and
+        score >= 70
+    ):
+
+        action = (
+            "Contact this lead first"
+        )
+
+
+    elif status == "new":
+
+        action = (
+            "Send the first response"
+        )
+
+
+    elif status == "won":
+
+        action = (
+            "Prepare campaign delivery"
+        )
+
+
+    else:
+
+        action = (
+            "No immediate action"
+        )
+
+
+    return {
+        "priority_score":
+            score,
+
+        "priority_label":
+            priority,
+
+        "recommended_action":
+            action,
+
+        "effective_value":
+            effective_value,
+
+        "auto_estimated":
+            (
+                manual_value <= 0
+                and
+                automatic_value > 0
+            ),
+
+        "age_days":
+            age_days,
+    }
+
+
+# ============================================================
+# BUILD DASHBOARD DATA
+# ============================================================
+
+def build_dashboard_data():
+
     connection = get_connection()
+
 
     rows = connection.execute(
         """
@@ -269,56 +658,28 @@ def monetization_dashboard():
         """
     ).fetchall()
 
-    leads = [
-        dict(row)
-        for row in rows
-    ]
 
-    total = len(leads)
+    leads = []
 
-    new_count = sum(
-        1
-        for lead in leads
-        if lead["status"] == "new"
-    )
 
-    contacted_count = sum(
-        1
-        for lead in leads
-        if lead["status"] == "contacted"
-    )
+    for row in rows:
 
-    negotiating_count = sum(
-        1
-        for lead in leads
-        if lead["status"] == "negotiating"
-    )
+        lead = dict(row)
 
-    won_count = sum(
-        1
-        for lead in leads
-        if lead["status"] == "won"
-    )
-
-    potential_value = sum(
-        float(
-            lead["estimated_value"]
-            or 0
+        intelligence = (
+            calculate_lead_intelligence(
+                lead
+            )
         )
-        for lead in leads
-        if lead["status"] not in (
-            "closed",
-        )
-    )
 
-    won_value = sum(
-        float(
-            lead["estimated_value"]
-            or 0
+        lead.update(
+            intelligence
         )
-        for lead in leads
-        if lead["status"] == "won"
-    )
+
+        leads.append(
+            lead
+        )
+
 
     service_rows = connection.execute(
         """
@@ -332,36 +693,258 @@ def monetization_dashboard():
         """
     ).fetchall()
 
+
     connection.close()
+
+
+    total = len(
+        leads
+    )
+
+
+    new_count = sum(
+        1
+        for lead in leads
+        if lead["status"] == "new"
+    )
+
+
+    contacted_count = sum(
+        1
+        for lead in leads
+        if lead["status"] == "contacted"
+    )
+
+
+    negotiating_count = sum(
+        1
+        for lead in leads
+        if lead["status"] == "negotiating"
+    )
+
+
+    won_count = sum(
+        1
+        for lead in leads
+        if lead["status"] == "won"
+    )
+
+
+    potential_value = sum(
+        lead["effective_value"]
+        for lead in leads
+        if lead["status"]
+        not in (
+            "won",
+            "closed",
+        )
+    )
+
+
+    won_value = sum(
+        lead["effective_value"]
+        for lead in leads
+        if lead["status"]
+        == "won"
+    )
+
+
+    auto_estimated_count = sum(
+        1
+        for lead in leads
+        if lead["auto_estimated"]
+    )
+
+
+    open_leads = [
+        lead
+        for lead in leads
+        if lead["status"]
+        not in (
+            "won",
+            "closed",
+        )
+    ]
+
+
+    follow_up_lead = None
+
+
+    if open_leads:
+
+        follow_up_lead = max(
+            open_leads,
+            key=lambda item:
+                item[
+                    "priority_score"
+                ],
+        )
+
+
+    return {
+        "leads":
+            leads,
+
+        "total":
+            total,
+
+        "new_count":
+            new_count,
+
+        "contacted_count":
+            contacted_count,
+
+        "negotiating_count":
+            negotiating_count,
+
+        "won_count":
+            won_count,
+
+        "potential_value":
+            potential_value,
+
+        "won_value":
+            won_value,
+
+        "auto_estimated_count":
+            auto_estimated_count,
+
+        "follow_up_lead":
+            follow_up_lead,
+
+        "top_services":
+            [
+                dict(row)
+                for row
+                in service_rows
+            ],
+    }
+
+
+# ============================================================
+# DASHBOARD
+# ============================================================
+
+@monetization_admin_bp.route(
+    "/monetization-dashboard"
+)
+def monetization_dashboard():
+
+    if not logged_in():
+
+        return redirect(
+            url_for(
+                "monetization_admin.monetization_login"
+            )
+        )
+
+
+    data = (
+        build_dashboard_data()
+    )
+
 
     return render_template(
         "monetization_dashboard.html",
 
-        leads=leads,
-
-        total=total,
-
-        new_count=new_count,
-
-        contacted_count=contacted_count,
-
-        negotiating_count=negotiating_count,
-
-        won_count=won_count,
-
-        potential_value=potential_value,
-
-        won_value=won_value,
-
-        top_services=[
-            dict(row)
-            for row in service_rows
-        ],
+        **data,
 
         csrf_token=session.get(
             "monetization_csrf",
             ""
         ),
+    )
+
+
+# ============================================================
+# PRIVATE INTELLIGENCE API
+# ============================================================
+
+@monetization_admin_bp.route(
+    "/api/monetization/intelligence"
+)
+def monetization_intelligence_api():
+
+    if not logged_in():
+
+        return jsonify(
+            {
+                "status":
+                    "unauthorized"
+            }
+        ), 401
+
+
+    data = (
+        build_dashboard_data()
+    )
+
+
+    follow_up = (
+        data[
+            "follow_up_lead"
+        ]
+    )
+
+
+    follow_up_data = None
+
+
+    if follow_up:
+
+        follow_up_data = {
+            "id":
+                follow_up["id"],
+
+            "name":
+                follow_up["name"],
+
+            "company":
+                follow_up["company"],
+
+            "service":
+                follow_up["service"],
+
+            "priority_score":
+                follow_up[
+                    "priority_score"
+                ],
+
+            "recommended_action":
+                follow_up[
+                    "recommended_action"
+                ],
+
+            "estimated_value":
+                follow_up[
+                    "effective_value"
+                ],
+        }
+
+
+    return jsonify(
+        {
+            "status":
+                "success",
+
+            "potential_pipeline":
+                data[
+                    "potential_value"
+                ],
+
+            "won_value":
+                data[
+                    "won_value"
+                ],
+
+            "auto_estimated_leads":
+                data[
+                    "auto_estimated_count"
+                ],
+
+            "follow_up_first":
+                follow_up_data,
+        }
     )
 
 
@@ -373,7 +956,9 @@ def monetization_dashboard():
     "/api/monetization/lead/<int:lead_id>",
     methods=["POST"],
 )
-def update_lead(lead_id):
+def update_lead(
+    lead_id
+):
 
     if not logged_in():
 
@@ -384,6 +969,7 @@ def update_lead(lead_id):
             }
         ), 401
 
+
     if not valid_csrf():
 
         return jsonify(
@@ -393,12 +979,14 @@ def update_lead(lead_id):
             }
         ), 403
 
+
     data = (
         request.get_json(
             silent=True
         )
         or {}
     )
+
 
     allowed = {
         "new",
@@ -408,12 +996,14 @@ def update_lead(lead_id):
         "closed",
     }
 
+
     status = str(
         data.get(
             "status",
             "new"
         )
     ).strip().lower()
+
 
     if status not in allowed:
 
@@ -426,6 +1016,7 @@ def update_lead(lead_id):
                     "Invalid status."
             }
         ), 400
+
 
     try:
 
@@ -447,6 +1038,7 @@ def update_lead(lead_id):
 
         value = 0
 
+
     notes = str(
         data.get(
             "notes",
@@ -454,9 +1046,11 @@ def update_lead(lead_id):
         )
     ).strip()[:2000]
 
+
     connection = get_connection()
 
-    lead = connection.execute(
+
+    exists = connection.execute(
         """
         SELECT id
         FROM brand_enquiries
@@ -467,7 +1061,8 @@ def update_lead(lead_id):
         )
     ).fetchone()
 
-    if not lead:
+
+    if not exists:
 
         connection.close()
 
@@ -478,14 +1073,17 @@ def update_lead(lead_id):
             }
         ), 404
 
+
     connection.execute(
         """
         UPDATE brand_enquiries
+
         SET
             status = ?,
             estimated_value = ?,
             notes = ?,
             updated_at = CURRENT_TIMESTAMP
+
         WHERE id = ?
         """,
         (
@@ -496,8 +1094,10 @@ def update_lead(lead_id):
         )
     )
 
+
     connection.commit()
     connection.close()
+
 
     return jsonify(
         {

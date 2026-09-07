@@ -38,21 +38,16 @@
 <header class="admin-nav">
 
     <a href="/">
-
         <strong>
             RR
         </strong>
 
         <span>
-
             Raj Raushan Official
-
             <small>
                 MONETIZATION ADMIN
             </small>
-
         </span>
-
     </a>
 
 
@@ -63,7 +58,7 @@
         </a>
 
         <a href="/monetization-logout">
-            Exit
+            Logout
         </a>
 
     </div>
@@ -87,8 +82,8 @@
         </h1>
 
         <p>
-            Leads, campaign value and
-            automated follow-up intelligence.
+            Track brand leads,
+            campaign value and deal progress.
         </p>
 
     </div>
@@ -145,10 +140,6 @@
             ₹{{ "{:,.0f}".format(potential_value) }}
         </strong>
 
-        <p>
-            Includes automatic budget estimates.
-        </p>
-
     </article>
 
 
@@ -162,151 +153,41 @@
             ₹{{ "{:,.0f}".format(won_value) }}
         </strong>
 
-        <p>
-            Estimated value of won deals.
-        </p>
-
     </article>
 
 
     <article>
 
         <span>
-            AUTO-ESTIMATED
+            TOP SERVICE
         </span>
 
-        <strong>
-            {{ auto_estimated_count }}
+        {% if top_services %}
+
+        <strong class="service-name">
+            {{ top_services[0].service }}
         </strong>
 
-        <p>
-            Leads automatically valued
-            from their budget range.
-        </p>
+        {% else %}
+
+        <strong class="service-name">
+            No data yet
+        </strong>
+
+        {% endif %}
 
     </article>
 
 </section>
 
 
-{% if follow_up_lead %}
-
-<section class="intelligence-panel">
-
-    <div class="intelligence-copy">
-
-        <span>
-            AUTO LEAD INTELLIGENCE
-        </span>
-
-        <h2>
-            Follow Up First
-        </h2>
-
-        <p>
-            This recommendation is based on
-            budget, service type, lead freshness
-            and pipeline stage.
-        </p>
-
-    </div>
-
-
-    <div class="priority-lead">
-
-        <div class="priority-top">
-
-            <span
-                class="
-                    priority-pill
-                    priority-{{ follow_up_lead.priority_label }}
-                "
-            >
-                PRIORITY
-                {{ follow_up_lead.priority_score }}/100
-            </span>
-
-            <span>
-                Lead #{{ follow_up_lead.id }}
-            </span>
-
-        </div>
-
-
-        <h3>
-            {{ follow_up_lead.name }}
-        </h3>
-
-        <p>
-            {{ follow_up_lead.company or "Company not specified" }}
-        </p>
-
-
-        <div class="priority-details">
-
-            <div>
-
-                <span>
-                    SERVICE
-                </span>
-
-                <strong>
-                    {{ follow_up_lead.service }}
-                </strong>
-
-            </div>
-
-
-            <div>
-
-                <span>
-                    ESTIMATED VALUE
-                </span>
-
-                <strong>
-                    ₹{{ "{:,.0f}".format(follow_up_lead.effective_value) }}
-                </strong>
-
-            </div>
-
-        </div>
-
-
-        <div class="next-action">
-
-            <span>
-                RECOMMENDED NEXT ACTION
-            </span>
-
-            <strong>
-                {{ follow_up_lead.recommended_action }}
-            </strong>
-
-        </div>
-
-    </div>
-
-</section>
-
-{% endif %}
-
-
 <section class="leads-section">
-
 
     <div class="leads-title">
 
-        <div>
-
-            <span class="tiny-label">
-                BUSINESS PIPELINE
-            </span>
-
-            <h2>
-                Brand Enquiries
-            </h2>
-
-        </div>
+        <h2>
+            Brand Enquiries
+        </h2>
 
 
         <select id="statusFilter">
@@ -377,33 +258,14 @@
                 </div>
 
 
-                <div class="lead-badges">
-
-                    {% if lead.status not in ["won", "closed"] %}
-
-                    <b
-                        class="
-                            priority-pill
-                            priority-{{ lead.priority_label }}
-                        "
-                    >
-                        {{ lead.priority_score }}/100
-                    </b>
-
-                    {% endif %}
-
-
-                    <b class="status status-{{ lead.status }}">
-                        {{ lead.status|upper }}
-                    </b>
-
-                </div>
+                <b class="status status-{{ lead.status }}">
+                    {{ lead.status|upper }}
+                </b>
 
             </div>
 
 
             <div class="lead-info">
-
 
                 <div>
 
@@ -439,40 +301,6 @@
 
                     <strong>
                         {{ lead.budget or "Not specified" }}
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        ESTIMATED VALUE
-                    </span>
-
-                    <strong>
-                        ₹{{ "{:,.0f}".format(lead.effective_value) }}
-                    </strong>
-
-                    {% if lead.auto_estimated %}
-
-                    <small class="auto-value-note">
-                        AUTO ESTIMATE
-                    </small>
-
-                    {% endif %}
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        NEXT ACTION
-                    </span>
-
-                    <strong>
-                        {{ lead.recommended_action }}
                     </strong>
 
                 </div>
@@ -539,7 +367,7 @@
 
                 <label>
 
-                    Manual Deal Value ₹
+                    Deal Value ₹
 
                     <input
                         class="lead-value"
@@ -547,7 +375,6 @@
                         min="0"
                         step="100"
                         value="{{ lead.estimated_value or 0 }}"
-                        placeholder="{{ lead.effective_value }}"
                     >
 
                 </label>
@@ -583,7 +410,9 @@
         {% else %}
 
         <div class="empty-leads">
+
             No brand enquiries yet.
+
         </div>
 
         {% endfor %}

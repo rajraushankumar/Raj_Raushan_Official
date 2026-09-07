@@ -728,3 +728,377 @@ body {
     }
 
 }
+
+/* ==========================================================
+   AUTO LEAD INTELLIGENCE
+========================================================== */
+
+.money-grid article p {
+    margin:
+        8px 0 0;
+
+    color:
+        #7a8798;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.45;
+}
+
+
+.money-grid .won-card p {
+    color:
+        #c8e1d1;
+}
+
+
+/* FOLLOW UP PANEL */
+
+.intelligence-panel {
+    margin-top:
+        18px;
+
+    padding:
+        32px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        .85fr 1.15fr;
+
+    gap:
+        35px;
+
+    border-radius:
+        23px;
+
+    color:
+        #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(90,130,220,.25),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #0b1421,
+            #1b3454
+        );
+
+    box-shadow:
+        0 22px 55px
+        rgba(15,23,42,.18);
+}
+
+
+.intelligence-copy > span,
+.tiny-label {
+    color:
+        #91a5ff;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        2px;
+}
+
+
+.intelligence-copy h2 {
+    margin:
+        9px 0 12px;
+
+    font-size:
+        38px;
+}
+
+
+.intelligence-copy p {
+    max-width:
+        430px;
+
+    color:
+        #bdc9d8;
+
+    line-height:
+        1.7;
+}
+
+
+.priority-lead {
+    padding:
+        25px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255,255,255,.06);
+}
+
+
+.priority-top {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    color:
+        #b9c6d7;
+
+    font-size:
+        10px;
+}
+
+
+.priority-lead h3 {
+    margin:
+        20px 0 5px;
+
+    font-size:
+        29px;
+}
+
+
+.priority-lead > p {
+    margin:
+        0;
+
+    color:
+        #bdc8d6;
+}
+
+
+.priority-details {
+    margin-top:
+        22px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        10px;
+}
+
+
+.priority-details div {
+    padding:
+        14px;
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(255,255,255,.06);
+}
+
+
+.priority-details span,
+.next-action span {
+    display:
+        block;
+
+    margin-bottom:
+        6px;
+
+    color:
+        #aab8ca;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.2px;
+}
+
+
+.next-action {
+    margin-top:
+        11px;
+
+    padding:
+        15px;
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+
+/* PRIORITY */
+
+.lead-badges {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+}
+
+
+.priority-pill {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        7px 10px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .7px;
+}
+
+
+.priority-high {
+    color:
+        #8b1d1d;
+
+    background:
+        #ffe4e4;
+}
+
+
+.priority-medium {
+    color:
+        #816000;
+
+    background:
+        #fff4cc;
+}
+
+
+.priority-low {
+    color:
+        #3554d1;
+
+    background:
+        #eaf0ff;
+}
+
+
+.priority-complete {
+    color:
+        #667085;
+
+    background:
+        #edf0f4;
+}
+
+
+/* FLEXIBLE INFO GRID */
+
+.lead-info {
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                180px,
+                1fr
+            )
+        ) !important;
+}
+
+
+.auto-value-note {
+    display:
+        inline-block;
+
+    margin-top:
+        6px;
+
+    padding:
+        4px 6px;
+
+    border-radius:
+        5px;
+
+    color:
+        #3554d1;
+
+    background:
+        #eaf0ff;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+}
+
+
+@media (max-width: 850px) {
+
+    .intelligence-panel {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .intelligence-panel {
+        padding:
+            22px;
+    }
+
+    .priority-details {
+        grid-template-columns:
+            1fr;
+    }
+
+    .lead-badges {
+        flex-wrap:
+            wrap;
+    }
+
+}
+
