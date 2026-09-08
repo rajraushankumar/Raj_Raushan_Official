@@ -2479,17 +2479,8 @@ def add_monetization_payment(
         """
         SELECT
             id,
-            status,
-            service,
-            budget,
-            estimated_value,
-            COALESCE(
-                proposal_value,
-                0
-            ) AS proposal_value
-
+            status
         FROM brand_enquiries
-
         WHERE id = ?
         """,
         (
@@ -2508,72 +2499,6 @@ def add_monetization_payment(
                     "not_found"
             }
         ), 404
-
-
-    proposal_value = float(
-        lead["proposal_value"]
-        or 0
-    )
-
-
-    estimated_value = float(
-        lead["estimated_value"]
-        or 0
-    )
-
-
-    # --------------------------------------------------------
-    # AUTOMATIC DEAL VALUE
-    #
-    # Priority:
-    # 1. Proposal value
-    # 2. Manual estimated value
-    # 3. Budget-range estimate
-    # --------------------------------------------------------
-
-    target_value = (
-        proposal_value
-        if proposal_value > 0
-        else estimated_value
-    )
-
-
-    if target_value <= 0:
-
-        target_value = float(
-            estimate_budget_value(
-                lead["budget"]
-            )
-            or 0
-        )
-
-
-    # Persist automatic target so all dashboard calculations
-    # use the same deal value from now on.
-
-    if (
-        proposal_value <= 0
-        and
-        estimated_value <= 0
-        and
-        target_value > 0
-    ):
-
-        connection.execute(
-            """
-            UPDATE brand_enquiries
-
-            SET
-                estimated_value = ?,
-                updated_at = CURRENT_TIMESTAMP
-
-            WHERE id = ?
-            """,
-            (
-                target_value,
-                lead_id,
-            )
-        )
 
 
     connection.execute(
@@ -2601,8 +2526,7 @@ def add_monetization_payment(
     )
 
 
-    # Any real payment means the collaboration became a deal.
-
+    # Actual payment means this deal is real/won.
     if lead["status"] != "closed":
 
         connection.execute(
@@ -2651,11 +2575,6 @@ def add_monetization_payment(
             "payment_status":
                 updated[
                     "payment_status"
-                ],
-
-            "deal_value":
-                updated[
-                    "target_value"
                 ],
         }
     )
