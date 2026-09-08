@@ -1,0 +1,1181 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="Explore all public YouTube travel playlists from Raj Raushan Official."
+>
+
+<title>
+    Travel Playlists | Raj Raushan Official
+</title>
+
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/favicon.svg"
+>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #f4f7fb;
+
+    color:
+        #101827;
+
+    overflow-x:
+        hidden;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.playlist-nav {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(8,13,23,.98);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+.playlist-nav-inner {
+    width: 92%;
+
+    max-width: 1280px;
+
+    min-height: 72px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: 25px;
+}
+
+
+.playlist-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    color: white;
+
+    text-decoration: none;
+}
+
+
+.playlist-logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        #eef3ff;
+
+    color:
+        #101827;
+
+    font-weight: 900;
+}
+
+
+.playlist-brand-text {
+    display: flex;
+
+    flex-direction:
+        column;
+}
+
+
+.playlist-brand-text strong {
+    font-size: 15px;
+}
+
+
+.playlist-brand-text small {
+    margin-top: 4px;
+
+    color: #e5e7eb;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.playlist-nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 21px;
+}
+
+
+.playlist-nav-links a {
+    color:
+        #d8dee9;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.playlist-nav-links a:hover {
+    color: white;
+}
+
+
+.playlist-subscribe {
+    padding:
+        12px 18px;
+
+    border-radius:
+        10px;
+
+    background:
+        #ffffff;
+
+    color:
+        #101827 !important;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.playlist-hero {
+    padding:
+        78px 20px;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(65,110,190,.25),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            #09101a,
+            #14273d
+        );
+}
+
+
+.playlist-hero-inner {
+    width: 92%;
+
+    max-width: 1150px;
+
+    margin: auto;
+}
+
+
+.playlist-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    padding:
+        8px 13px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    border-radius:
+        999px;
+
+    color:
+        #dce4ef;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing:
+        2.5px;
+}
+
+
+.playlist-hero h1 {
+    max-width: 900px;
+
+    margin:
+        0 0 17px;
+
+    font-size:
+        clamp(
+            43px,
+            6vw,
+            70px
+        );
+
+    line-height: 1.04;
+
+    letter-spacing:
+        -2px;
+}
+
+
+.playlist-hero p {
+    max-width: 720px;
+
+    margin: 0;
+
+    color:
+        #c5d0dd;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.playlist-stats {
+    width: 92%;
+
+    max-width: 1150px;
+
+    margin:
+        -28px auto 0;
+
+    position: relative;
+
+    z-index: 3;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap: 12px;
+}
+
+
+.playlist-stat {
+    padding:
+        20px 23px;
+
+    border:
+        1px solid
+        #e4e9f2;
+
+    border-radius:
+        17px;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 12px 35px
+        rgba(15,23,42,.08);
+}
+
+
+.playlist-stat span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color:
+        #738097;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing:
+        1.5px;
+}
+
+
+.playlist-stat strong {
+    font-size: 28px;
+}
+
+
+/* =========================================================
+   EXPLORER
+========================================================= */
+
+.playlist-section {
+    padding:
+        65px 20px 95px;
+}
+
+
+.playlist-container {
+    width: 92%;
+
+    max-width: 1250px;
+
+    margin: auto;
+}
+
+
+.playlist-toolbar {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-end;
+
+    gap: 25px;
+
+    margin-bottom:
+        30px;
+}
+
+
+.playlist-toolbar h2 {
+    margin:
+        0 0 8px;
+
+    font-size:
+        clamp(
+            31px,
+            4vw,
+            46px
+        );
+}
+
+
+.playlist-toolbar p {
+    margin: 0;
+
+    color:
+        #677287;
+}
+
+
+/* SEARCH */
+
+.playlist-search {
+    width:
+        min(
+            100%,
+            330px
+        );
+
+    min-height: 47px;
+
+    padding:
+        0 16px;
+
+    border:
+        1px solid
+        #dce3ed;
+
+    border-radius:
+        12px;
+
+    background:
+        #ffffff;
+
+    color:
+        #101827;
+
+    font-size:
+        14px;
+
+    outline: none;
+}
+
+
+.playlist-search:focus {
+    border-color:
+        #536dfe;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(83,109,254,.12);
+}
+
+
+/* =========================================================
+   PLAYLIST CARDS
+========================================================= */
+
+.playlist-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+
+    gap: 20px;
+}
+
+
+.youtube-playlist-card {
+    overflow: hidden;
+
+    display: block;
+
+    border:
+        1px solid
+        #e2e8f1;
+
+    border-radius:
+        21px;
+
+    background:
+        #ffffff;
+
+    color:
+        #101827;
+
+    text-decoration:
+        none;
+
+    box-shadow:
+        0 12px 35px
+        rgba(15,23,42,.065);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+
+.youtube-playlist-card:hover {
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(53,84,209,.28);
+
+    box-shadow:
+        0 22px 50px
+        rgba(15,23,42,.13);
+}
+
+
+/* THUMBNAIL */
+
+.playlist-thumbnail {
+    position: relative;
+
+    aspect-ratio:
+        16 / 9;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #253c5e
+        );
+}
+
+
+.playlist-thumbnail img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .4s ease;
+}
+
+
+.youtube-playlist-card:hover
+.playlist-thumbnail img {
+
+    transform:
+        scale(1.045);
+}
+
+
+.playlist-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 40%,
+            rgba(5,10,17,.65)
+        );
+}
+
+
+.playlist-count-badge {
+    position: absolute;
+
+    right: 15px;
+    bottom: 15px;
+
+    padding:
+        8px 11px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(5,10,17,.86);
+
+    color:
+        #ffffff;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+/* CONTENT */
+
+.playlist-card-content {
+    padding:
+        22px;
+}
+
+
+.playlist-card-label {
+    display: block;
+
+    margin-bottom:
+        9px;
+
+    color:
+        #536dfe;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.7px;
+}
+
+
+.playlist-card-content h3 {
+    margin:
+        0 0 11px;
+
+    color:
+        #101827;
+
+    font-size:
+        20px;
+
+    line-height:
+        1.35;
+}
+
+
+.playlist-description {
+    min-height:
+        43px;
+
+    margin:
+        0 0 18px;
+
+    color:
+        #6b7689;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.6;
+
+    display:
+        -webkit-box;
+
+    -webkit-line-clamp:
+        2;
+
+    -webkit-box-orient:
+        vertical;
+
+    overflow:
+        hidden;
+}
+
+
+.playlist-open {
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    padding-top:
+        16px;
+
+    border-top:
+        1px solid
+        #edf0f5;
+
+    color:
+        #101827;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+}
+
+
+/* EMPTY */
+
+.playlist-empty {
+    padding: 45px;
+
+    border-radius: 20px;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid
+        #e3e8f0;
+
+    text-align:
+        center;
+}
+
+
+.playlist-empty h3 {
+    margin:
+        0 0 9px;
+}
+
+
+.playlist-empty p {
+    color:
+        #6b7689;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .playlist-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .playlist-nav-links {
+        display: none;
+    }
+
+    .playlist-toolbar {
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+    .playlist-search {
+        width: 100%;
+        max-width: none;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .playlist-nav-inner {
+        min-height: 64px;
+    }
+
+    .playlist-hero {
+        padding:
+            60px 18px;
+    }
+
+    .playlist-hero h1 {
+        font-size:
+            41px;
+    }
+
+    .playlist-stats {
+        grid-template-columns:
+            1fr;
+
+        width:
+            calc(100% - 36px);
+    }
+
+    .playlist-section {
+        padding:
+            55px 18px 70px;
+    }
+
+    .playlist-container {
+        width: 100%;
+    }
+
+    .playlist-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+</style>
+
+<link rel="stylesheet" href="/static/css/public_mobile_nav.css">
+
+<link rel="stylesheet" href="/static/css/global_search.css">
+</head>
+
+
+<body>
+
+
+<header class="playlist-nav">
+
+<div class="playlist-nav-inner">
+
+    <a
+        href="/"
+        class="playlist-brand"
+    >
+
+        <span class="playlist-logo">
+            RR
+        </span>
+
+        <span class="playlist-brand-text">
+
+            <strong>
+                Raj Raushan
+            </strong>
+
+            <small>
+                OFFICIAL
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <nav class="playlist-nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/explore">
+                Explore
+            </a>
+
+            <a href="/destinations">
+            Destinations
+        </a>
+
+        <a href="/#vlogs">
+            Vlogs
+        </a>
+
+        <a href="/#shorts">
+            Shorts
+        </a>
+
+        <a href="/travel-map">
+                Travel Map
+            </a>
+
+            <a href="/gallery">
+                Gallery
+            </a>
+
+            <a href="/about">
+            About
+        </a>
+
+        <a href="/collaborate">
+            Collaborate
+        </a>
+
+        <a
+            href="https://www.youtube.com/@RajRaushanOfficial?sub_confirmation=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="playlist-subscribe"
+        >
+            Subscribe
+        </a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+<section class="playlist-hero">
+
+<div class="playlist-hero-inner">
+
+    <span class="playlist-eyebrow">
+        YOUTUBE TRAVEL COLLECTIONS
+    </span>
+
+    <h1>
+        Explore Every Playlist.
+    </h1>
+
+    <p>
+        Browse all public Raj Raushan Official
+        YouTube playlists in one travel-focused
+        collection.
+    </p>
+
+</div>
+
+</section>
+
+
+<section class="playlist-stats">
+
+    <div class="playlist-stat">
+
+        <span>
+            PUBLIC PLAYLISTS
+        </span>
+
+        <strong>
+            {{ playlist_count|default(0) }}
+        </strong>
+
+    </div>
+
+
+    <div class="playlist-stat">
+
+        <span>
+            VIDEOS ACROSS PLAYLISTS
+        </span>
+
+        <strong>
+            {{ total_playlist_videos|default(0) }}
+        </strong>
+
+    </div>
+
+</section>
+
+
+<section class="playlist-section">
+
+<div class="playlist-container">
+
+
+    <div class="playlist-toolbar">
+
+        <div>
+
+            <h2>
+                Playlist Explorer
+            </h2>
+
+            <p>
+                Choose a collection and continue
+                the journey on YouTube.
+            </p>
+
+        </div>
+
+
+        <input
+            type="search"
+            class="playlist-search"
+            id="playlistSearch"
+            placeholder="Search playlists..."
+            aria-label="Search playlists"
+        >
+
+    </div>
+
+
+    {% if playlists %}
+
+    <div
+        class="playlist-grid"
+        id="playlistGrid"
+    >
+
+
+        {% for playlist in playlists %}
+
+        <a
+            class="youtube-playlist-card"
+            href="{{ playlist.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-title="{{ playlist.title|lower }}"
+        >
+
+
+            <div class="playlist-thumbnail">
+
+                {% if playlist.thumbnail %}
+
+                <img
+                    src="{{ playlist.thumbnail }}"
+                    alt="{{ playlist.title }}"
+                    loading="lazy"
+                >
+
+                {% endif %}
+
+
+                <div class="playlist-overlay"></div>
+
+
+                <span class="playlist-count-badge">
+
+                    {{ playlist.video_count }}
+                    Videos
+
+                </span>
+
+            </div>
+
+
+            <div class="playlist-card-content">
+
+                <span class="playlist-card-label">
+                    YOUTUBE PLAYLIST
+                </span>
+
+
+                <h3>
+                    {{ playlist.title }}
+                </h3>
+
+
+                {% if playlist.description %}
+
+                <p class="playlist-description">
+                    {{ playlist.description }}
+                </p>
+
+                {% else %}
+
+                <p class="playlist-description">
+                    Explore this Raj Raushan Official
+                    video collection.
+                </p>
+
+                {% endif %}
+
+
+                <div class="playlist-open">
+
+                    <span>
+                        Open Playlist
+                    </span>
+
+                    <span>
+                        &nearr;
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+        {% endfor %}
+
+
+    </div>
+
+
+    {% else %}
+
+    <div class="playlist-empty">
+
+        <h3>
+            No public playlists available.
+        </h3>
+
+        <p>
+            Playlist data could not be loaded
+            right now.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+
+</div>
+
+</section>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const search =
+            document.getElementById(
+                "playlistSearch"
+            );
+
+        const cards =
+            document.querySelectorAll(
+                ".youtube-playlist-card"
+            );
+
+
+        if (!search) {
+            return;
+        }
+
+
+        search.addEventListener(
+            "input",
+            function () {
+
+                const query =
+                    search.value
+                    .trim()
+                    .toLowerCase();
+
+
+                cards.forEach(
+                    function(card) {
+
+                        const title =
+                            card.dataset.title
+                            || "";
+
+
+                        card.style.display =
+                            title.includes(
+                                query
+                            )
+                            ? "block"
+                            : "none";
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+<script src="/static/js/public_mobile_nav.js"></script>
+
+<script src="/static/js/global_search.js"></script>
+
+<script src="/static/js/global_search_tracking.js"></script>
+</body>
+
+</html>
+
+
+

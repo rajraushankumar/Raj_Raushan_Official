@@ -1,0 +1,2909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Raj Raushan Official</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+
+
+<!-- =========================================================
+     GLOBAL CREATOR SEO
+========================================================= -->
+
+<meta name="description"
+      content="Raj Raushan Official is a travel and creator platform featuring journeys, destinations, culture, experiences, vlogs and shorts from India and beyond.">
+
+<meta name="keywords"
+      content="Raj Raushan Official, Raj Raushan, travel creator, India travel vlog, Bihar travel vlog, travel videos, YouTube creator, Indian vlogger, travel shorts, destinations">
+
+<meta name="author"
+      content="Raj Raushan Official">
+
+<meta name="robots"
+      content="index, follow">
+
+<meta name="theme-color"
+      content="#14213d">
+
+<meta property="og:type"
+      content="website">
+
+<meta property="og:title"
+      content="Raj Raushan Official | Explore ? Watch ? Connect">
+
+<meta property="og:description"
+      content="Explore destinations, cultures and real travel experiences with Raj Raushan Official.">
+
+<meta property="og:site_name"
+      content="Raj Raushan Official">
+
+<meta name="twitter:card"
+      content="summary_large_image">
+
+<meta name="twitter:title"
+      content="Raj Raushan Official">
+
+<meta name="twitter:description"
+      content="Travel stories, destinations, vlogs and creator experiences from India and beyond.">
+
+<!-- GLOBAL CREATOR SEO -->
+
+
+
+<style>
+
+/* =========================================================
+   GLOBAL CREATOR CTA STYLE
+========================================================= */
+
+.global-creator-cta {
+    width: 100%;
+    padding: 90px 20px;
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #172554,
+            #1e3a5f
+        );
+    color: #ffffff;
+    text-align: center;
+}
+
+.global-creator-inner {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.creator-eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    opacity: 0.78;
+}
+
+.global-creator-cta h2 {
+    margin: 0 auto 20px;
+    max-width: 850px;
+    font-size: clamp(
+        34px,
+        5vw,
+        64px
+    );
+    line-height: 1.08;
+}
+
+.global-creator-cta h2 span {
+    display: block;
+    margin-top: 8px;
+}
+
+.global-creator-cta p {
+    max-width: 720px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+    line-height: 1.7;
+    opacity: 0.86;
+}
+
+.global-creator-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.creator-primary-btn,
+.creator-secondary-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 52px;
+    padding: 0 25px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 800;
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
+}
+
+.creator-primary-btn {
+    background: #ffffff;
+    color: #111827;
+}
+
+.creator-secondary-btn {
+    border: 1px solid
+        rgba(255,255,255,.38);
+    color: #ffffff;
+}
+
+.creator-primary-btn:hover,
+.creator-secondary-btn:hover {
+    transform: translateY(-2px);
+    opacity: .92;
+}
+
+.creator-brand-line {
+    margin-top: 35px;
+    font-size: 14px;
+    letter-spacing: .6px;
+    opacity: .68;
+}
+
+.creator-brand-line span {
+    margin: 0 8px;
+}
+
+@media (max-width: 650px) {
+
+    .global-creator-cta {
+        padding: 65px 18px;
+    }
+
+    .global-creator-cta p {
+        font-size: 16px;
+    }
+
+    .creator-primary-btn,
+    .creator-secondary-btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+}
+
+/* GLOBAL CREATOR CTA STYLE */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   GLOBAL CREATOR PHASE 2 STYLE
+========================================================= */
+
+.world-section {
+    padding: 95px 20px;
+    background: #f7f9fc;
+}
+
+.world-container {
+    width: 92%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.world-heading {
+    max-width: 720px;
+    margin-bottom: 45px;
+}
+
+.world-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: #3554d1;
+}
+
+.world-heading h2,
+.creator-about h2,
+.brand-collaboration h2 {
+    margin: 0 0 16px;
+    font-size: clamp(
+        32px,
+        4vw,
+        50px
+    );
+    line-height: 1.12;
+}
+
+.world-heading p,
+.creator-about p {
+    line-height: 1.75;
+    color: #5d6574;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.destination-card {
+    padding: 28px;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow:
+        0 10px 35px
+        rgba(23, 32, 51, .07);
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 16px 42px
+        rgba(23, 32, 51, .11);
+}
+
+.destination-icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.destination-card h3 {
+    margin: 0 0 12px;
+    font-size: 21px;
+}
+
+.destination-card p {
+    margin: 0;
+    line-height: 1.65;
+    color: #697181;
+}
+
+
+/* ABOUT */
+
+.creator-about {
+    padding: 100px 20px;
+    background: #ffffff;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns:
+        1.3fr .7fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-lead {
+    font-size: 21px;
+    color: #222c3d !important;
+}
+
+.creator-identity-card {
+    padding: 40px;
+    border-radius: 26px;
+    color: white;
+    background:
+        linear-gradient(
+            145deg,
+            #101828,
+            #1d3557
+        );
+    box-shadow:
+        0 20px 50px
+        rgba(13, 25, 48, .18);
+}
+
+.creator-identity-card > span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: .7;
+}
+
+.creator-identity-card h3 {
+    margin: 20px 0;
+    font-size: 43px;
+    line-height: 1.1;
+}
+
+.creator-identity-card p {
+    color:
+        rgba(255,255,255,.72);
+}
+
+.creator-identity-card a {
+    display: inline-flex;
+    margin-top: 14px;
+    padding: 13px 18px;
+    border-radius: 11px;
+    background: #ffffff;
+    color: #111827;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+
+/* COLLABORATION */
+
+.brand-collaboration {
+    padding: 105px 20px;
+    text-align: center;
+    color: #ffffff;
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1e293b
+        );
+}
+
+.collaboration-inner {
+    max-width: 900px;
+    margin: auto;
+}
+
+.brand-collaboration .world-label {
+    color: #b9c8ff;
+}
+
+.brand-collaboration p {
+    max-width: 720px;
+    margin: 0 auto 28px;
+    line-height: 1.75;
+    color:
+        rgba(255,255,255,.76);
+}
+
+.collaboration-types {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.collaboration-types span {
+    padding: 9px 14px;
+    border-radius: 999px;
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+    background:
+        rgba(255,255,255,.07);
+    font-size: 13px;
+}
+
+.collaboration-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.collaboration-actions a {
+    padding: 14px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.collaboration-primary {
+    background: #ffffff;
+    color: #111827;
+}
+
+.collaboration-secondary {
+    color: #ffffff;
+    border:
+        1px solid
+        rgba(255,255,255,.32);
+}
+
+.brand-collaboration small {
+    color:
+        rgba(255,255,255,.5);
+}
+
+
+/* FOOTER */
+
+.creator-footer {
+    padding: 55px 6% 24px;
+    background: #080d17;
+    color: #ffffff;
+}
+
+.footer-main {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns:
+        1fr 2fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.footer-brand h3 {
+    margin: 0 0 7px;
+}
+
+.footer-brand p {
+    margin: 0;
+    opacity: .55;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.footer-links a,
+.footer-youtube a {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: .75;
+}
+
+.footer-links a:hover,
+.footer-youtube a:hover {
+    opacity: 1;
+}
+
+.footer-youtube {
+    text-align: right;
+}
+
+.footer-youtube span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    opacity: .5;
+}
+
+.footer-youtube a {
+    font-weight: 800;
+}
+
+.footer-bottom {
+    max-width: 1250px;
+    margin: 38px auto 0;
+    padding-top: 20px;
+    border-top:
+        1px solid
+        rgba(255,255,255,.09);
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 12px;
+    opacity: .48;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+    .destination-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-youtube {
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .world-section,
+    .creator-about,
+    .brand-collaboration {
+        padding:
+            70px 18px;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .creator-identity-card {
+        padding: 30px;
+    }
+
+    .creator-identity-card h3 {
+        font-size: 36px;
+    }
+
+    .collaboration-actions a {
+        width: 100%;
+        max-width: 310px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+/* GLOBAL CREATOR PHASE 2 STYLE */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   RAJ PROFESSIONAL BRAND STYLE
+========================================================= */
+
+
+/* ---------- STICKY NAV ---------- */
+
+.raj-pro-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    width: 100%;
+
+    background:
+        rgba(8, 13, 23, .93);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .08);
+}
+
+.raj-pro-nav {
+    width: 92%;
+    max-width: 1320px;
+
+    min-height: 72px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+/* LOGO */
+
+.raj-pro-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    flex-shrink: 0;
+}
+
+.raj-logo-mark {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #dbe5ff
+        );
+
+    color: #111827;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: -0.3px;
+}
+
+.raj-logo-text {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.05;
+}
+
+.raj-logo-text strong {
+    font-size: 15px;
+    letter-spacing: .2px;
+}
+
+.raj-logo-text small {
+    margin-top: 4px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: .58;
+}
+
+
+/* LINKS */
+
+.raj-pro-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+}
+
+.raj-pro-links a {
+    position: relative;
+
+    color:
+        rgba(255, 255, 255, .74);
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        color .2s ease;
+}
+
+.raj-pro-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: #ffffff;
+
+    transition:
+        width .2s ease;
+}
+
+.raj-pro-links a:hover {
+    color: #ffffff;
+}
+
+.raj-pro-links a:hover::after {
+    width: 100%;
+}
+
+
+/* SUBSCRIBE */
+
+.raj-nav-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.raj-subscribe-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 0 17px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
+}
+
+.raj-subscribe-nav:hover {
+    transform:
+        translateY(-2px);
+
+    opacity: .92;
+}
+
+
+/* MOBILE BUTTON */
+
+.raj-menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    cursor: pointer;
+}
+
+.raj-menu-btn span {
+    display: block;
+
+    width: 19px;
+    height: 2px;
+
+    margin: 4px auto;
+
+    border-radius: 5px;
+
+    background: white;
+}
+
+
+/* ---------- MEDIA KIT ---------- */
+
+.raj-media-kit {
+    padding:
+        110px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f5f7fb 100%
+        );
+
+    color: #172033;
+}
+
+.raj-media-container {
+    width: 92%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+}
+
+.raj-media-intro {
+    max-width: 780px;
+
+    margin-bottom: 55px;
+}
+
+.raj-section-label {
+    display: inline-block;
+
+    margin-bottom: 13px;
+
+    color: #3554d1;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 2.8px;
+}
+
+.raj-media-intro h2 {
+    margin:
+        0 0 18px;
+
+    font-size:
+        clamp(
+            36px,
+            5vw,
+            58px
+        );
+
+    line-height: 1.07;
+
+    letter-spacing: -1.4px;
+}
+
+.raj-media-intro h2 span {
+    display: block;
+}
+
+.raj-media-intro p {
+    margin: 0;
+
+    max-width: 700px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #626b7a;
+}
+
+
+/* MEDIA CARDS */
+
+.raj-media-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 18px;
+}
+
+.raj-media-card {
+    position: relative;
+
+    min-height: 270px;
+
+    padding: 28px;
+
+    overflow: hidden;
+
+    border:
+        1px solid #e9edf5;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 34px
+        rgba(15, 23, 42, .055);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.raj-media-card:hover {
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(15, 23, 42, .10);
+}
+
+.raj-media-number {
+    margin-bottom: 42px;
+
+    color: #9aa6bc;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1.6px;
+}
+
+.raj-media-card h3 {
+    margin:
+        0 0 13px;
+
+    font-size: 20px;
+
+    line-height: 1.25;
+}
+
+.raj-media-card p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #697282;
+}
+
+
+/* PROFILE */
+
+.raj-media-profile {
+    margin-top: 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.25fr .75fr;
+
+    gap: 22px;
+}
+
+.raj-profile-main,
+.raj-media-fit {
+    padding: 38px;
+
+    border-radius: 24px;
+}
+
+.raj-profile-main {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101827,
+            #192b48
+        );
+}
+
+.raj-profile-label,
+.raj-media-fit > span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 2.2px;
+
+    opacity: .58;
+}
+
+.raj-profile-main h3 {
+    margin:
+        0 0 7px;
+
+    font-size: 32px;
+}
+
+.raj-profile-main p {
+    margin:
+        0 0 25px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            .65
+        );
+}
+
+.raj-profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.raj-profile-tags span {
+    padding:
+        8px 11px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    font-size: 11px;
+}
+
+
+/* PARTNERSHIP FIT */
+
+.raj-media-fit {
+    background: #eef3ff;
+
+    border:
+        1px solid #dde6fb;
+}
+
+.raj-media-fit > span {
+    color: #3554d1;
+
+    opacity: 1;
+}
+
+.raj-media-fit ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.raj-media-fit li {
+    margin-bottom: 12px;
+
+    line-height: 1.5;
+
+    color: #475167;
+}
+
+
+/* PARTNERSHIP PROMISE */
+
+.raj-partner-promise {
+    margin-top: 22px;
+
+    padding:
+        35px 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-radius: 24px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e8edf5;
+}
+
+.raj-partner-promise h3 {
+    margin:
+        0 0 8px;
+
+    font-size: 25px;
+}
+
+.raj-partner-promise p {
+    max-width: 650px;
+
+    margin: 0;
+
+    line-height: 1.65;
+
+    color: #697282;
+}
+
+.raj-partner-button {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding:
+        0 20px;
+
+    border-radius: 11px;
+
+    background: #172033;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* SMOOTH SCROLL */
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 85px;
+}
+
+
+/* ---------- TABLET ---------- */
+
+@media (
+    max-width: 1050px
+) {
+
+    .raj-pro-links {
+        gap: 16px;
+    }
+
+    .raj-pro-links a {
+        font-size: 12px;
+    }
+
+    .raj-media-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+
+/* ---------- MOBILE NAV ---------- */
+
+@media (
+    max-width: 850px
+) {
+
+    .raj-pro-nav {
+        min-height: 66px;
+    }
+
+    .raj-pro-links {
+        position: absolute;
+
+        top: 66px;
+        left: 0;
+
+        width: 100%;
+
+        padding:
+            18px 5% 25px;
+
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 4px;
+
+        background:
+            rgba(8,13,23,.98);
+
+        border-top:
+            1px solid
+            rgba(255,255,255,.07);
+
+        box-shadow:
+            0 20px 35px
+            rgba(0,0,0,.18);
+    }
+
+    .raj-pro-links.raj-menu-open {
+        display: flex;
+    }
+
+    .raj-pro-links a {
+        width: 100%;
+
+        padding:
+            12px 4px;
+
+        font-size: 14px;
+    }
+
+    .raj-pro-links a::after {
+        display: none;
+    }
+
+    .raj-menu-btn {
+        display: block;
+    }
+
+    .raj-subscribe-nav {
+        display: none;
+    }
+
+    .raj-media-profile {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media (
+    max-width: 600px
+) {
+
+    .raj-media-kit {
+        padding:
+            75px 18px;
+    }
+
+    .raj-media-container {
+        width: 100%;
+    }
+
+    .raj-media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .raj-media-card {
+        min-height: auto;
+    }
+
+    .raj-media-number {
+        margin-bottom: 25px;
+    }
+
+    .raj-profile-main,
+    .raj-media-fit {
+        padding: 28px;
+    }
+
+    .raj-partner-promise {
+        padding: 28px;
+
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .raj-partner-button {
+        width: 100%;
+    }
+
+    .raj-logo-text strong {
+        font-size: 13px;
+    }
+
+}
+
+
+/* RAJ PROFESSIONAL BRAND STYLE */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   RAJ DARK TEXT POLISH
+========================================================= */
+
+/* Main light-page text */
+body {
+    color: #111827;
+}
+
+/* Main headings */
+h1,
+h2,
+h3,
+h4 {
+    color: #0b1220;
+}
+
+/* Creator brand */
+.raj-logo-text strong {
+    color: #ffffff;
+    font-weight: 900;
+}
+
+.raj-logo-text small {
+    color: #d4d9e3;
+    opacity: .8;
+}
+
+/* Professional navbar darker */
+.raj-pro-header {
+    background: rgba(5, 10, 18, .97);
+}
+
+/* Navbar links stronger */
+.raj-pro-links a {
+    color: #d9dee8;
+}
+
+.raj-pro-links a:hover {
+    color: #ffffff;
+}
+
+/* About / destinations / media-kit text */
+.world-heading p,
+.creator-about p,
+.raj-media-intro p,
+.raj-media-card p,
+.raj-partner-promise p {
+    color: #465064;
+}
+
+/* Card headings */
+.destination-card h3,
+.raj-media-card h3,
+.raj-profile-main h3,
+.raj-partner-promise h3 {
+    font-weight: 800;
+}
+
+/* Brand name sections */
+.creator-about h2,
+.raj-media-intro h2 {
+    color: #0a1020;
+}
+
+/* Dark sections remain white */
+.global-creator-cta h2,
+.brand-collaboration h2,
+.creator-identity-card h3,
+.creator-footer h3 {
+    color: #ffffff;
+}
+
+/* RAJ DARK TEXT POLISH */
+
+</style>
+
+
+
+<style>
+
+/* HERO HEADING COLOR FIX */
+
+.hero h1,
+.hero-section h1,
+.hero-content h1,
+section.hero h1,
+body > section:first-of-type h1 {
+    color: #ffffff !important;
+}
+
+/* Hero subtitle */
+.hero p,
+.hero-section p,
+.hero-content p,
+body > section:first-of-type p {
+    color: #ffffff;
+}
+
+/* HERO HEADING COLOR FIX */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   SOCIAL DARK CARD COLOR FIX
+========================================================= */
+
+/* Social section headings */
+.social-dark-fix h1,
+.social-dark-fix h2,
+.social-dark-fix h3,
+.social-dark-fix h4 {
+    color: #ffffff !important;
+}
+
+/* Card titles and important text */
+.social-dark-fix strong,
+.social-dark-fix .title,
+.social-dark-fix .social-title {
+    color: #ffffff !important;
+}
+
+/* Description text */
+.social-dark-fix p {
+    color: #cbd5e1 !important;
+}
+
+/* Social links */
+.social-dark-fix a {
+    color: #ffffff !important;
+}
+
+.social-dark-fix a:hover {
+    color: #dbeafe !important;
+}
+
+/* Keep icons bright */
+.social-dark-fix .icon,
+.social-dark-fix .social-icon {
+    opacity: 1 !important;
+}
+
+
+/* Professional About anchor */
+
+#creator-about {
+    scroll-margin-top: 95px;
+}
+
+
+/* Ensure About section text stays visible */
+
+#creator-about h2,
+#creator-about h3 {
+    color: #0b1220 !important;
+}
+
+#creator-about p {
+    color: #465064 !important;
+}
+
+/* SOCIAL DARK CARD COLOR FIX */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   ABOUT DARK CARD VISIBILITY FIX
+========================================================= */
+
+.creator-identity-card {
+    color: #ffffff !important;
+}
+
+/* Small heading */
+.creator-identity-card > span {
+    color: #d7deea !important;
+    opacity: .85 !important;
+}
+
+/* Explore / Watch / Connect */
+.creator-identity-card h3 {
+    color: #ffffff !important;
+}
+
+/* Description */
+.creator-identity-card p {
+    color: #cbd5e1 !important;
+    opacity: 1 !important;
+}
+
+/* Subscribe button */
+.creator-identity-card a {
+    background: #ffffff !important;
+    color: #0b1220 !important;
+}
+
+.creator-identity-card a:hover {
+    background: #e9eef7 !important;
+}
+
+/* ABOUT DARK CARD VISIBILITY FIX */
+
+</style>
+
+
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/favicon.svg"
+>
+</head>
+
+
+<body>
+
+<!-- =========================================================
+     RAJ PROFESSIONAL NAVIGATION
+========================================================= -->
+
+<header class="raj-pro-header">
+
+    <div class="raj-pro-nav">
+
+        <a
+            class="raj-pro-logo"
+            href="/"
+            aria-label="Raj Raushan Official Home"
+        >
+
+            <span class="raj-logo-mark">
+                RR
+            </span>
+
+            <span class="raj-logo-text">
+
+                <strong>
+                    Raj Raushan
+                </strong>
+
+                <small>
+                    OFFICIAL
+                </small>
+
+            </span>
+
+        </a>
+
+
+        <nav
+            class="raj-pro-links"
+            aria-label="Main navigation"
+        >
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="#vlogs">
+                Vlogs
+            </a>
+
+            <a href="#shorts">
+                Shorts
+            </a>
+
+            <a href="#destinations">
+                Destinations
+            </a>
+
+            <a href="#creator-about">
+                About
+            </a>
+
+            <a href="#media-kit">
+                Media Kit
+            </a>
+
+            <a href="#collaboration">
+                Collaborate
+            </a>
+
+        </nav>
+
+
+        <div class="raj-nav-actions">
+
+            <a
+                class="raj-subscribe-nav"
+                href="https://www.youtube.com/@rajraushanofficial?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Subscribe
+            </a>
+
+            <button
+                class="raj-menu-btn"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- RAJ PROFESSIONAL NAVIGATION -->
+
+
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    
+
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>
+            Welcome to Raj Raushan Official
+        </h1>
+
+        <p>
+            Explore • Watch • Connect
+        </p>
+
+        <a href="#vlogs">
+
+            <button>
+                Watch Latest Vlog
+            </button>
+
+        </a>
+
+    </section>
+
+    <!-- ================= MY YOUTUBE CHANNELS ================= -->
+
+<section class="channels-section">
+
+    <h2>My YouTube Channels</h2>
+
+    <div class="channels-container">
+
+        <!-- FIRST CHANNEL -->
+        {% if channel1 %}
+
+        <div class="channel-card">
+
+            <img
+                src="{{ channel1.profile_image }}"
+                alt="{{ channel1.name }}"
+                class="channel-image"
+            >
+
+            <h2>{{ channel1.name }}</h2>
+
+            <p>{{ channel1.handle }}</p>
+
+            <div class="channel-stats">
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel1.subscribers|int) }}
+                    </strong>
+                    <span>Subscribers</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel1.views|int) }}
+                    </strong>
+                    <span>Total Views</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel1.videos|int) }}
+                    </strong>
+                    <span>Videos</span>
+                </div>
+
+            </div>
+
+            <a
+                href="{{ channel1.url }}"
+                target="_blank"
+                class="channel-btn"
+            >
+                Visit Channel
+            </a>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- SECOND CHANNEL -->
+        {% if channel2 %}
+
+        <div class="channel-card">
+
+            <img
+                src="{{ channel2.profile_image }}"
+                alt="{{ channel2.name }}"
+                class="channel-image"
+            >
+
+            <h2>{{ channel2.name }}</h2>
+
+            <p>{{ channel2.handle }}</p>
+
+            <div class="channel-stats">
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel2.subscribers|int) }}
+                    </strong>
+                    <span>Subscribers</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel2.views|int) }}
+                    </strong>
+                    <span>Total Views</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel2.videos|int) }}
+                    </strong>
+                    <span>Videos</span>
+                </div>
+
+            </div>
+
+            <a
+                href="{{ channel2.url }}"
+                target="_blank"
+                class="channel-btn"
+            >
+                Visit Channel
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+
+    <!-- ================= CHANNEL PROFILE ================= -->
+
+    {% if channel %}
+
+    <section class="channel-profile">
+
+        <img
+            src="{{ channel.profile_image }}"
+            alt="Raj Raushan Official"
+            class="channel-image"
+        >
+
+
+        <div class="channel-details">
+
+            <h2>
+                {{ channel.name }}
+            </h2>
+
+            <p>
+                @rajraushanofficial
+            </p>
+
+
+            <div class="channel-stats">
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.subscribers|int) }}
+                    </strong>
+
+                    <span>
+                        Subscribers
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.views|int) }}
+                    </strong>
+
+                    <span>
+                        Total Views
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.videos|int) }}
+                    </strong>
+
+                    <span>
+                        Videos
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <a
+                href="https://www.youtube.com/@rajraushanofficial"
+                target="_blank"
+                class="channel-btn"
+            >
+                Visit YouTube Channel
+            </a>
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+
+    <!-- ================= VLOGS ================= -->
+
+    <section
+        class="videos"
+        id="vlogs"
+    >
+
+        <h2>
+            🎬 Latest Vlogs
+        </h2>
+
+
+        <div class="video-container">
+
+
+            {% if vlogs %}
+
+
+                {% for video in vlogs %}
+
+
+                <div class="video-card">
+
+
+                    <a
+                        href="https://www.youtube.com/@RajRaushanOfficial"
+                        target="_blank"
+                    >
+
+                        <img
+                            src="{{ video.thumbnail }}"
+                            alt="{{ video.title }}"
+                        >
+
+                    </a>
+
+
+                    <div class="video-info">
+
+
+                        <h3>
+                            {{ video.title }}
+                        </h3>
+
+
+                        <p>
+                            Raj Raushan Official
+                        </p>
+
+
+                        <div class="video-meta">
+
+                            <span>
+                                👁
+                                {{ "{:,}".format(video.views|int) }}
+                                views
+                            </span>
+
+                            <span>
+                                📅
+                                {{ video.published_at }}
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="{{ video.url }}"
+                            target="_blank"
+                            class="watch-btn"
+                        >
+                            Watch Vlog
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+                {% endfor %}
+
+
+            {% else %}
+
+
+                <div class="no-videos">
+
+                    <h3>
+                        🎬 No Vlogs Found
+                    </h3>
+
+                    <p>
+                        New vlogs will appear here automatically.
+                    </p>
+
+                </div>
+
+
+            {% endif %}
+
+
+        </div>
+
+    </section>
+
+
+
+   <!-- ================= SHORTS ================= -->
+
+<section class="shorts-section" id="shorts">
+
+    <h2>📱 Latest Shorts</h2>
+
+    <div class="shorts-container">
+
+        {% if shorts %}
+
+            {% for video in shorts %}
+
+            <div class="short-card">
+
+                <a
+                    href="{{ video.url }}"
+                    target="_blank"
+                    class="short-thumbnail"
+                >
+
+                    <img
+                        src="{{ video.thumbnail }}"
+                        alt="{{ video.title }}"
+                    >
+
+                    <div class="short-play">
+                        ▶
+                    </div>
+
+                </a>
+
+
+                <div class="short-info">
+
+                    <h3>
+                        {{ video.title }}
+                    </h3>
+
+                    <div class="short-meta">
+
+                        <span>
+                            👁 {{ "{:,}".format(video.views|int) }}
+                        </span>
+
+                        <span>
+                            📅 {{ video.published_at }}
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+
+        {% else %}
+
+            <div class="no-videos">
+
+                <h3>📱 No Shorts Found</h3>
+
+                <p>
+                    New Shorts will appear here automatically.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+    <!-- ================= EXPLORE ================= -->
+
+    <section
+        class="social-section"
+        id="explore"
+    >
+
+        <h2>
+            Explore Raj Raushan Official
+        </h2>
+
+        <p>
+            Travel • Vlogs • Shorts • Life • Adventures
+        </p>
+
+    </section>
+
+
+
+   <!-- ================= SOCIAL MEDIA HUB ================= -->
+
+<section class="social-dark-fix social-hub" id="about">
+
+    <h2>🌐 Connect With Me</h2>
+
+    <p class="social-subtitle">
+        Follow and connect with me across all platforms.
+    </p>
+
+    <div class="social-grid">
+
+        <a href="https://www.youtube.com/@rajraushanofficial"
+           target="_blank"
+           class="social-card">
+            <h3>▶ YouTube</h3>
+            <p>Raj Raushan Official</p>
+            <span>Visit Channel →</span>
+        </a>
+
+        <a href="https://www.youtube.com/@rajraushanofficial02"
+           target="_blank"
+           class="social-card">
+            <h3>▶ YouTube 02</h3>
+            <p>Raj Raushan Official 02</p>
+            <span>Visit Channel →</span>
+        </a>
+
+        <a href="https://www.instagram.com/rajraushanofficial/"
+           target="_blank"
+           class="social-card">
+            <h3>📸 Instagram</h3>
+            <p>@rajraushanofficial</p>
+            <span>Follow →</span>
+        </a>
+
+        <a href="https://www.instagram.com/rajraushanofficial/"
+           class="social-card">
+            <h3>📘 Facebook</h3>
+            <p>Coming Soon</p>
+            <span>Connect →</span>
+        </a>
+
+        <a href="https://www.facebook.com/rajraushanofficial/"
+           class="social-card">
+            <h3>💼 LinkedIn</h3>
+            <p>Professional Profile</p>
+            <span>Connect →</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/rajraushankumar/"
+           class="social-card">
+            <h3>💻 GitHub</h3>
+            <p>Projects & Code</p>
+            <span>View Projects →</span>
+        </a>
+
+    </div>
+
+</section>
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Raj Raushan Official
+        </p>
+
+        <p>
+            Explore • Watch • Connect
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}">
+    </script>
+
+
+
+
+
+
+<!-- =========================================================
+     GLOBAL CREATOR PHASE 2
+========================================================= -->
+
+<section class="world-section" id="destinations">
+
+    <div class="world-container">
+
+        <div class="world-heading">
+
+            <span class="world-label">
+                DISCOVER
+            </span>
+
+            <h2>
+                Explore Destinations & Stories
+            </h2>
+
+            <p>
+                Travel experiences built around places,
+                culture, history, nature and real journeys.
+            </p>
+
+        </div>
+
+
+        <div class="destination-grid">
+
+
+            <article class="destination-card">
+
+                <div class="destination-icon">
+                    &#127758;
+                </div>
+
+                <h3>
+                    Bihar
+                </h3>
+
+                <p>
+                    Discover local destinations,
+                    heritage, culture and hidden
+                    travel experiences.
+                </p>
+
+            </article>
+
+
+            <article class="destination-card">
+
+                <div class="destination-icon">
+                    &#127984;
+                </div>
+
+                <h3>
+                    Heritage & History
+                </h3>
+
+                <p>
+                    Explore forts, monuments,
+                    historic places and stories
+                    connected with India's past.
+                </p>
+
+            </article>
+
+
+            <article class="destination-card">
+
+                <div class="destination-icon">
+                    &#9968;
+                </div>
+
+                <h3>
+                    Nature & Adventure
+                </h3>
+
+                <p>
+                    Hills, waterfalls, roads,
+                    landscapes and outdoor
+                    travel experiences.
+                </p>
+
+            </article>
+
+
+            <article class="destination-card">
+
+                <div class="destination-icon">
+                    &#9992;
+                </div>
+
+                <h3>
+                    India & Beyond
+                </h3>
+
+                <p>
+                    A growing journey toward
+                    discovering destinations
+                    across India and the world.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="creator-about" id="creator-about">
+
+    <div class="world-container about-grid">
+
+        <div>
+
+            <span class="world-label">
+                ABOUT THE CREATOR
+            </span>
+
+            <h2>
+                Raj Raushan Official
+            </h2>
+
+            <p class="about-lead">
+                A travel-focused creator platform
+                sharing destinations, cultures,
+                experiences and visual stories.
+            </p>
+
+            <p>
+                Raj Raushan Official is built around
+                one simple idea: explore more,
+                experience places personally and
+                share those journeys through
+                meaningful videos.
+            </p>
+
+            <p>
+                The platform combines travel
+                storytelling with technology,
+                creator analytics and data-driven
+                content development.
+            </p>
+
+        </div>
+
+
+        <div class="creator-identity-card">
+
+            <span style="color:#dbe4f0 !important; opacity:1 !important;">
+                CREATOR PLATFORM
+            </span>
+
+            <h3 style="color:#ffffff !important;">
+                Explore
+                <br>
+                Watch
+                <br>
+                Connect
+            </h3>
+
+            <p style="color:#d5deeb !important; opacity:1 !important;">
+                Original travel videos,
+                Shorts and digital experiences.
+            </p>
+
+            <a
+                href="https://www.youtube.com/@rajraushanofficial?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+             style="background:#ffffff !important; color:#0b1220 !important;">
+                Subscribe to the Journey
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="brand-collaboration" id="collaboration">
+
+    <div class="collaboration-inner">
+
+        <span class="world-label">
+            WORK WITH RAJ RAUSHAN OFFICIAL
+        </span>
+
+        <h2>
+            Sponsorships & Collaborations
+        </h2>
+
+        <p>
+            Open to suitable travel,
+            destination, tourism,
+            hospitality and creator
+            collaborations that fit
+            the Raj Raushan Official audience
+            and content style.
+        </p>
+
+
+        <div class="collaboration-types">
+
+            <span>Travel Partnerships</span>
+            <span>Destination Features</span>
+            <span>Brand Collaborations</span>
+            <span>Creator Campaigns</span>
+
+        </div>
+
+
+        <div class="collaboration-actions">
+
+            <a
+                class="collaboration-primary"
+                href="https://www.youtube.com/@rajraushanofficial/about"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Collaboration Enquiries
+            </a>
+
+            <a
+                class="collaboration-secondary"
+                href="https://www.youtube.com/@rajraushanofficial"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                View YouTube Channel
+            </a>
+
+        </div>
+
+
+        <small>
+            Partnerships are considered based on
+            relevance, audience value and content fit.
+        </small>
+
+    </div>
+
+</section>
+
+<!-- GLOBAL CREATOR PHASE 2 -->
+
+
+
+<!-- =========================================================
+     RAJ CREATOR MEDIA KIT
+========================================================= -->
+
+<section
+    class="raj-media-kit"
+    id="media-kit"
+>
+
+    <div class="raj-media-container">
+
+
+        <div class="raj-media-intro">
+
+            <span class="raj-section-label">
+                CREATOR MEDIA KIT
+            </span>
+
+            <h2>
+                Partner with
+                <span>
+                    Raj Raushan Official
+                </span>
+            </h2>
+
+            <p>
+                A travel-focused digital creator platform
+                combining authentic journeys, destination
+                storytelling, short-form content and
+                technology-driven creator insights.
+            </p>
+
+        </div>
+
+
+        <div class="raj-media-grid">
+
+
+            <article class="raj-media-card">
+
+                <div class="raj-media-number">
+                    01
+                </div>
+
+                <h3>
+                    Travel & Destinations
+                </h3>
+
+                <p>
+                    Travel videos covering destinations,
+                    roads, heritage, culture, nature
+                    and real on-location experiences.
+                </p>
+
+            </article>
+
+
+            <article class="raj-media-card">
+
+                <div class="raj-media-number">
+                    02
+                </div>
+
+                <h3>
+                    Short-Form Content
+                </h3>
+
+                <p>
+                    Mobile-first Shorts and visual
+                    storytelling designed for quick
+                    discovery and social engagement.
+                </p>
+
+            </article>
+
+
+            <article class="raj-media-card">
+
+                <div class="raj-media-number">
+                    03
+                </div>
+
+                <h3>
+                    Local Storytelling
+                </h3>
+
+                <p>
+                    Authentic coverage of places,
+                    communities, history and experiences
+                    that are often missed by mainstream
+                    travel content.
+                </p>
+
+            </article>
+
+
+            <article class="raj-media-card">
+
+                <div class="raj-media-number">
+                    04
+                </div>
+
+                <h3>
+                    Creator Technology
+                </h3>
+
+                <p>
+                    Data analytics and machine-learning
+                    tools are used to understand content
+                    performance and improve creator strategy.
+                </p>
+
+            </article>
+
+
+        </div>
+
+
+        <div class="raj-media-profile">
+
+
+            <div class="raj-profile-main">
+
+                <span class="raj-profile-label">
+                    CREATOR PROFILE
+                </span>
+
+                <h3>
+                    Raj Raushan Official
+                </h3>
+
+                <p>
+                    Travel ? Stories ? Experiences ? Technology
+                </p>
+
+
+                <div class="raj-profile-tags">
+
+                    <span>
+                        Travel Creator
+                    </span>
+
+                    <span>
+                        YouTube Vlogs
+                    </span>
+
+                    <span>
+                        Shorts
+                    </span>
+
+                    <span>
+                        India Travel
+                    </span>
+
+                    <span>
+                        Heritage
+                    </span>
+
+                    <span>
+                        Nature
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="raj-media-fit">
+
+                <span>
+                    IDEAL PARTNERSHIPS
+                </span>
+
+                <ul>
+
+                    <li>
+                        Tourism & destination campaigns
+                    </li>
+
+                    <li>
+                        Hotels, stays & hospitality
+                    </li>
+
+                    <li>
+                        Travel products & services
+                    </li>
+
+                    <li>
+                        Creator and digital campaigns
+                    </li>
+
+                    <li>
+                        Culture and heritage projects
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="raj-partner-promise">
+
+            <div>
+
+                <span class="raj-section-label">
+                    PARTNERSHIP APPROACH
+                </span>
+
+                <h3>
+                    Audience value comes first.
+                </h3>
+
+                <p>
+                    Collaborations are considered when
+                    they naturally fit the channel,
+                    the destination and the audience.
+                </p>
+
+            </div>
+
+
+            <a
+                href="#collaboration"
+                class="raj-partner-button"
+            >
+                Explore Collaboration
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+<!-- RAJ CREATOR MEDIA KIT -->
+
+<!-- =========================================================
+     GLOBAL CREATOR CTA
+========================================================= -->
+
+<section class="global-creator-cta">
+
+    <div class="global-creator-inner">
+
+        <span class="creator-eyebrow">
+            TRAVEL ? STORIES ? EXPERIENCES
+        </span>
+
+        <h2>
+            Explore the World with
+            <span>Raj Raushan Official</span>
+        </h2>
+
+        <p>
+            Discover destinations, cultures and real travel
+            experiences through original vlogs, shorts and
+            visual stories from India and beyond.
+        </p>
+
+        <div class="global-creator-actions">
+
+            <a
+                class="creator-primary-btn"
+                href="https://www.youtube.com/@rajraushanofficial?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Subscribe on YouTube
+            </a>
+
+            <a
+                class="creator-secondary-btn"
+                href="#vlogs"
+            >
+                Explore Vlogs
+            </a>
+
+        </div>
+
+        <div class="creator-brand-line">
+            Raj Raushan Official
+            <span>?</span>
+            Explore ? Watch ? Connect
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GLOBAL CREATOR CTA -->
+
+
+
+<!-- =========================================================
+     RAJ RAUSHAN PROFESSIONAL FOOTER
+========================================================= -->
+
+<footer class="creator-footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <h3>
+                Raj Raushan Official
+            </h3>
+
+            <p>
+                Explore ? Watch ? Connect
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="#vlogs">
+                Vlogs
+            </a>
+
+            <a href="#shorts">
+                Shorts
+            </a>
+
+            <a href="#destinations">
+                Destinations
+            </a>
+
+            <a href="#creator-about">
+                About
+            </a>
+
+            <a href="#collaboration">
+                Collaborations
+            </a>
+
+        </div>
+
+
+        <div class="footer-youtube">
+
+            <span>
+                Follow the Journey
+            </span>
+
+            <a
+                href="https://www.youtube.com/@rajraushanofficial?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                YouTube
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            &copy; Raj Raushan Official.
+            All rights reserved.
+        </span>
+
+        <span>
+            Travel ? Stories ? Technology
+        </span>
+
+    </div>
+
+</footer>
+
+<!-- RAJ RAUSHAN PROFESSIONAL FOOTER -->
+
+
+
+<script>
+
+/* =========================================================
+   RAJ MOBILE NAVIGATION SCRIPT
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const menuButton =
+            document.querySelector(
+                ".raj-menu-btn"
+            );
+
+        const menu =
+            document.querySelector(
+                ".raj-pro-links"
+            );
+
+        if (!menuButton || !menu) {
+            return;
+        }
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                const opened =
+                    menu.classList.toggle(
+                        "raj-menu-open"
+                    );
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    opened
+                        ? "true"
+                        : "false"
+                );
+
+            }
+        );
+
+
+        menu.querySelectorAll("a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            menu.classList.remove(
+                                "raj-menu-open"
+                            );
+
+                            menuButton.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+    }
+);
+
+/* RAJ MOBILE NAVIGATION SCRIPT */
+
+</script>
+
+
+
+<style>
+
+/* FORCED ABOUT CARD FINAL FIX */
+
+body #creator-about .creator-identity-card {
+    background: #162945 !important;
+    color: #ffffff !important;
+}
+
+body #creator-about .creator-identity-card > span {
+    color: #dbe4f0 !important;
+    opacity: 1 !important;
+}
+
+body #creator-about .creator-identity-card h3 {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+body #creator-about .creator-identity-card p {
+    color: #d5deeb !important;
+    opacity: 1 !important;
+}
+
+body #creator-about .creator-identity-card a {
+    background: #ffffff !important;
+    color: #0b1220 !important;
+}
+
+/* FORCED ABOUT CARD FINAL FIX */
+
+</style>
+
+</body>
+
+</html>
+
