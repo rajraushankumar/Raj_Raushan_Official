@@ -1,0 +1,544 @@
+﻿/* ==========================================================
+   CREATOR BUSINESS NOTIFICATION CENTER
+========================================================== */
+
+.rr-business-bell {
+    position: fixed;
+
+    top: 86px;
+    right: 22px;
+
+    z-index: 8500;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    border-radius: 16px;
+
+    background:
+        #0b1422;
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 16px 45px
+        rgba(0,0,0,.22);
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.rr-business-bell:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 22px 55px
+        rgba(0,0,0,.28);
+}
+
+
+.rr-business-badge {
+    position: absolute;
+
+    top: -6px;
+    right: -6px;
+
+    min-width: 22px;
+    height: 22px;
+
+    padding:
+        0 5px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        2px solid #ffffff;
+
+    border-radius: 999px;
+
+    background:
+        #dc2626;
+
+    color:
+        #ffffff;
+
+    font-size: 9px;
+    font-weight: 900;
+}
+
+
+.rr-business-badge.active {
+    display: flex;
+}
+
+
+/* ==========================================================
+   PANEL
+========================================================== */
+
+.rr-notification-panel {
+    position: fixed;
+
+    top: 148px;
+    right: 22px;
+
+    z-index: 8400;
+
+    width:
+        min(
+            calc(100vw - 32px),
+            410px
+        );
+
+    max-height:
+        calc(
+            100vh - 175px
+        );
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    border:
+        1px solid
+        #dfe6ef;
+
+    border-radius:
+        20px;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 28px 80px
+        rgba(15,23,42,.22);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-10px)
+        scale(.98);
+
+    transition:
+        opacity .2s ease,
+        visibility .2s ease,
+        transform .2s ease;
+}
+
+
+.rr-notification-panel.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* HEADER */
+
+.rr-notification-header {
+    padding:
+        18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom:
+        1px solid #e8edf3;
+}
+
+
+.rr-notification-header span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color:
+        #536dfe;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing:
+        1.6px;
+}
+
+
+.rr-notification-header strong {
+    font-size: 17px;
+}
+
+
+.rr-refresh-notifications {
+    min-height: 35px;
+
+    padding:
+        0 11px;
+
+    border:
+        1px solid #dce3ed;
+
+    border-radius: 9px;
+
+    background:
+        #f8fafc;
+
+    color:
+        #354052;
+
+    cursor: pointer;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+/* SUMMARY */
+
+.rr-notification-summary {
+    padding:
+        11px 17px;
+
+    display: flex;
+
+    gap: 8px;
+
+    border-bottom:
+        1px solid #edf0f4;
+
+    background:
+        #f8fafc;
+}
+
+
+.rr-notification-summary span {
+    padding:
+        6px 9px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+}
+
+
+.rr-summary-total {
+    background:
+        #eaf0ff;
+
+    color:
+        #3554d1;
+}
+
+
+.rr-summary-high {
+    background:
+        #ffe7e7;
+
+    color:
+        #a92727;
+}
+
+
+.rr-summary-medium {
+    background:
+        #fff3cc;
+
+    color:
+        #816000;
+}
+
+
+/* LIST */
+
+.rr-notification-list {
+    overflow-y: auto;
+
+    padding:
+        9px;
+}
+
+
+.rr-notification-item {
+    width: 100%;
+
+    margin-bottom: 7px;
+
+    padding:
+        13px;
+
+    display: flex;
+
+    gap: 12px;
+
+    border: 0;
+
+    border-radius: 13px;
+
+    background:
+        #f8fafc;
+
+    color:
+        #101827;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform .17s ease,
+        background .17s ease;
+}
+
+
+.rr-notification-item:hover {
+    transform:
+        translateX(2px);
+
+    background:
+        #eef3ff;
+}
+
+
+.rr-notification-indicator {
+    width: 9px;
+    height: 9px;
+
+    margin-top: 5px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+
+.rr-notification-high
+.rr-notification-indicator {
+    background:
+        #dc2626;
+}
+
+
+.rr-notification-medium
+.rr-notification-indicator {
+    background:
+        #d69e00;
+}
+
+
+.rr-notification-low
+.rr-notification-indicator {
+    background:
+        #536dfe;
+}
+
+
+.rr-notification-content {
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+.rr-notification-category {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color:
+        #758096;
+
+    font-size: 7px;
+
+    font-weight: 900;
+
+    letter-spacing:
+        1.2px;
+}
+
+
+.rr-notification-title {
+    display: block;
+
+    color:
+        #101827;
+
+    font-size: 12px;
+
+    font-weight: 900;
+}
+
+
+.rr-notification-message {
+    display: block;
+
+    margin-top: 4px;
+
+    color:
+        #677386;
+
+    font-size: 10px;
+
+    line-height: 1.45;
+}
+
+
+.rr-notification-action {
+    display: block;
+
+    margin-top: 7px;
+
+    color:
+        #536dfe;
+
+    font-size: 9px;
+
+    font-weight: 900;
+}
+
+
+/* EMPTY */
+
+.rr-notification-empty {
+    padding:
+        45px 25px;
+
+    text-align: center;
+}
+
+
+.rr-notification-empty strong {
+    display: block;
+
+    color:
+        #101827;
+}
+
+
+.rr-notification-empty span {
+    display: block;
+
+    margin-top: 7px;
+
+    color:
+        #758096;
+
+    font-size: 11px;
+}
+
+
+/* FOOTER */
+
+.rr-notification-footer {
+    padding:
+        10px 15px;
+
+    border-top:
+        1px solid #edf0f4;
+
+    background:
+        #f8fafc;
+
+    color:
+        #8a94a5;
+
+    font-size: 8px;
+
+    text-align: center;
+}
+
+
+/* LEAD HIGHLIGHT */
+
+.rr-lead-attention {
+    animation:
+        rrLeadAttention
+        1.7s ease;
+}
+
+
+@keyframes rrLeadAttention {
+
+    0%,
+    100% {
+        box-shadow:
+            0 12px 35px
+            rgba(15,23,42,.055);
+    }
+
+    35% {
+        box-shadow:
+            0 0 0 4px
+            rgba(83,109,254,.24),
+            0 18px 45px
+            rgba(15,23,42,.15);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .rr-business-bell {
+        top: auto;
+
+        right: 17px;
+        bottom: 82px;
+
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .rr-notification-panel {
+        top: auto;
+
+        left: 10px;
+        right: 10px;
+        bottom: 18px;
+
+        width: auto;
+
+        max-height:
+            72vh;
+
+        border-radius:
+            19px;
+    }
+
+}
