@@ -5001,8 +5001,6 @@ and
 <link rel="stylesheet" href="/static/css/global_search.css">
 <link rel="stylesheet" href="/static/css/brand_avatar.css">
 <link rel="stylesheet" href="/static/css/creator_home.css?v=8">
-<link rel="stylesheet" href="/static/css/hero_spacing_fix.css?v=2">
-<link rel="stylesheet" href="/static/css/theme_clean.css?v=100">
 </head>
 
 
@@ -5951,7 +5949,7 @@ and
             {% if vlogs %}
 
 
-                {% for video in vlogs[:6] %}
+                {% for video in vlogs %}
 
 
                 <div class="video-card">
@@ -6274,7 +6272,7 @@ and
             {% set featured_vlogs =
                 vlogs|default([]) %}
 
-            {% for video in featured_vlogs[:6] %}
+            {% for video in featured_vlogs[:3] %}
 
             <article class="rr-story-card">
 
@@ -7929,7 +7927,6 @@ document.addEventListener(
 <script src="/static/js/global_search_tracking.js"></script>
 <script src="/static/js/brand_avatar.js"></script>
 <script src="/static/js/creator_home.js?v=8"></script>
-<script src="/static/js/theme_clean.js?v=100"></script>
 </body>
 
 </html>

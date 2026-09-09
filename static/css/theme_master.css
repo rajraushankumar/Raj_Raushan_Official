@@ -1,0 +1,1048 @@
+/* ==========================================================
+   RAJ RAUSHAN OFFICIAL
+   MASTER LIGHT / DARK THEME
+========================================================== */
+
+
+/* ==========================================================
+   COLOR SYSTEM
+========================================================== */
+
+:root {
+
+    --rr-bg:
+        #f5f7fb;
+
+    --rr-bg-soft:
+        #eef3fb;
+
+    --rr-surface:
+        #ffffff;
+
+    --rr-surface-2:
+        #f8fafc;
+
+    --rr-text:
+        #0f172a;
+
+    --rr-heading:
+        #0b1324;
+
+    --rr-muted:
+        #64748b;
+
+    --rr-border:
+        #dde5ef;
+
+    --rr-accent:
+        #617ff0;
+
+    --rr-accent-soft:
+        #eef2ff;
+
+    --rr-shadow:
+        0 14px 36px
+        rgba(15,23,42,.07);
+
+    --rr-nav:
+        #ffffff;
+
+    --rr-hero:
+        linear-gradient(
+            135deg,
+            #f8fafc 0%,
+            #eef3ff 100%
+        );
+
+    color-scheme:
+        light;
+}
+
+
+html.rr-dark {
+
+    --rr-bg:
+        #07111f;
+
+    --rr-bg-soft:
+        #0b1627;
+
+    --rr-surface:
+        #111c2d;
+
+    --rr-surface-2:
+        #0d1828;
+
+    --rr-text:
+        #f8fafc;
+
+    --rr-heading:
+        #ffffff;
+
+    --rr-muted:
+        #9cacbf;
+
+    --rr-border:
+        rgba(255,255,255,.09);
+
+    --rr-accent:
+        #91a7ff;
+
+    --rr-accent-soft:
+        #17243b;
+
+    --rr-shadow:
+        0 18px 42px
+        rgba(0,0,0,.20);
+
+    --rr-nav:
+        #07101d;
+
+    --rr-hero:
+        linear-gradient(
+            135deg,
+            #071426 0%,
+            #11172f 100%
+        );
+
+    color-scheme:
+        dark;
+}
+
+
+/* ==========================================================
+   PAGE
+========================================================== */
+
+html,
+body {
+    background:
+        var(--rr-bg) !important;
+
+    color:
+        var(--rr-text) !important;
+}
+
+
+body {
+    transition:
+        background-color .25s ease,
+        color .25s ease;
+}
+
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+header,
+nav,
+.navbar,
+.site-header,
+.rr-navbar,
+.rr-nav {
+    background:
+        var(--rr-nav) !important;
+
+    border-color:
+        var(--rr-border) !important;
+
+    transition:
+        background-color .25s ease,
+        border-color .25s ease;
+}
+
+
+header a,
+nav a,
+.navbar a,
+.rr-navbar a,
+.rr-nav a {
+    color:
+        var(--rr-text) !important;
+}
+
+
+header strong,
+nav strong {
+    color:
+        var(--rr-heading) !important;
+}
+
+
+/* navbar creator small official */
+
+html:not(.rr-dark)
+header small,
+
+html:not(.rr-dark)
+nav small,
+
+html:not(.rr-dark)
+header [class*="official"],
+
+html:not(.rr-dark)
+nav [class*="official"] {
+    color:
+        #64748b !important;
+}
+
+
+html.rr-dark
+header small,
+
+html.rr-dark
+nav small,
+
+html.rr-dark
+header [class*="official"],
+
+html.rr-dark
+nav [class*="official"] {
+    color:
+        #aab7ca !important;
+}
+
+
+/* ==========================================================
+   SUBSCRIBE BUTTON
+========================================================== */
+
+.rr-theme-subscribe {
+    background:
+        #ffffff !important;
+
+    color:
+        #0f172a !important;
+
+    border-color:
+        rgba(15,23,42,.09) !important;
+
+    opacity:
+        1 !important;
+}
+
+
+.rr-theme-subscribe * {
+    color:
+        #0f172a !important;
+}
+
+
+/* ==========================================================
+   CREATOR HERO
+========================================================== */
+
+.rr-creator-identity {
+    background:
+        var(--rr-hero) !important;
+
+    color:
+        var(--rr-text) !important;
+
+    transition:
+        background .28s ease,
+        color .28s ease;
+}
+
+
+/* RAJ RAUSHAN */
+
+html:not(.rr-dark)
+.rr-creator-name,
+
+html:not(.rr-dark)
+.rr-name-main {
+    color:
+        #0b1324 !important;
+}
+
+
+html.rr-dark
+.rr-creator-name,
+
+html.rr-dark
+.rr-name-main {
+    color:
+        #ffffff !important;
+}
+
+
+/* OFFICIAL */
+
+.rr-creator-name
+.rr-name-official,
+
+.rr-creator-name > span {
+    color:
+        var(--rr-accent) !important;
+}
+
+
+/* EYEBROW */
+
+.rr-creator-eyebrow {
+    color:
+        var(--rr-accent) !important;
+}
+
+
+/* ROLE */
+
+.rr-creator-role,
+.rr-creator-identity h2,
+.rr-creator-identity h3 {
+    color:
+        var(--rr-heading) !important;
+}
+
+
+/* LOCATION */
+
+.rr-creator-location {
+    color:
+        var(--rr-text) !important;
+}
+
+
+.rr-creator-location span {
+    color:
+        var(--rr-accent) !important;
+}
+
+
+/* INTRO */
+
+.rr-creator-intro,
+.rr-creator-identity p {
+    color:
+        var(--rr-muted) !important;
+}
+
+
+/* TAGS */
+
+.rr-creator-tags {
+    background:
+        transparent !important;
+}
+
+
+.rr-creator-tags span {
+    background:
+        var(--rr-surface) !important;
+
+    color:
+        var(--rr-text) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+}
+
+
+/* HERO BUTTONS */
+
+.rr-creator-btn-primary {
+    background:
+        #ffffff !important;
+
+    color:
+        #0f172a !important;
+}
+
+
+.rr-creator-btn-primary * {
+    color:
+        #0f172a !important;
+}
+
+
+.rr-creator-btn-secondary {
+    background:
+        #ed2430 !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+.rr-creator-btn-secondary * {
+    color:
+        #ffffff !important;
+}
+
+
+html:not(.rr-dark)
+.rr-creator-btn-ghost {
+    background:
+        #e9eef7 !important;
+
+    color:
+        #172033 !important;
+
+    border-color:
+        #ccd5e2 !important;
+}
+
+
+html.rr-dark
+.rr-creator-btn-ghost {
+    background:
+        #172338 !important;
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        rgba(255,255,255,.12) !important;
+}
+
+
+.rr-creator-btn-ghost * {
+    color:
+        inherit !important;
+}
+
+
+/* ACTIVE CREATOR */
+
+.rr-profile-live {
+    background:
+        #0e1928 !important;
+
+    color:
+        #9ef2c8 !important;
+}
+
+
+/* NEVER ALTER IMAGES */
+
+.rr-creator-identity img,
+main img,
+.rr-theme-card img {
+    opacity:
+        1 !important;
+
+    filter:
+        none !important;
+}
+
+
+/* ==========================================================
+   NORMAL PAGE SECTIONS
+========================================================== */
+
+main,
+.rr-theme-section {
+    color:
+        var(--rr-text) !important;
+}
+
+
+.rr-theme-section {
+    background:
+        var(--rr-bg) !important;
+}
+
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6,
+
+.rr-theme-section h1,
+.rr-theme-section h2,
+.rr-theme-section h3,
+.rr-theme-section h4,
+.rr-theme-section h5,
+.rr-theme-section h6 {
+    color:
+        var(--rr-heading);
+}
+
+
+main p,
+.rr-theme-section p {
+    color:
+        var(--rr-muted);
+}
+
+
+/* ==========================================================
+   UNIVERSAL PUBLIC CARDS
+========================================================== */
+
+main .rr-theme-card,
+main article,
+
+main .video-card,
+main .vlog-card,
+main .short-card,
+main .story-card,
+main .destination-card,
+main .playlist-card,
+main .gallery-card,
+main .feature-card,
+
+main [class*="feature-card"],
+main [class*="story-card"],
+main [class*="channel-card"] {
+    background:
+        var(--rr-surface) !important;
+
+    color:
+        var(--rr-text) !important;
+
+    border-color:
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+
+    transition:
+        background-color .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+/* CARD HEADINGS */
+
+main .rr-theme-card h1,
+main .rr-theme-card h2,
+main .rr-theme-card h3,
+main .rr-theme-card h4,
+
+main article h1,
+main article h2,
+main article h3,
+main article h4,
+
+main .feature-card h3,
+main .story-card h3,
+main .video-card h3,
+main .vlog-card h3 {
+    color:
+        var(--rr-heading) !important;
+}
+
+
+/* CARD MUTED */
+
+main .rr-theme-card p,
+main .rr-theme-card small,
+
+main article p,
+main article small {
+    color:
+        var(--rr-muted) !important;
+}
+
+
+/* ==========================================================
+   STORIES BEYOND SCREEN
+========================================================== */
+
+.rr-theme-feature-section {
+    background:
+        var(--rr-bg) !important;
+}
+
+
+.rr-theme-feature-section
+.rr-theme-feature-card {
+    background:
+        var(--rr-surface) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+.rr-theme-feature-card h1,
+.rr-theme-feature-card h2,
+.rr-theme-feature-card h3,
+.rr-theme-feature-card h4 {
+    color:
+        var(--rr-heading) !important;
+}
+
+
+.rr-theme-feature-card p,
+.rr-theme-feature-card span {
+    color:
+        var(--rr-muted) !important;
+}
+
+
+/* card number */
+
+.rr-theme-feature-card
+.rr-theme-number {
+    color:
+        var(--rr-accent) !important;
+}
+
+
+/* ==========================================================
+   YOUTUBE CHANNELS
+========================================================== */
+
+.rr-theme-channel-section {
+    background:
+        var(--rr-bg) !important;
+}
+
+
+.rr-theme-channel-heading {
+    color:
+        var(--rr-heading) !important;
+}
+
+
+.rr-theme-channel-card {
+    background:
+        var(--rr-surface) !important;
+
+    color:
+        var(--rr-text) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+.rr-theme-channel-card h1,
+.rr-theme-channel-card h2,
+.rr-theme-channel-card h3,
+.rr-theme-channel-card h4,
+.rr-theme-channel-card strong {
+    color:
+        var(--rr-heading) !important;
+}
+
+
+.rr-theme-channel-card p,
+.rr-theme-channel-card span,
+.rr-theme-channel-card small {
+    color:
+        var(--rr-muted) !important;
+}
+
+
+.rr-theme-channel-card img {
+    opacity:
+        1 !important;
+
+    filter:
+        none !important;
+}
+
+
+/* ==========================================================
+   FEATURED STORIES / JOURNEYS
+========================================================== */
+
+.rr-theme-story-section {
+    background:
+        var(--rr-bg) !important;
+}
+
+
+.rr-theme-story-card {
+    background:
+        var(--rr-surface) !important;
+
+    color:
+        var(--rr-text) !important;
+
+    border-color:
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+.rr-theme-story-card h1,
+.rr-theme-story-card h2,
+.rr-theme-story-card h3,
+.rr-theme-story-card h4,
+.rr-theme-story-card strong,
+.rr-theme-story-card a {
+    color:
+        var(--rr-heading) !important;
+}
+
+
+.rr-theme-story-card p,
+.rr-theme-story-card small {
+    color:
+        var(--rr-muted) !important;
+}
+
+
+/* PLAY ICON */
+
+.rr-theme-play {
+    width:
+        64px !important;
+
+    height:
+        64px !important;
+
+    display:
+        inline-flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    border-radius:
+        50% !important;
+
+    background:
+        rgba(255,255,255,.93) !important;
+
+    color:
+        #101827 !important;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.18) !important;
+}
+
+
+.rr-theme-play svg {
+    width:
+        22px;
+
+    height:
+        22px;
+}
+
+
+/* ==========================================================
+   LATEST VLOGS / SHORTS
+========================================================== */
+
+.rr-theme-video-section {
+    background:
+        var(--rr-bg) !important;
+}
+
+
+.rr-theme-video-card {
+    background:
+        var(--rr-surface) !important;
+
+    color:
+        var(--rr-text) !important;
+
+    border-color:
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+.rr-theme-video-card h1,
+.rr-theme-video-card h2,
+.rr-theme-video-card h3,
+.rr-theme-video-card h4,
+.rr-theme-video-card strong {
+    color:
+        var(--rr-heading) !important;
+}
+
+
+.rr-theme-video-card p,
+.rr-theme-video-card span,
+.rr-theme-video-card small {
+    color:
+        var(--rr-muted) !important;
+}
+
+
+/* ==========================================================
+   SOCIAL MEDIA
+========================================================== */
+
+.rr-social-trust-links {
+    background:
+        transparent !important;
+}
+
+
+.rr-v7-social-card,
+.rr-v6-social-card,
+.rr-social-trust-links > a {
+    background:
+        var(--rr-surface) !important;
+
+    color:
+        var(--rr-text) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* remove special second channel tint */
+
+.rr-v7-youtube-second {
+    background:
+        var(--rr-surface) !important;
+}
+
+
+.rr-v7-copy strong,
+.rr-v6-social-copy strong,
+.rr-social-trust-links strong {
+    color:
+        var(--rr-heading) !important;
+
+    opacity:
+        1 !important;
+}
+
+
+.rr-v7-copy small,
+.rr-v6-social-copy small,
+.rr-social-trust-links small {
+    color:
+        var(--rr-muted) !important;
+
+    opacity:
+        1 !important;
+}
+
+
+.rr-v7-arrow,
+.rr-v6-open,
+.rr-social-open {
+    color:
+        var(--rr-accent) !important;
+}
+
+
+/* BRAND ICONS MUST STAY WHITE */
+
+.rr-v7-logo,
+.rr-v6-logo,
+.rr-platform-logo,
+.rr-social-logo {
+    color:
+        #ffffff !important;
+
+    opacity:
+        1 !important;
+
+    filter:
+        none !important;
+}
+
+
+/* ==========================================================
+   FORMS
+========================================================== */
+
+input,
+textarea,
+select {
+    background:
+        var(--rr-surface) !important;
+
+    color:
+        var(--rr-text) !important;
+
+    border-color:
+        var(--rr-border) !important;
+}
+
+
+input::placeholder,
+textarea::placeholder {
+    color:
+        var(--rr-muted) !important;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer {
+    background:
+        var(--rr-bg-soft) !important;
+
+    color:
+        var(--rr-text) !important;
+
+    border-color:
+        var(--rr-border) !important;
+}
+
+
+/* ==========================================================
+   MARQUEE / TRAVEL STRIP
+   INTENTIONALLY DARK IN BOTH MODES
+========================================================== */
+
+[class*="marquee"],
+[class*="ticker"] {
+    color:
+        #ffffff;
+}
+
+
+/* ==========================================================
+   THEME BUTTON
+========================================================== */
+
+#rrThemeToggle {
+    width:
+        58px !important;
+
+    height:
+        58px !important;
+
+    min-width:
+        58px !important;
+
+    padding:
+        0 !important;
+
+    display:
+        inline-flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    border-radius:
+        16px !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    background:
+        var(--rr-surface) !important;
+
+    color:
+        var(--rr-text) !important;
+
+    cursor:
+        pointer !important;
+
+    position:
+        relative !important;
+
+    z-index:
+        9999 !important;
+
+    transition:
+        transform .2s ease,
+        background-color .2s ease,
+        color .2s ease !important;
+}
+
+
+#rrThemeToggle:hover {
+    transform:
+        translateY(-2px);
+}
+
+
+#rrThemeToggle svg {
+    width:
+        25px !important;
+
+    height:
+        25px !important;
+
+    display:
+        block !important;
+
+    pointer-events:
+        none !important;
+}
+
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.rr-theme-card:hover,
+.rr-theme-feature-card:hover,
+.rr-theme-channel-card:hover,
+.rr-theme-story-card:hover,
+.rr-theme-video-card:hover,
+.rr-v7-social-card:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--rr-accent) 35%,
+            var(--rr-border)
+        ) !important;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    #rrThemeToggle {
+        width:
+            44px !important;
+
+        height:
+            44px !important;
+
+        min-width:
+            44px !important;
+
+        border-radius:
+            12px !important;
+    }
+
+
+    #rrThemeToggle svg {
+        width:
+            21px !important;
+
+        height:
+            21px !important;
+    }
+
+}

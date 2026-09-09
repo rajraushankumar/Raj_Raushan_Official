@@ -1,0 +1,334 @@
+/* ==========================================================
+   RAJ RAUSHAN OFFICIAL
+   CLEAN THEME SYSTEM
+========================================================== */
+
+:root {
+    --rr-bg: #f4f7fb;
+    --rr-surface: #ffffff;
+    --rr-surface-soft: #eef3f9;
+    --rr-heading: #0b1324;
+    --rr-text: #1e293b;
+    --rr-muted: #64748b;
+    --rr-border: #dce4ee;
+    --rr-accent: #617ff0;
+    --rr-shadow: 0 14px 34px rgba(15, 23, 42, .07);
+    --rr-nav: #ffffff;
+    color-scheme: light;
+}
+
+html.rr-clean-dark {
+    --rr-bg: #07111f;
+    --rr-surface: #111c2d;
+    --rr-surface-soft: #0c1728;
+    --rr-heading: #ffffff;
+    --rr-text: #e7edf7;
+    --rr-muted: #9cacbf;
+    --rr-border: rgba(255,255,255,.09);
+    --rr-accent: #91a7ff;
+    --rr-shadow: 0 17px 40px rgba(0,0,0,.22);
+    --rr-nav: #07101d;
+    color-scheme: dark;
+}
+
+
+/* PAGE */
+
+html,
+body {
+    background: var(--rr-bg) !important;
+    color: var(--rr-text) !important;
+}
+
+body {
+    transition:
+        background-color .25s ease,
+        color .25s ease;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.rr-clean-header {
+    background: var(--rr-nav) !important;
+    color: var(--rr-text) !important;
+    border-color: var(--rr-border) !important;
+}
+
+.rr-clean-header nav,
+.rr-clean-header ul,
+.rr-clean-header [class*="nav"],
+.rr-clean-header [class*="menu"] {
+    background: transparent !important;
+}
+
+.rr-clean-header a:not(.rr-clean-subscribe) {
+    color: var(--rr-text) !important;
+}
+
+.rr-clean-header strong {
+    color: var(--rr-heading) !important;
+}
+
+
+/* Subscribe always clear */
+
+.rr-clean-subscribe {
+    background: #ffffff !important;
+    color: #0b1324 !important;
+    border-color: rgba(15,23,42,.10) !important;
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.rr-clean-hero {
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc,
+            #edf3ff
+        ) !important;
+
+    color: var(--rr-text) !important;
+}
+
+html.rr-clean-dark .rr-clean-hero {
+    background:
+        linear-gradient(
+            135deg,
+            #071426,
+            #11172f
+        ) !important;
+}
+
+.rr-clean-hero .rr-clean-main-name {
+    color: var(--rr-heading) !important;
+}
+
+.rr-clean-hero .rr-clean-official {
+    color: var(--rr-accent) !important;
+}
+
+.rr-clean-hero h2,
+.rr-clean-hero h3 {
+    color: var(--rr-heading) !important;
+}
+
+.rr-clean-hero p {
+    color: var(--rr-muted) !important;
+}
+
+
+/* Pills */
+
+.rr-clean-hero [class*="tag"] span,
+.rr-clean-hero [class*="chip"],
+.rr-clean-hero .rr-creator-tags span {
+    background: var(--rr-surface) !important;
+    color: var(--rr-text) !important;
+    border-color: var(--rr-border) !important;
+}
+
+
+/* ==========================================================
+   GENERIC SECTIONS
+========================================================== */
+
+.rr-clean-section {
+    background: var(--rr-bg) !important;
+    color: var(--rr-text) !important;
+}
+
+.rr-clean-section > h1,
+.rr-clean-section > h2,
+.rr-clean-section > h3 {
+    color: var(--rr-heading) !important;
+}
+
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.rr-clean-card {
+    background: var(--rr-surface) !important;
+    color: var(--rr-text) !important;
+    border-color: var(--rr-border) !important;
+    box-shadow: var(--rr-shadow) !important;
+}
+
+.rr-clean-card h1,
+.rr-clean-card h2,
+.rr-clean-card h3,
+.rr-clean-card h4,
+.rr-clean-card strong {
+    color: var(--rr-heading) !important;
+}
+
+.rr-clean-card p,
+.rr-clean-card small {
+    color: var(--rr-muted) !important;
+}
+
+.rr-clean-card img {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+
+/* ==========================================================
+   SOCIAL CARDS
+========================================================== */
+
+.rr-social-trust-links > a,
+.rr-v7-social-card,
+.rr-v6-social-card {
+    background: var(--rr-surface) !important;
+    color: var(--rr-text) !important;
+    border-color: var(--rr-border) !important;
+    box-shadow: var(--rr-shadow) !important;
+}
+
+.rr-v7-copy strong,
+.rr-v6-social-copy strong,
+.rr-social-trust-links strong {
+    color: var(--rr-heading) !important;
+}
+
+.rr-v7-copy small,
+.rr-v6-social-copy small,
+.rr-social-trust-links small {
+    color: var(--rr-muted) !important;
+}
+
+.rr-v7-youtube-second {
+    background: var(--rr-surface) !important;
+}
+
+
+/* Keep social logos genuine */
+
+.rr-v7-logo,
+.rr-v6-logo,
+.rr-platform-logo,
+.rr-social-logo {
+    color: #ffffff !important;
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   STORY PLAY BUTTON
+========================================================== */
+
+.rr-clean-play {
+    width: 62px !important;
+    height: 62px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    background: rgba(255,255,255,.94) !important;
+    color: #101827 !important;
+
+    box-shadow:
+        0 9px 24px rgba(0,0,0,.17) !important;
+}
+
+.rr-clean-play svg {
+    width: 22px !important;
+    height: 22px !important;
+}
+
+
+/* ==========================================================
+   THEME BUTTON
+========================================================== */
+
+#rrCleanThemeToggle {
+    width: 58px !important;
+    height: 58px !important;
+    min-width: 58px !important;
+
+    padding: 0 !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 16px !important;
+
+    background: var(--rr-surface) !important;
+    color: var(--rr-text) !important;
+
+    border:
+        1px solid var(--rr-border) !important;
+
+    cursor: pointer !important;
+    z-index: 9999 !important;
+}
+
+#rrCleanThemeToggle svg {
+    width: 25px !important;
+    height: 25px !important;
+    display: block !important;
+    pointer-events: none !important;
+}
+
+
+/* ==========================================================
+   FORMS
+========================================================== */
+
+input,
+textarea,
+select {
+    background: var(--rr-surface) !important;
+    color: var(--rr-text) !important;
+    border-color: var(--rr-border) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--rr-muted) !important;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer {
+    background: var(--rr-surface-soft) !important;
+    color: var(--rr-text) !important;
+    border-color: var(--rr-border) !important;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    #rrCleanThemeToggle {
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        border-radius: 12px !important;
+    }
+
+    #rrCleanThemeToggle svg {
+        width: 21px !important;
+        height: 21px !important;
+    }
+}

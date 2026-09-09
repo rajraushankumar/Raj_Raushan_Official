@@ -1,0 +1,43 @@
+/* ==========================================================
+   HERO TOP SPACING FIX
+========================================================== */
+
+.rr-creator-identity {
+    padding-top: 38px !important;
+    min-height: auto !important;
+}
+
+
+.rr-creator-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+
+.rr-creator-profile,
+.rr-creator-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .rr-creator-identity {
+        padding-top: 32px !important;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .rr-creator-identity {
+        padding-top: 24px !important;
+    }
+
+}

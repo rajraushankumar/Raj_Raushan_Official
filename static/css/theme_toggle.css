@@ -1,0 +1,1396 @@
+/* ==========================================================
+   RAJ RAUSHAN OFFICIAL
+   FINAL THEME SYSTEM V3
+========================================================== */
+
+html,
+body {
+    transition:
+        background-color .25s ease,
+        color .25s ease;
+}
+
+
+/* ==========================================================
+   DARK PAGE
+========================================================== */
+
+html.rr-dark,
+html.rr-dark body {
+    background: #07111f !important;
+    color: #f8fafc !important;
+}
+
+
+/* MAIN LIGHT SECTIONS */
+
+html.rr-dark main,
+html.rr-dark .section,
+html.rr-dark .featured-stories,
+html.rr-dark .latest-vlogs,
+html.rr-dark .latest-shorts,
+html.rr-dark .destinations-section,
+html.rr-dark .gallery-section,
+html.rr-dark .media-kit-section,
+html.rr-dark .about-section {
+    background: #07111f !important;
+    color: #f8fafc !important;
+}
+
+
+/* COMMON WHITE CARDS */
+
+html.rr-dark .card,
+html.rr-dark .video-card,
+html.rr-dark .vlog-card,
+html.rr-dark .story-card,
+html.rr-dark .short-card,
+html.rr-dark .destination-card,
+html.rr-dark .playlist-card,
+html.rr-dark .gallery-card,
+html.rr-dark .feature-card,
+html.rr-dark article {
+    background: #111c2d !important;
+
+    color: #ffffff !important;
+
+    border-color:
+        rgba(255,255,255,.08) !important;
+}
+
+
+/* HEADINGS */
+
+html.rr-dark h1,
+html.rr-dark h2,
+html.rr-dark h3,
+html.rr-dark h4,
+html.rr-dark h5,
+html.rr-dark h6 {
+    color: #f8fafc;
+}
+
+
+/* BODY TEXT */
+
+html.rr-dark p,
+html.rr-dark li,
+html.rr-dark span {
+    border-color:
+        rgba(255,255,255,.09);
+}
+
+
+/* MUTED TEXT */
+
+html.rr-dark .meta,
+html.rr-dark small,
+html.rr-dark .subtitle {
+    color: #94a3b8 !important;
+}
+
+
+/* FORMS */
+
+html.rr-dark input,
+html.rr-dark textarea,
+html.rr-dark select {
+    background: #0d1828 !important;
+
+    color: #ffffff !important;
+
+    border-color:
+        rgba(255,255,255,.14) !important;
+}
+
+
+/* ==========================================================
+   THEME BUTTON
+========================================================== */
+
+#rrThemeToggle {
+    width: 58px !important;
+    height: 58px !important;
+
+    min-width: 58px !important;
+
+    padding: 0 !important;
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 16px !important;
+
+    border:
+        1px solid
+        rgba(15,23,42,.12) !important;
+
+    background: #ffffff !important;
+
+    color: #0b1422 !important;
+
+    cursor: pointer !important;
+
+    position: relative !important;
+
+    z-index: 9999 !important;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        color .2s ease !important;
+}
+
+
+#rrThemeToggle:hover {
+    transform: translateY(-2px);
+}
+
+
+html.rr-dark #rrThemeToggle {
+    background: #162235 !important;
+
+    color: #ffffff !important;
+
+    border-color:
+        rgba(255,255,255,.12) !important;
+}
+
+
+#rrThemeToggle svg {
+    width: 25px !important;
+    height: 25px !important;
+
+    display: block !important;
+
+    pointer-events: none !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    #rrThemeToggle {
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+
+        border-radius: 12px !important;
+    }
+
+
+    #rrThemeToggle svg {
+        width: 21px !important;
+        height: 21px !important;
+    }
+
+}
+
+
+/* YOUTUBE_CHANNEL_DARK_FIX_V4 */
+
+
+/* SECTION */
+
+html.rr-dark
+.rr-channel-section {
+    background:
+        #07111f !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+/* MAIN TITLE */
+
+html.rr-dark
+.rr-channel-section
+.rr-channel-heading {
+    color:
+        #ffffff !important;
+}
+
+
+/* CHANNEL CARDS */
+
+html.rr-dark
+.rr-channel-card {
+    background:
+        #111c2d !important;
+
+    color:
+        #ffffff !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08) !important;
+
+    box-shadow:
+        0 18px 42px
+        rgba(0,0,0,.20) !important;
+}
+
+
+/* CHANNEL NAME */
+
+html.rr-dark
+.rr-channel-card h1,
+
+html.rr-dark
+.rr-channel-card h2,
+
+html.rr-dark
+.rr-channel-card h3,
+
+html.rr-dark
+.rr-channel-card h4,
+
+html.rr-dark
+.rr-channel-card strong {
+    color:
+        #ffffff !important;
+}
+
+
+/* HANDLE / LABELS */
+
+html.rr-dark
+.rr-channel-card p,
+
+html.rr-dark
+.rr-channel-card span,
+
+html.rr-dark
+.rr-channel-card small {
+    color:
+        #aab6c8 !important;
+}
+
+
+/* BIG STATS */
+
+html.rr-dark
+.rr-channel-card
+.rr-channel-stat-number {
+    color:
+        #ffffff !important;
+}
+
+
+/* VISIT CHANNEL BUTTON */
+
+html.rr-dark
+.rr-channel-card a {
+    color:
+        #ffffff;
+}
+
+
+/* PROFILE IMAGE */
+
+html.rr-dark
+.rr-channel-card img {
+    filter:
+        none !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* LIGHT MODE REMAINS NORMAL */
+
+html:not(.rr-dark)
+.rr-channel-card {
+    background:
+        #ffffff;
+}
+
+
+/* SMOOTH */
+
+.rr-channel-section,
+.rr-channel-card {
+    transition:
+        background-color .25s ease,
+        color .25s ease,
+        border-color .25s ease;
+}
+
+
+/* UPPER_PAGE_THEME_FIX_V5 */
+
+
+/* ==========================================================
+   LIGHT MODE - NAVBAR
+========================================================== */
+
+html:not(.rr-dark) header,
+html:not(.rr-dark) nav,
+html:not(.rr-dark) .navbar,
+html:not(.rr-dark) .site-header,
+html:not(.rr-dark) .rr-navbar,
+html:not(.rr-dark) .rr-nav {
+    background:
+        #ffffff !important;
+
+    color:
+        #0b1422 !important;
+
+    border-color:
+        rgba(15,23,42,.10) !important;
+}
+
+
+html:not(.rr-dark) header a,
+html:not(.rr-dark) nav a,
+html:not(.rr-dark) .navbar a,
+html:not(.rr-dark) .rr-navbar a,
+html:not(.rr-dark) .rr-nav a {
+    color:
+        #162033 !important;
+}
+
+
+/* Creator name/logo in navbar */
+
+html:not(.rr-dark)
+header strong,
+
+html:not(.rr-dark)
+header span,
+
+html:not(.rr-dark)
+nav strong {
+    color:
+        #101827 !important;
+}
+
+
+/* ==========================================================
+   LIGHT MODE - HERO
+========================================================== */
+
+html:not(.rr-dark)
+.rr-creator-identity {
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc,
+            #eef3ff
+        ) !important;
+
+    color:
+        #0f172a !important;
+}
+
+
+html:not(.rr-dark)
+.rr-creator-identity
+.rr-creator-name,
+
+html:not(.rr-dark)
+.rr-creator-identity h1,
+
+html:not(.rr-dark)
+.rr-creator-identity h2,
+
+html:not(.rr-dark)
+.rr-creator-identity h3 {
+    color:
+        #0f172a !important;
+}
+
+
+/* Official remains blue */
+
+html:not(.rr-dark)
+.rr-creator-name
+.rr-name-official,
+
+html:not(.rr-dark)
+.rr-creator-name span {
+    color:
+        #5874e8 !important;
+}
+
+
+html:not(.rr-dark)
+.rr-creator-identity p {
+    color:
+        #475569 !important;
+}
+
+
+/* Hero tags */
+
+html:not(.rr-dark)
+.rr-creator-identity
+[class*="tag"],
+
+html:not(.rr-dark)
+.rr-creator-identity
+[class*="chip"] {
+    background:
+        #ffffff !important;
+
+    color:
+        #25324a !important;
+
+    border-color:
+        rgba(15,23,42,.12) !important;
+}
+
+
+/* Work With Me dark button in light mode */
+
+html:not(.rr-dark)
+.rr-creator-identity
+a:not([href*="youtube"]):not(:first-of-type) {
+    border-color:
+        rgba(15,23,42,.14);
+}
+
+
+/* ==========================================================
+   DARK MODE - NAVBAR
+========================================================== */
+
+html.rr-dark header,
+html.rr-dark nav,
+html.rr-dark .navbar,
+html.rr-dark .site-header,
+html.rr-dark .rr-navbar,
+html.rr-dark .rr-nav {
+    background:
+        #07101d !important;
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        rgba(255,255,255,.08) !important;
+}
+
+
+html.rr-dark header a,
+html.rr-dark nav a,
+html.rr-dark .navbar a,
+html.rr-dark .rr-navbar a,
+html.rr-dark .rr-nav a {
+    color:
+        #f3f6fb !important;
+}
+
+
+html.rr-dark header strong,
+html.rr-dark header span,
+html.rr-dark nav strong {
+    color:
+        #ffffff !important;
+}
+
+
+/* ==========================================================
+   DARK MODE - HERO
+========================================================== */
+
+html.rr-dark
+.rr-creator-identity {
+    background:
+        linear-gradient(
+            135deg,
+            #071426,
+            #11172f
+        ) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+html.rr-dark
+.rr-creator-identity
+.rr-creator-name,
+
+html.rr-dark
+.rr-creator-identity h1,
+
+html.rr-dark
+.rr-creator-identity h2,
+
+html.rr-dark
+.rr-creator-identity h3 {
+    color:
+        #ffffff !important;
+}
+
+
+html.rr-dark
+.rr-creator-name
+.rr-name-official,
+
+html.rr-dark
+.rr-creator-name span {
+    color:
+        #91a7ff !important;
+}
+
+
+html.rr-dark
+.rr-creator-identity p {
+    color:
+        #d7deea !important;
+}
+
+
+/* ==========================================================
+   KEEP DP NORMAL
+========================================================== */
+
+.rr-creator-identity img,
+header img,
+nav img {
+    filter:
+        none !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   SMOOTH THEME CHANGE
+========================================================== */
+
+header,
+nav,
+.navbar,
+.site-header,
+.rr-navbar,
+.rr-nav,
+.rr-creator-identity {
+    transition:
+        background .28s ease,
+        color .28s ease,
+        border-color .28s ease !important;
+}
+
+
+/* LIGHT_MODE_CONTRAST_FIX_V6 */
+
+
+/* ==========================================================
+   LIGHT MODE HERO
+========================================================== */
+
+html:not(.rr-dark)
+.rr-creator-identity {
+    background:
+        linear-gradient(
+            135deg,
+            #f7f9fd,
+            #eef3ff
+        ) !important;
+
+    color:
+        #101827 !important;
+}
+
+
+/* RAJ RAUSHAN */
+
+html:not(.rr-dark)
+.rr-creator-name,
+
+html:not(.rr-dark)
+.rr-creator-name
+.rr-name-main {
+    color:
+        #0f172a !important;
+}
+
+
+/* OFFICIAL */
+
+html:not(.rr-dark)
+.rr-creator-name
+.rr-name-official,
+
+html:not(.rr-dark)
+.rr-creator-name > span {
+    color:
+        #617ff0 !important;
+}
+
+
+/* TOP SMALL BRAND TEXT */
+
+html:not(.rr-dark)
+.rr-creator-eyebrow {
+    color:
+        #5874df !important;
+}
+
+
+/* TRAVEL CONTENT CREATOR */
+
+html:not(.rr-dark)
+.rr-creator-role {
+    color:
+        #111827 !important;
+}
+
+
+/* LOCATION */
+
+html:not(.rr-dark)
+.rr-creator-location {
+    color:
+        #334155 !important;
+}
+
+
+html:not(.rr-dark)
+.rr-creator-location span {
+    color:
+        #5874df !important;
+}
+
+
+/* INTRO */
+
+html:not(.rr-dark)
+.rr-creator-intro {
+    color:
+        #475569 !important;
+}
+
+
+/* ==========================================================
+   TAGS
+========================================================== */
+
+html:not(.rr-dark)
+.rr-creator-tags {
+    background:
+        transparent !important;
+}
+
+
+html:not(.rr-dark)
+.rr-creator-tags span {
+    background:
+        #ffffff !important;
+
+    color:
+        #334155 !important;
+
+    border:
+        1px solid
+        rgba(15,23,42,.12) !important;
+
+    box-shadow:
+        0 4px 14px
+        rgba(15,23,42,.04) !important;
+}
+
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+html:not(.rr-dark)
+.rr-creator-btn-primary {
+    background:
+        #ffffff !important;
+
+    color:
+        #0f172a !important;
+
+    border:
+        1px solid
+        rgba(15,23,42,.10) !important;
+}
+
+
+html:not(.rr-dark)
+.rr-creator-btn-secondary {
+    background:
+        #ed1c2b !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+html:not(.rr-dark)
+.rr-creator-btn-ghost {
+    background:
+        #e8edf7 !important;
+
+    color:
+        #172033 !important;
+
+    border:
+        1px solid
+        rgba(15,23,42,.12) !important;
+}
+
+
+/* ==========================================================
+   AVAILABILITY LINE
+========================================================== */
+
+html:not(.rr-dark)
+.rr-creator-availability {
+    color:
+        #64748b !important;
+}
+
+
+/* ==========================================================
+   NAVBAR BRAND
+========================================================== */
+
+html:not(.rr-dark)
+header,
+
+html:not(.rr-dark)
+nav {
+    background:
+        #ffffff !important;
+}
+
+
+html:not(.rr-dark)
+header a,
+
+html:not(.rr-dark)
+nav a {
+    color:
+        #162033 !important;
+}
+
+
+html:not(.rr-dark)
+header strong,
+
+html:not(.rr-dark)
+nav strong {
+    color:
+        #111827 !important;
+}
+
+
+/* Small OFFICIAL text near logo */
+
+html:not(.rr-dark)
+header small,
+
+html:not(.rr-dark)
+nav small,
+
+html:not(.rr-dark)
+header [class*="sub"],
+
+html:not(.rr-dark)
+nav [class*="sub"] {
+    color:
+        #64748b !important;
+}
+
+
+/* ==========================================================
+   PROFILE / DP
+========================================================== */
+
+html:not(.rr-dark)
+.rr-profile-image {
+    filter:
+        none !important;
+
+    opacity:
+        1 !important;
+}
+
+
+html:not(.rr-dark)
+.rr-profile-image-shell {
+    box-shadow:
+        0 25px 60px
+        rgba(15,23,42,.16) !important;
+}
+
+
+/* ==========================================================
+   ACTIVE CREATOR BADGE
+========================================================== */
+
+html:not(.rr-dark)
+.rr-profile-live {
+    background:
+        #101827 !important;
+
+    color:
+        #9ff0c8 !important;
+
+    border-color:
+        rgba(15,23,42,.14) !important;
+}
+
+
+/* GLOBAL_SECTION_THEME_FIX_V7 */
+
+
+/* ==========================================================
+   YOUTUBE CHANNEL SECTION - DARK
+========================================================== */
+
+html.rr-dark
+.rr-v7-channel-section {
+    background:
+        #07111f !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+html.rr-dark
+.rr-v7-channel-heading {
+    color:
+        #ffffff !important;
+}
+
+
+html.rr-dark
+.rr-v7-channel-card {
+    background:
+        #111c2d !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08) !important;
+
+    color:
+        #ffffff !important;
+
+    box-shadow:
+        0 18px 45px
+        rgba(0,0,0,.18) !important;
+}
+
+
+html.rr-dark
+.rr-v7-channel-card h1,
+
+html.rr-dark
+.rr-v7-channel-card h2,
+
+html.rr-dark
+.rr-v7-channel-card h3,
+
+html.rr-dark
+.rr-v7-channel-card h4,
+
+html.rr-dark
+.rr-v7-channel-card strong {
+    color:
+        #ffffff !important;
+}
+
+
+html.rr-dark
+.rr-v7-channel-card p,
+
+html.rr-dark
+.rr-v7-channel-card small,
+
+html.rr-dark
+.rr-v7-channel-card span {
+    color:
+        #aebbd0 !important;
+}
+
+
+html.rr-dark
+.rr-v7-channel-card a {
+    color:
+        #ffffff !important;
+}
+
+
+html.rr-dark
+.rr-v7-channel-card img {
+    filter:
+        none !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   YOUTUBE CHANNEL SECTION - LIGHT
+========================================================== */
+
+html:not(.rr-dark)
+.rr-v7-channel-section {
+    background:
+        #f5f7fb !important;
+
+    color:
+        #0f172a !important;
+}
+
+
+html:not(.rr-dark)
+.rr-v7-channel-heading {
+    color:
+        #0f172a !important;
+}
+
+
+html:not(.rr-dark)
+.rr-v7-channel-card {
+    background:
+        #ffffff !important;
+
+    color:
+        #0f172a !important;
+
+    border:
+        1px solid
+        rgba(15,23,42,.07) !important;
+}
+
+
+html:not(.rr-dark)
+.rr-v7-channel-card h1,
+
+html:not(.rr-dark)
+.rr-v7-channel-card h2,
+
+html:not(.rr-dark)
+.rr-v7-channel-card h3,
+
+html:not(.rr-dark)
+.rr-v7-channel-card h4,
+
+html:not(.rr-dark)
+.rr-v7-channel-card strong {
+    color:
+        #0f172a !important;
+}
+
+
+html:not(.rr-dark)
+.rr-v7-channel-card p,
+
+html:not(.rr-dark)
+.rr-v7-channel-card small,
+
+html:not(.rr-dark)
+.rr-v7-channel-card span {
+    color:
+        #526174 !important;
+}
+
+
+/* ==========================================================
+   FEATURED STORY CARDS - DARK
+========================================================== */
+
+html.rr-dark
+.rr-v7-story-card {
+    background:
+        #111c2d !important;
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        rgba(255,255,255,.08) !important;
+}
+
+
+html.rr-dark
+.rr-v7-story-card h1,
+
+html.rr-dark
+.rr-v7-story-card h2,
+
+html.rr-dark
+.rr-v7-story-card h3,
+
+html.rr-dark
+.rr-v7-story-card h4,
+
+html.rr-dark
+.rr-v7-story-card strong,
+
+html.rr-dark
+.rr-v7-story-card a {
+    color:
+        #ffffff !important;
+}
+
+
+html.rr-dark
+.rr-v7-story-card p,
+
+html.rr-dark
+.rr-v7-story-card small,
+
+html.rr-dark
+.rr-v7-story-card span {
+    color:
+        #9fb0c7 !important;
+}
+
+
+html.rr-dark
+.rr-v7-story-card img {
+    filter:
+        none !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   STORY CARD - LIGHT
+========================================================== */
+
+html:not(.rr-dark)
+.rr-v7-story-card {
+    background:
+        #ffffff !important;
+
+    color:
+        #0f172a !important;
+}
+
+
+html:not(.rr-dark)
+.rr-v7-story-card h1,
+
+html:not(.rr-dark)
+.rr-v7-story-card h2,
+
+html:not(.rr-dark)
+.rr-v7-story-card h3,
+
+html:not(.rr-dark)
+.rr-v7-story-card h4,
+
+html:not(.rr-dark)
+.rr-v7-story-card strong {
+    color:
+        #0f172a !important;
+}
+
+
+/* ==========================================================
+   STORY PLAY ICON
+========================================================== */
+
+.rr-v7-story-play {
+    width:
+        64px !important;
+
+    height:
+        64px !important;
+
+    display:
+        flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    border-radius:
+        50% !important;
+
+    background:
+        rgba(255,255,255,.92) !important;
+
+    color:
+        #111827 !important;
+
+    font-family:
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        20px !important;
+
+    font-weight:
+        700 !important;
+
+    box-shadow:
+        0 8px 24px
+        rgba(0,0,0,.15) !important;
+}
+
+
+/* ==========================================================
+   SMOOTH
+========================================================== */
+
+.rr-v7-channel-section,
+.rr-v7-channel-card,
+.rr-v7-story-card {
+    transition:
+        background-color .25s ease,
+        color .25s ease,
+        border-color .25s ease !important;
+}
+
+
+/* PREMIUM_LIGHT_SOCIAL_V8 */
+
+
+/* ==========================================================
+   LIGHT MODE - SOCIAL AREA
+========================================================== */
+
+html:not(.rr-dark)
+.rr-social-trust-links {
+    background:
+        transparent !important;
+
+    gap:
+        16px !important;
+}
+
+
+/* ALL 6 SOCIAL CARDS */
+
+html:not(.rr-dark)
+.rr-v7-social-card,
+
+html:not(.rr-dark)
+.rr-v6-social-card,
+
+html:not(.rr-dark)
+.rr-social-trust-links > a {
+    background:
+        #ffffff !important;
+
+    border:
+        1px solid
+        #dde4ee !important;
+
+    color:
+        #111827 !important;
+
+    box-shadow:
+        0 10px 28px
+        rgba(15,23,42,.055) !important;
+
+    opacity:
+        1 !important;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease !important;
+}
+
+
+/* REMOVE OLD SPECIAL PINK / TRANSPARENT BACKGROUNDS */
+
+html:not(.rr-dark)
+.rr-v7-youtube-second,
+
+html:not(.rr-dark)
+.rr-v7-youtube,
+
+html:not(.rr-dark)
+.rr-v7-instagram,
+
+html:not(.rr-dark)
+.rr-v7-facebook,
+
+html:not(.rr-dark)
+.rr-v7-linkedin,
+
+html:not(.rr-dark)
+.rr-v7-github {
+    background:
+        #ffffff !important;
+}
+
+
+/* CARD HOVER */
+
+html:not(.rr-dark)
+.rr-v7-social-card:hover,
+
+html:not(.rr-dark)
+.rr-v6-social-card:hover,
+
+html:not(.rr-dark)
+.rr-social-trust-links > a:hover {
+    transform:
+        translateY(-4px) !important;
+
+    border-color:
+        #b9c8e5 !important;
+
+    box-shadow:
+        0 18px 38px
+        rgba(15,23,42,.10) !important;
+}
+
+
+/* ==========================================================
+   SOCIAL TITLES
+========================================================== */
+
+html:not(.rr-dark)
+.rr-v7-copy strong,
+
+html:not(.rr-dark)
+.rr-v6-social-copy strong,
+
+html:not(.rr-dark)
+.rr-social-trust-links strong {
+    color:
+        #111827 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* SOCIAL SUBTEXT */
+
+html:not(.rr-dark)
+.rr-v7-copy small,
+
+html:not(.rr-dark)
+.rr-v6-social-copy small,
+
+html:not(.rr-dark)
+.rr-social-trust-links small,
+
+html:not(.rr-dark)
+.rr-social-trust-links p {
+    color:
+        #64748b !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ARROWS */
+
+html:not(.rr-dark)
+.rr-v7-arrow,
+
+html:not(.rr-dark)
+.rr-v6-open,
+
+html:not(.rr-dark)
+.rr-social-open {
+    color:
+        #5874df !important;
+
+    opacity:
+        .8 !important;
+}
+
+
+html:not(.rr-dark)
+.rr-v7-social-card:hover
+.rr-v7-arrow {
+    color:
+        #3157d5 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   PLATFORM LOGOS
+   KEEP REAL BRAND COLORS
+========================================================== */
+
+html:not(.rr-dark)
+.rr-v7-logo,
+
+html:not(.rr-dark)
+.rr-v6-logo {
+    opacity:
+        1 !important;
+
+    filter:
+        none !important;
+
+    box-shadow:
+        0 8px 18px
+        rgba(15,23,42,.12) !important;
+}
+
+
+/* ==========================================================
+   FIND ME ONLINE LABEL
+========================================================== */
+
+html:not(.rr-dark)
+.rr-social-trust-links::before {
+    color:
+        #3f5fc9 !important;
+}
+
+
+/* ==========================================================
+   REDUCE EXTRA GAP ABOVE SOCIAL SECTION
+========================================================== */
+
+html:not(.rr-dark)
+.rr-creator-availability {
+    margin-bottom:
+        42px !important;
+}
+
+
+/* ==========================================================
+   LIGHT PAGE BACKGROUND
+========================================================== */
+
+html:not(.rr-dark)
+body {
+    background:
+        #f4f7fb !important;
+
+    color:
+        #111827 !important;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    html:not(.rr-dark)
+    .rr-social-trust-links {
+        gap:
+            12px !important;
+    }
+
+}

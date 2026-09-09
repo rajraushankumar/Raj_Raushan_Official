@@ -737,7 +737,7 @@ def home():
     # Template can show first 3/6
     # depending on its existing design.
 
-    shorts = shorts[:4]
+    shorts = shorts[:6]
 
 
     print(
