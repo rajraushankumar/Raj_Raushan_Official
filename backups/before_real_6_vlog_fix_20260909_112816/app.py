@@ -86,7 +86,7 @@ def get_latest_videos():
         playlist_params = {
             "part": "snippet",
             "playlistId": playlist_id,
-            "maxResults": 30,
+            "maxResults": 12,
             "key": API_KEY
         }
 
