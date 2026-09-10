@@ -2627,3 +2627,926 @@ body .rr-back-top {
     }
 
 }
+
+
+
+/* ==========================================================
+   DARKER TEXT CONTRAST V31
+   LIGHT SECTIONS ONLY
+========================================================== */
+
+:root {
+
+    --rr-ink:
+        #071510 !important;
+
+    --rr-muted:
+        #465851 !important;
+
+    --rr-border:
+        #d6d2c8 !important;
+
+}
+
+
+/* ==========================================================
+   MAIN SECTION DESCRIPTIONS
+========================================================== */
+
+body .rr-highlight-heading p,
+body .rr-stories-header p,
+body .world-heading p,
+body .creator-about p,
+body .rr-brand-trust p,
+body .raj-media-kit p,
+
+body .story-section p,
+body .pillars-section p,
+body .journey-section p,
+
+body .collab-section p,
+body .destination-section p,
+body .detail-story p,
+
+body .explore-main p,
+body .gallery-section p,
+body .playlist-section p,
+body .map-layout p,
+
+body .services-section p,
+body .why-section p,
+body .enquiry-section p {
+
+    color:
+        #465851 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   CARD TITLES
+========================================================== */
+
+body .rr-highlight-card h3,
+
+body .channel-card h2,
+body .channel-card h3,
+
+body .video-card h3,
+
+body .short-card h3,
+body .short-info h3,
+
+body .rr-story-card h3,
+body .rr-story-content h3,
+
+body .destination-card h3,
+
+body .rr-brand-point strong,
+
+body .raj-media-card h3,
+body .raj-media-fit h3,
+body .raj-partner-promise h3,
+
+body .identity-card h3,
+body .pillar-card h3,
+body .journey-item h3,
+
+body .collab-card h3,
+body .collab-value-light h3,
+
+body .service-card h3,
+
+body .playlist-sync-card h3,
+body .highlights-card h3,
+body .playlist-card h3,
+
+body .explore-card h3,
+body .destination-result h3,
+body .playlist-result h3,
+
+body .youtube-playlist-card h3,
+body .map-place-card h3 {
+
+    color:
+        #071510 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   CARD DESCRIPTION TEXT
+========================================================== */
+
+body .rr-highlight-card p,
+
+body .channel-card p,
+body .channel-card span,
+
+body .video-card p,
+body .video-meta,
+
+body .short-info p,
+body .short-meta,
+
+body .rr-story-card p,
+body .rr-story-meta,
+body .rr-story-info,
+
+body .destination-card p,
+body .destination-stats,
+
+body .rr-brand-point p,
+
+body .raj-media-card p,
+body .raj-media-fit p,
+body .raj-partner-promise p,
+
+body .identity-card p,
+body .pillar-card p,
+body .journey-item p,
+
+body .collab-card p,
+body .collab-value-light p,
+
+body .service-card p,
+
+body .playlist-sync-card p,
+body .highlights-card p,
+body .playlist-card p,
+
+body .explore-card p,
+body .destination-result p,
+body .playlist-result p,
+
+body .playlist-description,
+
+body .youtube-playlist-card p,
+
+body .map-place-card p {
+
+    color:
+        #465851 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   DESTINATION / EXPERIENCE CARDS
+   Screenshot wale cards
+========================================================== */
+
+body .destination-card h3,
+body .identity-card h3,
+body .pillar-card h3,
+
+body [class*="destination"] h3,
+body [class*="experience"] h3 {
+
+    color:
+        #071510 !important;
+}
+
+
+body .destination-card p,
+body .identity-card p,
+body .pillar-card p,
+
+body [class*="destination"] p,
+body [class*="experience"] p {
+
+    color:
+        #465851 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   STORIES BEYOND SCREEN
+   Screenshot 02
+========================================================== */
+
+body .rr-highlight-card {
+
+    color:
+        #071510 !important;
+}
+
+
+body .rr-highlight-card h3 {
+
+    color:
+        #071510 !important;
+}
+
+
+body .rr-highlight-card p {
+
+    color:
+        #465851 !important;
+}
+
+
+body .rr-highlight-number {
+
+    color:
+        #a7772f !important;
+}
+
+
+/* ==========================================================
+   ABOUT / JOURNEY TEXT
+========================================================== */
+
+body .about-lead {
+
+    color:
+        #35483f !important;
+}
+
+
+body .journey-item span,
+body .pillar-card span,
+body .identity-card span {
+
+    color:
+        #465851 !important;
+}
+
+
+/* ==========================================================
+   CHANNEL STATS
+========================================================== */
+
+body .channel-stats strong {
+
+    color:
+        #071510 !important;
+}
+
+
+body .channel-stats span {
+
+    color:
+        #465851 !important;
+}
+
+
+/* ==========================================================
+   PLAYLIST / EXPLORE SMALL TEXT
+========================================================== */
+
+body .playlist-stat span,
+body .playlist-description,
+body .explore-tags,
+body .destination-stats {
+
+    color:
+        #465851 !important;
+}
+
+
+/* ==========================================================
+   FORM TEXT
+========================================================== */
+
+body input,
+body textarea,
+body select {
+
+    color:
+        #071510 !important;
+}
+
+
+body input::placeholder,
+body textarea::placeholder {
+
+    color:
+        #68766f !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   KEEP DARK SECTIONS LIGHT
+   IMPORTANT - DO NOT MAKE HERO/NAV BLACK
+========================================================== */
+
+body .rr-creator-identity p,
+body .rr-creator-identity span:not(.rr-name-main):not(.rr-name-official),
+
+body .rr-shorts-spotlight p,
+body .rr-shorts-spotlight span,
+
+body .brand-collaboration p,
+body .global-creator-cta p,
+
+body .creator-footer p,
+body .creator-footer span,
+
+body .about-hero p,
+body .collab-hero p,
+body .destination-hero p,
+body .detail-hero p,
+body .explore-hero p,
+body .gallery-hero p,
+body .playlist-hero p,
+body .map-hero p,
+body .money-hero p,
+
+body .creator-identity-card p,
+body .collab-value-dark p {
+
+    color:
+        #c0ccc7 !important;
+}
+
+
+/* HERO NAME / NAV STAY WHITE */
+
+body .rr-name-main,
+body .rr-creator-role,
+
+body .raj-pro-header a,
+body .raj-pro-logo,
+body .raj-logo-text strong {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .rr-name-official {
+
+    color:
+        var(--rr-gold-light) !important;
+}
+
+
+
+/* ==========================================================
+   RR FINAL CONTRAST V32
+========================================================== */
+
+:root {
+    --rr-ink-final: #0b1713;
+    --rr-text-final: #43544d;
+    --rr-dark-title: #ffffff;
+    --rr-dark-text: #c2cec9;
+    --rr-gold-final: #e5c992;
+}
+
+
+/* ==========================================================
+   LIGHT CARDS - DARK READABLE TEXT
+========================================================== */
+
+body :where(
+    .rr-highlight-card,
+    .channel-card,
+    .video-card,
+    .short-card,
+    .rr-story-card,
+    .destination-card,
+    .rr-brand-point,
+    .raj-media-card,
+    .raj-media-fit,
+    .raj-partner-promise,
+    .identity-card,
+    .pillar-card,
+    .journey-item,
+    .collab-card,
+    .collab-value-light,
+    .service-card,
+    .playlist-sync-card,
+    .highlights-card,
+    .playlist-card,
+    .explore-card,
+    .destination-result,
+    .playlist-result,
+    .youtube-playlist-card,
+    .map-place-card
+) :where(h1,h2,h3,h4,strong) {
+    color: var(--rr-ink-final) !important;
+    opacity: 1 !important;
+}
+
+
+body :where(
+    .rr-highlight-card,
+    .channel-card,
+    .video-card,
+    .short-card,
+    .rr-story-card,
+    .destination-card,
+    .rr-brand-point,
+    .raj-media-card,
+    .raj-media-fit,
+    .raj-partner-promise,
+    .identity-card,
+    .pillar-card,
+    .journey-item,
+    .collab-card,
+    .collab-value-light,
+    .service-card,
+    .playlist-sync-card,
+    .highlights-card,
+    .playlist-card,
+    .explore-card,
+    .destination-result,
+    .playlist-result,
+    .youtube-playlist-card,
+    .map-place-card
+) :where(p,small,span) {
+    color: var(--rr-text-final) !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   SECTION DESCRIPTION TEXT
+========================================================== */
+
+body :where(
+    .rr-highlight-heading,
+    .rr-stories-header,
+    .world-heading,
+    .creator-about,
+    .rr-brand-trust,
+    .raj-media-kit,
+    .story-section,
+    .pillars-section,
+    .journey-section,
+    .collab-section,
+    .destination-section,
+    .detail-story,
+    .explore-main,
+    .gallery-section,
+    .playlist-section,
+    .map-layout,
+    .services-section,
+    .why-section,
+    .enquiry-section
+) p {
+    color: var(--rr-text-final) !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   FIND ME ONLINE - DARK SECTION
+========================================================== */
+
+body .rr-social-trust-links > a {
+    background: rgba(255,255,255,.075) !important;
+    border-color: rgba(229,201,146,.30) !important;
+}
+
+
+body .rr-social-trust-links :where(
+    strong,
+    .rr-social-title
+) {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+
+body .rr-social-trust-links :where(
+    p,
+    small,
+    .rr-social-info span,
+    .rr-v7-copy small,
+    .rr-v6-social-copy small
+) {
+    color: #c2cec9 !important;
+    opacity: 1 !important;
+}
+
+
+body :where(
+    .rr-social-arrow,
+    .rr-v7-arrow,
+    .rr-v6-open
+) {
+    color: #e5c992 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   CREATOR STATS
+========================================================== */
+
+body .rr-stat-card {
+    background: rgba(255,255,255,.075) !important;
+    border-color: rgba(229,201,146,.30) !important;
+}
+
+
+body .rr-stat-card strong {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+
+body .rr-stat-card :where(
+    span,
+    small,
+    p
+) {
+    color: #c2cec9 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+body .rr-creator-identity .rr-name-main,
+body .rr-creator-identity .rr-creator-role {
+    color: #ffffff !important;
+}
+
+
+body .rr-creator-identity .rr-name-official,
+body .rr-creator-identity .rr-creator-eyebrow {
+    color: #e5c992 !important;
+}
+
+
+body .rr-creator-identity :where(
+    .rr-creator-location,
+    .rr-creator-intro,
+    .rr-creator-availability
+) {
+    color: #c2cec9 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   DARK SECTIONS
+========================================================== */
+
+body :where(
+    .rr-shorts-spotlight,
+    .brand-collaboration,
+    .global-creator-cta,
+    .creator-footer,
+    .about-cta,
+    .about-footer,
+    .collab-footer,
+    .detail-cta,
+    .creator-identity-card,
+    .raj-media-profile,
+    .collab-value-dark,
+    .about-hero,
+    .collab-hero,
+    .destination-hero,
+    .detail-hero,
+    .explore-hero,
+    .gallery-hero,
+    .playlist-hero,
+    .map-hero,
+    .money-hero
+) :where(h1,h2,h3,h4,strong) {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+
+body :where(
+    .rr-shorts-spotlight,
+    .brand-collaboration,
+    .global-creator-cta,
+    .creator-footer,
+    .about-cta,
+    .about-footer,
+    .collab-footer,
+    .detail-cta,
+    .creator-identity-card,
+    .raj-media-profile,
+    .collab-value-dark,
+    .about-hero,
+    .collab-hero,
+    .destination-hero,
+    .detail-hero,
+    .explore-hero,
+    .gallery-hero,
+    .playlist-hero,
+    .map-hero,
+    .money-hero
+) :where(p,small,span) {
+    color: #c2cec9 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   CHANNELS
+========================================================== */
+
+body .channel-card :where(h2,h3,strong) {
+    color: #0b1713 !important;
+}
+
+
+body .channel-card :where(p,span,small) {
+    color: #43544d !important;
+}
+
+
+/* ==========================================================
+   VLOGS
+========================================================== */
+
+body .video-card h3,
+body .video-info h3 {
+    color: #0b1713 !important;
+}
+
+
+body .video-card :where(p,span,small),
+body .video-meta {
+    color: #43544d !important;
+}
+
+
+/* ==========================================================
+   NORMAL SHORTS
+========================================================== */
+
+body .short-info h3 {
+    color: #0b1713 !important;
+}
+
+
+body .short-info :where(p,span,small),
+body .short-meta {
+    color: #43544d !important;
+}
+
+
+/* ==========================================================
+   FEATURED STORIES
+========================================================== */
+
+body .rr-story-content h3 {
+    color: #0b1713 !important;
+}
+
+
+body .rr-story-content :where(p,span,small),
+body .rr-story-meta,
+body .rr-story-info {
+    color: #43544d !important;
+}
+
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+body .raj-pro-header :where(a,strong) {
+    color: #f4f7f5 !important;
+    opacity: 1 !important;
+}
+
+
+body .raj-logo-text small {
+    color: #b8c5c0 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   LIGHT SECTION LABELS
+========================================================== */
+
+body :where(
+    .world-label,
+    .rr-stories-label,
+    .rr-brand-label,
+    .raj-section-label,
+    .story-label,
+    .collab-section-label,
+    .section-label,
+    .playlist-eyebrow,
+    .about-eyebrow,
+    .collab-eyebrow,
+    .explore-eyebrow,
+    .money-eyebrow,
+    .eyebrow
+) {
+    color: #936620 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   FORMS
+========================================================== */
+
+body :where(input,textarea,select) {
+    color: #17231f !important;
+}
+
+
+body input::placeholder,
+body textarea::placeholder {
+    color: #66766f !important;
+    opacity: 1 !important;
+}
+
+
+
+/* ==========================================================
+   PROFESSIONAL FONT WEIGHT V33
+========================================================== */
+
+/* Main headings */
+
+body h1 {
+    font-weight: 900 !important;
+}
+
+body h2 {
+    font-weight: 850 !important;
+}
+
+body h3,
+body h4 {
+    font-weight: 800 !important;
+}
+
+
+/* Normal paragraphs */
+
+body p {
+    font-weight: 500 !important;
+}
+
+
+/* Card descriptions */
+
+body :where(
+    .rr-highlight-card,
+    .channel-card,
+    .video-card,
+    .short-card,
+    .rr-story-card,
+    .destination-card,
+    .rr-brand-point,
+    .raj-media-card,
+    .identity-card,
+    .pillar-card,
+    .journey-item,
+    .collab-card,
+    .service-card,
+    .playlist-card,
+    .explore-card,
+    .destination-result,
+    .playlist-result,
+    .youtube-playlist-card,
+    .map-place-card
+) :where(p,span,small) {
+    font-weight: 550 !important;
+}
+
+
+/* Card titles */
+
+body :where(
+    .rr-highlight-card,
+    .channel-card,
+    .video-card,
+    .short-card,
+    .rr-story-card,
+    .destination-card,
+    .rr-brand-point,
+    .raj-media-card,
+    .identity-card,
+    .pillar-card,
+    .journey-item,
+    .collab-card,
+    .service-card,
+    .playlist-card,
+    .explore-card,
+    .youtube-playlist-card,
+    .map-place-card
+) :where(h2,h3,h4,strong) {
+    font-weight: 800 !important;
+}
+
+
+/* Navbar */
+
+body .raj-pro-header a,
+body .about-nav a,
+body .collab-nav a,
+body .travel-nav a,
+body .gallery-nav a,
+body .playlist-nav a,
+body .money-nav a {
+    font-weight: 750 !important;
+}
+
+
+/* Buttons */
+
+body :where(
+    button,
+    .channel-btn,
+    .watch-btn,
+    .card-action,
+    .playlist-open,
+    .money-primary-btn,
+    .rr-creator-btn-primary,
+    .rr-creator-btn-secondary,
+    .rr-creator-btn-ghost,
+    .raj-subscribe-nav
+) {
+    font-weight: 800 !important;
+}
+
+
+/* Labels / eyebrow text */
+
+body :where(
+    .world-label,
+    .rr-stories-label,
+    .rr-brand-label,
+    .raj-section-label,
+    .story-label,
+    .collab-section-label,
+    .section-label,
+    .playlist-eyebrow,
+    .about-eyebrow,
+    .collab-eyebrow,
+    .explore-eyebrow,
+    .money-eyebrow,
+    .eyebrow,
+    .rr-creator-eyebrow
+) {
+    font-weight: 850 !important;
+}
+
+
+/* Social cards */
+
+body .rr-social-trust-links strong {
+    font-weight: 800 !important;
+}
+
+body .rr-social-trust-links :where(
+    small,
+    p,
+    span
+) {
+    font-weight: 550 !important;
+}
+
+
+/* Stats */
+
+body .rr-stat-card strong {
+    font-weight: 900 !important;
+}
+
+body .rr-stat-card :where(
+    span,
+    small,
+    p
+) {
+    font-weight: 650 !important;
+}
+
+
+/* Hero */
+
+body .rr-name-main,
+body .rr-name-official {
+    font-weight: 900 !important;
+}
+
+body .rr-creator-role {
+    font-weight: 850 !important;
+}
+
+body .rr-creator-location,
+body .rr-creator-intro {
+    font-weight: 500 !important;
+}
