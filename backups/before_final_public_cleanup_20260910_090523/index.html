@@ -1661,7 +1661,7 @@ body .rr-premium-hero h1 {
 
 body .rr-premium-hero h1::before {
     content:
-        "TRAVEL  \2022  STORIES  \2022  EXPERIENCES";
+        "TRAVEL  ?  STORIES  ?  EXPERIENCES";
 
     display: table;
 
@@ -3075,7 +3075,7 @@ body .rr-premium-hero a {
 /* small arrow */
 
 .rr-clickable-card::before {
-    content: "\2197";
+    content: "?";
 
     position: absolute;
 
@@ -3139,7 +3139,7 @@ body .rr-premium-hero a {
 
 .destination-clickable-card::after {
 
-    content: "\2197";
+    content: "?";
 
     position: absolute;
 
@@ -5002,54 +5002,7 @@ and
 <link rel="stylesheet" href="/static/css/brand_avatar.css">
 <link rel="stylesheet" href="/static/css/creator_home.css?v=8">
 <link rel="stylesheet" href="/static/css/hero_spacing_fix.css?v=2">
-
-
-<!-- RR_FINAL_THEME_BOOT -->
-<script>
-(function () {
-    try {
-        var keys = [
-            "rr_site_theme_final",
-            "rr_clean_theme",
-            "rr_master_theme",
-            "rr_theme_v3",
-            "rr_site_theme"
-        ];
-
-        var theme = null;
-
-        for (var i = 0; i < keys.length; i++) {
-            var value = localStorage.getItem(keys[i]);
-
-            if (
-                value === "dark"
-                ||
-                value === "light"
-            ) {
-                theme = value;
-                break;
-            }
-        }
-
-        document.documentElement
-            .setAttribute(
-                "data-rr-theme",
-                theme || "light"
-            );
-
-    } catch (error) {
-
-        document.documentElement
-            .setAttribute(
-                "data-rr-theme",
-                "light"
-            );
-    }
-})();
-</script>
-<!-- /RR_FINAL_THEME_BOOT -->
-
-<link rel="stylesheet" href="/static/css/site_theme_final.css?v=1">
+<link rel="stylesheet" href="/static/css/theme_clean.css?v=100">
 </head>
 
 
@@ -5264,7 +5217,9 @@ and
                 class="rr-creator-location"
             >
                 Bihar, India
-                <span>&bull;</span>
+                <span>
+                    ?
+                </span>
                 Exploring India Through
                 Stories, Culture & Travel
             </p>
@@ -5497,7 +5452,9 @@ and
             class="rr-stat-card"
             data-stat="videos"
         >
-            <strong>--</strong>
+            <strong>
+                ?
+            </strong>
 
             <span>
                 Videos
@@ -5509,7 +5466,9 @@ and
             class="rr-stat-card"
             data-stat="views"
         >
-            <strong>--</strong>
+            <strong>
+                ?
+            </strong>
 
             <span>
                 Views
@@ -5521,7 +5480,9 @@ and
             class="rr-stat-card"
             data-stat="destinations"
         >
-            <strong>--</strong>
+            <strong>
+                ?
+            </strong>
 
             <span>
                 Destinations
@@ -5560,6 +5521,27 @@ and
 
 
     <!-- ================= HERO ================= -->
+
+    <section class="rr-premium-hero hero">
+
+        <h1>
+            Welcome to Raj Raushan Official
+        </h1>
+
+        <p>
+            Explore • Watch • Connect
+        </p>
+
+        <a href="#vlogs">
+
+            <button>
+                Watch Latest Vlog
+            </button>
+
+        </a>
+
+    </section>
+
 <!-- =========================================================
      RR CREATOR HIGHLIGHTS
 ========================================================= -->
@@ -5867,7 +5849,91 @@ and
 
 
     <!-- ================= CHANNEL PROFILE ================= -->
-<!-- ================= VLOGS ================= -->
+
+    {% if channel %}
+
+    <section class="channel-profile">
+
+        <img
+            src="{{ channel.profile_image }}"
+            alt="Raj Raushan Official"
+            class="channel-image"
+        >
+
+
+        <div class="channel-details">
+
+            <h2>
+                {{ channel.name }}
+            </h2>
+
+            <p>
+                @rajraushanofficial
+            </p>
+
+
+            <div class="channel-stats">
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.subscribers|int) }}
+                    </strong>
+
+                    <span>
+                        Subscribers
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.views|int) }}
+                    </strong>
+
+                    <span>
+                        Total Views
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.videos|int) }}
+                    </strong>
+
+                    <span>
+                        Videos
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <a
+                href="https://www.youtube.com/@rajraushanofficial"
+                target="_blank"
+                class="channel-btn"
+            >
+                Visit YouTube Channel
+            </a>
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+
+    <!-- ================= VLOGS ================= -->
 
     <section
         class="videos"
@@ -6052,9 +6118,101 @@ and
 </section>
 
     <!-- ================= EXPLORE ================= -->
-<!-- ================= SOCIAL MEDIA HUB ================= -->
-<!-- ================= FOOTER ================= -->
-<!-- ================= JAVASCRIPT ================= -->
+
+    <section
+        class="social-section"
+        id="explore"
+    >
+
+        <h2>
+            Explore Raj Raushan Official
+        </h2>
+
+        <p>
+            Travel • Vlogs • Shorts • Life • Adventures
+        </p>
+
+    </section>
+
+
+
+   <!-- ================= SOCIAL MEDIA HUB ================= -->
+
+<section class="social-dark-fix social-hub" id="about">
+
+    <h2>🌐 Connect With Me</h2>
+
+    <p class="social-subtitle">
+        Follow and connect with me across all platforms.
+    </p>
+
+    <div class="social-grid">
+
+        <a href="https://www.youtube.com/@rajraushanofficial"
+           target="_blank"
+           class="social-card">
+            <h3>▶ YouTube</h3>
+            <p>Raj Raushan Official</p>
+            <span>Visit Channel →</span>
+        </a>
+
+        <a href="https://www.youtube.com/@rajraushanofficial02"
+           target="_blank"
+           class="social-card">
+            <h3>▶ YouTube 02</h3>
+            <p>Raj Raushan Official 02</p>
+            <span>Visit Channel →</span>
+        </a>
+
+        <a href="https://www.instagram.com/rajraushanofficial/"
+           target="_blank"
+           class="social-card">
+            <h3>📸 Instagram</h3>
+            <p>@rajraushanofficial</p>
+            <span>Follow →</span>
+        </a>
+
+        <a href="https://www.instagram.com/rajraushanofficial/"
+           class="social-card">
+            <h3>📘 Facebook</h3>
+            <p>Coming Soon</p>
+            <span>Connect →</span>
+        </a>
+
+        <a href="https://www.facebook.com/rajraushanofficial/"
+           class="social-card">
+            <h3>💼 LinkedIn</h3>
+            <p>Professional Profile</p>
+            <span>Connect →</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/rajraushankumar/"
+           class="social-card">
+            <h3>💻 GitHub</h3>
+            <p>Projects & Code</p>
+            <span>View Projects →</span>
+        </a>
+
+    </div>
+
+</section>
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Raj Raushan Official
+        </p>
+
+        <p>
+            Explore • Watch • Connect
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
 
     <script
         src="{{ url_for('static', filename='js/script.js') }}">
@@ -6105,7 +6263,7 @@ and
                 href="#vlogs"
                 class="rr-view-all"
             >
-                View All Vlogs &rarr;
+                View All Vlogs ?
             </a>
 
         </div>
@@ -6133,7 +6291,9 @@ and
                         loading="lazy"
                     >
 
-                    <span class="rr-play-button">&#9654;</span>
+                    <span class="rr-play-button">
+                        ?
+                    </span>
 
                 </a>
 
@@ -6169,7 +6329,7 @@ and
                         rel="noopener noreferrer"
                         class="rr-watch-story"
                     >
-                        Watch Story &rarr;
+                        Watch Story ?
                     </a>
 
                 </div>
@@ -7020,7 +7180,7 @@ and
 
         <div class="creator-brand-line">
             Raj Raushan Official
-            <span>&bull;</span>
+            <span>?</span>
             Explore &bull; Watch &bull; Connect
         </div>
 
@@ -7109,7 +7269,7 @@ and
         </span>
 
         <span>
-            Travel &bull; Stories &bull; Technology
+            Travel ? Stories ? Technology
         </span>
 
     </div>
@@ -7768,8 +7928,8 @@ document.addEventListener(
 
 <script src="/static/js/global_search_tracking.js"></script>
 <script src="/static/js/brand_avatar.js"></script>
-<script src="/static/js/creator_home.js?v=9"></script>
-<script src="/static/js/site_theme_final.js?v=1"></script>
+<script src="/static/js/creator_home.js?v=8"></script>
+<script src="/static/js/theme_clean.js?v=100"></script>
 </body>
 
 </html>

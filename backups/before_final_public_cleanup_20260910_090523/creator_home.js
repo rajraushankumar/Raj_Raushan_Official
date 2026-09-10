@@ -1194,33 +1194,29 @@ document.addEventListener(
 
 })();
 
-/* HERO_ONE_LINE_LAYOUT_V9 */
+/* HERO_ONE_LINE_FORCE_V8 */
 
 (function () {
 
-    function applyHeroLineV9() {
+    function forceHeroOneLineV8() {
 
         const hero =
             document.querySelector(
                 ".rr-creator-name"
             );
 
-
         if (!hero) {
             return;
         }
-
 
         hero.innerHTML = `
             <span class="rr-name-main">
                 Raj Raushan
             </span>
-
             <span class="rr-name-official">
                 Official
             </span>
         `;
-
 
         hero.classList.add(
             "rr-hero-one-line"
@@ -1233,13 +1229,11 @@ document.addEventListener(
             "important"
         );
 
-
         hero.style.setProperty(
             "align-items",
             "baseline",
             "important"
         );
-
 
         hero.style.setProperty(
             "flex-wrap",
@@ -1247,13 +1241,11 @@ document.addEventListener(
             "important"
         );
 
-
         hero.style.setProperty(
             "white-space",
             "nowrap",
             "important"
         );
-
 
         hero.style.setProperty(
             "gap",
@@ -1262,32 +1254,55 @@ document.addEventListener(
         );
 
 
-        hero
-            .querySelectorAll(
-                "span"
-            )
-            .forEach(
-                function (element) {
-
-                    element.style.setProperty(
-                        "display",
-                        "inline-block",
-                        "important"
-                    );
-
-
-                    /*
-                     IMPORTANT:
-                     NO inline colour here.
-                     Theme CSS controls it.
-                    */
-
-                    element.style.removeProperty(
-                        "color"
-                    );
-
-                }
+        const main =
+            hero.querySelector(
+                ".rr-name-main"
             );
+
+        const official =
+            hero.querySelector(
+                ".rr-name-official"
+            );
+
+
+        if (main) {
+
+            main.style.setProperty(
+                "display",
+                "inline-block",
+                "important"
+            );
+
+            main.style.setProperty(
+                "color",
+                "#ffffff",
+                "important"
+            );
+
+        }
+
+
+        if (official) {
+
+            official.style.setProperty(
+                "display",
+                "inline-block",
+                "important"
+            );
+
+            official.style.setProperty(
+                "margin",
+                "0",
+                "important"
+            );
+
+            official.style.setProperty(
+                "color",
+                "#91a7ff",
+                "important"
+            );
+
+        }
 
     }
 
@@ -1299,12 +1314,26 @@ document.addEventListener(
 
         document.addEventListener(
             "DOMContentLoaded",
-            applyHeroLineV9
+            function () {
+
+                forceHeroOneLineV8();
+
+                setTimeout(
+                    forceHeroOneLineV8,
+                    150
+                );
+
+            }
         );
 
     } else {
 
-        applyHeroLineV9();
+        forceHeroOneLineV8();
+
+        setTimeout(
+            forceHeroOneLineV8,
+            150
+        );
 
     }
 
