@@ -1,0 +1,3372 @@
+
+/* ==========================================================
+   RAJ RAUSHAN OFFICIAL
+   LUXURY TRAVEL EDITORIAL THEME
+
+   THEME ONLY
+   NO LAYOUT REBUILD
+   NO DARK/LIGHT TOGGLE
+========================================================== */
+
+
+/* ==========================================================
+   DESIGN TOKENS
+========================================================== */
+
+:root {
+
+    --rr-forest:
+        #0b1f1b;
+
+    --rr-forest-2:
+        #12332c;
+
+    --rr-forest-3:
+        #193f36;
+
+    --rr-ivory:
+        #f6f3ec;
+
+    --rr-paper:
+        #fffdf9;
+
+    --rr-soft:
+        #eeeae1;
+
+    --rr-ink:
+        #17231f;
+
+    --rr-muted:
+        #68756f;
+
+    --rr-border:
+        #ddd8ce;
+
+    --rr-gold:
+        #c79a51;
+
+    --rr-gold-light:
+        #e5c992;
+
+    --rr-youtube:
+        #e72d3a;
+
+    --rr-shadow:
+        0 15px 42px
+        rgba(21, 36, 31, .08);
+
+    --rr-shadow-hover:
+        0 24px 55px
+        rgba(21, 36, 31, .14);
+
+}
+
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+html {
+
+    color-scheme:
+        light !important;
+
+    background:
+        var(--rr-ivory) !important;
+}
+
+
+body {
+
+    background:
+        var(--rr-ivory) !important;
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body,
+button,
+input,
+textarea,
+select {
+
+    font-family:
+        "Segoe UI",
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        Arial,
+        sans-serif !important;
+}
+
+
+img {
+
+    filter:
+        none !important;
+
+    opacity:
+        1 !important;
+}
+
+
+::selection {
+
+    background:
+        var(--rr-gold-light);
+
+    color:
+        var(--rr-forest);
+}
+
+
+
+/* ==========================================================
+   REMOVE ALL OLD THEME TOGGLES
+========================================================== */
+
+#rrThemeToggle,
+#rrCleanThemeToggle,
+#rrFinalThemeToggle {
+
+    display:
+        none !important;
+}
+
+
+
+/* ==========================================================
+   MAIN HOMEPAGE NAVBAR
+========================================================== */
+
+body .raj-pro-header,
+body .raj-pro-header.rr-nav-scrolled {
+
+    background:
+        rgba(11, 31, 27, .97) !important;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .08) !important;
+
+    box-shadow:
+        0 10px 32px
+        rgba(5, 18, 15, .18) !important;
+
+    backdrop-filter:
+        blur(18px) !important;
+
+    -webkit-backdrop-filter:
+        blur(18px) !important;
+}
+
+
+body .raj-pro-nav {
+
+    background:
+        transparent !important;
+}
+
+
+body .raj-pro-links {
+
+    background:
+        transparent !important;
+}
+
+
+body .raj-pro-links a {
+
+    color:
+        #e7ede9 !important;
+}
+
+
+body .raj-pro-links a:hover {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .raj-pro-links a::after {
+
+    background:
+        var(--rr-gold) !important;
+}
+
+
+body .raj-pro-logo,
+body .raj-logo-text strong {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .raj-logo-text small {
+
+    color:
+        #aebdb7 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+body .raj-logo-mark {
+
+    border:
+        1px solid
+        rgba(255,255,255,.18) !important;
+}
+
+
+body .raj-subscribe-nav {
+
+    background:
+        var(--rr-gold-light) !important;
+
+    color:
+        #17231f !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14) !important;
+
+    box-shadow:
+        0 8px 22px
+        rgba(0,0,0,.13) !important;
+}
+
+
+body .raj-subscribe-nav:hover {
+
+    background:
+        #f0dbaf !important;
+
+    color:
+        #101b18 !important;
+}
+
+
+body .raj-menu-btn {
+
+    background:
+        rgba(255,255,255,.08) !important;
+
+    border-color:
+        rgba(255,255,255,.10) !important;
+}
+
+
+body .raj-menu-btn span {
+
+    background:
+        #ffffff !important;
+}
+
+
+
+/* ==========================================================
+   MAIN CREATOR HERO
+========================================================== */
+
+body .rr-creator-identity {
+
+    background:
+
+        radial-gradient(
+            circle at 16% 28%,
+            rgba(199,154,81,.18),
+            transparent 31%
+        ),
+
+        radial-gradient(
+            circle at 86% 20%,
+            rgba(52,102,88,.32),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #081815 0%,
+            #0b211c 48%,
+            #14362e 100%
+        )
+
+        !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+body .rr-creator-glow {
+
+    opacity:
+        .45 !important;
+}
+
+
+body .rr-creator-eyebrow {
+
+    color:
+        var(--rr-gold-light) !important;
+}
+
+
+body .rr-creator-name,
+body .rr-name-main {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .rr-name-official {
+
+    color:
+        var(--rr-gold-light) !important;
+}
+
+
+body .rr-creator-role {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .rr-creator-location {
+
+    color:
+        #dce5e1 !important;
+}
+
+
+body .rr-creator-location span {
+
+    color:
+        var(--rr-gold-light) !important;
+}
+
+
+body .rr-creator-intro {
+
+    color:
+        #b9c7c2 !important;
+}
+
+
+body .rr-creator-tags {
+
+    background:
+        transparent !important;
+}
+
+
+body .rr-creator-tags span {
+
+    background:
+        rgba(255,255,255,.065) !important;
+
+    color:
+        #edf3f0 !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.13) !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+body .rr-creator-availability {
+
+    color:
+        #aabbb5 !important;
+}
+
+
+body .rr-status-dot {
+
+    background:
+        #38d79a !important;
+}
+
+
+body .rr-profile-image-shell {
+
+    background:
+        rgba(255,255,255,.08) !important;
+
+    border-color:
+        rgba(255,255,255,.10) !important;
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.30) !important;
+}
+
+
+body .rr-profile-ring {
+
+    border-color:
+        var(--rr-gold-light) !important;
+
+    opacity:
+        .58 !important;
+}
+
+
+body .rr-profile-live {
+
+    background:
+        #071713 !important;
+
+    color:
+        #a9f2ce !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10) !important;
+}
+
+
+
+/* ==========================================================
+   HERO BUTTONS
+========================================================== */
+
+body .rr-creator-btn-primary {
+
+    background:
+        #fffdf8 !important;
+
+    color:
+        var(--rr-forest) !important;
+
+    border-color:
+        #fffdf8 !important;
+}
+
+
+body .rr-creator-btn-secondary {
+
+    background:
+        var(--rr-youtube) !important;
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        var(--rr-youtube) !important;
+}
+
+
+body .rr-creator-btn-ghost {
+
+    background:
+        rgba(255,255,255,.055) !important;
+
+    color:
+        #ffffff !important;
+
+    border:
+        1px solid
+        rgba(229,201,146,.42) !important;
+}
+
+
+body .rr-creator-btn-ghost:hover {
+
+    background:
+        rgba(229,201,146,.12) !important;
+
+    border-color:
+        var(--rr-gold-light) !important;
+}
+
+
+
+/* ==========================================================
+   FIND ME ONLINE / HERO SOCIAL CARDS
+========================================================== */
+
+body .rr-social-trust-links {
+
+    background:
+        transparent !important;
+}
+
+
+body .rr-social-trust-links > a {
+
+    background:
+        rgba(255,255,255,.07) !important;
+
+    color:
+        #ffffff !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.11) !important;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,.11) !important;
+}
+
+
+body .rr-social-trust-links > a:hover {
+
+    background:
+        rgba(255,255,255,.105) !important;
+
+    border-color:
+        rgba(229,201,146,.48) !important;
+}
+
+
+body .rr-social-info strong {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .rr-social-info span {
+
+    color:
+        #abbcb6 !important;
+}
+
+
+body .rr-social-arrow {
+
+    color:
+        var(--rr-gold-light) !important;
+}
+
+
+body .rr-social-icon {
+
+    opacity:
+        1 !important;
+
+    filter:
+        none !important;
+}
+
+
+
+/* ==========================================================
+   HERO CREATOR STATS
+========================================================== */
+
+body .rr-stat-card {
+
+    background:
+        rgba(255,255,255,.065) !important;
+
+    color:
+        #ffffff !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.11) !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+body .rr-stat-card strong {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .rr-stat-card span {
+
+    color:
+        #aebeb8 !important;
+}
+
+
+
+/* ==========================================================
+   TRAVEL MARQUEE
+========================================================== */
+
+body .rr-travel-marquee {
+
+    background:
+        #071411 !important;
+
+    color:
+        #f7f3eb !important;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07) !important;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.07) !important;
+}
+
+
+body .rr-marquee-track {
+
+    color:
+        #e8eee9 !important;
+}
+
+
+
+/* ==========================================================
+   GENERAL LIGHT SECTIONS
+========================================================== */
+
+body .rr-creator-highlights,
+body .videos,
+body .rr-featured-stories,
+body .world-section,
+body .creator-about,
+body .raj-media-kit,
+
+body .story-section,
+body .journey-section,
+
+body .collab-section,
+
+body .destination-section,
+
+body .detail-story,
+
+body .explore-main,
+
+body .gallery-section,
+
+body .playlist-section,
+
+body .map-layout,
+
+body .services-section,
+body .enquiry-section {
+
+    background:
+        var(--rr-ivory) !important;
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+
+/* ==========================================================
+   WHITE / PAPER SECTIONS
+========================================================== */
+
+body .channels-section,
+body .shorts-section,
+body .rr-brand-trust,
+
+body .pillars-section,
+
+body .collab-contact,
+
+body .playlist-sync,
+body .playlist-stats,
+body .playlist-collection,
+
+body .why-section,
+body .trust-strip {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+
+/* ==========================================================
+   SECTION LABELS
+========================================================== */
+
+body .world-label,
+body .rr-stories-label,
+body .rr-shorts-label,
+body .rr-brand-label,
+body .raj-section-label,
+body .story-label,
+body .collab-section-label,
+body .section-label,
+body .playlist-eyebrow,
+body .about-eyebrow,
+body .collab-eyebrow,
+body .explore-eyebrow,
+body .money-eyebrow,
+body .eyebrow {
+
+    color:
+        #a87d37 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+
+/* ==========================================================
+   MAIN SECTION HEADINGS
+========================================================== */
+
+body .rr-highlight-heading h2,
+body .channels-section h2,
+body .videos h2,
+body .shorts-section h2,
+body .rr-stories-header h2,
+body .world-heading h2,
+body .creator-about h2,
+body .rr-brand-trust h2,
+body .raj-media-kit h2,
+
+body .story-section h2,
+body .pillars-section h2,
+body .journey-section h2,
+
+body .collab-section h2,
+
+body .destination-section h2,
+
+body .detail-story h2,
+
+body .explore-main h2,
+
+body .gallery-section h2,
+
+body .playlist-section h2,
+
+body .map-layout h2,
+
+body .services-section h2,
+body .why-section h2,
+body .enquiry-section h2 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+
+/* ==========================================================
+   SECTION PARAGRAPHS
+========================================================== */
+
+body .rr-highlight-heading p,
+body .rr-stories-header p,
+body .world-heading p,
+body .creator-about p,
+body .rr-brand-trust p,
+body .raj-media-kit p,
+
+body .story-section p,
+body .pillars-section p,
+body .journey-section p,
+
+body .collab-section p,
+
+body .destination-section p,
+
+body .detail-story p,
+
+body .explore-main p,
+body .playlist-section p,
+body .map-layout p,
+body .services-section p,
+body .why-section p {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+
+/* ==========================================================
+   STORIES BEYOND THE SCREEN
+========================================================== */
+
+body .rr-highlight-card {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .rr-highlight-card h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .rr-highlight-card p {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .rr-highlight-number {
+
+    color:
+        var(--rr-gold) !important;
+}
+
+
+body .rr-highlight-icon {
+
+    filter:
+        none !important;
+}
+
+
+
+/* ==========================================================
+   YOUTUBE CHANNELS
+========================================================== */
+
+body .channel-card {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .channel-card h2,
+body .channel-card h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .channel-card p {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .channel-stats strong {
+
+    color:
+        var(--rr-forest) !important;
+}
+
+
+body .channel-stats span {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .channel-btn {
+
+    background:
+        var(--rr-forest) !important;
+
+    color:
+        #ffffff !important;
+
+    border:
+        1px solid
+        var(--rr-forest) !important;
+}
+
+
+body .channel-btn:hover {
+
+    background:
+        var(--rr-forest-2) !important;
+}
+
+
+
+/* ==========================================================
+   LATEST VLOGS
+========================================================== */
+
+body .video-card {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .video-info {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .video-card h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .video-card p,
+body .video-meta {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .watch-btn {
+
+    background:
+        var(--rr-forest) !important;
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        var(--rr-forest) !important;
+}
+
+
+body .watch-btn:hover {
+
+    background:
+        var(--rr-forest-2) !important;
+}
+
+
+
+/* ==========================================================
+   LATEST SHORTS
+========================================================== */
+
+body .short-card {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .short-info {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .short-info h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .short-meta {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .short-play {
+
+    background:
+        rgba(11,31,27,.94) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+
+/* ==========================================================
+   FEATURED STORIES
+========================================================== */
+
+body .rr-story-card {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .rr-story-content {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .rr-story-content h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .rr-story-meta,
+body .rr-story-info {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .rr-watch-story {
+
+    color:
+        var(--rr-forest-2) !important;
+
+    font-weight:
+        800 !important;
+}
+
+
+body .rr-play-button {
+
+    background:
+        #fffdf8 !important;
+
+    color:
+        var(--rr-forest) !important;
+
+    border:
+        1px solid
+        rgba(11,31,27,.09) !important;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.14) !important;
+}
+
+
+
+/* ==========================================================
+   SHORTS SPOTLIGHT
+========================================================== */
+
+body .rr-shorts-spotlight {
+
+    background:
+
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(199,154,81,.18),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            135deg,
+            #081713,
+            #12332c
+        )
+
+        !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+body .rr-shorts-spotlight h2,
+body .rr-shorts-spotlight h3 {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .rr-shorts-spotlight p {
+
+    color:
+        #b8c7c1 !important;
+}
+
+
+body .rr-short-card {
+
+    background:
+        rgba(255,255,255,.07) !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.11) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+body .rr-short-content {
+
+    background:
+        transparent !important;
+}
+
+
+body .rr-short-content h3,
+body .rr-short-brand,
+body .rr-short-watch {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .rr-short-meta {
+
+    color:
+        #b7c5c0 !important;
+}
+
+
+
+/* ==========================================================
+   DESTINATION CARDS
+========================================================== */
+
+body .destination-card {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .destination-card h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .destination-card p {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .destination-stats {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .card-category {
+
+    color:
+        #9b7132 !important;
+}
+
+
+body .card-action {
+
+    background:
+        var(--rr-forest) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+
+/* ==========================================================
+   ABOUT CREATOR
+========================================================== */
+
+body .about-lead {
+
+    color:
+        #34433d !important;
+}
+
+
+body .creator-identity-card {
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #0a1e19,
+            #163b32
+        )
+
+        !important;
+
+    color:
+        #ffffff !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08) !important;
+
+    box-shadow:
+        0 24px 55px
+        rgba(11,31,27,.20) !important;
+}
+
+
+body .creator-identity-card h3 {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .creator-identity-card p {
+
+    color:
+        #bdcbc6 !important;
+}
+
+
+body .creator-identity-card a {
+
+    background:
+        var(--rr-gold-light) !important;
+
+    color:
+        var(--rr-forest) !important;
+}
+
+
+
+/* ==========================================================
+   BRAND TRUST
+========================================================== */
+
+body .rr-brand-point {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .rr-brand-point strong {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .rr-brand-point p {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .rr-brand-primary {
+
+    background:
+        var(--rr-forest) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+body .rr-brand-secondary {
+
+    color:
+        var(--rr-forest) !important;
+
+    border-color:
+        var(--rr-border) !important;
+}
+
+
+
+/* ==========================================================
+   MEDIA KIT
+========================================================== */
+
+body .raj-media-card,
+body .raj-media-fit,
+body .raj-partner-promise {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .raj-media-card h3,
+body .raj-media-fit h3,
+body .raj-partner-promise h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .raj-media-card p,
+body .raj-media-fit p,
+body .raj-partner-promise p {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+
+/* CREATOR PROFILE CARD */
+
+body .raj-media-profile {
+
+    background:
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(199,154,81,.17),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            145deg,
+            #091b17,
+            #173b33
+        )
+
+        !important;
+
+    color:
+        #ffffff !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08) !important;
+
+    box-shadow:
+        0 22px 55px
+        rgba(11,31,27,.20) !important;
+}
+
+
+body .raj-media-profile h1,
+body .raj-media-profile h2,
+body .raj-media-profile h3,
+body .raj-media-profile strong {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .raj-media-profile p,
+body .raj-media-profile span {
+
+    color:
+        #c3d0cb !important;
+}
+
+
+body .raj-profile-main {
+
+    background:
+        transparent !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+body .raj-profile-main h3,
+body .raj-profile-main strong {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .raj-profile-main p,
+body .raj-profile-main span {
+
+    color:
+        #c3d0cb !important;
+}
+
+
+body .raj-profile-tags span {
+
+    background:
+        rgba(255,255,255,.07) !important;
+
+    color:
+        #eef3f0 !important;
+
+    border-color:
+        rgba(255,255,255,.11) !important;
+}
+
+
+body .raj-partner-button {
+
+    background:
+        var(--rr-forest) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+
+/* ==========================================================
+   DARK PROFESSIONAL CTA SECTIONS
+========================================================== */
+
+body .brand-collaboration,
+body .global-creator-cta,
+body .creator-footer,
+body .about-cta,
+body .about-footer,
+body .collab-footer,
+body .detail-cta {
+
+    background:
+
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(199,154,81,.14),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            135deg,
+            #071511,
+            #12332c
+        )
+
+        !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+body .brand-collaboration h2,
+body .global-creator-cta h2,
+body .creator-footer h3,
+body .about-cta h2,
+body .detail-cta h2 {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .brand-collaboration p,
+body .global-creator-cta p,
+body .creator-footer p,
+body .about-cta p,
+body .detail-cta p {
+
+    color:
+        #b7c5c0 !important;
+}
+
+
+body .collaboration-primary,
+body .creator-primary-btn,
+body .about-primary {
+
+    background:
+        var(--rr-gold-light) !important;
+
+    color:
+        var(--rr-forest) !important;
+}
+
+
+body .collaboration-secondary,
+body .creator-secondary-btn,
+body .about-secondary {
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        rgba(229,201,146,.42) !important;
+}
+
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+body .creator-footer {
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07) !important;
+}
+
+
+body .footer-links a,
+body .footer-youtube a {
+
+    color:
+        #dfe8e4 !important;
+}
+
+
+body .footer-links a:hover,
+body .footer-youtube a:hover {
+
+    color:
+        var(--rr-gold-light) !important;
+}
+
+
+
+/* ==========================================================
+   ABOUT PAGE NAV
+========================================================== */
+
+body .about-nav,
+body .collab-nav,
+body .travel-nav,
+body .gallery-nav,
+body .playlist-nav,
+body .money-nav {
+
+    background:
+        rgba(11,31,27,.98) !important;
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        rgba(255,255,255,.08) !important;
+
+    box-shadow:
+        0 8px 28px
+        rgba(5,18,15,.15) !important;
+}
+
+
+body .about-nav a,
+body .collab-nav a,
+body .travel-nav a,
+body .gallery-nav a,
+body .playlist-nav a,
+body .money-nav a {
+
+    color:
+        #e2eae6 !important;
+}
+
+
+body .about-nav a:hover,
+body .collab-nav a:hover,
+body .travel-nav a:hover,
+body .gallery-nav a:hover,
+body .playlist-nav a:hover,
+body .money-nav a:hover {
+
+    color:
+        var(--rr-gold-light) !important;
+}
+
+
+body .about-brand,
+body .collab-brand,
+body .travel-brand,
+body .playlist-brand,
+body .money-brand {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .about-logo,
+body .collab-logo,
+body .travel-logo,
+body .playlist-logo,
+body .money-logo {
+
+    color:
+        #ffffff !important;
+}
+
+
+
+/* ==========================================================
+   ALL PUBLIC PAGE HEROES
+========================================================== */
+
+body .about-hero,
+body .collab-hero,
+body .destination-hero,
+body .detail-hero,
+body .explore-hero,
+body .gallery-hero,
+body .playlist-hero,
+body .map-hero,
+body .money-hero {
+
+    background:
+
+        radial-gradient(
+            circle at 82% 15%,
+            rgba(199,154,81,.16),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            135deg,
+            #081713,
+            #15382f
+        )
+
+        !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+body .about-hero h1,
+body .collab-hero h1,
+body .destination-hero h1,
+body .detail-hero h1,
+body .explore-hero h1,
+body .gallery-hero h1,
+body .playlist-hero h1,
+body .map-hero h1,
+body .money-hero h1 {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .about-hero p,
+body .collab-hero p,
+body .destination-hero p,
+body .detail-hero p,
+body .explore-hero p,
+body .gallery-hero p,
+body .playlist-hero p,
+body .map-hero p,
+body .money-hero p {
+
+    color:
+        #b8c7c1 !important;
+}
+
+
+
+/* ==========================================================
+   ABOUT PAGE CARDS
+========================================================== */
+
+body .identity-card,
+body .pillar-card,
+body .journey-item {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .identity-card h3,
+body .pillar-card h3,
+body .journey-item h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .identity-card p,
+body .pillar-card p,
+body .journey-item p {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .identity-tags span {
+
+    background:
+        #eee8dc !important;
+
+    color:
+        #665334 !important;
+
+    border-color:
+        #dfd3bd !important;
+}
+
+
+body .pillar-number {
+
+    color:
+        var(--rr-gold) !important;
+}
+
+
+
+/* ==========================================================
+   COLLABORATE PAGE
+========================================================== */
+
+body .collab-card,
+body .collab-value-light {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .collab-card h3,
+body .collab-value-light h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .collab-card p,
+body .collab-value-light p {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .collab-value-dark {
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #0a1e19,
+            #153a31
+        )
+
+        !important;
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        rgba(255,255,255,.08) !important;
+}
+
+
+body .collab-value-dark h3 {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .collab-value-dark p {
+
+    color:
+        #bccac5 !important;
+}
+
+
+body .collab-primary {
+
+    background:
+        var(--rr-gold-light) !important;
+
+    color:
+        var(--rr-forest) !important;
+}
+
+
+body .collab-secondary {
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        rgba(229,201,146,.40) !important;
+}
+
+
+
+/* ==========================================================
+   DESTINATIONS PAGE
+========================================================== */
+
+body .playlist-sync-card {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .destination-toolbar,
+body .filter-row {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .destination-filter {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border-color:
+        var(--rr-border) !important;
+}
+
+
+body .destination-filter.active {
+
+    background:
+        var(--rr-forest) !important;
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        var(--rr-forest) !important;
+}
+
+
+
+/* ==========================================================
+   DESTINATION DETAIL
+========================================================== */
+
+body .highlights-card,
+body .playlist-card {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .highlights-card h3,
+body .playlist-card h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .highlights-card p,
+body .playlist-card p {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+
+/* ==========================================================
+   EXPLORE PAGE
+========================================================== */
+
+body .explore-controls {
+
+    background:
+        var(--rr-paper) !important;
+
+    border-color:
+        var(--rr-border) !important;
+}
+
+
+body .explore-filter {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border-color:
+        var(--rr-border) !important;
+}
+
+
+body .explore-filter.active {
+
+    background:
+        var(--rr-forest) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+body .explore-card,
+body .destination-result,
+body .playlist-result {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .explore-card h3,
+body .destination-result h3,
+body .playlist-result h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .explore-card p,
+body .destination-result p,
+body .playlist-result p {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .explore-type,
+body .explore-arrow {
+
+    color:
+        #9c7232 !important;
+}
+
+
+body .explore-tags span {
+
+    background:
+        #eee8dc !important;
+
+    color:
+        #6c5836 !important;
+}
+
+
+
+/* ==========================================================
+   GALLERY
+========================================================== */
+
+body .gallery-section {
+
+    background:
+        var(--rr-ivory) !important;
+}
+
+
+body .gallery-item {
+
+    background:
+        var(--rr-paper) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .gallery-overlay {
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(6,18,15,.84)
+        ) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+
+/* ==========================================================
+   PLAYLISTS
+========================================================== */
+
+body .playlist-stat,
+body .youtube-playlist-card {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .playlist-stat strong,
+body .youtube-playlist-card h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .playlist-stat span,
+body .playlist-description {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .playlist-card-label {
+
+    color:
+        #9b7032 !important;
+}
+
+
+body .playlist-open {
+
+    background:
+        var(--rr-forest) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+body .playlist-search {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border-color:
+        var(--rr-border) !important;
+}
+
+
+
+/* ==========================================================
+   TRAVEL MAP
+========================================================== */
+
+body .map-sidebar,
+body .map-place-card,
+body .map-panel {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border-color:
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .map-place-card h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .map-place-card p {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body #travelMap,
+body .leaflet-container {
+
+    background:
+        #dde4df !important;
+}
+
+
+
+/* ==========================================================
+   WORK WITH ME PAGE
+========================================================== */
+
+body .service-card {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        var(--rr-shadow) !important;
+}
+
+
+body .service-card h3 {
+
+    color:
+        var(--rr-ink) !important;
+}
+
+
+body .service-card p {
+
+    color:
+        var(--rr-muted) !important;
+}
+
+
+body .service-number {
+
+    color:
+        var(--rr-gold) !important;
+}
+
+
+body .service-card.featured {
+
+    border:
+        1px solid
+        var(--rr-gold-light) !important;
+
+    box-shadow:
+        0 18px 45px
+        rgba(156,113,50,.13) !important;
+}
+
+
+body .custom-badge {
+
+    background:
+        var(--rr-gold-light) !important;
+
+    color:
+        var(--rr-forest) !important;
+}
+
+
+body .money-primary-btn {
+
+    background:
+        var(--rr-gold-light) !important;
+
+    color:
+        var(--rr-forest) !important;
+}
+
+
+
+/* ==========================================================
+   FORMS
+========================================================== */
+
+body input,
+body textarea,
+body select {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+body input:focus,
+body textarea:focus,
+body select:focus {
+
+    border-color:
+        var(--rr-gold) !important;
+
+    outline:
+        none !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(199,154,81,.13) !important;
+}
+
+
+body input::placeholder,
+body textarea::placeholder {
+
+    color:
+        #929c97 !important;
+}
+
+
+body .submit-enquiry {
+
+    background:
+        var(--rr-forest) !important;
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        var(--rr-forest) !important;
+}
+
+
+
+/* ==========================================================
+   GLOBAL SEARCH
+========================================================== */
+
+body .rr-search-button {
+
+    background:
+        var(--rr-forest) !important;
+
+    color:
+        #ffffff !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.09) !important;
+
+    box-shadow:
+        0 14px 35px
+        rgba(11,31,27,.20) !important;
+}
+
+
+body .rr-search-panel {
+
+    background:
+        var(--rr-paper) !important;
+
+    color:
+        var(--rr-ink) !important;
+
+    border:
+        1px solid
+        var(--rr-border) !important;
+
+    box-shadow:
+        0 24px 60px
+        rgba(11,31,27,.17) !important;
+}
+
+
+
+/* ==========================================================
+   GENERIC CARD HOVERS
+========================================================== */
+
+body .rr-highlight-card,
+body .channel-card,
+body .video-card,
+body .short-card,
+body .rr-story-card,
+body .destination-card,
+body .rr-brand-point,
+body .raj-media-card,
+body .raj-media-fit,
+body .raj-partner-promise,
+body .identity-card,
+body .pillar-card,
+body .journey-item,
+body .collab-card,
+body .collab-value-light,
+body .service-card,
+body .playlist-sync-card,
+body .highlights-card,
+body .playlist-card,
+body .explore-card,
+body .destination-result,
+body .playlist-result,
+body .gallery-item,
+body .playlist-stat,
+body .youtube-playlist-card,
+body .map-place-card {
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease !important;
+}
+
+
+body .rr-highlight-card:hover,
+body .channel-card:hover,
+body .video-card:hover,
+body .short-card:hover,
+body .rr-story-card:hover,
+body .destination-card:hover,
+body .rr-brand-point:hover,
+body .raj-media-card:hover,
+body .raj-media-fit:hover,
+body .raj-partner-promise:hover,
+body .identity-card:hover,
+body .pillar-card:hover,
+body .journey-item:hover,
+body .collab-card:hover,
+body .service-card:hover,
+body .playlist-sync-card:hover,
+body .highlights-card:hover,
+body .playlist-card:hover,
+body .explore-card:hover,
+body .destination-result:hover,
+body .playlist-result:hover,
+body .gallery-item:hover,
+body .playlist-stat:hover,
+body .youtube-playlist-card:hover,
+body .map-place-card:hover {
+
+    transform:
+        translateY(-4px) !important;
+
+    border-color:
+        #d4c8b4 !important;
+
+    box-shadow:
+        var(--rr-shadow-hover) !important;
+}
+
+
+
+/* ==========================================================
+   BACK TO TOP
+========================================================== */
+
+body .rr-back-top {
+
+    background:
+        var(--rr-gold-light) !important;
+
+    color:
+        var(--rr-forest) !important;
+
+    border-color:
+        rgba(11,31,27,.08) !important;
+}
+
+
+
+/* ==========================================================
+   MOBILE NAV
+========================================================== */
+
+@media (max-width: 1000px) {
+
+    body .raj-pro-links.raj-menu-open {
+
+        background:
+            #0b1f1b !important;
+
+        border-top:
+            1px solid
+            rgba(255,255,255,.08) !important;
+
+        box-shadow:
+            0 18px 40px
+            rgba(0,0,0,.22) !important;
+    }
+
+
+    body .raj-pro-links.raj-menu-open a {
+
+        color:
+            #edf2ef !important;
+    }
+
+}
+
+
+
+/* ==========================================================
+   MOBILE THEME POLISH
+========================================================== */
+
+@media (max-width: 700px) {
+
+    body .rr-creator-identity {
+
+        background:
+
+            radial-gradient(
+                circle at 50% 15%,
+                rgba(199,154,81,.15),
+                transparent 30%
+            ),
+
+            linear-gradient(
+                145deg,
+                #081713,
+                #14362e
+            )
+
+            !important;
+    }
+
+
+    body .rr-creator-name {
+
+        color:
+            #ffffff !important;
+    }
+
+
+    body .rr-name-main {
+
+        color:
+            #ffffff !important;
+    }
+
+
+    body .rr-name-official {
+
+        color:
+            var(--rr-gold-light) !important;
+    }
+
+
+    body .channel-card,
+    body .video-card,
+    body .short-card,
+    body .rr-story-card,
+    body .destination-card {
+
+        box-shadow:
+            0 10px 28px
+            rgba(21,36,31,.07) !important;
+    }
+
+}
+
+
+
+/* ==========================================================
+   DARKER TEXT CONTRAST V31
+   LIGHT SECTIONS ONLY
+========================================================== */
+
+:root {
+
+    --rr-ink:
+        #071510 !important;
+
+    --rr-muted:
+        #465851 !important;
+
+    --rr-border:
+        #d6d2c8 !important;
+
+}
+
+
+/* ==========================================================
+   MAIN SECTION DESCRIPTIONS
+========================================================== */
+
+body .rr-highlight-heading p,
+body .rr-stories-header p,
+body .world-heading p,
+body .creator-about p,
+body .rr-brand-trust p,
+body .raj-media-kit p,
+
+body .story-section p,
+body .pillars-section p,
+body .journey-section p,
+
+body .collab-section p,
+body .destination-section p,
+body .detail-story p,
+
+body .explore-main p,
+body .gallery-section p,
+body .playlist-section p,
+body .map-layout p,
+
+body .services-section p,
+body .why-section p,
+body .enquiry-section p {
+
+    color:
+        #465851 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   CARD TITLES
+========================================================== */
+
+body .rr-highlight-card h3,
+
+body .channel-card h2,
+body .channel-card h3,
+
+body .video-card h3,
+
+body .short-card h3,
+body .short-info h3,
+
+body .rr-story-card h3,
+body .rr-story-content h3,
+
+body .destination-card h3,
+
+body .rr-brand-point strong,
+
+body .raj-media-card h3,
+body .raj-media-fit h3,
+body .raj-partner-promise h3,
+
+body .identity-card h3,
+body .pillar-card h3,
+body .journey-item h3,
+
+body .collab-card h3,
+body .collab-value-light h3,
+
+body .service-card h3,
+
+body .playlist-sync-card h3,
+body .highlights-card h3,
+body .playlist-card h3,
+
+body .explore-card h3,
+body .destination-result h3,
+body .playlist-result h3,
+
+body .youtube-playlist-card h3,
+body .map-place-card h3 {
+
+    color:
+        #071510 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   CARD DESCRIPTION TEXT
+========================================================== */
+
+body .rr-highlight-card p,
+
+body .channel-card p,
+body .channel-card span,
+
+body .video-card p,
+body .video-meta,
+
+body .short-info p,
+body .short-meta,
+
+body .rr-story-card p,
+body .rr-story-meta,
+body .rr-story-info,
+
+body .destination-card p,
+body .destination-stats,
+
+body .rr-brand-point p,
+
+body .raj-media-card p,
+body .raj-media-fit p,
+body .raj-partner-promise p,
+
+body .identity-card p,
+body .pillar-card p,
+body .journey-item p,
+
+body .collab-card p,
+body .collab-value-light p,
+
+body .service-card p,
+
+body .playlist-sync-card p,
+body .highlights-card p,
+body .playlist-card p,
+
+body .explore-card p,
+body .destination-result p,
+body .playlist-result p,
+
+body .playlist-description,
+
+body .youtube-playlist-card p,
+
+body .map-place-card p {
+
+    color:
+        #465851 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   DESTINATION / EXPERIENCE CARDS
+   Screenshot wale cards
+========================================================== */
+
+body .destination-card h3,
+body .identity-card h3,
+body .pillar-card h3,
+
+body [class*="destination"] h3,
+body [class*="experience"] h3 {
+
+    color:
+        #071510 !important;
+}
+
+
+body .destination-card p,
+body .identity-card p,
+body .pillar-card p,
+
+body [class*="destination"] p,
+body [class*="experience"] p {
+
+    color:
+        #465851 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   STORIES BEYOND SCREEN
+   Screenshot 02
+========================================================== */
+
+body .rr-highlight-card {
+
+    color:
+        #071510 !important;
+}
+
+
+body .rr-highlight-card h3 {
+
+    color:
+        #071510 !important;
+}
+
+
+body .rr-highlight-card p {
+
+    color:
+        #465851 !important;
+}
+
+
+body .rr-highlight-number {
+
+    color:
+        #a7772f !important;
+}
+
+
+/* ==========================================================
+   ABOUT / JOURNEY TEXT
+========================================================== */
+
+body .about-lead {
+
+    color:
+        #35483f !important;
+}
+
+
+body .journey-item span,
+body .pillar-card span,
+body .identity-card span {
+
+    color:
+        #465851 !important;
+}
+
+
+/* ==========================================================
+   CHANNEL STATS
+========================================================== */
+
+body .channel-stats strong {
+
+    color:
+        #071510 !important;
+}
+
+
+body .channel-stats span {
+
+    color:
+        #465851 !important;
+}
+
+
+/* ==========================================================
+   PLAYLIST / EXPLORE SMALL TEXT
+========================================================== */
+
+body .playlist-stat span,
+body .playlist-description,
+body .explore-tags,
+body .destination-stats {
+
+    color:
+        #465851 !important;
+}
+
+
+/* ==========================================================
+   FORM TEXT
+========================================================== */
+
+body input,
+body textarea,
+body select {
+
+    color:
+        #071510 !important;
+}
+
+
+body input::placeholder,
+body textarea::placeholder {
+
+    color:
+        #68766f !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   KEEP DARK SECTIONS LIGHT
+   IMPORTANT - DO NOT MAKE HERO/NAV BLACK
+========================================================== */
+
+body .rr-creator-identity p,
+body .rr-creator-identity span:not(.rr-name-main):not(.rr-name-official),
+
+body .rr-shorts-spotlight p,
+body .rr-shorts-spotlight span,
+
+body .brand-collaboration p,
+body .global-creator-cta p,
+
+body .creator-footer p,
+body .creator-footer span,
+
+body .about-hero p,
+body .collab-hero p,
+body .destination-hero p,
+body .detail-hero p,
+body .explore-hero p,
+body .gallery-hero p,
+body .playlist-hero p,
+body .map-hero p,
+body .money-hero p,
+
+body .creator-identity-card p,
+body .collab-value-dark p {
+
+    color:
+        #c0ccc7 !important;
+}
+
+
+/* HERO NAME / NAV STAY WHITE */
+
+body .rr-name-main,
+body .rr-creator-role,
+
+body .raj-pro-header a,
+body .raj-pro-logo,
+body .raj-logo-text strong {
+
+    color:
+        #ffffff !important;
+}
+
+
+body .rr-name-official {
+
+    color:
+        var(--rr-gold-light) !important;
+}
+
+
+
+/* ==========================================================
+   RR FINAL CONTRAST V32
+========================================================== */
+
+:root {
+    --rr-ink-final: #0b1713;
+    --rr-text-final: #43544d;
+    --rr-dark-title: #ffffff;
+    --rr-dark-text: #c2cec9;
+    --rr-gold-final: #e5c992;
+}
+
+
+/* ==========================================================
+   LIGHT CARDS - DARK READABLE TEXT
+========================================================== */
+
+body :where(
+    .rr-highlight-card,
+    .channel-card,
+    .video-card,
+    .short-card,
+    .rr-story-card,
+    .destination-card,
+    .rr-brand-point,
+    .raj-media-card,
+    .raj-media-fit,
+    .raj-partner-promise,
+    .identity-card,
+    .pillar-card,
+    .journey-item,
+    .collab-card,
+    .collab-value-light,
+    .service-card,
+    .playlist-sync-card,
+    .highlights-card,
+    .playlist-card,
+    .explore-card,
+    .destination-result,
+    .playlist-result,
+    .youtube-playlist-card,
+    .map-place-card
+) :where(h1,h2,h3,h4,strong) {
+    color: var(--rr-ink-final) !important;
+    opacity: 1 !important;
+}
+
+
+body :where(
+    .rr-highlight-card,
+    .channel-card,
+    .video-card,
+    .short-card,
+    .rr-story-card,
+    .destination-card,
+    .rr-brand-point,
+    .raj-media-card,
+    .raj-media-fit,
+    .raj-partner-promise,
+    .identity-card,
+    .pillar-card,
+    .journey-item,
+    .collab-card,
+    .collab-value-light,
+    .service-card,
+    .playlist-sync-card,
+    .highlights-card,
+    .playlist-card,
+    .explore-card,
+    .destination-result,
+    .playlist-result,
+    .youtube-playlist-card,
+    .map-place-card
+) :where(p,small,span) {
+    color: var(--rr-text-final) !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   SECTION DESCRIPTION TEXT
+========================================================== */
+
+body :where(
+    .rr-highlight-heading,
+    .rr-stories-header,
+    .world-heading,
+    .creator-about,
+    .rr-brand-trust,
+    .raj-media-kit,
+    .story-section,
+    .pillars-section,
+    .journey-section,
+    .collab-section,
+    .destination-section,
+    .detail-story,
+    .explore-main,
+    .gallery-section,
+    .playlist-section,
+    .map-layout,
+    .services-section,
+    .why-section,
+    .enquiry-section
+) p {
+    color: var(--rr-text-final) !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   FIND ME ONLINE - DARK SECTION
+========================================================== */
+
+body .rr-social-trust-links > a {
+    background: rgba(255,255,255,.075) !important;
+    border-color: rgba(229,201,146,.30) !important;
+}
+
+
+body .rr-social-trust-links :where(
+    strong,
+    .rr-social-title
+) {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+
+body .rr-social-trust-links :where(
+    p,
+    small,
+    .rr-social-info span,
+    .rr-v7-copy small,
+    .rr-v6-social-copy small
+) {
+    color: #c2cec9 !important;
+    opacity: 1 !important;
+}
+
+
+body :where(
+    .rr-social-arrow,
+    .rr-v7-arrow,
+    .rr-v6-open
+) {
+    color: #e5c992 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   CREATOR STATS
+========================================================== */
+
+body .rr-stat-card {
+    background: rgba(255,255,255,.075) !important;
+    border-color: rgba(229,201,146,.30) !important;
+}
+
+
+body .rr-stat-card strong {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+
+body .rr-stat-card :where(
+    span,
+    small,
+    p
+) {
+    color: #c2cec9 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+body .rr-creator-identity .rr-name-main,
+body .rr-creator-identity .rr-creator-role {
+    color: #ffffff !important;
+}
+
+
+body .rr-creator-identity .rr-name-official,
+body .rr-creator-identity .rr-creator-eyebrow {
+    color: #e5c992 !important;
+}
+
+
+body .rr-creator-identity :where(
+    .rr-creator-location,
+    .rr-creator-intro,
+    .rr-creator-availability
+) {
+    color: #c2cec9 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   DARK SECTIONS
+========================================================== */
+
+body :where(
+    .rr-shorts-spotlight,
+    .brand-collaboration,
+    .global-creator-cta,
+    .creator-footer,
+    .about-cta,
+    .about-footer,
+    .collab-footer,
+    .detail-cta,
+    .creator-identity-card,
+    .raj-media-profile,
+    .collab-value-dark,
+    .about-hero,
+    .collab-hero,
+    .destination-hero,
+    .detail-hero,
+    .explore-hero,
+    .gallery-hero,
+    .playlist-hero,
+    .map-hero,
+    .money-hero
+) :where(h1,h2,h3,h4,strong) {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+
+body :where(
+    .rr-shorts-spotlight,
+    .brand-collaboration,
+    .global-creator-cta,
+    .creator-footer,
+    .about-cta,
+    .about-footer,
+    .collab-footer,
+    .detail-cta,
+    .creator-identity-card,
+    .raj-media-profile,
+    .collab-value-dark,
+    .about-hero,
+    .collab-hero,
+    .destination-hero,
+    .detail-hero,
+    .explore-hero,
+    .gallery-hero,
+    .playlist-hero,
+    .map-hero,
+    .money-hero
+) :where(p,small,span) {
+    color: #c2cec9 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   CHANNELS
+========================================================== */
+
+body .channel-card :where(h2,h3,strong) {
+    color: #0b1713 !important;
+}
+
+
+body .channel-card :where(p,span,small) {
+    color: #43544d !important;
+}
+
+
+/* ==========================================================
+   VLOGS
+========================================================== */
+
+body .video-card h3,
+body .video-info h3 {
+    color: #0b1713 !important;
+}
+
+
+body .video-card :where(p,span,small),
+body .video-meta {
+    color: #43544d !important;
+}
+
+
+/* ==========================================================
+   NORMAL SHORTS
+========================================================== */
+
+body .short-info h3 {
+    color: #0b1713 !important;
+}
+
+
+body .short-info :where(p,span,small),
+body .short-meta {
+    color: #43544d !important;
+}
+
+
+/* ==========================================================
+   FEATURED STORIES
+========================================================== */
+
+body .rr-story-content h3 {
+    color: #0b1713 !important;
+}
+
+
+body .rr-story-content :where(p,span,small),
+body .rr-story-meta,
+body .rr-story-info {
+    color: #43544d !important;
+}
+
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+body .raj-pro-header :where(a,strong) {
+    color: #f4f7f5 !important;
+    opacity: 1 !important;
+}
+
+
+body .raj-logo-text small {
+    color: #b8c5c0 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   LIGHT SECTION LABELS
+========================================================== */
+
+body :where(
+    .world-label,
+    .rr-stories-label,
+    .rr-brand-label,
+    .raj-section-label,
+    .story-label,
+    .collab-section-label,
+    .section-label,
+    .playlist-eyebrow,
+    .about-eyebrow,
+    .collab-eyebrow,
+    .explore-eyebrow,
+    .money-eyebrow,
+    .eyebrow
+) {
+    color: #936620 !important;
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   FORMS
+========================================================== */
+
+body :where(input,textarea,select) {
+    color: #17231f !important;
+}
+
+
+body input::placeholder,
+body textarea::placeholder {
+    color: #66766f !important;
+    opacity: 1 !important;
+}
