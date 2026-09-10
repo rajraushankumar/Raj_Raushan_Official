@@ -11,7 +11,7 @@
 >
 
 <title>
-    Travel Map | Raj Raushan Official
+    {{ destination.title }} | Raj Raushan Official
 </title>
 
 <link
@@ -22,12 +22,7 @@
 
 <link
     rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
->
-
-<link
-    rel="stylesheet"
-    href="/static/css/travel_map.css"
+    href="/static/css/destination_detail.css"
 >
 
 <link rel="stylesheet" href="/static/css/public_mobile_nav.css">
@@ -81,7 +76,6 @@
 <!-- /RR_FINAL_THEME_BOOT -->
 
 <link rel="stylesheet" href="/static/css/site_theme_final.css?v=1">
-<link rel="stylesheet" href="/static/css/professional_travel_theme.css?v=30">
 </head>
 
 
@@ -90,7 +84,10 @@
 
 <header class="travel-nav">
 
-    <a href="/" class="travel-brand">
+    <a
+        href="/"
+        class="travel-brand"
+    >
 
         <span class="travel-logo">
             RR
@@ -113,10 +110,6 @@
 
     <nav>
 
-        <a href="/">
-            Home
-        </a>
-
         <a href="/explore">
                 Explore
             </a>
@@ -127,6 +120,10 @@
 
         <a href="/playlists">
             Playlists
+        </a>
+
+        <a href="/travel-map">
+            Travel Map
         </a>
 
         <a href="/gallery">
@@ -142,21 +139,24 @@
 </header>
 
 
-<section class="map-hero">
+<section class="detail-hero">
 
     <div>
 
-        <span class="eyebrow">
-            REAL TRAVEL LOCATIONS
+        <span class="detail-region">
+
+            {{ destination.region }}
+            &bull;
+            {{ destination.category }}
+
         </span>
 
         <h1>
-            Travel Map Explorer
+            {{ destination.title }}
         </h1>
 
         <p>
-            Explore destinations featured in
-            Raj Raushan Official travel journeys.
+            {{ destination.intro }}
         </p>
 
     </div>
@@ -164,70 +164,148 @@
 </section>
 
 
-<main class="map-layout">
+<section class="detail-story">
+
+    <div class="story-grid">
 
 
-    <aside class="map-sidebar">
+        <div>
+
+            <span class="section-label">
+                DESTINATION STORY
+            </span>
+
+            <h2>
+                Explore the Journey
+            </h2>
+
+            <p>
+                {{ destination.story }}
+            </p>
+
+        </div>
+
+
+        <aside class="highlights-card">
+
+            <h3>
+                Highlights
+            </h3>
+
+            <div>
+
+                {% for item
+                   in destination.highlights %}
+
+                <span>
+                    {{ item }}
+                </span>
+
+                {% endfor %}
+
+            </div>
+
+        </aside>
+
+
+    </div>
+
+</section>
+
+
+<section class="playlist-collection">
+
+    <div class="section-heading">
 
         <span class="section-label">
-            DESTINATIONS
+            YOUTUBE COLLECTIONS
         </span>
 
         <h2>
-            Places on the Journey
+            Playlists from {{ destination.title }}
         </h2>
 
+    </div>
 
-        {% for destination in destinations %}
 
-        <button
-            type="button"
-            class="map-place-card"
-            data-slug="{{ destination.slug }}"
-            data-lat="{{ destination.lat }}"
-            data-lng="{{ destination.lng }}"
+    {% if destination_playlists %}
+
+    <div class="playlist-grid">
+
+        {% for playlist
+           in destination_playlists %}
+
+        <a
+            class="playlist-card"
+            href="{{ playlist.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
         >
 
-            <strong>
-                {{ destination.title }}
-            </strong>
+            {% if playlist.thumbnail %}
 
-            <small>
-                {{ destination.region }}
-            </small>
+            <img
+                src="{{ playlist.thumbnail }}"
+                alt="{{ playlist.title }}"
+                loading="lazy"
+            >
 
-        </button>
+            {% endif %}
+
+            <div>
+
+                <span>
+                    YOUTUBE PLAYLIST
+                </span>
+
+                <h3>
+                    {{ playlist.title }}
+                </h3>
+
+                <p>
+                    {{ playlist.video_count }}
+                    videos
+                </p>
+
+                <strong>
+                    Open Playlist &nearr;
+                </strong>
+
+            </div>
+
+        </a>
 
         {% endfor %}
 
-
-        <a
-            href="/destinations"
-            class="all-destinations"
-        >
-            View All Destinations &rarr;
-        </a>
-
-    </aside>
+    </div>
 
 
-    <section class="map-panel">
+    {% else %}
 
-        <div id="travelMap"></div>
+    <div class="empty-state">
+        Playlist data is currently unavailable.
+    </div>
 
-    </section>
+    {% endif %}
+
+</section>
 
 
-</main>
+<section class="detail-cta">
 
+    <h2>
+        Continue Exploring
+    </h2>
 
-<script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-></script>
+    <a href="/destinations">
+        All Destinations
+    </a>
 
-<script
-    src="/static/js/travel_map.js"
-></script>
+    <a href="/playlists">
+        All Playlists
+    </a>
+
+</section>
 
 
 <script src="/static/js/public_mobile_nav.js"></script>
@@ -238,6 +316,7 @@
 <script src="/static/js/brand_avatar.js"></script>
 <script src="/static/js/site_theme_final.js?v=1"></script>
 </body>
+
 </html>
 
 
