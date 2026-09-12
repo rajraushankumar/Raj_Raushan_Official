@@ -1,0 +1,632 @@
+
+/* ==========================================================
+   RAJ RAUSHAN OFFICIAL
+   CREATOR ABOUT + CONTENT PILLARS V2
+========================================================== */
+
+.rr-about-shell {
+    width: min(1280px, calc(100% - 40px));
+    margin: 0 auto 34px;
+}
+
+
+/* ==========================================================
+   SECTION HEADING
+========================================================== */
+
+.rr-section-head {
+    max-width: 760px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.rr-section-kicker {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #e8c77d;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: .18em;
+}
+
+.rr-section-head h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(32px, 4vw, 50px);
+
+    line-height: 1.08;
+
+    letter-spacing: -.035em;
+}
+
+.rr-section-head p {
+    margin: 14px auto 0;
+
+    color: rgba(224,232,243,.7);
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================================
+   ABOUT CREATOR
+========================================================== */
+
+.rr-about-card {
+    position: relative;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: .72fr 1.28fr;
+
+    gap: 42px;
+
+    align-items: center;
+
+    padding: 42px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at 12% 20%,
+            rgba(223,184,99,.12),
+            transparent 28%
+        ),
+        linear-gradient(
+            140deg,
+            rgba(19,39,64,.96),
+            rgba(10,24,43,.98)
+        );
+
+    box-shadow:
+        0 24px 60px rgba(0,0,0,.2);
+}
+
+
+.rr-about-photo-area {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.rr-about-photo {
+    position: relative;
+
+    width: 230px;
+    height: 230px;
+
+    padding: 7px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0d89a,
+            #b8873d
+        );
+
+    box-shadow:
+        0 22px 55px rgba(0,0,0,.34);
+}
+
+
+.rr-about-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    object-position: center 30%;
+
+    border: 5px solid #10223a;
+}
+
+
+.rr-about-copy h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(29px, 3.5vw, 46px);
+
+    line-height: 1.05;
+
+    letter-spacing: -.035em;
+}
+
+
+.rr-about-copy h3 span {
+    color: #e7c57d;
+}
+
+
+.rr-about-copy p {
+    margin: 17px 0 0;
+
+    max-width: 760px;
+
+    color: rgba(225,233,244,.72);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+.rr-about-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 22px;
+}
+
+
+.rr-about-tag {
+    padding: 8px 12px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.045);
+
+    color: rgba(255,255,255,.86);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   CONTENT PILLARS
+========================================================== */
+
+.rr-content-pillar-section {
+    margin-top: 34px;
+}
+
+
+.rr-content-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+.rr-content-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 230px;
+
+    padding: 26px;
+
+    border: 1px solid rgba(255,255,255,.09);
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(23,43,69,.95),
+            rgba(10,23,41,.98)
+        );
+
+    transition:
+        transform .28s ease,
+        border-color .28s ease,
+        box-shadow .28s ease;
+}
+
+
+.rr-content-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(231,197,125,.35);
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,.22);
+}
+
+
+.rr-content-number {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 22px;
+
+    border-radius: 13px;
+
+    color: #071522;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0d79a,
+            #d6ac58
+        );
+
+    font-size: 12px;
+
+    font-weight: 900;
+}
+
+
+.rr-content-card h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    line-height: 1.2;
+}
+
+
+.rr-content-card p {
+    margin: 11px 0 0;
+
+    color: rgba(220,229,241,.68);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   CREATOR JOURNEY STRIP
+========================================================== */
+
+.rr-journey-strip {
+    margin-top: 22px;
+
+    padding: 25px 30px;
+
+    border: 1px solid rgba(255,255,255,.09);
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(14,31,53,.98),
+            rgba(25,34,57,.94)
+        );
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 0;
+}
+
+
+.rr-journey-item {
+    position: relative;
+
+    padding: 5px 24px;
+
+    text-align: center;
+}
+
+
+.rr-journey-item:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 12%;
+
+    width: 1px;
+    height: 76%;
+
+    background:
+        rgba(255,255,255,.09);
+}
+
+
+.rr-journey-value {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 800;
+}
+
+
+.rr-journey-label {
+    display: block;
+
+    margin-top: 5px;
+
+    color: rgba(218,227,240,.62);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .05em;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   SOCIAL CTA
+========================================================== */
+
+.rr-follow-strip {
+    margin-top: 22px;
+
+    padding: 28px 32px;
+
+    border-radius: 22px;
+
+    border: 1px solid rgba(230,194,117,.18);
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(32,43,67,.96),
+            rgba(31,28,49,.96)
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 24px;
+}
+
+
+.rr-follow-copy h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 23px;
+}
+
+
+.rr-follow-copy p {
+    margin: 7px 0 0;
+
+    color: rgba(224,232,243,.66);
+
+    font-size: 12px;
+}
+
+
+.rr-follow-actions {
+    display: flex;
+
+    gap: 9px;
+
+    flex-wrap: wrap;
+}
+
+
+.rr-follow-btn {
+    min-height: 42px;
+
+    padding: 10px 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition:
+        transform .22s ease;
+}
+
+
+.rr-follow-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+.rr-follow-youtube {
+    color: #fff;
+
+    background: #ff0033;
+}
+
+
+.rr-follow-instagram {
+    color: #fff;
+
+    background:
+        linear-gradient(
+            120deg,
+            #ffad3d,
+            #e1306c,
+            #6d51d9
+        );
+}
+
+
+/* ==========================================================
+   REVEAL
+========================================================== */
+
+.rr-about-reveal {
+    opacity: 0;
+
+    transform: translateY(22px);
+
+    transition:
+        opacity .65s ease,
+        transform .65s ease;
+}
+
+
+.rr-about-reveal.rr-about-show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 1000px) {
+
+    .rr-content-grid {
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .rr-about-card {
+        grid-template-columns:
+            1fr;
+
+        text-align: center;
+
+        padding:
+            36px 28px;
+    }
+
+
+    .rr-about-copy p {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .rr-about-tags {
+        justify-content: center;
+    }
+
+
+    .rr-journey-strip {
+        grid-template-columns:
+            repeat(2,1fr);
+
+        row-gap:
+            24px;
+    }
+
+
+    .rr-journey-item:nth-child(2)::after {
+        display: none;
+    }
+
+
+    .rr-follow-strip {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .rr-follow-actions {
+        justify-content: center;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .rr-about-shell {
+        width: calc(100% - 20px);
+    }
+
+
+    .rr-about-photo {
+        width: 175px;
+        height: 175px;
+    }
+
+
+    .rr-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .rr-content-card {
+        min-height: auto;
+    }
+
+
+    .rr-journey-strip {
+        grid-template-columns: 1fr;
+    }
+
+
+    .rr-journey-item::after {
+        display: none !important;
+    }
+
+
+    .rr-follow-actions {
+        width: 100%;
+    }
+
+
+    .rr-follow-btn {
+        flex: 1;
+    }
+
+}
