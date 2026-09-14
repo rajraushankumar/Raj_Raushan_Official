@@ -1,0 +1,165 @@
+
+/* ==========================================================
+   RAJ RAUSHAN OFFICIAL
+   PROFESSIONAL NAVIGATION V1
+========================================================== */
+
+
+/* ==========================================================
+   SCROLL PROGRESS
+========================================================== */
+
+#rr-scroll-progress {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 3px;
+
+    z-index: 9999999;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d8aa50,
+            #f4d994,
+            #ffffff,
+            #e8bd68
+        );
+
+    box-shadow:
+        0 0 12px rgba(232,189,104,.55);
+
+    transition:
+        width .08s linear;
+}
+
+
+/* ==========================================================
+   NAVBAR SCROLLED STATE
+========================================================== */
+
+html body nav.rr-nav-scrolled,
+html body header.rr-nav-scrolled,
+html body .navbar.rr-nav-scrolled,
+html body .nav-container.rr-nav-scrolled {
+
+    background:
+        rgba(7,20,36,.94) !important;
+
+    backdrop-filter:
+        blur(18px) !important;
+
+    -webkit-backdrop-filter:
+        blur(18px) !important;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08) !important;
+
+    box-shadow:
+        0 12px 36px rgba(0,0,0,.25) !important;
+}
+
+
+/* ==========================================================
+   NAV LINKS
+========================================================== */
+
+html body nav a[href^="#"],
+html body .navbar a[href^="#"],
+html body .nav-container a[href^="#"] {
+
+    position: relative;
+
+    transition:
+        color .22s ease,
+        opacity .22s ease !important;
+}
+
+
+/* ACTIVE NAV LINK */
+
+html body nav a.rr-nav-active,
+html body .navbar a.rr-nav-active,
+html body .nav-container a.rr-nav-active {
+
+    color:
+        #f0cf87 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* Active underline */
+
+html body nav a.rr-nav-active::after,
+html body .navbar a.rr-nav-active::after,
+html body .nav-container a.rr-nav-active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 16%;
+    right: 16%;
+
+    bottom: -6px;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #f0cf87,
+            transparent
+        );
+
+    box-shadow:
+        0 0 9px rgba(240,207,135,.45);
+}
+
+
+/* ==========================================================
+   LINK HOVER
+========================================================== */
+
+html body nav a[href^="#"]:hover,
+html body .navbar a[href^="#"]:hover,
+html body .nav-container a[href^="#"]:hover {
+
+    color:
+        #f1d594 !important;
+}
+
+
+/* ==========================================================
+   SECTION SCROLL OFFSET
+========================================================== */
+
+section[id],
+div[id] {
+
+    scroll-margin-top:
+        95px;
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #rr-scroll-progress {
+        transition: none !important;
+    }
+
+}
