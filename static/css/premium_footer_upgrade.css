@@ -1,0 +1,552 @@
+
+/* ==========================================================
+   RAJ RAUSHAN OFFICIAL
+   PREMIUM FOOTER V1
+========================================================== */
+
+.rr-premium-footer {
+    width: min(1280px, calc(100% - 40px));
+
+    margin:
+        40px auto 22px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    border-radius:
+        28px;
+
+    background:
+        radial-gradient(
+            circle at 12% 0%,
+            rgba(228,190,106,.10),
+            transparent 28%
+        ),
+        linear-gradient(
+            145deg,
+            #10233c,
+            #081727
+        );
+
+    box-shadow:
+        0 28px 70px rgba(0,0,0,.23);
+}
+
+
+/* ==========================================================
+   MAIN GRID
+========================================================== */
+
+.rr-footer-main {
+    display:
+        grid;
+
+    grid-template-columns:
+        1.35fr .65fr .75fr;
+
+    gap:
+        45px;
+
+    padding:
+        48px;
+}
+
+
+/* ==========================================================
+   BRAND
+========================================================== */
+
+.rr-footer-brand {
+    max-width:
+        480px;
+}
+
+
+.rr-footer-brand-top {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+}
+
+
+.rr-footer-dp {
+    width:
+        68px;
+
+    height:
+        68px;
+
+    min-width:
+        68px;
+
+    display:
+        block;
+
+    object-fit:
+        cover;
+
+    object-position:
+        center 30%;
+
+    border-radius:
+        50%;
+
+    border:
+        3px solid #e2bd70;
+
+    box-shadow:
+        0 0 0 4px rgba(226,189,112,.08);
+}
+
+
+.rr-footer-brand-name {
+    margin:
+        0;
+
+    color:
+        #ffffff;
+
+    font-size:
+        23px;
+
+    font-weight:
+        800;
+
+    line-height:
+        1.05;
+
+    letter-spacing:
+        -.025em;
+}
+
+
+.rr-footer-brand-label {
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    color:
+        #e7c478;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .17em;
+}
+
+
+.rr-footer-description {
+    margin:
+        20px 0 0;
+
+    max-width:
+        440px;
+
+    color:
+        rgba(220,230,243,.66);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.8;
+}
+
+
+/* ==========================================================
+   TITLES
+========================================================== */
+
+.rr-footer-title {
+    margin:
+        0 0 18px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .02em;
+}
+
+
+/* ==========================================================
+   QUICK LINKS
+========================================================== */
+
+.rr-footer-links {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    gap:
+        11px;
+}
+
+
+.rr-footer-links a {
+    position:
+        relative;
+
+    color:
+        rgba(220,230,243,.66);
+
+    text-decoration:
+        none;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    transition:
+        color .22s ease,
+        transform .22s ease;
+}
+
+
+.rr-footer-links a:hover {
+    color:
+        #eccb83;
+
+    transform:
+        translateX(4px);
+}
+
+
+/* ==========================================================
+   SOCIAL LINKS
+========================================================== */
+
+.rr-footer-socials {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap:
+        9px;
+}
+
+
+.rr-footer-social {
+    min-height:
+        42px;
+
+    padding:
+        9px 12px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:
+        rgba(255,255,255,.83);
+
+    text-decoration:
+        none;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    transition:
+        transform .22s ease,
+        border-color .22s ease,
+        background .22s ease;
+}
+
+
+.rr-footer-social:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(232,196,119,.30);
+
+    background:
+        rgba(255,255,255,.065);
+}
+
+
+/* ==========================================================
+   BOTTOM BAR
+========================================================== */
+
+.rr-footer-bottom {
+    min-height:
+        70px;
+
+    padding:
+        15px 48px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
+
+    background:
+        rgba(0,0,0,.10);
+}
+
+
+.rr-footer-copy {
+    margin:
+        0;
+
+    color:
+        rgba(218,227,239,.53);
+
+    font-size:
+        10px;
+
+    line-height:
+        1.6;
+}
+
+
+.rr-footer-copy strong {
+    color:
+        rgba(255,255,255,.84);
+}
+
+
+/* ==========================================================
+   BACK TO TOP
+========================================================== */
+
+.rr-footer-top-btn {
+    min-height:
+        40px;
+
+    padding:
+        9px 15px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    border:
+        1px solid rgba(231,195,117,.24);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(231,195,117,.07);
+
+    color:
+        #edcc82;
+
+    cursor:
+        pointer;
+
+    font-family:
+        inherit;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    transition:
+        transform .22s ease,
+        background .22s ease;
+}
+
+
+.rr-footer-top-btn:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(231,195,117,.12);
+}
+
+
+/* ==========================================================
+   SMALL ACCENT
+========================================================== */
+
+.rr-footer-status {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    margin-top:
+        18px;
+
+    color:
+        rgba(220,230,243,.61);
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+}
+
+
+.rr-footer-status-dot {
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #64d48e;
+
+    box-shadow:
+        0 0 10px rgba(100,212,142,.5);
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .rr-footer-main {
+        grid-template-columns:
+            1fr 1fr;
+
+        padding:
+            38px 32px;
+    }
+
+
+    .rr-footer-brand {
+        grid-column:
+            1 / -1;
+
+        max-width:
+            none;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .rr-premium-footer {
+        width:
+            calc(100% - 20px);
+
+        border-radius:
+            22px;
+    }
+
+
+    .rr-footer-main {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            30px;
+
+        padding:
+            32px 22px;
+    }
+
+
+    .rr-footer-brand {
+        grid-column:
+            auto;
+    }
+
+
+    .rr-footer-socials {
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+    }
+
+
+    .rr-footer-bottom {
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+
+        padding:
+            20px;
+    }
+
+
+    .rr-footer-top-btn {
+        width:
+            100%;
+    }
+
+}
