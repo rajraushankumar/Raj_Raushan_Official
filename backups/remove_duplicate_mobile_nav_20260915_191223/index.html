@@ -5171,21 +5171,22 @@ and
 
 <link
     rel="stylesheet"
-    href="/static/css/mobile_responsive_final.css?v=2"
+    href="/static/css/mobile_responsive_final.css?v=4"
 >
 
 <link
     rel="stylesheet"
     href="/static/css/production_polish.css?v=1"
 >
+
 <link
     rel="stylesheet"
-    href="/static/css/follow_journey_upgrade.css?v=2"
+    href="/static/css/mobile_nav_upgrade.css?v=2"
 >
 
 <link
     rel="stylesheet"
-    href="/static/css/mobile_menu_clean.css?v=2"
+    href="/static/css/follow_journey_upgrade.css?v=2"
 >
 </head>
 
@@ -5300,7 +5301,7 @@ and
 
 
         <nav
-            class="raj-pro-links"
+            class="raj-pro-links rr-legacy-desktop-nav"
             aria-label="Main navigation"
         >
 
@@ -9289,6 +9290,135 @@ document.addEventListener(
     src="/static/js/production_polish.js?v=1"
     defer
 ></script>
+
+<!-- RR MOBILE NAV START -->
+
+<div
+    id="rr-mobile-nav-overlay"
+    class="rr-mobile-nav-overlay"
+    aria-hidden="true"
+></div>
+
+<nav
+    id="rr-mobile-nav-panel"
+    class="rr-mobile-nav-panel"
+    aria-label="Mobile navigation"
+>
+
+    <div class="rr-mobile-brand">
+
+        <img
+            src="/static/images/rajraushan_dp.jpg"
+            alt="Raj Raushan Official"
+        >
+
+        <div>
+
+            <strong>
+                Raj Raushan Official
+            </strong>
+
+            <small>
+                TRAVEL CONTENT CREATOR
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="rr-mobile-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a
+            href="https://www.youtube.com/@RajRaushanOfficial/videos"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Videos
+        </a>
+
+        <a
+            href="https://www.youtube.com/@RajRaushanOfficial/shorts"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Shorts
+        </a>
+
+        <a href="#media-kit">
+            Media Kit
+        </a>
+
+        <a href="#rr-collaboration">
+            Collaborate
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/rajraushankumar/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            LinkedIn
+        </a>
+
+    </div>
+
+
+    <div class="rr-mobile-social">
+
+        <a
+            class="rr-mobile-youtube"
+            href="https://www.youtube.com/@RajRaushanOfficial"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            YouTube
+        </a>
+
+        <a
+            class="rr-mobile-instagram"
+            href="https://www.instagram.com/rajraushanofficial/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Instagram
+        </a>
+
+    </div>
+
+
+    <p class="rr-mobile-footer-label">
+        Travel • Culture • Stories
+    </p>
+
+</nav>
+
+
+<button
+    id="rr-mobile-nav-toggle"
+    class="rr-mobile-nav-toggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-controls="rr-mobile-nav-panel"
+    aria-expanded="false"
+>
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<!-- RR MOBILE NAV END -->
+
+
+<script
+    src="/static/js/mobile_nav_upgrade.js?v=2"
+    defer
+></script>
+
 <script
     src="/static/js/social_channel_badges.js?v=54"
     defer
@@ -9430,11 +9560,6 @@ document.addEventListener(
 
 <script
     src="/static/js/follow_journey_upgrade.js?v=1"
-    defer
-></script>
-
-<script
-    src="/static/js/mobile_menu_clean.js?v=2"
     defer
 ></script>
 </body>

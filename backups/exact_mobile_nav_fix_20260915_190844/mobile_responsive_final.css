@@ -1,0 +1,921 @@
+
+/* ==========================================================
+   RAJ RAUSHAN OFFICIAL
+   MOBILE RESPONSIVE FINAL POLISH V1
+========================================================== */
+
+/* Global protection */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1000px) {
+
+    .rr-pro-shell,
+    .rr-about-shell,
+    .rr-travel-portfolio,
+    .rr-media-kit,
+    .rr-premium-footer {
+
+        width: calc(100% - 28px) !important;
+        max-width: none !important;
+    }
+
+
+    /* Creator hero */
+
+    .rr-pro-showcase {
+
+        grid-template-columns: 1fr !important;
+
+        gap: 28px !important;
+
+        padding: 38px 30px !important;
+
+        text-align: center !important;
+    }
+
+
+    .rr-pro-copy {
+        margin: 0 auto !important;
+    }
+
+
+    .rr-pro-actions {
+
+        justify-content: center !important;
+    }
+
+
+    /* Featured video */
+
+    .rr-pro-featured {
+
+        grid-template-columns: 1fr !important;
+    }
+
+
+    /* About */
+
+    .rr-about-card {
+
+        grid-template-columns: 1fr !important;
+
+        gap: 25px !important;
+
+        text-align: center !important;
+    }
+
+
+    .rr-about-tags {
+
+        justify-content: center !important;
+    }
+
+
+    /* Travel */
+
+    .rr-destination-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+
+    /* Media kit */
+
+    .rr-media-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+
+    .rr-media-proof {
+
+        grid-template-columns: 1fr !important;
+    }
+
+
+    /* Footer */
+
+    .rr-footer-main {
+
+        grid-template-columns:
+            1fr 1fr !important;
+    }
+
+
+    .rr-footer-brand {
+
+        grid-column: 1 / -1 !important;
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 780px) {
+
+    /* ------------------------------------------------------
+       GENERAL
+    ------------------------------------------------------ */
+
+    section,
+    main,
+    footer {
+
+        max-width: 100% !important;
+    }
+
+
+    .rr-pro-shell,
+    .rr-about-shell,
+    .rr-travel-portfolio,
+    .rr-media-kit,
+    .rr-premium-footer {
+
+        width: calc(100% - 20px) !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+
+    /* ------------------------------------------------------
+       CREATOR SHOWCASE
+    ------------------------------------------------------ */
+
+    .rr-pro-showcase {
+
+        padding: 30px 18px !important;
+
+        border-radius: 22px !important;
+    }
+
+
+    .rr-pro-showcase h1 {
+
+        font-size: clamp(35px, 11vw, 48px) !important;
+
+        line-height: 1 !important;
+    }
+
+
+    .rr-pro-lead {
+
+        font-size: 14px !important;
+
+        line-height: 1.65 !important;
+    }
+
+
+    .rr-pro-actions {
+
+        width: 100% !important;
+
+        flex-direction: column !important;
+    }
+
+
+    .rr-pro-actions .rr-pro-btn {
+
+        width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    .rr-pro-photo-wrap {
+
+        width: 205px !important;
+        height: 205px !important;
+    }
+
+
+    .rr-pro-photo-ring {
+
+        width: 168px !important;
+        height: 168px !important;
+    }
+
+
+    /* ------------------------------------------------------
+       FEATURED VIDEO
+    ------------------------------------------------------ */
+
+    .rr-pro-featured {
+
+        gap: 14px !important;
+    }
+
+
+    .rr-pro-featured-copy {
+
+        padding: 25px 19px !important;
+    }
+
+
+    .rr-pro-video-card {
+
+        padding: 7px !important;
+
+        border-radius: 18px !important;
+    }
+
+
+    .rr-pro-video-frame {
+
+        width: 100% !important;
+
+        aspect-ratio: 16 / 9 !important;
+
+        min-height: 0 !important;
+    }
+
+
+    .rr-pro-video-frame iframe {
+
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+
+    /* ------------------------------------------------------
+       COLLABORATION CTA
+    ------------------------------------------------------ */
+
+    .rr-pro-collab {
+
+        grid-template-columns: 1fr !important;
+
+        padding: 30px 19px !important;
+
+        text-align: center !important;
+
+        border-radius: 22px !important;
+    }
+
+
+    .rr-pro-collab-actions {
+
+        width: 100% !important;
+    }
+
+
+    .rr-pro-collab-actions .rr-pro-btn {
+
+        width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* ------------------------------------------------------
+       ABOUT CREATOR
+    ------------------------------------------------------ */
+
+    .rr-about-shell > .rr-section-head {
+
+        padding: 30px 18px !important;
+    }
+
+
+    .rr-section-head h2 {
+
+        font-size: 31px !important;
+    }
+
+
+    .rr-about-card {
+
+        padding: 28px 18px !important;
+
+        border-radius: 21px !important;
+    }
+
+
+    .rr-about-photo {
+
+        width: 165px !important;
+        height: 165px !important;
+    }
+
+
+    .rr-about-copy h3 {
+
+        font-size: 30px !important;
+    }
+
+
+    .rr-about-copy p {
+
+        font-size: 13px !important;
+
+        line-height: 1.7 !important;
+    }
+
+
+    .rr-content-pillar-section {
+
+        padding: 27px 15px 18px !important;
+    }
+
+
+    .rr-content-grid {
+
+        grid-template-columns: 1fr !important;
+    }
+
+
+    .rr-content-card {
+
+        width: 100% !important;
+
+        min-height: 180px !important;
+
+        padding: 21px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    .rr-journey-strip {
+
+        grid-template-columns: 1fr 1fr !important;
+
+        gap: 15px !important;
+
+        padding: 20px 14px !important;
+    }
+
+
+    .rr-journey-item {
+
+        padding: 8px !important;
+    }
+
+
+    .rr-journey-item::after {
+
+        display: none !important;
+    }
+
+
+    .rr-follow-strip {
+
+        flex-direction: column !important;
+
+        padding: 24px 18px !important;
+
+        text-align: center !important;
+    }
+
+
+    .rr-follow-actions {
+
+        width: 100% !important;
+    }
+
+
+    .rr-follow-btn {
+
+        flex: 1 !important;
+    }
+
+
+    /* ------------------------------------------------------
+       TRAVEL PORTFOLIO
+    ------------------------------------------------------ */
+
+    .rr-travel-heading {
+
+        padding: 30px 18px !important;
+    }
+
+
+    .rr-travel-heading h2 {
+
+        font-size: 31px !important;
+    }
+
+
+    .rr-travel-panel {
+
+        padding: 15px !important;
+    }
+
+
+    .rr-destination-grid {
+
+        grid-template-columns: 1fr !important;
+    }
+
+
+    .rr-destination-card {
+
+        width: 100% !important;
+
+        min-height: 235px !important;
+
+        padding: 20px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    .rr-destination-content {
+
+        left: 20px !important;
+        right: 20px !important;
+        bottom: 20px !important;
+    }
+
+
+    .rr-portfolio-strip {
+
+        grid-template-columns: 1fr !important;
+
+        gap: 17px !important;
+
+        padding: 22px 16px !important;
+    }
+
+
+    .rr-portfolio-main {
+
+        text-align: center !important;
+    }
+
+
+    .rr-portfolio-stat {
+
+        padding: 7px !important;
+    }
+
+
+    .rr-portfolio-stat::after {
+
+        display: none !important;
+    }
+
+
+    .rr-travel-cta {
+
+        flex-direction: column !important;
+
+        padding: 23px 17px !important;
+
+        text-align: center !important;
+    }
+
+
+    .rr-travel-cta-btn {
+
+        width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* ------------------------------------------------------
+       MEDIA KIT
+    ------------------------------------------------------ */
+
+    .rr-media-head {
+
+        padding: 30px 18px !important;
+    }
+
+
+    .rr-media-head h2 {
+
+        font-size: 31px !important;
+    }
+
+
+    .rr-media-grid {
+
+        grid-template-columns: 1fr !important;
+    }
+
+
+    .rr-media-card {
+
+        width: 100% !important;
+
+        min-height: 205px !important;
+
+        padding: 22px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    .rr-media-proof {
+
+        grid-template-columns: 1fr !important;
+    }
+
+
+    .rr-media-proof-copy,
+    .rr-media-contact {
+
+        padding: 24px 19px !important;
+    }
+
+
+    .rr-media-benefits {
+
+        grid-template-columns: 1fr !important;
+    }
+
+
+    /* ------------------------------------------------------
+       YOUTUBE + INSTAGRAM CHANNEL CARDS
+    ------------------------------------------------------ */
+
+    html body .channels-section
+    .channels-container {
+
+        width: calc(100% - 20px) !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 13px !important;
+    }
+
+
+    html body .channels-section
+    .channels-container > .channel-card {
+
+        width: 100% !important;
+
+        height: auto !important;
+
+        min-height: 285px !important;
+
+        max-height: none !important;
+
+        padding: 18px 16px !important;
+
+        box-sizing: border-box !important;
+
+        overflow: visible !important;
+    }
+
+
+    html body .channels-section
+    .channel-card img {
+
+        width: 84px !important;
+        height: 84px !important;
+
+        min-width: 84px !important;
+        min-height: 84px !important;
+
+        max-width: 84px !important;
+        max-height: 84px !important;
+
+        aspect-ratio: 1 / 1 !important;
+
+        object-fit: cover !important;
+
+        border-radius: 50% !important;
+
+        clip-path: circle(50% at 50% 50%) !important;
+    }
+
+
+    html body .channels-section
+    .channel-card .channel-stats {
+
+        width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    html body .channels-section
+    .channel-card .channel-btn {
+
+        max-width: 100% !important;
+    }
+
+
+    /* ------------------------------------------------------
+       FOOTER
+    ------------------------------------------------------ */
+
+    .rr-footer-main {
+
+        grid-template-columns: 1fr !important;
+
+        gap: 28px !important;
+
+        padding: 31px 20px !important;
+    }
+
+
+    .rr-footer-brand {
+
+        grid-column: auto !important;
+    }
+
+
+    .rr-footer-brand-top {
+
+        align-items: center !important;
+    }
+
+
+    .rr-footer-dp {
+
+        width: 60px !important;
+        height: 60px !important;
+
+        min-width: 60px !important;
+    }
+
+
+    .rr-footer-socials {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+
+    .rr-footer-bottom {
+
+        flex-direction: column !important;
+
+        padding: 19px !important;
+
+        text-align: center !important;
+    }
+
+
+    .rr-footer-top-btn {
+
+        width: 100% !important;
+    }
+
+
+    /* ------------------------------------------------------
+       MOBILE MENU
+       Move slightly up to avoid bottom controls
+    ------------------------------------------------------ */
+
+    .rr-mobile-nav-toggle {
+
+        right:
+            max(16px, env(safe-area-inset-right)) !important;
+
+        bottom:
+            calc(18px + env(safe-area-inset-bottom)) !important;
+    }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL PHONES
+========================================================== */
+
+@media (max-width: 420px) {
+
+    .rr-pro-showcase h1 {
+
+        font-size: 34px !important;
+    }
+
+
+    .rr-journey-strip {
+
+        grid-template-columns: 1fr !important;
+    }
+
+
+    .rr-footer-socials {
+
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+
+    html body .channels-section
+    .channel-card h2 {
+
+        font-size: 18px !important;
+    }
+
+
+    html body .channels-section
+    .channel-card .channel-stats strong {
+
+        font-size: 16px !important;
+    }
+
+}
+
+
+/* ==========================================================
+   LANDSCAPE PHONE
+========================================================== */
+
+@media
+(max-height: 500px)
+and (orientation: landscape)
+and (max-width: 950px) {
+
+    .rr-mobile-nav-panel {
+
+        max-height: calc(100vh - 24px) !important;
+
+        overflow-y: auto !important;
+    }
+
+}
+
+
+/* MOBILE OLD NAV CLEANUP V2 */
+
+@media (max-width: 780px) {
+
+    /*
+       Hide legacy / desktop navigation on mobile.
+       Keep the new hamburger mobile navigation untouched.
+    */
+
+    header nav ul,
+    header .nav-links,
+    header .navbar-links,
+    header .nav-menu,
+    header .menu-links,
+
+    .navbar .nav-links,
+    .navbar .navbar-links,
+    .navbar .nav-menu,
+
+    .site-header .nav-links,
+    .site-header .navbar-links,
+    .site-header .nav-menu,
+
+    .desktop-nav,
+    .desktop-menu,
+    .desktop-navigation,
+
+    nav.desktop-nav,
+    nav.desktop-menu {
+
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+
+    /*
+       Keep modern mobile controls visible
+    */
+
+    .rr-mobile-nav,
+    .rr-mobile-nav-toggle,
+    .rr-mobile-menu,
+    .rr-mobile-menu-panel,
+    .rr-mobile-overlay {
+
+        visibility: visible;
+    }
+
+}
+
+/* END MOBILE OLD NAV CLEANUP V2 */
+
+
+/* MOBILE STABILITY FIX V3 */
+
+@media (max-width: 780px) {
+
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+
+    /* ------------------------------------------------------
+       Desktop navigation must not appear inside mobile hero.
+       CSS-only: safe during live DevTools resize.
+    ------------------------------------------------------ */
+
+    header .nav-links,
+    header .navbar-links,
+    header .nav-menu,
+    header .menu-links,
+
+    .navbar .nav-links,
+    .navbar .navbar-links,
+    .navbar .nav-menu,
+
+    .site-header .nav-links,
+    .site-header .navbar-links,
+    .site-header .nav-menu,
+
+    .desktop-nav,
+    .desktop-menu,
+    .desktop-navigation {
+
+        display: none !important;
+    }
+
+
+    /* ------------------------------------------------------
+       Hero recovery.
+       Prevent responsive resize/animation state from leaving
+       the mobile hero invisible.
+    ------------------------------------------------------ */
+
+    .hero,
+    .hero-section,
+    .hero-content,
+    .hero-container,
+    .hero-inner,
+
+    .rr-hero,
+    .rr-hero-content,
+    .rr-hero-inner,
+
+    .creator-hero,
+    .creator-hero-content,
+    .creator-showcase,
+
+    .profile-container,
+    .profile-content,
+    .hero-profile,
+    .hero-text,
+    .hero-copy,
+    .hero-actions {
+
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+
+    /* Elements hidden by entrance animation must recover */
+    .hero [data-aos],
+    .hero-section [data-aos],
+    .rr-hero [data-aos],
+    .creator-hero [data-aos] {
+
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+
+
+    /* Keep main hero media visible */
+
+    .hero img,
+    .hero-section img,
+    .rr-hero img,
+    .creator-hero img {
+
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+
+    /* Top mobile controls remain visible */
+
+    .rr-mobile-nav-toggle,
+    .mobile-nav-toggle,
+    .mobile-menu-button,
+    .hamburger,
+    .search-btn,
+    .search-button {
+
+        visibility: visible;
+        opacity: 1;
+    }
+
+}
+
+/* END MOBILE STABILITY FIX V3 */

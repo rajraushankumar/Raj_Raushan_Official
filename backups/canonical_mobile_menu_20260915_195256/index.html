@@ -5185,8 +5185,82 @@ and
 
 <link
     rel="stylesheet"
-    href="/static/css/mobile_menu_clean.css?v=2"
+    href="/static/css/mobile_nav_upgrade.css?v=3"
 >
+
+<!-- MOBILE MENU VISIBILITY FIX START -->
+<style>
+
+/* MOBILE ONLY */
+@media (max-width: 780px) {
+
+    /* Menu completely hidden normally */
+    #rr-mobile-nav-panel {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    #rr-mobile-nav-overlay {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+
+    /* Links must NEVER appear over hero */
+    #rr-mobile-nav-panel .rr-mobile-links {
+        display: none !important;
+    }
+
+
+    /* Only after hamburger click */
+    #rr-mobile-nav-panel.rr-mobile-visible {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+
+        position: fixed !important;
+
+        top: 64px !important;
+        right: 8px !important;
+
+        width: min(330px, calc(100vw - 16px)) !important;
+        max-height: calc(100vh - 78px) !important;
+
+        overflow-y: auto !important;
+
+        z-index: 50000 !important;
+    }
+
+
+    #rr-mobile-nav-panel.rr-mobile-visible .rr-mobile-links {
+        display: grid !important;
+    }
+
+
+    #rr-mobile-nav-overlay.rr-mobile-visible {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+
+        position: fixed !important;
+        inset: 0 !important;
+
+        background: rgba(2,8,17,.68) !important;
+
+        z-index: 49990 !important;
+    }
+
+}
+
+</style>
+<!-- MOBILE MENU VISIBILITY FIX END -->
+
 </head>
 
 
@@ -9289,6 +9363,136 @@ document.addEventListener(
     src="/static/js/production_polish.js?v=1"
     defer
 ></script>
+
+<!-- RR MOBILE NAV START -->
+
+<div
+    id="rr-mobile-nav-overlay"
+    class="rr-mobile-nav-overlay"
+    aria-hidden="true"
+></div>
+
+<nav
+    id="rr-mobile-nav-panel"
+    class="rr-mobile-nav-panel"
+    aria-label="Mobile navigation"
+>
+
+    <div class="rr-mobile-brand">
+
+        <img
+            src="/static/images/rajraushan_dp.jpg"
+            alt="Raj Raushan Official"
+        >
+
+        <div>
+
+            <strong>
+                Raj Raushan Official
+            </strong>
+
+            <small>
+                TRAVEL CONTENT CREATOR
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="rr-mobile-links">
+
+    <a href="/">
+        Home
+    </a>
+
+    <a href="/vlogs">
+        Vlogs
+    </a>
+
+    <a href="/shorts">
+        Shorts
+    </a>
+
+    <a href="/explore">
+        Explore
+    </a>
+
+    <a href="/destinations">
+        Destinations
+    </a>
+
+    <a href="/playlists">
+        Playlists
+    </a>
+
+    <a href="/travel-map">
+        Travel Map
+    </a>
+
+    <a href="/gallery">
+        Gallery
+    </a>
+
+    <a href="/about">
+        About
+    </a>
+
+    <a href="#media-kit">
+        Media Kit
+    </a>
+
+    <a href="/collaborate">
+        Collaborate
+    </a>
+
+</div>
+
+
+    <div class="rr-mobile-social">
+
+        <a
+            class="rr-mobile-youtube"
+            href="https://www.youtube.com/@RajRaushanOfficial"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            YouTube
+        </a>
+
+        <a
+            class="rr-mobile-instagram"
+            href="https://www.instagram.com/rajraushanofficial/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Instagram
+        </a>
+
+    </div>
+
+
+    <p class="rr-mobile-footer-label">
+        Travel • Culture • Stories
+    </p>
+
+</nav>
+
+
+<button
+    id="rr-mobile-nav-toggle"
+    class="rr-mobile-nav-toggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-controls="rr-mobile-nav-panel"
+    aria-expanded="false"
+>
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<!-- RR MOBILE NAV END -->
 <script
     src="/static/js/social_channel_badges.js?v=54"
     defer
@@ -9434,7 +9638,7 @@ document.addEventListener(
 ></script>
 
 <script
-    src="/static/js/mobile_menu_clean.js?v=2"
+    src="/static/js/mobile_nav_upgrade.js?v=3"
     defer
 ></script>
 </body>

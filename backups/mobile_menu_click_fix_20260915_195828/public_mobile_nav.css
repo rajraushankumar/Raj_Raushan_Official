@@ -1,0 +1,289 @@
+
+/* ==========================================================
+   RAJ RAUSHAN - SINGLE CANONICAL MOBILE MENU
+========================================================== */
+
+.rr-canonical-mobile-btn,
+.rr-canonical-mobile-backdrop,
+.rr-canonical-mobile-panel {
+    display: none;
+}
+
+@media (max-width: 780px) {
+
+    /* Hide the old desktop navigation group on mobile */
+    .rr-mobile-legacy-nav,
+    .rr-mobile-legacy-nav-item {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+
+    /* Leave room beside Search */
+    .rr-mobile-search-space {
+        margin-right: 48px !important;
+    }
+
+
+    /* =========================
+       3 DOT BUTTON
+    ========================= */
+
+    html body .rr-canonical-mobile-btn {
+
+        display: flex !important;
+
+        position: fixed !important;
+
+        top: 10px !important;
+        right: 8px !important;
+
+        width: 42px !important;
+        height: 42px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        border:
+            1px solid rgba(255,255,255,.11) !important;
+
+        border-radius: 12px !important;
+
+        background: #17263a !important;
+        color: #ffffff !important;
+
+        font-size: 27px !important;
+        font-weight: 900 !important;
+        line-height: 1 !important;
+
+        cursor: pointer !important;
+
+        z-index: 60010 !important;
+    }
+
+
+    /* =========================
+       BACKDROP
+    ========================= */
+
+    html body .rr-canonical-mobile-backdrop {
+
+        display: block !important;
+
+        position: fixed !important;
+        inset: 0 !important;
+
+        background:
+            rgba(2,8,17,.68) !important;
+
+        backdrop-filter:
+            blur(4px);
+
+        opacity: 0 !important;
+        visibility: hidden !important;
+
+        pointer-events: none !important;
+
+        transition:
+            opacity .2s ease,
+            visibility .2s ease;
+
+        z-index: 59990 !important;
+    }
+
+
+    html body .rr-canonical-mobile-backdrop.active {
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        pointer-events: auto !important;
+    }
+
+
+    /* =========================
+       RIGHT SIDE PANEL
+
+       IMPORTANT:
+       Off-screen by default.
+       It does NOT appear over hero.
+    ========================= */
+
+    html body .rr-canonical-mobile-panel {
+
+        display: block !important;
+
+        position: fixed !important;
+
+        top: 0 !important;
+        right: 0 !important;
+
+        width: min(320px, 86vw) !important;
+        height: 100dvh !important;
+
+        padding:
+            75px 16px 24px !important;
+
+        box-sizing: border-box !important;
+
+        overflow-y: auto !important;
+
+        background:
+            linear-gradient(
+                160deg,
+                #13243a,
+                #071321
+            ) !important;
+
+        border-left:
+            1px solid rgba(255,255,255,.10) !important;
+
+        box-shadow:
+            -20px 0 55px rgba(0,0,0,.35) !important;
+
+        transform:
+            translateX(105%) !important;
+
+        visibility: hidden !important;
+        pointer-events: none !important;
+
+        transition:
+            transform .25s ease,
+            visibility .25s ease !important;
+
+        z-index: 60000 !important;
+    }
+
+
+    html body .rr-canonical-mobile-panel.active {
+
+        transform:
+            translateX(0) !important;
+
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+
+    /* =========================
+       PANEL TITLE
+    ========================= */
+
+    .rr-canonical-menu-title {
+
+        padding:
+            0 3px 14px;
+
+        border-bottom:
+            1px solid rgba(255,255,255,.08);
+
+        margin-bottom: 13px;
+    }
+
+
+    .rr-canonical-menu-title strong {
+
+        display: block;
+
+        color: #ffffff;
+
+        font-size: 16px;
+        font-weight: 900;
+    }
+
+
+    .rr-canonical-menu-title span {
+
+        display: block;
+
+        margin-top: 4px;
+
+        color: #e8c77f;
+
+        font-size: 8px;
+        font-weight: 900;
+
+        letter-spacing: .15em;
+    }
+
+
+    /* =========================
+       LINKS
+    ========================= */
+
+    .rr-canonical-mobile-links {
+
+        display: grid !important;
+
+        grid-template-columns:
+            1fr !important;
+
+        gap: 7px !important;
+    }
+
+
+    .rr-canonical-mobile-links a {
+
+        min-height: 43px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        padding:
+            10px 12px !important;
+
+        box-sizing: border-box !important;
+
+        border:
+            1px solid rgba(255,255,255,.07) !important;
+
+        border-radius: 10px !important;
+
+        background:
+            rgba(255,255,255,.035) !important;
+
+        color:
+            #edf2f8 !important;
+
+        text-decoration: none !important;
+
+        font-size: 11px !important;
+        font-weight: 800 !important;
+    }
+
+
+    .rr-canonical-mobile-links a:hover {
+
+        color: #edce89 !important;
+
+        border-color:
+            rgba(237,206,137,.27) !important;
+
+        background:
+            rgba(237,206,137,.07) !important;
+    }
+
+
+    body.rr-canonical-menu-open {
+        overflow: hidden !important;
+    }
+
+}
+
+
+@media (min-width: 781px) {
+
+    .rr-canonical-mobile-btn,
+    .rr-canonical-mobile-backdrop,
+    .rr-canonical-mobile-panel {
+
+        display: none !important;
+    }
+
+}
