@@ -6603,46 +6603,39 @@ html body .channels-section
 }
 
 
+
 /* ==========================================================
-   SOCIAL PLATFORM BADGES FIX V54
+   SOCIAL CHANNEL BADGES V53
 ========================================================== */
 
-/*
-   IMPORTANT:
-   Do not use ::before for YouTube badge.
-   Old theme already uses pseudo elements.
-*/
+/* YouTube badge */
 
 html body .channels-section
 .channels-container > .channel-card:not(.rr-instagram-card)::before {
 
-    content: none !important;
-    display: none !important;
-}
-
-
-/* ==========================================================
-   COMMON BADGE
-========================================================== */
-
-html body .channels-section
-.rr-platform-label {
+    content: "YOUTUBE";
 
     display: inline-flex !important;
 
     align-items: center !important;
     justify-content: center !important;
 
-    min-width: 92px !important;
-    min-height: 26px !important;
+    min-height: 23px !important;
 
-    margin: 0 auto 7px !important;
+    margin: 0 auto 6px !important;
 
-    padding: 5px 12px !important;
-
-    box-sizing: border-box !important;
+    padding: 4px 12px !important;
 
     border-radius: 999px !important;
+
+    border:
+        1px solid rgba(255, 45, 45, .45) !important;
+
+    background:
+        rgba(255, 0, 0, .10) !important;
+
+    color:
+        #ff5b5b !important;
 
     font-size: 8px !important;
 
@@ -6651,60 +6644,35 @@ html body .channels-section
     line-height: 1 !important;
 
     letter-spacing: .13em !important;
-
-    text-transform: uppercase !important;
-
-    flex-shrink: 0 !important;
 }
 
 
-/* ==========================================================
-   YOUTUBE
-========================================================== */
+/* Instagram badge */
 
 html body .channels-section
-.rr-youtube-label {
-
-    color: #ff6666 !important;
-
-    border:
-        1px solid rgba(255,50,50,.42) !important;
-
-    background:
-        rgba(255,20,20,.08) !important;
-}
-
-
-/* ==========================================================
-   INSTAGRAM
-========================================================== */
-
-html body .channels-section
-.rr-instagram-label {
-
-    min-width: 92px !important;
-    min-height: 26px !important;
-
-    margin: 0 auto 7px !important;
-
-    padding: 5px 12px !important;
+.rr-instagram-card .rr-instagram-label {
 
     display: inline-flex !important;
 
     align-items: center !important;
     justify-content: center !important;
 
-    box-sizing: border-box !important;
+    min-height: 23px !important;
+
+    margin: 0 auto 6px !important;
+
+    padding: 4px 12px !important;
 
     border-radius: 999px !important;
-
-    color: #f27ba5 !important;
 
     border:
         1px solid rgba(225,48,108,.42) !important;
 
     background:
-        rgba(225,48,108,.08) !important;
+        rgba(225,48,108,.09) !important;
+
+    color:
+        #f27ba5 !important;
 
     font-size: 8px !important;
 
@@ -6716,97 +6684,46 @@ html body .channels-section
 }
 
 
-/* ==========================================================
-   ALL PROFILE IMAGES SAME SIZE
-========================================================== */
-
-html body .channels-section
-.channels-container > .channel-card img {
-
-    width: 88px !important;
-    height: 88px !important;
-
-    min-width: 88px !important;
-    min-height: 88px !important;
-
-    max-width: 88px !important;
-    max-height: 88px !important;
-
-    flex: 0 0 88px !important;
-
-    aspect-ratio: 1 / 1 !important;
-
-    display: block !important;
-
-    margin: 0 auto 7px !important;
-
-    padding: 0 !important;
-
-    object-fit: cover !important;
-    object-position: center 35% !important;
-
-    border-radius: 50% !important;
-
-    clip-path: circle(50% at 50% 50%) !important;
-}
-
-
-/* Broken-image fallback should remain circular */
-
-html body .channels-section
-.channel-card img.rr-channel-fallback {
-
-    opacity: 1 !important;
-
-    filter: none !important;
-}
-
-
-/* ==========================================================
-   CARD SIZE REMAINS SAME
-========================================================== */
+/* Small spacing adjustment */
 
 html body .channels-section
 .channels-container > .channel-card {
 
-    height: 285px !important;
-    min-height: 285px !important;
-    max-height: 285px !important;
-
-    padding:
-        12px 20px 16px !important;
-
-    overflow: hidden !important;
+    padding-top: 11px !important;
 }
 
 
-/* Slight compact title spacing */
-
 html body .channels-section
-.channel-card h2,
+.channels-container > .channel-card img {
 
-html body .channels-section
-.channel-card h3 {
+    width: 82px !important;
+    height: 82px !important;
 
-    margin:
-        1px 0 3px !important;
+    min-width: 82px !important;
+    min-height: 82px !important;
+
+    max-width: 82px !important;
+    max-height: 82px !important;
+
+    flex-basis: 82px !important;
 }
 
 
-/* ==========================================================
-   MOBILE
-========================================================== */
+/* Mobile */
 
 @media (max-width: 600px) {
 
     html body .channels-section
-    .channels-container > .channel-card {
+    .channels-container > .channel-card img {
 
-        height: auto !important;
+        width: 80px !important;
+        height: 80px !important;
 
-        min-height: 285px !important;
+        min-width: 80px !important;
+        min-height: 80px !important;
 
-        max-height: none !important;
+        max-width: 80px !important;
+        max-height: 80px !important;
     }
 
 }
