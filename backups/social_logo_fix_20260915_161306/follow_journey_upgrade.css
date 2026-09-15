@@ -1,0 +1,307 @@
+
+/* ==========================================================
+   FOLLOW THE JOURNEY V1
+========================================================== */
+
+.rr-follow-journey {
+    width: min(1280px, calc(100% - 40px));
+    margin: 28px auto 38px;
+    padding: 34px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 26px;
+
+    background:
+        radial-gradient(
+            circle at 50% -20%,
+            rgba(232,195,112,.12),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #11243d,
+            #09192c
+        );
+
+    box-shadow:
+        0 22px 55px rgba(0,0,0,.18);
+}
+
+
+/* HEADER */
+
+.rr-follow-journey-head {
+    max-width: 720px;
+    margin: 0 auto 25px;
+    text-align: center;
+}
+
+.rr-follow-journey-kicker {
+    display: inline-block;
+
+    margin-bottom: 9px;
+
+    color: #e8c477;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: .18em;
+}
+
+.rr-follow-journey-head h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(30px, 3.5vw, 45px);
+
+    line-height: 1.08;
+
+    letter-spacing: -.035em;
+}
+
+.rr-follow-journey-head p {
+    margin: 11px auto 0;
+
+    color: rgba(220,230,243,.66);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   TWO CARDS
+========================================================== */
+
+.rr-follow-journey-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap: 16px;
+}
+
+
+.rr-journey-social-card {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 185px;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    border: 1px solid rgba(255,255,255,.09);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28,49,77,.97),
+            rgba(12,27,47,.99)
+        );
+
+    text-decoration: none;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.rr-journey-social-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(232,196,119,.30);
+
+    box-shadow:
+        0 18px 38px rgba(0,0,0,.22);
+}
+
+
+/* ICON */
+
+.rr-journey-social-icon {
+    width: 74px;
+    height: 74px;
+
+    min-width: 74px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    color: #ffffff;
+
+    font-size: 27px;
+
+    font-weight: 900;
+}
+
+
+.rr-journey-youtube .rr-journey-social-icon {
+    background: #ff0033;
+
+    box-shadow:
+        0 13px 30px rgba(255,0,51,.18);
+}
+
+
+.rr-journey-instagram .rr-journey-social-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #ffb13b,
+            #e1306c,
+            #7154d9
+        );
+
+    box-shadow:
+        0 13px 30px rgba(225,48,108,.17);
+}
+
+
+/* CONTENT */
+
+.rr-journey-social-content {
+    min-width: 0;
+}
+
+
+.rr-journey-platform {
+    display: inline-block;
+
+    margin-bottom: 7px;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .13em;
+
+    color: #e7c77f;
+}
+
+
+.rr-journey-social-content h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    line-height: 1.15;
+}
+
+
+.rr-journey-social-content p {
+    margin: 8px 0 0;
+
+    color: rgba(220,230,243,.64);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+.rr-journey-social-action {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-top: 14px;
+
+    color: #efcf88;
+
+    font-size: 10px;
+
+    font-weight: 900;
+}
+
+
+/* Decorative glow */
+
+.rr-journey-social-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: -70px;
+    top: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.025);
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .rr-follow-journey {
+        width: calc(100% - 20px);
+
+        padding: 24px 15px;
+
+        border-radius: 21px;
+    }
+
+
+    .rr-follow-journey-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .rr-journey-social-card {
+        min-height: 155px;
+
+        padding: 20px;
+
+        gap: 15px;
+    }
+
+
+    .rr-journey-social-icon {
+        width: 60px;
+        height: 60px;
+
+        min-width: 60px;
+
+        font-size: 22px;
+
+        border-radius: 15px;
+    }
+
+
+    .rr-journey-social-content h3 {
+        font-size: 19px;
+    }
+
+}
