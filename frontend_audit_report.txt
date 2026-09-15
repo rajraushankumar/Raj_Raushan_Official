@@ -1,0 +1,182 @@
+============================================================
+ RAJ RAUSHAN OFFICIAL - FRONTEND AUDIT
+ Generated: 09/15/2026 15:51:14
+============================================================
+
+1. CSS FILES LOADED
+-------------------
+CSS: /static/css/home_nav_lock.css
+CSS: /static/css/global_search.css
+CSS: /static/css/brand_avatar.css
+CSS: /static/css/creator_home.css?v=8
+CSS: /static/css/hero_spacing_fix.css?v=2
+CSS: /static/css/site_theme_final.css?v=10
+CSS: /static/css/professional_travel_theme.css?v=51
+CSS: /static/css/creator_pro_upgrade.css?v=1
+CSS: /static/css/creator_about_upgrade.css?v=4
+CSS: /static/css/travel_portfolio_upgrade.css?v=3
+CSS: /static/css/site_loading_upgrade.css?v=1
+CSS: /static/css/navigation_pro_upgrade.css?v=1
+CSS: /static/css/media_kit_upgrade.css?v=1
+CSS: /static/css/premium_footer_upgrade.css?v=1
+CSS: /static/css/mobile_responsive_final.css?v=1
+CSS: /static/css/production_polish.css?v=1
+
+CSS references total: 16
+
+2. DUPLICATE CSS REFERENCES
+---------------------------
+No duplicate CSS references found.
+
+3. JS FILES LOADED
+------------------
+JS: /static/js/global_search.js
+JS: /static/js/global_search_tracking.js
+JS: /static/js/brand_avatar.js
+JS: /static/js/creator_home.js?v=10
+JS: /static/js/site_theme_final.js?v=1
+JS: /static/js/creator_stats_counter.js?v=36
+JS: /static/js/search_nav_position.js?v=38
+JS: /static/js/channel_pair_layout.js?v=45
+JS: /static/js/creator_pro_upgrade.js?v=1
+JS: /static/js/creator_about_upgrade.js?v=2
+JS: /static/js/travel_portfolio_upgrade.js?v=1
+JS: /static/js/site_loading_upgrade.js?v=1
+JS: /static/js/navigation_pro_upgrade.js?v=1
+JS: /static/js/media_kit_upgrade.js?v=1
+JS: /static/js/premium_footer_upgrade.js?v=1
+JS: /static/js/production_polish.js?v=1
+
+JS references total: 16
+
+4. DUPLICATE JS REFERENCES
+--------------------------
+No duplicate JS references found.
+
+5. DUPLICATE HTML IDs
+---------------------
+DUPLICATE ID: media-kit  Count=2
+
+6. INLINE CODE
+--------------
+Inline <style> blocks : 22
+Inline JS blocks      : 7
+
+7. PROJECT CSS FILES
+--------------------
+brand_avatar.css  [1.06 KB]
+business_notifications.css  [6.43 KB]
+creator_about_upgrade.css  [17.41 KB]
+creator_home.css  [26.29 KB]
+creator_pro_upgrade.css  [10.06 KB]
+destination_detail.css  [8.09 KB]
+destinations.css  [8.26 KB]
+explore.css  [7.63 KB]
+explore_autocomplete.css  [2.48 KB]
+explore_premium.css  [12.32 KB]
+global_search.css  [4.82 KB]
+hero_spacing_fix.css  [0.7 KB]
+home_nav_lock.css  [3.67 KB]
+media_kit_upgrade.css  [6.85 KB]
+mobile_responsive_final.css  [11.85 KB]
+monetization_dashboard.css  [12.62 KB]
+monetization_earnings.css  [5.36 KB]
+monetization_pro_v2.css  [3.56 KB]
+monetization_proposal.css  [3.37 KB]
+monetization_reply.css  [2.34 KB]
+navigation_pro_upgrade.css  [3.09 KB]
+premium_footer_upgrade.css  [7.26 KB]
+production_polish.css  [3.46 KB]
+professional_travel_theme.css  [153.31 KB]
+public_mobile_nav.css  [5.2 KB]
+revenue_analytics.css  [4.68 KB]
+site_loading_upgrade.css  [3.63 KB]
+site_theme_final.css  [22.8 KB]
+style.css  [35.16 KB]
+travel_map.css  [2.9 KB]
+travel_portfolio_upgrade.css  [11.74 KB]
+work_with_me.css  [9.17 KB]
+
+Total CSS files: 32
+
+8. PROJECT JS FILES
+-------------------
+brand_avatar.js  [1.57 KB]
+business_notifications.js  [14.19 KB]
+channel_pair_layout.js  [1.16 KB]
+creator_about_upgrade.js  [0.96 KB]
+creator_home.js  [34.43 KB]
+creator_pro_upgrade.js  [0.97 KB]
+creator_stats_counter.js  [5.51 KB]
+destinations.js  [4.83 KB]
+explore.js  [6.14 KB]
+explore_autocomplete.js  [14.17 KB]
+global_search.js  [13.72 KB]
+global_search_tracking.js  [3.73 KB]
+lead_filter_reset.js  [0.72 KB]
+media_kit_upgrade.js  [1.01 KB]
+monetization_dashboard.js  [15.86 KB]
+monetization_earnings.js  [18.53 KB]
+monetization_proposal.js  [17.17 KB]
+monetization_reply.js  [7.5 KB]
+navigation_pro_upgrade.js  [5.96 KB]
+premium_footer_upgrade.js  [0.86 KB]
+production_polish.js  [3.85 KB]
+public_mobile_nav.js  [6.78 KB]
+revenue_analytics.js  [9.54 KB]
+script.js  [0 KB]
+search_nav_position.js  [1.5 KB]
+site_loading_upgrade.js  [1.73 KB]
+site_theme_final.js  [7.2 KB]
+travel_map.js  [5.86 KB]
+travel_portfolio_upgrade.js  [0.97 KB]
+work_with_me.js  [6.87 KB]
+
+Total JS files: 30
+
+9. OLD CHANNEL CSS OVERRIDES
+----------------------------
+FOUND: INSTAGRAM CHANNEL CARDS V40  Line=6276
+FOUND: YOUTUBE + INSTAGRAM PROFILE GRID V41  Line=6894
+FOUND: CHANNEL CARD SIZE FIX V42  Line=7231
+FOUND: FINAL COMPACT CHANNEL CARDS V43  Line=7468
+FOUND: INSTAGRAM EXACT YOUTUBE SIZE FINAL V44  Line=7876
+FOUND: YOUTUBE + INSTAGRAM PAIR LAYOUT V45  Line=8091
+FOUND: SMALL YOUTUBE + INSTAGRAM CARDS V46  Line=8365
+FOUND: EXTRA SMALL YOUTUBE + INSTAGRAM CARDS V47  Line=8649
+FOUND: FOUR CARDS ONE SCREEN V48  Line=8886
+FOUND: PROFILE FACE + SAME SIZE FIX V49  Line=9203
+FOUND: CHANNEL CARD LENGTH FIX V50  Line=9435
+FOUND: ROUND PROFILE PHOTO FINAL V51  Line=9597
+FOUND: ROUND PROFILE PHOTO FINAL V51  Line=9739
+
+10. POSSIBLE OLD THEME FILES
+----------------------------
+EXISTS: static\css\site_theme_final.css
+EXISTS: static\js\site_theme_final.js
+
+11. PROFESSIONAL MODULE CHECK
+-----------------------------
+OK      : static\css\creator_pro_upgrade.css
+OK      : static\css\creator_about_upgrade.css
+OK      : static\css\travel_portfolio_upgrade.css
+OK      : static\css\media_kit_upgrade.css
+OK      : static\css\premium_footer_upgrade.css
+MISSING : static\css\mobile_nav_upgrade.css
+OK      : static\css\mobile_responsive_final.css
+OK      : static\css\navigation_pro_upgrade.css
+OK      : static\css\site_loading_upgrade.css
+OK      : static\css\production_polish.css
+OK      : static\js\creator_pro_upgrade.js
+OK      : static\js\creator_about_upgrade.js
+OK      : static\js\travel_portfolio_upgrade.js
+OK      : static\js\media_kit_upgrade.js
+OK      : static\js\premium_footer_upgrade.js
+MISSING : static\js\mobile_nav_upgrade.js
+OK      : static\js\navigation_pro_upgrade.js
+OK      : static\js\site_loading_upgrade.js
+OK      : static\js\production_polish.js
+
+============================================================
+ AUDIT COMPLETE - NO PROJECT FILE WAS MODIFIED
+============================================================
