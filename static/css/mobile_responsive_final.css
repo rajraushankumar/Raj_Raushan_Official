@@ -752,3 +752,58 @@ and (max-width: 950px) {
     }
 
 }
+
+
+/* MOBILE OLD NAV CLEANUP V2 */
+
+@media (max-width: 780px) {
+
+    /*
+       Hide legacy / desktop navigation on mobile.
+       Keep the new hamburger mobile navigation untouched.
+    */
+
+    header nav ul,
+    header .nav-links,
+    header .navbar-links,
+    header .nav-menu,
+    header .menu-links,
+
+    .navbar .nav-links,
+    .navbar .navbar-links,
+    .navbar .nav-menu,
+
+    .site-header .nav-links,
+    .site-header .navbar-links,
+    .site-header .nav-menu,
+
+    .desktop-nav,
+    .desktop-menu,
+    .desktop-navigation,
+
+    nav.desktop-nav,
+    nav.desktop-menu {
+
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+
+    /*
+       Keep modern mobile controls visible
+    */
+
+    .rr-mobile-nav,
+    .rr-mobile-nav-toggle,
+    .rr-mobile-menu,
+    .rr-mobile-menu-panel,
+    .rr-mobile-overlay {
+
+        visibility: visible;
+    }
+
+}
+
+/* END MOBILE OLD NAV CLEANUP V2 */

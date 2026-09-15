@@ -1,0 +1,31 @@
+
+/* ==========================================================
+   RESPONSIVE NAV GUARD V1
+   Fixes desktop nav links appearing after desktop -> phone resize
+========================================================== */
+
+@media (max-width: 780px) {
+
+    html.rr-phone-layout .rr-legacy-nav-hide {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+}
+
+
+/* New mobile navigation must always remain available */
+
+@media (max-width: 780px) {
+
+    .rr-mobile-nav,
+    .rr-mobile-nav-toggle,
+    .rr-mobile-menu,
+    .rr-mobile-menu-panel,
+    .rr-mobile-overlay {
+        visibility: visible !important;
+    }
+
+}
