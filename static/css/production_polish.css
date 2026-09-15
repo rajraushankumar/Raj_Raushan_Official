@@ -1,0 +1,210 @@
+
+/* ==========================================================
+   RAJ RAUSHAN OFFICIAL
+   PRODUCTION POLISH V1
+========================================================== */
+
+
+/* ==========================================================
+   SKIP TO CONTENT
+========================================================== */
+
+.rr-skip-link {
+    position: fixed;
+
+    top: 10px;
+    left: 10px;
+
+    z-index: 99999999;
+
+    padding: 11px 16px;
+
+    border-radius: 10px;
+
+    color: #071522;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1d793,
+            #dcb25b
+        );
+
+    font-size: 12px;
+    font-weight: 900;
+
+    text-decoration: none;
+
+    transform:
+        translateY(-150%);
+
+    transition:
+        transform .2s ease;
+}
+
+
+.rr-skip-link:focus {
+    transform:
+        translateY(0);
+}
+
+
+/* ==========================================================
+   BETTER KEYBOARD ACCESSIBILITY
+========================================================== */
+
+html body a:focus-visible,
+html body button:focus-visible,
+html body input:focus-visible,
+html body textarea:focus-visible,
+html body select:focus-visible {
+
+    outline:
+        2px solid #edcb80 !important;
+
+    outline-offset:
+        4px !important;
+
+    border-radius:
+        6px;
+}
+
+
+/* ==========================================================
+   SAFE IMAGE RENDERING
+========================================================== */
+
+img {
+    max-width:
+        100%;
+
+    height:
+        auto;
+}
+
+
+img.rr-image-error {
+    opacity:
+        .25;
+
+    filter:
+        grayscale(1);
+}
+
+
+/* Preserve circular profile images */
+
+.channel-card img,
+.rr-about-photo img,
+.rr-pro-photo-ring img,
+.rr-footer-dp,
+.rr-mobile-brand img,
+.rr-loader-photo-wrap img {
+
+    height:
+        revert-layer;
+}
+
+
+/* ==========================================================
+   SAFE VIDEO / IFRAMES
+========================================================== */
+
+iframe,
+video {
+
+    max-width:
+        100%;
+}
+
+
+/* ==========================================================
+   EXTERNAL LINK INDICATOR FOR SCREEN READERS ONLY
+========================================================== */
+
+.rr-sr-only {
+
+    position:
+        absolute !important;
+
+    width:
+        1px !important;
+
+    height:
+        1px !important;
+
+    padding:
+        0 !important;
+
+    margin:
+        -1px !important;
+
+    overflow:
+        hidden !important;
+
+    clip:
+        rect(0, 0, 0, 0) !important;
+
+    white-space:
+        nowrap !important;
+
+    border:
+        0 !important;
+}
+
+
+/* ==========================================================
+   PAGE SELECTION
+========================================================== */
+
+::selection {
+
+    color:
+        #071522;
+
+    background:
+        #ebcb83;
+}
+
+
+/* ==========================================================
+   SMOOTH FONT RENDERING
+========================================================== */
+
+html body {
+
+    -webkit-font-smoothing:
+        antialiased;
+
+    -moz-osx-font-smoothing:
+        grayscale;
+
+    text-rendering:
+        optimizeLegibility;
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior:
+            auto !important;
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+    }
+
+}
