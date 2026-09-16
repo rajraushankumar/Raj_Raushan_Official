@@ -1,37 +1,28 @@
 # Virtual Environment
 .venv/
 venv/
-
 # Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-
 # Environment / Secret files
 .env
 .env.*
-
 # Jupyter
 .ipynb_checkpoints/
-
 # VS Code
 .vscode/
-
 # OS files
 .DS_Store
 Thumbs.db
-
 # Logs
 *.log
-
 # Temporary files
 *.tmp
-
 # ML model cache / large files
 *.pkl
 *.joblib
-
 # SQLite temporary files
 *.db-journal
 *.sqlite-journal# Local creator analytics data
@@ -42,6 +33,6 @@ app_broken_*.py
 backup_*/
 templates/dashboard_before_*.html
 templates/dashboard_broken_*.html
-
 # Private monetization admin auth
 .monetization_admin_auth
+!.env.example
