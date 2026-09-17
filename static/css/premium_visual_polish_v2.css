@@ -437,3 +437,17 @@ body .rr-v2-story-card .rr-v2-icon {
             22px !important;
     }
 }
+/* BIG HERO NAME - PURE WHITE */
+body .rr-v2-hero h1 {
+    color: #ffffff !important;
+    background: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.35) !important;
+    opacity: 1 !important;
+}
+
+body .rr-v2-hero .rr-v2-official {
+    background: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
