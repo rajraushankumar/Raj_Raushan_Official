@@ -451,3 +451,47 @@ body .rr-v2-hero .rr-v2-official {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
 }
+
+/* FINAL RENDER DARK BACKGROUND FIX */
+html,
+body,
+main,
+section,
+.hero,
+.hero-section,
+.creator-hero,
+.creator-showcase {
+    background-color: #07111f !important;
+    color: #ffffff !important;
+}
+
+body::before,
+body::after,
+main::before,
+main::after {
+    background: transparent !important;
+}
+
+.hero,
+.hero-section,
+.creator-hero,
+.creator-showcase {
+    background:
+        linear-gradient(
+            135deg,
+            #07111f 0%,
+            #0a1728 55%,
+            #07111f 100%
+        ) !important;
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p,
+.hero-section h1,
+.hero-section h2,
+.hero-section h3,
+.hero-section p {
+    color: #ffffff !important;
+}
