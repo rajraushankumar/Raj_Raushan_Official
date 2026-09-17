@@ -86,9 +86,7 @@ Open:
 - /about
 - /collaborate
 
-## Social Links
-
-YouTube: https://www.youtube.com/@RajRaushanOfficial
+## Social
 
 YouTube 02: https://www.youtube.com/@rajraushanofficial02
 
