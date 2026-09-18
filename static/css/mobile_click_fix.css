@@ -1,0 +1,90 @@
+/* ==========================================================
+   RAJ RAUSHAN OFFICIAL
+   MOBILE CLICK / TOUCH FIX
+========================================================== */
+
+@media (max-width: 950px) {
+
+    /*
+       Hidden overlays must NEVER capture taps.
+    */
+
+    .rr-mobile-menu-backdrop:not(.active),
+    #rr-clean-menu-overlay:not(.open),
+    .rr-search-overlay:not(.active),
+    .rr-mobile-nav-overlay:not(.rr-mobile-visible),
+    #rr-mobile-nav-overlay:not(.rr-mobile-visible):not(.open) {
+        pointer-events: none !important;
+    }
+
+
+    /*
+       Hidden menu panels must not sit above page links.
+    */
+
+    .rr-mobile-menu-panel:not(.active),
+    #rr-clean-menu-panel:not(.open),
+    .rr-mobile-nav-panel:not(.rr-mobile-visible),
+    #rr-mobile-nav-panel:not(.rr-mobile-visible):not(.open) {
+        pointer-events: none !important;
+    }
+
+
+    /*
+       Only OPEN overlays/panels receive taps.
+    */
+
+    .rr-mobile-menu-backdrop.active,
+    #rr-clean-menu-overlay.open,
+    .rr-search-overlay.active,
+    .rr-mobile-nav-overlay.rr-mobile-visible,
+    #rr-mobile-nav-overlay.open {
+        pointer-events: auto !important;
+    }
+
+    .rr-mobile-menu-panel.active,
+    #rr-clean-menu-panel.open,
+    .rr-mobile-nav-panel.rr-mobile-visible,
+    #rr-mobile-nav-panel.open {
+        pointer-events: auto !important;
+    }
+
+
+    /*
+       Loader cannot remain as invisible click blocker.
+    */
+
+    #rr-site-loader.rr-loader-hide {
+        pointer-events: none !important;
+    }
+
+
+    /*
+       Normal interactive elements.
+    */
+
+    a[href],
+    button:not([disabled]),
+    [role="link"],
+    [data-href],
+    input,
+    select,
+    textarea {
+        touch-action: manipulation !important;
+    }
+
+
+    /*
+       Menu links themselves must remain clickable.
+    */
+
+    .rr-clean-menu-links a,
+    .rr-mobile-links a,
+    .rr-mobile-menu-panel a,
+    .rr-mobile-nav-panel a {
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        position: relative;
+        z-index: 2;
+    }
+}
