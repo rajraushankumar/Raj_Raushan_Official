@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" data-rr-theme="dark">
+
+<head>
+<script src="{{ url_for('static', filename='js/theme_boot.js') }}?v=20"></script>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Travel Map | Raj Raushan Official
+</title>
+
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/favicon.svg"
+>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+>
+
+<link
+    rel="stylesheet"
+    href="/static/css/travel_map.css"
+>
+
+<link rel="stylesheet" href="/static/css/public_mobile_nav.css">
+
+<link rel="stylesheet" href="/static/css/global_search.css">
+<link rel="stylesheet" href="/static/css/brand_avatar.css">
+<link rel="stylesheet" href="/static/css/professional_travel_theme.css?v=42">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- RR CANONICAL REFERENCE THEME -->
+
+<!-- RR CANONICAL REFERENCE THEME -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/site_theme_final.css') }}?v=20">
+</head>
+
+
+<body>
+
+
+<header class="travel-nav">
+
+    <a href="/" class="travel-brand">
+
+        <span class="travel-logo">
+            RR
+        </span>
+
+        <span>
+
+            <strong>
+                Raj Raushan
+            </strong>
+
+            <small>
+                OFFICIAL
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/explore">
+                Explore
+            </a>
+
+            <a href="/destinations">
+            Destinations
+        </a>
+
+        <a href="/playlists">
+            Playlists
+        </a>
+
+        <a href="/gallery">
+            Gallery
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="map-hero">
+
+    <div>
+
+        <span class="eyebrow">
+            REAL TRAVEL LOCATIONS
+        </span>
+
+        <h1>
+            Travel Map Explorer
+        </h1>
+
+        <p>
+            Explore destinations featured in
+            Raj Raushan Official travel journeys.
+        </p>
+
+    </div>
+
+</section>
+
+
+<main class="map-layout">
+
+
+    <aside class="map-sidebar">
+
+        <span class="section-label">
+            DESTINATIONS
+        </span>
+
+        <h2>
+            Places on the Journey
+        </h2>
+
+
+        {% for destination in destinations %}
+
+        <button
+            type="button"
+            class="map-place-card"
+            data-slug="{{ destination.slug }}"
+            data-lat="{{ destination.lat }}"
+            data-lng="{{ destination.lng }}"
+        >
+
+            <strong>
+                {{ destination.title }}
+            </strong>
+
+            <small>
+                {{ destination.region }}
+            </small>
+
+        </button>
+
+        {% endfor %}
+
+
+        <a
+            href="/destinations"
+            class="all-destinations"
+        >
+            View All Destinations &rarr;
+        </a>
+
+    </aside>
+
+
+    <section class="map-panel">
+
+        <div id="travelMap"></div>
+
+    </section>
+
+
+</main>
+
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+<script
+    src="/static/js/travel_map.js"
+></script>
+
+
+<script src="/static/js/public_mobile_nav.js"></script>
+
+<script src="/static/js/global_search.js"></script>
+
+<script src="/static/js/global_search_tracking.js"></script>
+<script src="/static/js/brand_avatar.js"></script>
+<script src="/static/js/search_nav_position.js?v=38"></script>
+
+<!-- RR PRODUCTION DARK THEME FIX -->
+<!-- RR PREMIUM VISUAL POLISH V2 -->
+
+<!-- RR CANONICAL REFERENCE THEME -->
+
+<!-- RR CANONICAL REFERENCE THEME -->
+<script src="{{ url_for('static', filename='js/site_theme_final.js') }}?v=20"></script>
+</body>
+</html>
+
+
+

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-rr-theme="dark">
 
 <head>
-
+<script src="{{ url_for('static', filename='js/theme_boot.js') }}?v=20"></script>
 <meta charset="UTF-8">
 
 <meta
@@ -25,8 +25,23 @@
 >
 
 <link rel="stylesheet" href="/static/css/brand_avatar.css">
+
+<!-- RR CANONICAL REFERENCE THEME -->
+<!-- RR_FINAL_THEME_BOOT -->
+<script>
+document.documentElement.setAttribute(
+    "data-rr-theme",
+    "dark"
+);
+
+document.documentElement.setAttribute(
+    "data-theme",
+    "dark"
+);
+</script>
+<!-- /RR_FINAL_THEME_BOOT -->
 <link rel="stylesheet"
-      href="{{ url_for('static', filename='css/live_dark_global.css') }}">
+      href="{{ url_for('static', filename='css/site_theme_final.css') }}?v=20260918-final">
 </head>
 
 
@@ -96,16 +111,10 @@
 <script src="/static/js/brand_avatar.js"></script>
 
 <!-- RR PRODUCTION DARK THEME FIX -->
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='css/render_dark_force.css') }}?v=20260917b">
-
-<script src="{{ url_for('static', filename='js/render_dark_force.js') }}?v=20260917b"></script>
-
 <!-- RR PREMIUM VISUAL POLISH V2 -->
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='css/premium_visual_polish_v2.css') }}?v=20260917">
 
-<script src="{{ url_for('static', filename='js/premium_visual_polish_v2.js') }}?v=20260917"></script>
+<!-- RR CANONICAL REFERENCE THEME -->
+<script src="{{ url_for('static', filename='js/site_theme_final.js') }}?v=20260918-final"></script>
 </body>
 
 </html>

@@ -5,71 +5,47 @@
 
 :root {
 
-    --rr-bg:
-        #f4f7fb;
+    /* Default is the production dark theme to prevent light-mode flash. */
+    --rr-bg: #101010;
+    --rr-surface: #1b1b1b;
+    --rr-surface-soft: #242424;
+    --rr-heading: #ffffff;
+    --rr-text: #e7e7e7;
+    --rr-muted: #b4b4b4;
+    --rr-border: rgba(255,255,255,.10);
+    --rr-accent: #f3c24f;
+    --rr-shadow: 0 18px 46px rgba(0,0,0,.34);
 
-    --rr-surface:
-        #ffffff;
+    color-scheme: dark;
+}
 
-    --rr-surface-soft:
-        #eef3f9;
+html[data-rr-theme="light"] {
+    --rr-bg: #f4f1e9;
+    --rr-surface: #ffffff;
+    --rr-surface-soft: #ece8df;
+    --rr-heading: #111111;
+    --rr-text: #292929;
+    --rr-muted: #66645f;
+    --rr-border: #ded8cc;
+    --rr-accent: #b98516;
+    --rr-shadow: 0 14px 34px rgba(20,20,20,.08);
 
-    --rr-heading:
-        #0b1324;
-
-    --rr-text:
-        #25324a;
-
-    --rr-muted:
-        #64748b;
-
-    --rr-border:
-        #dce4ee;
-
-    --rr-accent:
-        #617ff0;
-
-    --rr-shadow:
-        0 14px 34px
-        rgba(15, 23, 42, .07);
-
-    color-scheme:
-        light;
+    color-scheme: light;
 }
 
 
 html[data-rr-theme="dark"] {
+    --rr-bg: #101010;
+    --rr-surface: #1b1b1b;
+    --rr-surface-soft: #242424;
+    --rr-heading: #ffffff;
+    --rr-text: #e7e7e7;
+    --rr-muted: #b4b4b4;
+    --rr-border: rgba(255,255,255,.10);
+    --rr-accent: #f3c24f;
+    --rr-shadow: 0 18px 46px rgba(0,0,0,.34);
 
-    --rr-bg:
-        #07111f;
-
-    --rr-surface:
-        #111c2d;
-
-    --rr-surface-soft:
-        #0c1728;
-
-    --rr-heading:
-        #ffffff;
-
-    --rr-text:
-        #e7edf7;
-
-    --rr-muted:
-        #9cacbf;
-
-    --rr-border:
-        rgba(255,255,255,.09);
-
-    --rr-accent:
-        #91a7ff;
-
-    --rr-shadow:
-        0 18px 42px
-        rgba(0,0,0,.22);
-
-    color-scheme:
-        dark;
+    color-scheme: dark;
 }
 
 
@@ -1388,3 +1364,1789 @@ select {
     }
 
 }
+
+
+/* === RR REFERENCE PORTFOLIO DARK THEME V20 === */
+/* Single canonical public theme inspired by the supplied black/charcoal/gold reference. */
+
+html[data-rr-theme="dark"],
+html[data-rr-theme="dark"] body {
+    background: #101010 !important;
+    color: #e7e7e7 !important;
+}
+
+html[data-rr-theme="dark"] body {
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+/* Navigation: reference-style dark rounded surface with clean white text. */
+html[data-rr-theme="dark"] :is(
+    .raj-pro-header,
+    .playlist-nav,
+    .money-nav,
+    .travel-nav,
+    .about-nav,
+    .collab-nav,
+    .gallery-nav,
+    .explore-nav,
+    .detail-nav
+) {
+    background: rgba(16,16,16,.97) !important;
+    border-color: rgba(255,255,255,.09) !important;
+    box-shadow: 0 10px 34px rgba(0,0,0,.28) !important;
+    color: #fff !important;
+}
+
+html[data-rr-theme="dark"] :is(
+    .raj-pro-header,
+    .playlist-nav,
+    .money-nav,
+    .travel-nav,
+    .about-nav,
+    .collab-nav,
+    .gallery-nav,
+    .explore-nav,
+    .detail-nav
+) a {
+    color: #dedede !important;
+}
+
+html[data-rr-theme="dark"] :is(
+    .raj-pro-header,
+    .playlist-nav,
+    .money-nav,
+    .travel-nav,
+    .about-nav,
+    .collab-nav,
+    .gallery-nav,
+    .explore-nav,
+    .detail-nav
+) a:hover,
+html[data-rr-theme="dark"] :is(
+    .raj-pro-header,
+    .playlist-nav,
+    .money-nav,
+    .travel-nav,
+    .about-nav,
+    .collab-nav,
+    .gallery-nav,
+    .explore-nav,
+    .detail-nav
+) a.active {
+    color: #f3c24f !important;
+}
+
+/* Hero and major sections. */
+html[data-rr-theme="dark"] :is(
+    .rr-creator-identity,
+    .destination-hero,
+    .detail-hero,
+    .gallery-hero,
+    .playlist-hero,
+    .travel-map-hero,
+    .explore-hero,
+    .about-hero,
+    .collab-hero,
+    .money-hero,
+    .error-box
+) {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(243,194,79,.07), transparent 30%),
+        linear-gradient(145deg, #111111 0%, #161616 55%, #101010 100%) !important;
+    color: #fff !important;
+    border-color: rgba(255,255,255,.08) !important;
+}
+
+html[data-rr-theme="dark"] .rr-name-main,
+html[data-rr-theme="dark"] .rr-name-official,
+html[data-rr-theme="dark"] .rr-creator-name {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background: none !important;
+    text-shadow: none !important;
+}
+
+html[data-rr-theme="dark"] :is(
+    .rr-creator-eyebrow,
+    .section-label,
+    .eyebrow,
+    .detail-region,
+    .story-label,
+    .rr-section-kicker,
+    .collab-eyebrow,
+    .collab-section-label,
+    .money-eyebrow,
+    .card-category,
+    .rr-highlight-number,
+    .pillar-number,
+    .service-number
+) {
+    color: #f3c24f !important;
+}
+
+/* All principal public sections use the same deep charcoal base. */
+html[data-rr-theme="dark"] :is(
+    main,
+    .rr-creator-highlights,
+    .channels-section,
+    .videos,
+    .shorts-section,
+    .rr-featured-stories,
+    .world-section,
+    .creator-about,
+    .rr-brand-trust,
+    .raj-media-kit,
+    .playlist-stats,
+    .playlist-section,
+    .trust-strip,
+    .services-section,
+    .why-section,
+    .enquiry-section,
+    .map-layout,
+    .explore-main,
+    .explore-section,
+    .story-section,
+    .pillars-section,
+    .journey-section,
+    .detail-story,
+    .playlist-collection,
+    .playlist-sync,
+    .destination-section,
+    .collab-section,
+    .collab-contact,
+    .gallery-section,
+    .about-cta,
+    .detail-cta,
+    .collab-values,
+    .rr-follow-journey,
+    .rr-creator-trust,
+    footer
+) {
+    background: #101010 !important;
+    color: #e7e7e7 !important;
+}
+
+/* Cards and panels: charcoal, thin border, generous radius like the reference. */
+html[data-rr-theme="dark"] :is(
+    .rr-highlight-card,
+    .channel-card,
+    .video-card,
+    .short-card,
+    .rr-stat-card,
+    .destination-card,
+    .playlist-card,
+    .gallery-item,
+    .identity-card,
+    .creator-identity-card,
+    .pillar-card,
+    .journey-item,
+    .collab-card,
+    .collab-value-dark,
+    .collab-value-light,
+    .service-card,
+    .why-card,
+    .highlights-card,
+    .playlist-sync-card,
+    .map-panel,
+    .destination-toolbar,
+    .enquiry-layout,
+    .brand-form,
+    .rr-content-card,
+    .rr-journey-strip,
+    .rr-follow-strip,
+    .raj-media-card,
+    .rr-v6-social-card,
+    .rr-v7-social-card,
+    .rr-social-trust-links > a
+) {
+    background: #1b1b1b !important;
+    color: #e7e7e7 !important;
+    border: 1px solid rgba(255,255,255,.10) !important;
+    box-shadow: 0 18px 46px rgba(0,0,0,.30) !important;
+}
+
+html[data-rr-theme="dark"] :is(
+    .rr-highlight-card,
+    .channel-card,
+    .video-card,
+    .short-card,
+    .rr-stat-card,
+    .destination-card,
+    .playlist-card,
+    .identity-card,
+    .creator-identity-card,
+    .pillar-card,
+    .journey-item,
+    .collab-card,
+    .service-card,
+    .why-card,
+    .highlights-card,
+    .playlist-sync-card,
+    .map-panel,
+    .brand-form,
+    .rr-content-card
+):hover {
+    border-color: rgba(243,194,79,.34) !important;
+    box-shadow: 0 22px 54px rgba(0,0,0,.38) !important;
+}
+
+/* Strong contrast everywhere. */
+html[data-rr-theme="dark"] :is(
+    h1,h2,h3,h4,h5,h6,
+    .channel-card strong,
+    .rr-stat-card strong,
+    .destination-card strong,
+    .playlist-card strong,
+    .service-card strong,
+    .identity-card strong,
+    .pillar-card strong
+) {
+    color: #ffffff !important;
+}
+
+html[data-rr-theme="dark"] :is(
+    p,
+    .rr-creator-location,
+    .rr-creator-intro,
+    .rr-creator-availability,
+    .destination-card span,
+    .playlist-card span,
+    .channel-card span,
+    .channel-card p,
+    .rr-stat-card span,
+    .service-card p,
+    .pillar-card p,
+    .journey-item p,
+    .identity-card p,
+    .collab-card p,
+    .gallery-overlay p
+) {
+    color: #b5b5b5 !important;
+}
+
+/* Chips and small pills. */
+html[data-rr-theme="dark"] :is(
+    .rr-creator-tags span,
+    .destination-filter,
+    .about-tag,
+    .rr-about-tag,
+    .custom-badge,
+    .rr-chip,
+    .tag,
+    .badge
+) {
+    background: #242424 !important;
+    color: #d8d8d8 !important;
+    border: 1px solid rgba(255,255,255,.10) !important;
+}
+
+html[data-rr-theme="dark"] :is(
+    .destination-filter.active,
+    .destination-filter:hover
+) {
+    background: rgba(243,194,79,.14) !important;
+    color: #f3c24f !important;
+    border-color: rgba(243,194,79,.34) !important;
+}
+
+/* Reference gold accent for active UI, separators and back-to-top. */
+html[data-rr-theme="dark"] :is(
+    .rr-scroll-progress,
+    .rr-back-top,
+    .back-to-top,
+    .scroll-top
+) {
+    background: #f3c24f !important;
+    color: #101010 !important;
+}
+
+html[data-rr-theme="dark"] a:not(.raj-subscribe-nav):not(.rr-creator-btn-secondary):not(.channel-btn) {
+    text-decoration-color: rgba(243,194,79,.55);
+}
+
+/* Buttons. */
+html[data-rr-theme="dark"] :is(
+    .rr-creator-btn-primary,
+    .about-primary,
+    .collab-primary,
+    .money-primary-btn,
+    .submit-enquiry,
+    .card-action a,
+    .detail-cta a
+) {
+    background: #f3c24f !important;
+    color: #111111 !important;
+    border-color: #f3c24f !important;
+    box-shadow: none !important;
+}
+
+html[data-rr-theme="dark"] :is(
+    .rr-creator-btn-ghost,
+    .about-secondary,
+    .collab-secondary
+) {
+    background: #242424 !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,.11) !important;
+}
+
+/* Keep YouTube/subscribe branding obvious. */
+html[data-rr-theme="dark"] :is(
+    .rr-creator-btn-secondary,
+    .youtube-btn,
+    .rr-mobile-youtube
+) {
+    background: #e92732 !important;
+    color: #ffffff !important;
+}
+
+html[data-rr-theme="dark"] .raj-subscribe-nav {
+    background: #ffffff !important;
+    color: #101010 !important;
+    border-color: rgba(255,255,255,.18) !important;
+}
+
+/* Search and forms. */
+html[data-rr-theme="dark"] :is(input,textarea,select,.raj-search,.rr-search,.global-search) {
+    background: #202020 !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,.12) !important;
+}
+
+html[data-rr-theme="dark"] :is(input,textarea)::placeholder {
+    color: #858585 !important;
+}
+
+/* Travel map: keep the real map readable while fixing the surrounding panel. */
+html[data-rr-theme="dark"] .map-layout {
+    background: #101010 !important;
+}
+
+html[data-rr-theme="dark"] .map-panel {
+    background: #1b1b1b !important;
+}
+
+html[data-rr-theme="dark"] .map-panel :is(h1,h2,h3,h4,strong) {
+    color: #ffffff !important;
+}
+
+html[data-rr-theme="dark"] .map-panel :is(p,span,small) {
+    color: #b5b5b5 !important;
+}
+
+/* Theme toggle: compact gold-accent control inspired by the reference screenshot. */
+html[data-rr-theme="dark"] #rrFinalThemeToggle {
+    background: #242424 !important;
+    color: #f3c24f !important;
+    border-color: rgba(243,194,79,.24) !important;
+    box-shadow: 0 10px 28px rgba(0,0,0,.28) !important;
+}
+
+/* Mobile menu stays a true dark panel. */
+html[data-rr-theme="dark"] :is(
+    .rr-mobile-menu-panel,
+    .rr-mobile-nav-panel,
+    .raj-pro-links.raj-menu-open
+) {
+    background: #181818 !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html[data-rr-theme="dark"] :is(
+    .rr-mobile-menu-panel,
+    .rr-mobile-nav-panel,
+    .raj-pro-links.raj-menu-open
+) a {
+    color: #ececec !important;
+}
+
+@media (max-width: 760px) {
+    html[data-rr-theme="dark"] body {
+        background: #101010 !important;
+    }
+
+    html[data-rr-theme="dark"] :is(
+        .rr-highlight-card,
+        .channel-card,
+        .video-card,
+        .short-card,
+        .destination-card,
+        .playlist-card,
+        .identity-card,
+        .pillar-card,
+        .journey-item,
+        .collab-card,
+        .service-card,
+        .map-panel
+    ) {
+        border-radius: 20px !important;
+    }
+}
+
+
+html[data-rr-theme="dark"] .creator-identity-card {
+    background: #1b1b1b !important;
+    color: #e7e7e7 !important;
+}
+
+html[data-rr-theme="dark"] .creator-identity-card :is(h1,h2,h3,h4,strong) {
+    color: #ffffff !important;
+}
+
+html[data-rr-theme="dark"] .creator-identity-card :is(p,span,small) {
+    color: #b5b5b5 !important;
+}
+
+html[data-rr-theme="dark"] .creator-identity-card a {
+    background: #f3c24f !important;
+    color: #111111 !important;
+    border-color: #f3c24f !important;
+}
+
+/* RR_CANONICAL_DARK_GOLD_START */
+
+/* ============================================================
+   RAJ RAUSHAN OFFICIAL
+   CANONICAL DARK + GOLD THEME
+   ============================================================ */
+
+:root,
+html,
+html[data-rr-theme="dark"] {
+
+    color-scheme: dark !important;
+
+    /* Canonical theme */
+    --rr-bg: #101010 !important;
+    --rr-surface: #1d1d1d !important;
+    --rr-surface-soft: #242424 !important;
+
+    --rr-heading: #ffffff !important;
+    --rr-text: #cccccc !important;
+    --rr-muted: #9e9e9e !important;
+
+    --rr-border: rgba(255,255,255,.10) !important;
+
+    --rr-accent: #f4c451 !important;
+
+    --rr-shadow:
+        0 18px 45px rgba(0,0,0,.32) !important;
+
+    /* Override old professional travel LIGHT variables */
+    --rr-forest: #101010 !important;
+    --rr-forest-2: #181818 !important;
+    --rr-forest-3: #222222 !important;
+
+    --rr-ivory: #101010 !important;
+    --rr-paper: #1d1d1d !important;
+    --rr-soft: #292929 !important;
+
+    --rr-ink: #f8f8f8 !important;
+
+    --rr-gold: #f4c451 !important;
+    --rr-gold-light: #ffd66b !important;
+
+    --rr-youtube: #ff202d !important;
+
+    background: #101010 !important;
+}
+
+
+/* PAGE */
+
+html,
+body {
+    background: #101010 !important;
+    color: #cccccc !important;
+}
+
+body {
+    min-height: 100vh;
+}
+
+
+/* ALL PUBLIC SECTIONS */
+
+body main,
+body main section,
+body section {
+    color: #cccccc;
+}
+
+
+/* NAVBAR */
+
+body .raj-pro-header,
+body .raj-pro-header.rr-nav-scrolled {
+    background: rgba(15,15,15,.97) !important;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08) !important;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.28) !important;
+}
+
+body .raj-pro-links,
+body .raj-pro-nav {
+    background: transparent !important;
+}
+
+body .raj-pro-links a {
+    color: #d7d7d7 !important;
+}
+
+body .raj-pro-links a:hover {
+    color: #f4c451 !important;
+}
+
+body .raj-pro-links a::after {
+    background: #f4c451 !important;
+}
+
+body .raj-pro-logo,
+body .raj-logo-text strong {
+    color: #ffffff !important;
+}
+
+body .raj-logo-text small {
+    color: #a5a5a5 !important;
+}
+
+
+/* SUBSCRIBE */
+
+body .raj-subscribe-nav {
+    background: #ff202d !important;
+    color: #ffffff !important;
+
+    border:
+        1px solid rgba(255,255,255,.10) !important;
+}
+
+
+/* HERO */
+
+body .rr-creator-identity {
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(244,196,81,.13),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #101010 0%,
+            #151515 52%,
+            #0d0d0d 100%
+        ) !important;
+
+    color: #ffffff !important;
+}
+
+body .rr-creator-eyebrow {
+    color: #f4c451 !important;
+}
+
+body .rr-creator-title,
+body .rr-creator-title *,
+body .rr-creator-identity h1 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+body .rr-creator-role {
+    color: #ffffff !important;
+}
+
+body .rr-creator-location,
+body .rr-creator-description,
+body .rr-creator-availability {
+    color: #b8b8b8 !important;
+}
+
+
+/* HEADINGS */
+
+body main h1,
+body main h2,
+body main h3,
+body main h4,
+body main h5,
+body main h6,
+body section h1,
+body section h2,
+body section h3,
+body section h4 {
+    color: #ffffff !important;
+}
+
+
+/* ============================================================
+   ALL CARDS
+   Fix white vlog / short / destination / social card bodies
+   ============================================================ */
+
+body .video-card,
+body .video-info,
+
+body .short-card,
+body .short-info,
+
+body .channel-card,
+body .rr-instagram-card,
+
+body .destination-card,
+body .destination-item,
+body .destination-panel,
+
+body .playlist-card,
+body .gallery-card,
+
+body .rr-pro-video-card,
+body .rr-content-card,
+body .rr-highlight-card,
+body .rr-stat-card,
+
+body .social-card,
+body .creator-card,
+body .feature-card,
+body .media-card,
+body .collab-card,
+
+body main [class*="card"] {
+
+    background: #1d1d1d !important;
+
+    color: #cccccc !important;
+
+    border:
+        1px solid rgba(255,255,255,.10) !important;
+
+    box-shadow:
+        0 16px 38px rgba(0,0,0,.28) !important;
+}
+
+
+/* CARD HEADINGS */
+
+body .video-card h3,
+body .short-card h3,
+body .channel-card h3,
+body .destination-card h3,
+body .playlist-card h3,
+body .gallery-card h3,
+body main [class*="card"] h1,
+body main [class*="card"] h2,
+body main [class*="card"] h3,
+body main [class*="card"] h4 {
+
+    color: #ffffff !important;
+}
+
+
+/* CARD BODY TEXT */
+
+body .video-card p,
+body .video-meta,
+
+body .short-card p,
+body .short-meta,
+
+body .channel-card p,
+body .channel-card span,
+
+body .destination-card p,
+body .playlist-card p,
+body .gallery-card p,
+
+body main [class*="card"] p,
+body main [class*="card"] span,
+body main [class*="card"] small {
+
+    color: #a8a8a8 !important;
+}
+
+
+/* VLOG CARD SPECIFIC */
+
+body .video-card,
+body .video-info {
+    background: #1d1d1d !important;
+}
+
+body .video-card h3 {
+    color: #ffffff !important;
+}
+
+body .video-card p,
+body .video-meta {
+    color: #aaaaaa !important;
+}
+
+
+/* WATCH BUTTON */
+
+body .watch-btn {
+    background: #f4c451 !important;
+    color: #111111 !important;
+
+    border:
+        1px solid #f4c451 !important;
+}
+
+body .watch-btn:hover {
+    background: #ffd66b !important;
+}
+
+
+/* PRIMARY ACTIONS */
+
+body .rr-primary-btn,
+body .primary-btn,
+body .btn-primary {
+    background: #f4c451 !important;
+    color: #111111 !important;
+}
+
+
+/* FORM CONTROLS */
+
+body input,
+body textarea,
+body select {
+    background: #191919 !important;
+
+    color: #ffffff !important;
+
+    border-color:
+        rgba(255,255,255,.13) !important;
+}
+
+body input::placeholder,
+body textarea::placeholder {
+    color: #858585 !important;
+}
+
+
+/* TAGS / CHIPS */
+
+body .rr-about-tag,
+body [class*="chip"],
+body [class*="tag"] {
+    background: #242424 !important;
+
+    color: #d7d7d7 !important;
+
+    border-color:
+        rgba(255,255,255,.10) !important;
+}
+
+
+/* WORLD / DESTINATION / MAP SIDE PANELS */
+
+body .world-section,
+body .destination-section,
+body .explore-main,
+body .explore-section,
+body .story-section,
+body .pillars-section,
+body .journey-section,
+body .detail-story,
+body .playlist-collection,
+body .playlist-sync,
+body .collab-section,
+body .collab-contact,
+body .gallery-section {
+
+    background: #101010 !important;
+
+    color: #cccccc !important;
+}
+
+
+/* DESTINATION LIST */
+
+body .world-section .destination-item,
+body .destination-card,
+body [class*="destination-card"] {
+
+    background: #1d1d1d !important;
+
+    color: #ffffff !important;
+}
+
+
+/* FOOTER */
+
+body footer,
+body [class*="footer"] {
+
+    background: #0b0b0b !important;
+
+    color: #b5b5b5 !important;
+
+    border-color:
+        rgba(255,255,255,.08) !important;
+}
+
+
+/* REMOVE THEME SWITCHER COMPLETELY */
+
+#rrFinalThemeToggle,
+#rrThemeToggle,
+#rrCleanThemeToggle {
+
+    display: none !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    html,
+    body,
+    body main {
+        background: #101010 !important;
+    }
+
+    body .rr-creator-identity {
+        background:
+            linear-gradient(
+                180deg,
+                #101010 0%,
+                #151515 100%
+            ) !important;
+    }
+}
+
+/* RR_CANONICAL_DARK_GOLD_END */
+
+/* RR_EXACT_CONTRAST_FIX_START */
+
+/* =========================================================
+   EXACT COMPONENT CONTRAST FIX
+   No broad [class*=] selectors.
+   ========================================================= */
+
+
+/* ---------- HERO ---------- */
+
+/* Remove unwanted long dark strip behind hero chips */
+.rr-creator-tags {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+}
+
+/* Individual chips only */
+.rr-creator-tags > span {
+    background: #242424 !important;
+    color: #d7d7d7 !important;
+    border: 1px solid rgba(255,255,255,.11) !important;
+    border-radius: 999px !important;
+}
+
+/* Main hero */
+.rr-creator-title,
+.rr-creator-title *,
+.rr-creator-role {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.rr-creator-location,
+.rr-creator-intro,
+.rr-creator-availability {
+    color: #b8b8b8 !important;
+}
+
+
+/* ---------- NAVBAR ---------- */
+
+/* Subscribe must stay YouTube red */
+.raj-pro-header .raj-subscribe-nav,
+.raj-subscribe-nav {
+    background: #ff202d !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #ff202d !important;
+}
+
+.raj-subscribe-nav:hover {
+    background: #e91c28 !important;
+    color: #ffffff !important;
+}
+
+
+/* ---------- TRAVEL MAP ---------- */
+
+.map-sidebar {
+    background: #1d1d1d !important;
+    color: #ffffff !important;
+}
+
+.map-sidebar .section-label {
+    color: #f4c451 !important;
+}
+
+.map-sidebar h2 {
+    color: #ffffff !important;
+}
+
+.map-place-card {
+    background: #1d1d1d !important;
+    border: 1px solid rgba(255,255,255,.12) !important;
+    color: #ffffff !important;
+}
+
+.map-place-card strong {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.map-place-card small {
+    color: #b6bdc8 !important;
+    -webkit-text-fill-color: #b6bdc8 !important;
+}
+
+.map-place-card:hover,
+.map-place-card.active {
+    background: #272727 !important;
+    border-color: #f4c451 !important;
+}
+
+.map-place-card.active strong {
+    color: #f4c451 !important;
+}
+
+.all-destinations {
+    color: #f4c451 !important;
+}
+
+
+/* ---------- FEATURED VLOG STORIES ---------- */
+
+.rr-story-card {
+    background: #1d1d1d !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+.rr-story-content {
+    background: #1d1d1d !important;
+}
+
+.rr-story-content h3 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* RAJ RAUSHAN OFFICIAL label */
+.rr-story-meta {
+    color: #f4c451 !important;
+    -webkit-text-fill-color: #f4c451 !important;
+}
+
+/* Views + Date */
+.rr-story-info,
+.rr-story-info span {
+    color: #aeb7c2 !important;
+    -webkit-text-fill-color: #aeb7c2 !important;
+}
+
+/* Watch Story */
+.rr-watch-story {
+    color: #f4c451 !important;
+    -webkit-text-fill-color: #f4c451 !important;
+    font-weight: 800 !important;
+    text-decoration: none !important;
+}
+
+.rr-watch-story:hover {
+    color: #ffd66b !important;
+}
+
+
+/* ---------- NORMAL VLOG CARDS ---------- */
+
+.video-card,
+.video-info {
+    background: #1d1d1d !important;
+}
+
+.video-card h3,
+.video-title {
+    color: #ffffff !important;
+}
+
+.video-meta,
+.video-meta span {
+    color: #aeb7c2 !important;
+}
+
+.watch-btn {
+    background: #f4c451 !important;
+    color: #111111 !important;
+}
+
+
+/* ---------- SHORT CARDS ---------- */
+
+.short-card,
+.short-info {
+    background: #1d1d1d !important;
+}
+
+.short-info h3 {
+    color: #ffffff !important;
+}
+
+.short-meta,
+.short-meta span {
+    color: #aeb7c2 !important;
+}
+
+
+/* ---------- DESTINATION CARDS ---------- */
+
+.destination-card,
+.destination-item {
+    background: #1d1d1d !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+.destination-card h3,
+.destination-item h3,
+.destination-item strong {
+    color: #ffffff !important;
+}
+
+.destination-card p,
+.destination-item p,
+.destination-item small {
+    color: #aeb7c2 !important;
+}
+
+
+/* ---------- CHANNEL CARDS ---------- */
+
+.channel-card,
+.rr-instagram-card {
+    background: #1d1d1d !important;
+}
+
+.channel-card h3,
+.channel-card strong,
+.rr-instagram-card h3,
+.rr-instagram-card strong {
+    color: #ffffff !important;
+}
+
+.channel-card p,
+.channel-card span,
+.rr-instagram-card p,
+.rr-instagram-card span {
+    color: #b3bbc6 !important;
+}
+
+
+/* ---------- GLOBAL DARK PAGE ---------- */
+
+html,
+body {
+    background: #101010 !important;
+}
+
+
+/* RR_EXACT_CONTRAST_FIX_END */
+
+/* RR_EXPLORE_EXACT_FIX_START */
+
+/* ==========================================================
+   EXPLORE / PLACES TO EXPLORE
+   Exact fix - removes false card/tag container styling
+   ========================================================== */
+
+
+/* Main page */
+.explore-main {
+    background: #101010 !important;
+    color: #ffffff !important;
+}
+
+
+/* Section heading */
+.explore-heading > span {
+    color: #f4c451 !important;
+}
+
+.explore-heading h2 {
+    color: #ffffff !important;
+}
+
+
+/* Main destination cards */
+.explore-card,
+.destination-result,
+.playlist-result {
+    background: #1d1d1d !important;
+
+    color: #ffffff !important;
+
+    border:
+        1px solid rgba(255,255,255,.10) !important;
+
+    box-shadow:
+        0 16px 38px rgba(0,0,0,.28) !important;
+}
+
+
+/* ------------------------------------------
+   IMPORTANT:
+   .explore-card-top contains word "card"
+   but it is NOT a card.
+   Remove global [class*=card] styling.
+   ------------------------------------------ */
+
+.explore-card .explore-card-top {
+    background: transparent !important;
+
+    border: 0 !important;
+
+    outline: 0 !important;
+
+    box-shadow: none !important;
+
+    padding: 0 !important;
+}
+
+
+/* Category */
+.explore-card .explore-type {
+    color: #f4c451 !important;
+
+    -webkit-text-fill-color:
+        #f4c451 !important;
+
+    background: transparent !important;
+
+    border: 0 !important;
+}
+
+
+/* Arrow */
+.explore-card .explore-arrow {
+    width: 42px !important;
+    height: 42px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #292929 !important;
+
+    color: #f4c451 !important;
+
+    -webkit-text-fill-color:
+        #f4c451 !important;
+
+    border:
+        1px solid rgba(244,196,81,.25) !important;
+
+    border-radius: 50% !important;
+
+    box-shadow: none !important;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease !important;
+}
+
+.explore-card:hover .explore-arrow {
+    background: #f4c451 !important;
+
+    color: #111111 !important;
+
+    -webkit-text-fill-color:
+        #111111 !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* Region */
+.explore-card small {
+    color: #b7bec8 !important;
+
+    -webkit-text-fill-color:
+        #b7bec8 !important;
+}
+
+
+/* Destination title */
+.explore-card h3 {
+    color: #ffffff !important;
+
+    -webkit-text-fill-color:
+        #ffffff !important;
+}
+
+
+/* Description */
+.explore-card p {
+    color: #c2c2c2 !important;
+
+    -webkit-text-fill-color:
+        #c2c2c2 !important;
+}
+
+
+/* ------------------------------------------
+   IMPORTANT:
+   .explore-tags contains word "tag"
+   but container itself is NOT a tag.
+   ------------------------------------------ */
+
+.explore-card .explore-tags {
+    background: transparent !important;
+
+    border: 0 !important;
+
+    outline: 0 !important;
+
+    box-shadow: none !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+
+/* Only actual tag pills */
+.explore-card .explore-tags > span {
+    background: #292929 !important;
+
+    color: #d7d7d7 !important;
+
+    -webkit-text-fill-color:
+        #d7d7d7 !important;
+
+    border:
+        1px solid rgba(255,255,255,.10) !important;
+
+    border-radius: 999px !important;
+
+    box-shadow: none !important;
+
+    padding:
+        8px 13px !important;
+}
+
+
+/* Hover polish */
+.explore-card:hover {
+    border-color:
+        rgba(244,196,81,.35) !important;
+
+    box-shadow:
+        0 22px 48px rgba(0,0,0,.40) !important;
+}
+
+
+/* Filters */
+.explore-filter {
+    background: #1d1d1d !important;
+
+    color: #cccccc !important;
+
+    border-color:
+        rgba(255,255,255,.10) !important;
+}
+
+.explore-filter.active {
+    background: #f4c451 !important;
+
+    color: #111111 !important;
+
+    border-color: #f4c451 !important;
+}
+
+
+/* Search */
+.explore-search-wrap {
+    background: #1d1d1d !important;
+
+    border:
+        1px solid rgba(255,255,255,.10) !important;
+}
+
+.explore-search-wrap input {
+    background: transparent !important;
+    color: #ffffff !important;
+}
+
+.explore-search-wrap > span {
+    background: #f4c451 !important;
+    color: #111111 !important;
+}
+
+
+/* RR_EXPLORE_EXACT_FIX_END */
+
+/* RR_PLAYLIST_COLLAB_FIX_START */
+
+/* =========================================================
+   PLAYLIST PAGE - EXACT DARK CONTRAST
+   ========================================================= */
+
+.youtube-playlist-card {
+    background: #1d1d1d !important;
+    border-color: rgba(255,255,255,.10) !important;
+    color: #ffffff !important;
+}
+
+.playlist-card-content {
+    background: #1d1d1d !important;
+}
+
+/* YOUTUBE PLAYLIST label */
+.playlist-card-label {
+    color: #f4c451 !important;
+    -webkit-text-fill-color: #f4c451 !important;
+}
+
+/* Playlist title */
+.playlist-card-content h3 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Description */
+.playlist-description {
+    color: #b8b8b8 !important;
+    -webkit-text-fill-color: #b8b8b8 !important;
+}
+
+/* Bottom Open Playlist area */
+.playlist-open {
+    background: transparent !important;
+
+    color: #f4c451 !important;
+    -webkit-text-fill-color: #f4c451 !important;
+
+    border-top:
+        1px solid rgba(255,255,255,.12) !important;
+
+    font-weight: 800 !important;
+}
+
+.playlist-open span,
+.playlist-open strong,
+.playlist-open svg,
+.playlist-open i {
+    color: #f4c451 !important;
+    -webkit-text-fill-color: #f4c451 !important;
+}
+
+.youtube-playlist-card:hover .playlist-open {
+    color: #ffd66b !important;
+    -webkit-text-fill-color: #ffd66b !important;
+}
+
+/* Video count badge */
+.playlist-count-badge {
+    background: rgba(10,10,10,.90) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* Playlist search */
+.playlist-search {
+    background: #1d1d1d !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,.12) !important;
+}
+
+.playlist-search::placeholder {
+    color: #929292 !important;
+}
+
+
+/* =========================================================
+   COLLABORATE PAGE - EXACT DARK CONTRAST
+   ========================================================= */
+
+.collab-values {
+    background: #101010 !important;
+}
+
+.collab-value-dark,
+.collab-value-light {
+    background: #1d1d1d !important;
+
+    border:
+        1px solid rgba(255,255,255,.10) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 16px 38px rgba(0,0,0,.28) !important;
+}
+
+/* Both card headings */
+.collab-value-dark h3,
+.collab-value-light h3 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Left description */
+.collab-value-dark p {
+    color: #c2c2c2 !important;
+    -webkit-text-fill-color: #c2c2c2 !important;
+}
+
+/* Ideal Partnership Fit list */
+.collab-value-light ul {
+    color: #c5c5c5 !important;
+}
+
+.collab-value-light li {
+    color: #c5c5c5 !important;
+    -webkit-text-fill-color: #c5c5c5 !important;
+}
+
+/* Gold bullets */
+.collab-value-light li::marker {
+    color: #f4c451 !important;
+}
+
+/* General collaboration cards */
+.collab-card {
+    background: #1d1d1d !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+.collab-card h3 {
+    color: #ffffff !important;
+}
+
+.collab-card p {
+    color: #b8b8b8 !important;
+}
+
+.collab-section-label,
+.collab-eyebrow {
+    color: #f4c451 !important;
+}
+
+
+/* RR_PLAYLIST_COLLAB_FIX_END */
+
+/* RR_DESTINATIONS_EXACT_FIX_START */
+
+/* ==========================================================
+   DESTINATIONS PAGE - EXACT CONTRAST FIX
+   ========================================================== */
+
+
+/* ---------- PAGE ---------- */
+
+.destination-section {
+    background: #101010 !important;
+    color: #ffffff !important;
+}
+
+
+/* ---------- TOP PLAYLIST STATS ---------- */
+
+.playlist-sync {
+    background: transparent !important;
+}
+
+.playlist-sync-card {
+    background: #1d1d1d !important;
+
+    border:
+        1px solid rgba(255,255,255,.11) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 16px 38px rgba(0,0,0,.30) !important;
+
+    text-decoration: none !important;
+}
+
+
+/* remove false generic card styling from internal wrapper */
+
+.playlist-sync-card > div {
+    background: transparent !important;
+
+    border: 0 !important;
+
+    box-shadow: none !important;
+
+    padding: 0 !important;
+}
+
+
+/* PUBLIC PLAYLISTS / CONNECTED TO DESTINATIONS */
+
+.playlist-sync-card span {
+    color: #f4c451 !important;
+
+    -webkit-text-fill-color:
+        #f4c451 !important;
+
+    font-weight: 800 !important;
+}
+
+
+/* 17 */
+
+.playlist-sync-card strong {
+    color: #ffffff !important;
+
+    -webkit-text-fill-color:
+        #ffffff !important;
+
+    font-weight: 800 !important;
+}
+
+
+/* Explore all YouTube playlists */
+
+.playlist-sync-card small {
+    color: #b8b8b8 !important;
+
+    -webkit-text-fill-color:
+        #b8b8b8 !important;
+}
+
+
+/* Arrow circle */
+
+.playlist-sync-card > b {
+    width: 50px !important;
+    height: 50px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    background: #292929 !important;
+
+    color: #f4c451 !important;
+
+    -webkit-text-fill-color:
+        #f4c451 !important;
+
+    border:
+        1px solid rgba(244,196,81,.22) !important;
+}
+
+
+.playlist-sync-card:hover {
+    border-color:
+        rgba(244,196,81,.35) !important;
+}
+
+
+.playlist-sync-card:hover > b {
+    background: #f4c451 !important;
+
+    color: #111111 !important;
+
+    -webkit-text-fill-color:
+        #111111 !important;
+}
+
+
+/* ---------- TOOLBAR ---------- */
+
+.destination-toolbar {
+    background: transparent !important;
+}
+
+.destination-toolbar .section-label {
+    color: #f4c451 !important;
+}
+
+.destination-toolbar h2 {
+    color: #ffffff !important;
+}
+
+#destinationSearch {
+    background: #1d1d1d !important;
+
+    color: #ffffff !important;
+
+    border:
+        1px solid rgba(255,255,255,.12) !important;
+}
+
+#destinationSearch::placeholder {
+    color: #949494 !important;
+}
+
+
+/* ---------- FILTER BUTTONS ---------- */
+
+.destination-filter {
+    background: #242424 !important;
+
+    color: #d8d8d8 !important;
+
+    border:
+        1px solid rgba(255,255,255,.11) !important;
+}
+
+.destination-filter.active {
+    background: #f4c451 !important;
+
+    color: #111111 !important;
+
+    border-color: #f4c451 !important;
+}
+
+
+/* ---------- DESTINATION CARDS ---------- */
+
+.destination-card {
+    background:
+        radial-gradient(
+            circle at 92% 8%,
+            rgba(244,196,81,.06),
+            transparent 32%
+        ),
+        #1d1d1d !important;
+
+    border:
+        1px solid rgba(255,255,255,.10) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 16px 38px rgba(0,0,0,.28) !important;
+}
+
+
+/* IMPORTANT:
+   .card-category contains the word "card",
+   but it is just a small text label.
+   Remove global [class*=card] appearance.
+*/
+
+.destination-card .card-category {
+    display: inline !important;
+
+    width: auto !important;
+
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    border: 0 !important;
+
+    outline: 0 !important;
+
+    box-shadow: none !important;
+
+    color: #f4c451 !important;
+
+    -webkit-text-fill-color:
+        #f4c451 !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: 1.5px !important;
+}
+
+
+/* Destination name */
+
+.destination-card h3 {
+    color: #ffffff !important;
+
+    -webkit-text-fill-color:
+        #ffffff !important;
+}
+
+
+/* Description */
+
+.destination-card p {
+    color: #c2c2c2 !important;
+
+    -webkit-text-fill-color:
+        #c2c2c2 !important;
+}
+
+
+/* Playlist / Videos stats */
+
+.destination-stats {
+    background: transparent !important;
+
+    border: 0 !important;
+
+    box-shadow: none !important;
+}
+
+.destination-stats span {
+    color: #aeb7c2 !important;
+
+    -webkit-text-fill-color:
+        #aeb7c2 !important;
+}
+
+.destination-stats strong {
+    color: #ffffff !important;
+
+    -webkit-text-fill-color:
+        #ffffff !important;
+}
+
+
+/* Explore Destination */
+
+.destination-card .card-action {
+    background: transparent !important;
+
+    box-shadow: none !important;
+
+    color: #f4c451 !important;
+
+    -webkit-text-fill-color:
+        #f4c451 !important;
+
+    border-top:
+        1px solid rgba(255,255,255,.11) !important;
+}
+
+.destination-card .card-action span {
+    color: #f4c451 !important;
+
+    -webkit-text-fill-color:
+        #f4c451 !important;
+}
+
+
+.destination-card:hover {
+    border-color:
+        rgba(244,196,81,.32) !important;
+
+    transform:
+        translateY(-5px) !important;
+}
+
+
+/* RR_DESTINATIONS_EXACT_FIX_END */

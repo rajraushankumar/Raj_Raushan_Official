@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Destinations | Raj Raushan Official
+</title>
+
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/favicon.svg"
+>
+
+<link
+    rel="stylesheet"
+    href="/static/css/destinations.css"
+>
+
+<link rel="stylesheet" href="/static/css/public_mobile_nav.css">
+
+<link rel="stylesheet" href="/static/css/global_search.css">
+<link rel="stylesheet" href="/static/css/brand_avatar.css">
+
+<!-- RR_FINAL_THEME_BOOT -->
+<script>
+(function () {
+    try {
+        var keys = [
+            "rr_site_theme_final",
+            "rr_clean_theme",
+            "rr_master_theme",
+            "rr_theme_v3",
+            "rr_site_theme"
+        ];
+
+        var theme = null;
+
+        for (var i = 0; i < keys.length; i++) {
+            var value = localStorage.getItem(keys[i]);
+
+            if (
+                value === "dark"
+                ||
+                value === "light"
+            ) {
+                theme = value;
+                break;
+            }
+        }
+
+        document.documentElement
+            .setAttribute(
+                "data-rr-theme",
+                theme || "light"
+            );
+
+    } catch (error) {
+
+        document.documentElement
+            .setAttribute(
+                "data-rr-theme",
+                "light"
+            );
+    }
+})();
+</script>
+<!-- /RR_FINAL_THEME_BOOT -->
+
+<link rel="stylesheet" href="/static/css/site_theme_final.css?v=1">
+<link rel="stylesheet" href="/static/css/professional_travel_theme.css?v=42">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/live_dark_global.css') }}">
+</head>
+
+
+<body>
+
+
+<header class="travel-nav">
+
+    <a
+        href="/"
+        class="travel-brand"
+    >
+
+        <span class="travel-logo">
+            RR
+        </span>
+
+        <span>
+            <strong>
+                Raj Raushan
+            </strong>
+
+            <small>
+                OFFICIAL
+            </small>
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/explore">
+                Explore
+            </a>
+
+            <a href="/playlists">
+            Playlists
+        </a>
+
+        <a href="/travel-map">
+            Travel Map
+        </a>
+
+        <a href="/gallery">
+            Gallery
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="destination-hero">
+
+    <div>
+
+        <span class="eyebrow">
+            REAL JOURNEYS
+        </span>
+
+        <h1>
+            Destination Explorer
+        </h1>
+
+        <p>
+            Explore destinations and collections
+            built directly from Raj Raushan Official
+            public YouTube playlists.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="playlist-sync">
+
+    <a
+        href="/playlists"
+        class="playlist-sync-card"
+        id="publicPlaylistsCard"
+        aria-label="Open all public YouTube playlists"
+    >
+
+        <div>
+
+            <span>
+                PUBLIC PLAYLISTS
+            </span>
+
+            <strong>
+                {{ public_playlist_count }}
+            </strong>
+
+            <small>
+                Explore all YouTube playlists
+            </small>
+
+        </div>
+
+        <b aria-hidden="true">
+            &nearr;
+        </b>
+
+    </a>
+
+
+    <a
+        href="#destinationGrid"
+        class="playlist-sync-card"
+        id="connectedDestinationsCard"
+        aria-label="Explore connected destinations"
+    >
+
+        <div>
+
+            <span>
+                CONNECTED TO DESTINATIONS
+            </span>
+
+            <strong>
+                {{ matched_playlist_count }}
+            </strong>
+
+            <small>
+                Explore travel collections
+            </small>
+
+        </div>
+
+        <b aria-hidden="true">
+            &darr;
+        </b>
+
+    </a>
+
+</section>
+
+
+<main class="destination-section">
+
+
+    <div class="destination-toolbar">
+
+        <div>
+
+            <span class="section-label">
+                EXPLORE
+            </span>
+
+            <h2>
+                Places & Collections
+            </h2>
+
+        </div>
+
+
+        <input
+            type="search"
+            id="destinationSearch"
+            placeholder="Search destinations..."
+        >
+
+    </div>
+
+
+    <div class="filter-row">
+
+        <button
+            class="destination-filter active"
+            data-filter="all"
+        >
+            All
+        </button>
+
+        <button
+            class="destination-filter"
+            data-filter="bihar"
+        >
+            Bihar
+        </button>
+
+        <button
+            class="destination-filter"
+            data-filter="uttar-pradesh"
+        >
+            Uttar Pradesh
+        </button>
+
+        <button
+            class="destination-filter"
+            data-filter="jharkhand"
+        >
+            Jharkhand
+        </button>
+
+        <button
+            class="destination-filter"
+            data-filter="heritage"
+        >
+            Heritage
+        </button>
+
+        <button
+            class="destination-filter"
+            data-filter="spiritual"
+        >
+            Spiritual
+        </button>
+
+        <button
+            class="destination-filter"
+            data-filter="campus"
+        >
+            Campus
+        </button>
+
+        <button
+            class="destination-filter"
+            data-filter="village"
+        >
+            Village
+        </button>
+
+    </div>
+
+
+    <div
+        class="destination-grid"
+        id="destinationGrid"
+    >
+
+
+        {% for destination
+           in destinations %}
+
+        <a
+            class="destination-card"
+            href="/destination/{{ destination.slug }}"
+            data-title="{{ destination.title|lower }}"
+            data-tags="{{ destination.filter_tags|join(' ') }}"
+        >
+
+            <span class="card-category">
+                {{ destination.region }}
+            </span>
+
+
+            <h3>
+                {{ destination.title }}
+            </h3>
+
+
+            <p>
+                {{ destination.intro }}
+            </p>
+
+
+            <div class="destination-stats">
+
+                <span>
+
+                    <strong>
+                        {{ destination.playlist_count }}
+                    </strong>
+
+                    Playlist{% if destination.playlist_count != 1 %}s{% endif %}
+
+                </span>
+
+
+                <span>
+
+                    <strong>
+                        {{ destination.video_count }}
+                    </strong>
+
+                    Videos
+
+                </span>
+
+            </div>
+
+
+            <div class="card-action">
+
+                <span>
+                    Explore Destination
+                </span>
+
+                <span>
+                    &nearr;
+                </span>
+
+            </div>
+
+        </a>
+
+        {% endfor %}
+
+
+    </div>
+
+
+    <div
+        class="destination-empty"
+        id="destinationEmpty"
+    >
+        No destination matches your search.
+    </div>
+
+
+</main>
+
+
+<script
+    src="/static/js/destinations.js"
+></script>
+
+<script src="/static/js/public_mobile_nav.js"></script>
+
+<script src="/static/js/global_search.js"></script>
+
+<script src="/static/js/global_search_tracking.js"></script>
+<script src="/static/js/brand_avatar.js"></script>
+<script src="/static/js/site_theme_final.js?v=1"></script>
+<script src="/static/js/search_nav_position.js?v=38"></script>
+
+<!-- RR PRODUCTION DARK THEME FIX -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/render_dark_force.css') }}?v=20260917b">
+
+<script src="{{ url_for('static', filename='js/render_dark_force.js') }}?v=20260917b"></script>
+
+<!-- RR PREMIUM VISUAL POLISH V2 -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/premium_visual_polish_v2.css') }}?v=20260917">
+
+<script src="{{ url_for('static', filename='js/premium_visual_polish_v2.js') }}?v=20260917"></script>
+</body>
+
+</html>
+
+
+

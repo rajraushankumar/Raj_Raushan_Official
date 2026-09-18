@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Page Not Found | Raj Raushan Official
+</title>
+
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/favicon.svg"
+>
+
+<style>
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    text-align: center;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            #203b60,
+            #09101a 55%
+        );
+}
+
+.error-box {
+    max-width: 650px;
+}
+
+.error-code {
+    margin: 0;
+
+    font-size:
+        clamp(
+            90px,
+            18vw,
+            180px
+        );
+
+    line-height: .9;
+
+    opacity: .14;
+}
+
+h1 {
+    margin:
+        15px 0;
+
+    font-size:
+        clamp(
+            30px,
+            5vw,
+            48px
+        );
+}
+
+p {
+    color:
+        #c8d1df;
+
+    line-height: 1.7;
+}
+
+a {
+    display: inline-flex;
+
+    margin-top: 18px;
+
+    padding:
+        13px 20px;
+
+    border-radius: 11px;
+
+    background:
+        white;
+
+    color:
+        #101827;
+
+    text-decoration: none;
+
+    font-weight: 800;
+}
+
+</style>
+
+<link rel="stylesheet" href="/static/css/brand_avatar.css">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/live_dark_global.css') }}">
+</head>
+
+
+<body>
+
+<div class="error-box">
+
+    <div class="error-code">
+        404
+    </div>
+
+    <h1>
+        This Journey Does Not Exist.
+    </h1>
+
+    <p>
+        The page you are looking for
+        may have moved or is not available.
+        Continue exploring Raj Raushan Official.
+    </p>
+
+    <a href="/">
+        Back to Home
+    </a>
+
+</div>
+
+<script src="/static/js/brand_avatar.js"></script>
+
+<!-- RR PRODUCTION DARK THEME FIX -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/render_dark_force.css') }}?v=20260917b">
+
+<script src="{{ url_for('static', filename='js/render_dark_force.js') }}?v=20260917b"></script>
+
+<!-- RR PREMIUM VISUAL POLISH V2 -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/premium_visual_polish_v2.css') }}?v=20260917">
+
+<script src="{{ url_for('static', filename='js/premium_visual_polish_v2.js') }}?v=20260917"></script>
+</body>
+
+</html>

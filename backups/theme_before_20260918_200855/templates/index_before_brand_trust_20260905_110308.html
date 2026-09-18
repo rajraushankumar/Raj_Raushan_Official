@@ -1,0 +1,6206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Raj Raushan Official</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+
+
+<!-- =========================================================
+     GLOBAL CREATOR SEO
+========================================================= -->
+
+<meta name="description"
+      content="Raj Raushan Official is a travel and creator platform featuring journeys, destinations, culture, experiences, vlogs and shorts from India and beyond.">
+
+<meta name="keywords"
+      content="Raj Raushan Official, Raj Raushan, travel creator, India travel vlog, Bihar travel vlog, travel videos, YouTube creator, Indian vlogger, travel shorts, destinations">
+
+<meta name="author"
+      content="Raj Raushan Official">
+
+<meta name="robots"
+      content="index, follow">
+
+<meta name="theme-color"
+      content="#14213d">
+
+<meta property="og:type"
+      content="website">
+
+<meta property="og:title"
+      content="Raj Raushan Official | Explore &bull; Watch &bull; Connect">
+
+<meta property="og:description"
+      content="Explore destinations, cultures and real travel experiences with Raj Raushan Official.">
+
+<meta property="og:site_name"
+      content="Raj Raushan Official">
+
+<meta name="twitter:card"
+      content="summary_large_image">
+
+<meta name="twitter:title"
+      content="Raj Raushan Official">
+
+<meta name="twitter:description"
+      content="Travel stories, destinations, vlogs and creator experiences from India and beyond.">
+
+<!-- GLOBAL CREATOR SEO -->
+
+
+
+<style>
+
+/* =========================================================
+   GLOBAL CREATOR CTA STYLE
+========================================================= */
+
+.global-creator-cta {
+    width: 100%;
+    padding: 90px 20px;
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #172554,
+            #1e3a5f
+        );
+    color: #ffffff;
+    text-align: center;
+}
+
+.global-creator-inner {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.creator-eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    opacity: 0.78;
+}
+
+.global-creator-cta h2 {
+    margin: 0 auto 20px;
+    max-width: 850px;
+    font-size: clamp(
+        34px,
+        5vw,
+        64px
+    );
+    line-height: 1.08;
+}
+
+.global-creator-cta h2 span {
+    display: block;
+    margin-top: 8px;
+}
+
+.global-creator-cta p {
+    max-width: 720px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+    line-height: 1.7;
+    opacity: 0.86;
+}
+
+.global-creator-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.creator-primary-btn,
+.creator-secondary-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 52px;
+    padding: 0 25px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 800;
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
+}
+
+.creator-primary-btn {
+    background: #ffffff;
+    color: #111827;
+}
+
+.creator-secondary-btn {
+    border: 1px solid
+        rgba(255,255,255,.38);
+    color: #ffffff;
+}
+
+.creator-primary-btn:hover,
+.creator-secondary-btn:hover {
+    transform: translateY(-2px);
+    opacity: .92;
+}
+
+.creator-brand-line {
+    margin-top: 35px;
+    font-size: 14px;
+    letter-spacing: .6px;
+    opacity: .68;
+}
+
+.creator-brand-line span {
+    margin: 0 8px;
+}
+
+@media (max-width: 650px) {
+
+    .global-creator-cta {
+        padding: 65px 18px;
+    }
+
+    .global-creator-cta p {
+        font-size: 16px;
+    }
+
+    .creator-primary-btn,
+    .creator-secondary-btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+}
+
+/* GLOBAL CREATOR CTA STYLE */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   GLOBAL CREATOR PHASE 2 STYLE
+========================================================= */
+
+.world-section {
+    padding: 95px 20px;
+    background: #f7f9fc;
+}
+
+.world-container {
+    width: 92%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.world-heading {
+    max-width: 720px;
+    margin-bottom: 45px;
+}
+
+.world-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: #3554d1;
+}
+
+.world-heading h2,
+.creator-about h2,
+.brand-collaboration h2 {
+    margin: 0 0 16px;
+    font-size: clamp(
+        32px,
+        4vw,
+        50px
+    );
+    line-height: 1.12;
+}
+
+.world-heading p,
+.creator-about p {
+    line-height: 1.75;
+    color: #5d6574;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.destination-card {
+    padding: 28px;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow:
+        0 10px 35px
+        rgba(23, 32, 51, .07);
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 16px 42px
+        rgba(23, 32, 51, .11);
+}
+
+.destination-icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.destination-card h3 {
+    margin: 0 0 12px;
+    font-size: 21px;
+}
+
+.destination-card p {
+    margin: 0;
+    line-height: 1.65;
+    color: #697181;
+}
+
+
+/* ABOUT */
+
+.creator-about {
+    padding: 100px 20px;
+    background: #ffffff;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns:
+        1.3fr .7fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-lead {
+    font-size: 21px;
+    color: #222c3d !important;
+}
+
+.creator-identity-card {
+    padding: 40px;
+    border-radius: 26px;
+    color: white;
+    background:
+        linear-gradient(
+            145deg,
+            #101828,
+            #1d3557
+        );
+    box-shadow:
+        0 20px 50px
+        rgba(13, 25, 48, .18);
+}
+
+.creator-identity-card > span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: .7;
+}
+
+.creator-identity-card h3 {
+    margin: 20px 0;
+    font-size: 43px;
+    line-height: 1.1;
+}
+
+.creator-identity-card p {
+    color:
+        rgba(255,255,255,.72);
+}
+
+.creator-identity-card a {
+    display: inline-flex;
+    margin-top: 14px;
+    padding: 13px 18px;
+    border-radius: 11px;
+    background: #ffffff;
+    color: #111827;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+
+/* COLLABORATION */
+
+.brand-collaboration {
+    padding: 105px 20px;
+    text-align: center;
+    color: #ffffff;
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1e293b
+        );
+}
+
+.collaboration-inner {
+    max-width: 900px;
+    margin: auto;
+}
+
+.brand-collaboration .world-label {
+    color: #b9c8ff;
+}
+
+.brand-collaboration p {
+    max-width: 720px;
+    margin: 0 auto 28px;
+    line-height: 1.75;
+    color:
+        rgba(255,255,255,.76);
+}
+
+.collaboration-types {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.collaboration-types span {
+    padding: 9px 14px;
+    border-radius: 999px;
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+    background:
+        rgba(255,255,255,.07);
+    font-size: 13px;
+}
+
+.collaboration-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.collaboration-actions a {
+    padding: 14px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.collaboration-primary {
+    background: #ffffff;
+    color: #111827;
+}
+
+.collaboration-secondary {
+    color: #ffffff;
+    border:
+        1px solid
+        rgba(255,255,255,.32);
+}
+
+.brand-collaboration small {
+    color:
+        rgba(255,255,255,.5);
+}
+
+
+/* FOOTER */
+
+.creator-footer {
+    padding: 55px 6% 24px;
+    background: #080d17;
+    color: #ffffff;
+}
+
+.footer-main {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns:
+        1fr 2fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.footer-brand h3 {
+    margin: 0 0 7px;
+}
+
+.footer-brand p {
+    margin: 0;
+    opacity: .55;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.footer-links a,
+.footer-youtube a {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: .75;
+}
+
+.footer-links a:hover,
+.footer-youtube a:hover {
+    opacity: 1;
+}
+
+.footer-youtube {
+    text-align: right;
+}
+
+.footer-youtube span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    opacity: .5;
+}
+
+.footer-youtube a {
+    font-weight: 800;
+}
+
+.footer-bottom {
+    max-width: 1250px;
+    margin: 38px auto 0;
+    padding-top: 20px;
+    border-top:
+        1px solid
+        rgba(255,255,255,.09);
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 12px;
+    opacity: .48;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+    .destination-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-youtube {
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .world-section,
+    .creator-about,
+    .brand-collaboration {
+        padding:
+            70px 18px;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .creator-identity-card {
+        padding: 30px;
+    }
+
+    .creator-identity-card h3 {
+        font-size: 36px;
+    }
+
+    .collaboration-actions a {
+        width: 100%;
+        max-width: 310px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+/* GLOBAL CREATOR PHASE 2 STYLE */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   RAJ PROFESSIONAL BRAND STYLE
+========================================================= */
+
+
+/* ---------- STICKY NAV ---------- */
+
+.raj-pro-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    width: 100%;
+
+    background:
+        rgba(8, 13, 23, .93);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .08);
+}
+
+.raj-pro-nav {
+    width: 92%;
+    max-width: 1320px;
+
+    min-height: 72px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+/* LOGO */
+
+.raj-pro-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    flex-shrink: 0;
+}
+
+.raj-logo-mark {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #dbe5ff
+        );
+
+    color: #111827;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: -0.3px;
+}
+
+.raj-logo-text {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.05;
+}
+
+.raj-logo-text strong {
+    font-size: 15px;
+    letter-spacing: .2px;
+}
+
+.raj-logo-text small {
+    margin-top: 4px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: .58;
+}
+
+
+/* LINKS */
+
+.raj-pro-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+}
+
+.raj-pro-links a {
+    position: relative;
+
+    color:
+        rgba(255, 255, 255, .74);
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        color .2s ease;
+}
+
+.raj-pro-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: #ffffff;
+
+    transition:
+        width .2s ease;
+}
+
+.raj-pro-links a:hover {
+    color: #ffffff;
+}
+
+.raj-pro-links a:hover::after {
+    width: 100%;
+}
+
+
+/* SUBSCRIBE */
+
+.raj-nav-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.raj-subscribe-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 0 17px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
+}
+
+.raj-subscribe-nav:hover {
+    transform:
+        translateY(-2px);
+
+    opacity: .92;
+}
+
+
+/* MOBILE BUTTON */
+
+.raj-menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    cursor: pointer;
+}
+
+.raj-menu-btn span {
+    display: block;
+
+    width: 19px;
+    height: 2px;
+
+    margin: 4px auto;
+
+    border-radius: 5px;
+
+    background: white;
+}
+
+
+/* ---------- MEDIA KIT ---------- */
+
+.raj-media-kit {
+    padding:
+        110px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f5f7fb 100%
+        );
+
+    color: #172033;
+}
+
+.raj-media-container {
+    width: 92%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+}
+
+.raj-media-intro {
+    max-width: 780px;
+
+    margin-bottom: 55px;
+}
+
+.raj-section-label {
+    display: inline-block;
+
+    margin-bottom: 13px;
+
+    color: #3554d1;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 2.8px;
+}
+
+.raj-media-intro h2 {
+    margin:
+        0 0 18px;
+
+    font-size:
+        clamp(
+            36px,
+            5vw,
+            58px
+        );
+
+    line-height: 1.07;
+
+    letter-spacing: -1.4px;
+}
+
+.raj-media-intro h2 span {
+    display: block;
+}
+
+.raj-media-intro p {
+    margin: 0;
+
+    max-width: 700px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #626b7a;
+}
+
+
+/* MEDIA CARDS */
+
+.raj-media-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 18px;
+}
+
+.raj-media-card {
+    position: relative;
+
+    min-height: 270px;
+
+    padding: 28px;
+
+    overflow: hidden;
+
+    border:
+        1px solid #e9edf5;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 34px
+        rgba(15, 23, 42, .055);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.raj-media-card:hover {
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(15, 23, 42, .10);
+}
+
+.raj-media-number {
+    margin-bottom: 42px;
+
+    color: #9aa6bc;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1.6px;
+}
+
+.raj-media-card h3 {
+    margin:
+        0 0 13px;
+
+    font-size: 20px;
+
+    line-height: 1.25;
+}
+
+.raj-media-card p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #697282;
+}
+
+
+/* PROFILE */
+
+.raj-media-profile {
+    margin-top: 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.25fr .75fr;
+
+    gap: 22px;
+}
+
+.raj-profile-main,
+.raj-media-fit {
+    padding: 38px;
+
+    border-radius: 24px;
+}
+
+.raj-profile-main {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101827,
+            #192b48
+        );
+}
+
+.raj-profile-label,
+.raj-media-fit > span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 2.2px;
+
+    opacity: .58;
+}
+
+.raj-profile-main h3 {
+    margin:
+        0 0 7px;
+
+    font-size: 32px;
+}
+
+.raj-profile-main p {
+    margin:
+        0 0 25px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            .65
+        );
+}
+
+.raj-profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.raj-profile-tags span {
+    padding:
+        8px 11px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    font-size: 11px;
+}
+
+
+/* PARTNERSHIP FIT */
+
+.raj-media-fit {
+    background: #eef3ff;
+
+    border:
+        1px solid #dde6fb;
+}
+
+.raj-media-fit > span {
+    color: #3554d1;
+
+    opacity: 1;
+}
+
+.raj-media-fit ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.raj-media-fit li {
+    margin-bottom: 12px;
+
+    line-height: 1.5;
+
+    color: #475167;
+}
+
+
+/* PARTNERSHIP PROMISE */
+
+.raj-partner-promise {
+    margin-top: 22px;
+
+    padding:
+        35px 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-radius: 24px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e8edf5;
+}
+
+.raj-partner-promise h3 {
+    margin:
+        0 0 8px;
+
+    font-size: 25px;
+}
+
+.raj-partner-promise p {
+    max-width: 650px;
+
+    margin: 0;
+
+    line-height: 1.65;
+
+    color: #697282;
+}
+
+.raj-partner-button {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding:
+        0 20px;
+
+    border-radius: 11px;
+
+    background: #172033;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* SMOOTH SCROLL */
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 85px;
+}
+
+
+/* ---------- TABLET ---------- */
+
+@media (
+    max-width: 1050px
+) {
+
+    .raj-pro-links {
+        gap: 16px;
+    }
+
+    .raj-pro-links a {
+        font-size: 12px;
+    }
+
+    .raj-media-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+
+/* ---------- MOBILE NAV ---------- */
+
+@media (
+    max-width: 850px
+) {
+
+    .raj-pro-nav {
+        min-height: 66px;
+    }
+
+    .raj-pro-links {
+        position: absolute;
+
+        top: 66px;
+        left: 0;
+
+        width: 100%;
+
+        padding:
+            18px 5% 25px;
+
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 4px;
+
+        background:
+            rgba(8,13,23,.98);
+
+        border-top:
+            1px solid
+            rgba(255,255,255,.07);
+
+        box-shadow:
+            0 20px 35px
+            rgba(0,0,0,.18);
+    }
+
+    .raj-pro-links.raj-menu-open {
+        display: flex;
+    }
+
+    .raj-pro-links a {
+        width: 100%;
+
+        padding:
+            12px 4px;
+
+        font-size: 14px;
+    }
+
+    .raj-pro-links a::after {
+        display: none;
+    }
+
+    .raj-menu-btn {
+        display: block;
+    }
+
+    .raj-subscribe-nav {
+        display: none;
+    }
+
+    .raj-media-profile {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media (
+    max-width: 600px
+) {
+
+    .raj-media-kit {
+        padding:
+            75px 18px;
+    }
+
+    .raj-media-container {
+        width: 100%;
+    }
+
+    .raj-media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .raj-media-card {
+        min-height: auto;
+    }
+
+    .raj-media-number {
+        margin-bottom: 25px;
+    }
+
+    .raj-profile-main,
+    .raj-media-fit {
+        padding: 28px;
+    }
+
+    .raj-partner-promise {
+        padding: 28px;
+
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .raj-partner-button {
+        width: 100%;
+    }
+
+    .raj-logo-text strong {
+        font-size: 13px;
+    }
+
+}
+
+
+/* RAJ PROFESSIONAL BRAND STYLE */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   RAJ DARK TEXT POLISH
+========================================================= */
+
+/* Main light-page text */
+body {
+    color: #111827;
+}
+
+/* Main headings */
+h1,
+h2,
+h3,
+h4 {
+    color: #0b1220;
+}
+
+/* Creator brand */
+.raj-logo-text strong {
+    color: #ffffff;
+    font-weight: 900;
+}
+
+.raj-logo-text small {
+    color: #d4d9e3;
+    opacity: .8;
+}
+
+/* Professional navbar darker */
+.raj-pro-header {
+    background: rgba(5, 10, 18, .97);
+}
+
+/* Navbar links stronger */
+.raj-pro-links a {
+    color: #d9dee8;
+}
+
+.raj-pro-links a:hover {
+    color: #ffffff;
+}
+
+/* About / destinations / media-kit text */
+.world-heading p,
+.creator-about p,
+.raj-media-intro p,
+.raj-media-card p,
+.raj-partner-promise p {
+    color: #465064;
+}
+
+/* Card headings */
+.destination-card h3,
+.raj-media-card h3,
+.raj-profile-main h3,
+.raj-partner-promise h3 {
+    font-weight: 800;
+}
+
+/* Brand name sections */
+.creator-about h2,
+.raj-media-intro h2 {
+    color: #0a1020;
+}
+
+/* Dark sections remain white */
+.global-creator-cta h2,
+.brand-collaboration h2,
+.creator-identity-card h3,
+.creator-footer h3 {
+    color: #ffffff;
+}
+
+/* RAJ DARK TEXT POLISH */
+
+</style>
+
+
+
+<style>
+
+/* HERO HEADING COLOR FIX */
+
+.hero h1,
+.hero-section h1,
+.hero-content h1,
+section.hero h1,
+body > section:first-of-type h1 {
+    color: #ffffff !important;
+}
+
+/* Hero subtitle */
+.hero p,
+.hero-section p,
+.hero-content p,
+body > section:first-of-type p {
+    color: #ffffff;
+}
+
+/* HERO HEADING COLOR FIX */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   SOCIAL DARK CARD COLOR FIX
+========================================================= */
+
+/* Social section headings */
+.social-dark-fix h1,
+.social-dark-fix h2,
+.social-dark-fix h3,
+.social-dark-fix h4 {
+    color: #ffffff !important;
+}
+
+/* Card titles and important text */
+.social-dark-fix strong,
+.social-dark-fix .title,
+.social-dark-fix .social-title {
+    color: #ffffff !important;
+}
+
+/* Description text */
+.social-dark-fix p {
+    color: #cbd5e1 !important;
+}
+
+/* Social links */
+.social-dark-fix a {
+    color: #ffffff !important;
+}
+
+.social-dark-fix a:hover {
+    color: #dbeafe !important;
+}
+
+/* Keep icons bright */
+.social-dark-fix .icon,
+.social-dark-fix .social-icon {
+    opacity: 1 !important;
+}
+
+
+/* Professional About anchor */
+
+#creator-about {
+    scroll-margin-top: 95px;
+}
+
+
+/* Ensure About section text stays visible */
+
+#creator-about h2,
+#creator-about h3 {
+    color: #0b1220 !important;
+}
+
+#creator-about p {
+    color: #465064 !important;
+}
+
+/* SOCIAL DARK CARD COLOR FIX */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   ABOUT DARK CARD VISIBILITY FIX
+========================================================= */
+
+.creator-identity-card {
+    color: #ffffff !important;
+}
+
+/* Small heading */
+.creator-identity-card > span {
+    color: #d7deea !important;
+    opacity: .85 !important;
+}
+
+/* Explore / Watch / Connect */
+.creator-identity-card h3 {
+    color: #ffffff !important;
+}
+
+/* Description */
+.creator-identity-card p {
+    color: #cbd5e1 !important;
+    opacity: 1 !important;
+}
+
+/* Subscribe button */
+.creator-identity-card a {
+    background: #ffffff !important;
+    color: #0b1220 !important;
+}
+
+.creator-identity-card a:hover {
+    background: #e9eef7 !important;
+}
+
+/* ABOUT DARK CARD VISIBILITY FIX */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   RR PREMIUM HERO DESIGN
+========================================================= */
+
+.rr-premium-hero {
+    position: relative;
+
+    min-height: 560px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        90px 24px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(62, 91, 169, .18),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 82% 25%,
+            rgba(46, 125, 150, .14),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #090d14 0%,
+            #101722 45%,
+            #111827 100%
+        ) !important;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
+}
+
+
+/* subtle background glow */
+
+.rr-premium-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    left: -170px;
+    bottom: -220px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(55, 92, 170, .16);
+
+    filter:
+        blur(70px);
+
+    pointer-events: none;
+}
+
+
+.rr-premium-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    right: -150px;
+    top: -190px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(64, 135, 160, .12);
+
+    filter:
+        blur(75px);
+
+    pointer-events: none;
+}
+
+
+/* Keep actual hero content above glow */
+
+.rr-premium-hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* HERO MAIN TITLE */
+
+body .rr-premium-hero h1 {
+    max-width: 1050px;
+
+    margin:
+        0 auto 22px;
+
+    color:
+        #ffffff !important;
+
+    font-size:
+        clamp(
+            46px,
+            5.8vw,
+            82px
+        ) !important;
+
+    line-height:
+        1.03 !important;
+
+    font-weight:
+        900 !important;
+
+    letter-spacing:
+        -2.4px;
+
+    text-shadow:
+        0 10px 35px
+        rgba(0,0,0,.30);
+}
+
+
+/* Small creator badge */
+
+body .rr-premium-hero h1::before {
+    content:
+        "TRAVEL  ?  STORIES  ?  EXPERIENCES";
+
+    display: table;
+
+    margin:
+        0 auto 24px;
+
+    padding:
+        9px 15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    color:
+        #cbd5e1;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        2.4px;
+
+    line-height:
+        1.2;
+}
+
+
+/* SUBTITLE */
+
+body .rr-premium-hero p {
+    margin:
+        0 auto 34px;
+
+    color:
+        #d7deea !important;
+
+    font-size:
+        clamp(
+            17px,
+            2vw,
+            22px
+        ) !important;
+
+    line-height:
+        1.65;
+
+    letter-spacing:
+        .3px;
+}
+
+
+/* HERO BUTTON */
+
+body .rr-premium-hero a,
+body .rr-premium-hero button {
+    display: inline-flex;
+
+    min-height: 54px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        0 25px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.92) !important;
+
+    border-radius:
+        13px !important;
+
+    background:
+        #ffffff !important;
+
+    color:
+        #0b1220 !important;
+
+    text-decoration:
+        none !important;
+
+    font-size:
+        15px !important;
+
+    font-weight:
+        800 !important;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.25);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+
+body .rr-premium-hero a:hover,
+body .rr-premium-hero button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(0,0,0,.35);
+
+    background:
+        #eef3ff !important;
+}
+
+
+/* Small premium accent under hero */
+
+.rr-premium-hero::selection {
+    background: #ffffff;
+    color: #111827;
+}
+
+
+/* TABLET */
+
+@media (
+    max-width: 850px
+) {
+
+    .rr-premium-hero {
+        min-height: 510px;
+
+        padding:
+            75px 22px;
+    }
+
+    body .rr-premium-hero h1 {
+        letter-spacing:
+            -1.5px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (
+    max-width: 600px
+) {
+
+    .rr-premium-hero {
+        min-height: 470px;
+
+        padding:
+            65px 18px;
+    }
+
+    body .rr-premium-hero h1 {
+        font-size:
+            43px !important;
+
+        letter-spacing:
+            -1.2px;
+    }
+
+    body .rr-premium-hero h1::before {
+
+        font-size:
+            9px;
+
+        letter-spacing:
+            1.5px;
+    }
+
+    body .rr-premium-hero p {
+        font-size:
+            16px !important;
+    }
+
+    body .rr-premium-hero a,
+    body .rr-premium-hero button {
+
+        width:
+            min(100%, 300px);
+
+    }
+
+}
+
+/* RR PREMIUM HERO DESIGN */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   RR MEDIUM HERO FINAL FIX
+========================================================= */
+
+
+/* HERO SIZE - MEDIUM */
+
+.rr-premium-hero {
+    min-height: 480px !important;
+    padding: 70px 24px !important;
+}
+
+
+/* Medium professional heading */
+
+body .rr-premium-hero h1 {
+    max-width: 900px !important;
+
+    font-size:
+        clamp(
+            42px,
+            4.8vw,
+            66px
+        ) !important;
+
+    line-height: 1.05 !important;
+
+    letter-spacing: -1.6px !important;
+
+    margin-bottom: 18px !important;
+}
+
+
+/* Top Travel badge */
+
+body .rr-premium-hero h1::before {
+    margin-bottom: 20px !important;
+
+    padding: 8px 14px !important;
+
+    font-size: 10px !important;
+
+    letter-spacing: 2px !important;
+}
+
+
+/* Explore Watch Connect */
+
+body .rr-premium-hero p {
+    font-size: 19px !important;
+    margin-bottom: 28px !important;
+}
+
+
+/* Watch Latest Vlog button */
+
+body .rr-premium-hero a,
+body .rr-premium-hero button {
+
+    min-height: 50px !important;
+
+    padding:
+        0 24px !important;
+
+    font-size:
+        15px !important;
+
+    border-radius:
+        12px !important;
+}
+
+
+/* =========================================================
+   CREATOR PROFILE DARK CARD
+========================================================= */
+
+.raj-profile-main {
+    background:
+        linear-gradient(
+            135deg,
+            #101827,
+            #1b3152
+        ) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+/* CREATOR PROFILE small title */
+
+.raj-profile-main .raj-profile-label {
+    color:
+        #cbd5e1 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* Raj Raushan Official */
+
+body .raj-profile-main h3 {
+    color:
+        #ffffff !important;
+
+    opacity:
+        1 !important;
+
+    font-weight:
+        850 !important;
+}
+
+
+/* Travel &bull; Stories &bull; Experiences &bull; Technology */
+
+body .raj-profile-main p {
+    color:
+        #d6deeb !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* Tags */
+
+body .raj-profile-main .raj-profile-tags span {
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            .20
+        ) !important;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .07
+        ) !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .rr-premium-hero {
+        min-height:
+            420px !important;
+
+        padding:
+            55px 18px !important;
+    }
+
+    body .rr-premium-hero h1 {
+
+        font-size:
+            40px !important;
+
+        letter-spacing:
+            -1px !important;
+    }
+
+    body .rr-premium-hero p {
+        font-size:
+            16px !important;
+    }
+
+}
+
+
+/* RR MEDIUM HERO FINAL FIX */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   RR FEATURED STORIES STYLE
+========================================================= */
+
+.rr-featured-stories {
+    padding:
+        95px 20px;
+
+    background:
+        #f4f6fa;
+
+    color:
+        #0b1220;
+}
+
+.rr-stories-container {
+    width: 92%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+}
+
+
+.rr-stories-header {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 42px;
+}
+
+
+.rr-stories-label {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #3554d1;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 2.6px;
+}
+
+
+.rr-stories-header h2 {
+    margin:
+        0 0 12px;
+
+    color:
+        #0b1220 !important;
+
+    font-size:
+        clamp(
+            32px,
+            4vw,
+            50px
+        );
+
+    line-height: 1.1;
+}
+
+
+.rr-stories-header p {
+    margin: 0;
+
+    color: #596579;
+
+    font-size: 16px;
+}
+
+
+.rr-view-all {
+    flex-shrink: 0;
+
+    color: #111827;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+.rr-featured-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 22px;
+}
+
+
+/* STORY CARD */
+
+.rr-story-card {
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e4e9f1;
+
+    box-shadow:
+        0 12px 38px
+        rgba(15, 23, 42, .07);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.rr-story-card:hover {
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 20px 48px
+        rgba(15, 23, 42, .13);
+}
+
+
+/* THUMBNAIL */
+
+.rr-story-image {
+    position: relative;
+
+    display: block;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #111827;
+}
+
+
+.rr-story-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .4s ease;
+}
+
+
+.rr-story-card:hover
+.rr-story-image img {
+
+    transform:
+        scale(1.04);
+}
+
+
+/* PLAY BUTTON */
+
+.rr-play-button {
+    position: absolute;
+
+    left: 20px;
+    bottom: 18px;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.94);
+
+    color: #0b1220;
+
+    font-size: 15px;
+
+    box-shadow:
+        0 6px 22px
+        rgba(0,0,0,.22);
+}
+
+
+/* CONTENT */
+
+.rr-story-content {
+    padding:
+        24px;
+}
+
+
+.rr-story-meta {
+    margin-bottom: 10px;
+
+    color: #6d7890;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: 1.8px;
+}
+
+
+.rr-story-content h3 {
+    margin:
+        0 0 17px;
+
+    color:
+        #0b1220 !important;
+
+    font-size: 20px;
+
+    line-height: 1.35;
+}
+
+
+.rr-story-info {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px 15px;
+
+    margin-bottom: 20px;
+
+    color: #697386;
+
+    font-size: 12px;
+}
+
+
+.rr-watch-story {
+    color: #111827;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+/* EMPTY STATE */
+
+.rr-story-empty {
+    padding: 35px;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e5eaf2;
+
+    text-align: center;
+}
+
+
+.rr-story-empty p {
+    margin:
+        8px 0 0;
+
+    color: #697386;
+}
+
+
+/* TABLET */
+
+@media (
+    max-width: 950px
+) {
+
+    .rr-featured-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (
+    max-width: 650px
+) {
+
+    .rr-featured-stories {
+        padding:
+            70px 18px;
+    }
+
+    .rr-stories-container {
+        width: 100%;
+    }
+
+    .rr-stories-header {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+    .rr-featured-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+/* RR FEATURED STORIES STYLE */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   RR COMPACT HERO ALIGNMENT FIX
+========================================================= */
+
+.rr-premium-hero {
+    min-height: 390px !important;
+    padding: 48px 20px 52px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+}
+
+
+/* Keep complete hero content in center */
+
+.rr-premium-hero > div {
+    width: 100% !important;
+    max-width: 1000px !important;
+
+    margin: 0 auto !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+}
+
+
+/* Heading */
+
+body .rr-premium-hero h1 {
+    max-width: 850px !important;
+
+    margin:
+        0 auto 16px !important;
+
+    font-size:
+        clamp(
+            42px,
+            4.5vw,
+            64px
+        ) !important;
+
+    line-height:
+        1.05 !important;
+
+    text-align:
+        center !important;
+}
+
+
+/* Premium badge */
+
+body .rr-premium-hero h1::before {
+    content:
+        "TRAVEL \2022 STORIES \2022 EXPERIENCES" !important;
+
+    margin:
+        0 auto 20px !important;
+
+    font-size:
+        10px !important;
+
+    letter-spacing:
+        2px !important;
+}
+
+
+/* Explore Watch Connect */
+
+body .rr-premium-hero p {
+    margin:
+        0 auto 24px !important;
+
+    max-width:
+        620px !important;
+
+    text-align:
+        center !important;
+
+    font-size:
+        18px !important;
+}
+
+
+/* Prevent old layout from pushing content apart */
+
+.rr-premium-hero .hero-content,
+.rr-premium-hero .hero-text,
+.rr-premium-hero .content {
+    width: 100% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    text-align:
+        center !important;
+}
+
+
+/* Single clean CTA */
+
+body .rr-premium-hero a {
+    width: auto !important;
+    min-width: 190px !important;
+
+    min-height:
+        50px !important;
+
+    padding:
+        0 24px !important;
+
+    margin:
+        0 auto !important;
+
+    border-radius:
+        12px !important;
+}
+
+
+/* If old HTML has <a><button>...</button></a>,
+   remove double-button appearance */
+
+body .rr-premium-hero a button {
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: auto !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    border: 0 !important;
+    box-shadow: none !important;
+
+    background:
+        transparent !important;
+
+    color:
+        #0b1220 !important;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .rr-premium-hero {
+        min-height:
+            350px !important;
+
+        padding:
+            42px 18px !important;
+    }
+
+    body .rr-premium-hero h1 {
+        font-size:
+            39px !important;
+    }
+
+    body .rr-premium-hero p {
+        font-size:
+            16px !important;
+    }
+
+}
+
+/* RR COMPACT HERO ALIGNMENT FIX */
+
+</style>
+
+
+
+<style>
+
+/* RR EXTRA COMPACT HERO FIX */
+
+.rr-premium-hero {
+    min-height: 330px !important;
+    padding: 35px 20px 40px !important;
+}
+
+body .rr-premium-hero h1 {
+    max-width: 780px !important;
+
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            56px
+        ) !important;
+
+    margin-bottom: 14px !important;
+}
+
+body .rr-premium-hero h1::before {
+    margin-bottom: 16px !important;
+    padding: 7px 13px !important;
+}
+
+body .rr-premium-hero p {
+    margin-bottom: 20px !important;
+    font-size: 17px !important;
+}
+
+body .rr-premium-hero a {
+    min-height: 46px !important;
+    min-width: 180px !important;
+}
+
+@media (max-width: 600px) {
+
+    .rr-premium-hero {
+        min-height: 310px !important;
+        padding: 34px 18px !important;
+    }
+
+    body .rr-premium-hero h1 {
+        font-size: 35px !important;
+    }
+
+}
+
+/* RR EXTRA COMPACT HERO FIX */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   RR CREATOR HIGHLIGHTS STYLE
+========================================================= */
+
+.rr-creator-highlights {
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        75px 0 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc 0%,
+            #eef3f9 100%
+        );
+
+    color: #0b1220;
+}
+
+
+.rr-highlight-container {
+    width: 92%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding-bottom: 65px;
+}
+
+
+/* HEADING */
+
+.rr-highlight-heading {
+    max-width: 720px;
+
+    margin-bottom: 38px;
+}
+
+
+.rr-highlight-heading > span {
+    display: inline-block;
+
+    margin-bottom: 11px;
+
+    color: #3157d5;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2.8px;
+}
+
+
+.rr-highlight-heading h2 {
+    margin:
+        0 0 13px;
+
+    color:
+        #0b1220 !important;
+
+    font-size:
+        clamp(
+            31px,
+            4vw,
+            47px
+        );
+
+    line-height:
+        1.08;
+
+    letter-spacing:
+        -1px;
+}
+
+
+.rr-highlight-heading p {
+    margin: 0;
+
+    max-width: 650px;
+
+    color: #566176;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* CARDS */
+
+.rr-highlight-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 17px;
+}
+
+
+.rr-highlight-card {
+    position: relative;
+
+    min-height: 225px;
+
+    padding: 26px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(148,163,184,.22);
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .82
+        );
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(15,23,42,.06);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+
+.rr-highlight-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(67,97,238,.25);
+
+    box-shadow:
+        0 22px 48px
+        rgba(15,23,42,.11);
+}
+
+
+/* subtle gradient glow */
+
+.rr-highlight-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    right: -55px;
+    top: -55px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(56,100,220,.07);
+}
+
+
+.rr-highlight-icon {
+    margin-bottom: 20px;
+
+    font-size: 27px;
+}
+
+
+.rr-highlight-number {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    color: #9ba7ba;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+
+.rr-highlight-card h3 {
+    margin:
+        0 0 10px;
+
+    color:
+        #111827 !important;
+
+    font-size: 19px;
+
+    font-weight: 850;
+}
+
+
+.rr-highlight-card p {
+    margin: 0;
+
+    color: #687386;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   TRAVEL MARQUEE
+========================================================= */
+
+.rr-travel-marquee {
+    width: 100%;
+
+    overflow: hidden;
+
+    padding:
+        17px 0;
+
+    background:
+        #0a1019;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
+}
+
+
+.rr-marquee-track {
+    width: max-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+
+    white-space: nowrap;
+
+    animation:
+        rrTravelMove
+        28s
+        linear
+        infinite;
+}
+
+
+.rr-marquee-track span {
+
+    color:
+        #dce3ee;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2.4px;
+}
+
+
+.rr-marquee-track b {
+
+    color:
+        #536dfe;
+
+    font-size: 12px;
+}
+
+
+@keyframes rrTravelMove {
+
+    from {
+        transform:
+            translateX(0);
+    }
+
+    to {
+        transform:
+            translateX(-50%);
+    }
+
+}
+
+
+/* pause when hovered */
+
+.rr-travel-marquee:hover
+.rr-marquee-track {
+
+    animation-play-state:
+        paused;
+}
+
+
+/* TABLET */
+
+@media (
+    max-width: 950px
+) {
+
+    .rr-highlight-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (
+    max-width: 600px
+) {
+
+    .rr-creator-highlights {
+
+        padding-top:
+            60px;
+
+    }
+
+    .rr-highlight-container {
+
+        width: 100%;
+
+        padding:
+            0 18px 55px;
+
+    }
+
+    .rr-highlight-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .rr-highlight-card {
+
+        min-height:
+            auto;
+
+    }
+
+    .rr-travel-marquee {
+
+        padding:
+            14px 0;
+
+    }
+
+}
+
+
+/* Reduce motion accessibility */
+
+@media (
+    prefers-reduced-motion:
+    reduce
+) {
+
+    .rr-marquee-track {
+
+        animation:
+            none;
+
+    }
+
+}
+
+
+/* RR CREATOR HIGHLIGHTS STYLE */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   RR CLICKABLE HIGHLIGHT CARDS
+========================================================= */
+
+.rr-clickable-card {
+    cursor: pointer;
+}
+
+.rr-clickable-card:hover {
+    transform: translateY(-8px) !important;
+
+    border-color:
+        rgba(49,87,213,.40) !important;
+
+    box-shadow:
+        0 24px 55px
+        rgba(15,23,42,.14) !important;
+}
+
+.rr-clickable-card:focus {
+    outline:
+        3px solid
+        rgba(49,87,213,.28);
+
+    outline-offset: 4px;
+}
+
+/* small arrow */
+
+.rr-clickable-card::before {
+    content: "?";
+
+    position: absolute;
+
+    right: 24px;
+    bottom: 20px;
+
+    color: #3157d5;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    opacity: 0;
+
+    transform:
+        translate(-5px, 5px);
+
+    transition:
+        all .2s ease;
+}
+
+.rr-clickable-card:hover::before {
+    opacity: 1;
+
+    transform:
+        translate(0, 0);
+}
+
+/* RR CLICKABLE HIGHLIGHT CARDS */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   DESTINATION CLICKABLE CARDS STYLE
+========================================================= */
+
+.destination-clickable-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.destination-clickable-card:hover {
+
+    transform:
+        translateY(-7px) !important;
+
+    border-color:
+        rgba(49,87,213,.30);
+
+    box-shadow:
+        0 22px 50px
+        rgba(15,23,42,.13) !important;
+}
+
+
+/* arrow */
+
+.destination-clickable-card::after {
+
+    content: "?";
+
+    position: absolute;
+
+    right: 23px;
+    bottom: 20px;
+
+    color: #3157d5;
+
+    font-size: 19px;
+    font-weight: 900;
+
+    opacity: 0;
+
+    transform:
+        translate(-4px, 4px);
+
+    transition:
+        all .2s ease;
+}
+
+
+.destination-clickable-card:hover::after {
+
+    opacity: 1;
+
+    transform:
+        translate(0,0);
+}
+
+
+.destination-clickable-card:focus {
+
+    outline:
+        3px solid
+        rgba(49,87,213,.25);
+
+    outline-offset: 4px;
+}
+
+/* DESTINATION CLICKABLE CARDS STYLE */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   RR PREMIUM NAVIGATION UX STYLE
+========================================================= */
+
+
+/* ---------- SCROLL PROGRESS ---------- */
+
+.rr-scroll-progress {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    z-index: 20000;
+
+    pointer-events: none;
+
+    background: transparent;
+}
+
+.rr-scroll-progress span {
+    display: block;
+
+    width: 0%;
+    height: 100%;
+
+    border-radius: 0 5px 5px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #4f6df5,
+            #7c5cff,
+            #4f9cf9
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(79,109,245,.55);
+
+    transition:
+        width .08s linear;
+}
+
+
+/* ---------- ACTIVE NAV ---------- */
+
+.raj-pro-links a.rr-active-link {
+    color:
+        #ffffff !important;
+}
+
+.raj-pro-links a.rr-active-link::after {
+    width:
+        100% !important;
+}
+
+
+/* ---------- BACK TO TOP ---------- */
+
+.rr-back-top {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 15px;
+
+    background:
+        rgba(10,16,25,.94);
+
+    color: #ffffff;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    z-index: 9998;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(15px);
+
+    box-shadow:
+        0 12px 32px
+        rgba(0,0,0,.20);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease,
+        visibility .25s ease,
+        background .2s ease;
+}
+
+.rr-back-top.rr-show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+}
+
+.rr-back-top:hover {
+    background: #18243a;
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* ---------- NAVBAR SHADOW ON SCROLL ---------- */
+
+.raj-pro-header.rr-nav-scrolled {
+
+    box-shadow:
+        0 8px 30px
+        rgba(0,0,0,.20);
+
+    border-bottom-color:
+        rgba(255,255,255,.10);
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+    .rr-back-top {
+        right: 16px;
+        bottom: 18px;
+
+        width: 44px;
+        height: 44px;
+    }
+
+}
+
+/* RR PREMIUM NAVIGATION UX STYLE */
+
+</style>
+
+
+
+<style>
+
+/* =========================================================
+   RR SHORTS SPOTLIGHT STYLE
+========================================================= */
+
+.rr-shorts-spotlight {
+    padding:
+        90px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #09101a 0%,
+            #111d2e 100%
+        );
+
+    color: #ffffff;
+
+    overflow: hidden;
+}
+
+
+.rr-shorts-container {
+    width: 92%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+}
+
+
+/* HEADER */
+
+.rr-shorts-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 30px;
+
+    margin-bottom: 42px;
+}
+
+
+.rr-shorts-label {
+    display: inline-block;
+
+    margin-bottom: 11px;
+
+    color: #9bb2ff;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2.8px;
+}
+
+
+.rr-shorts-header h2 {
+    margin:
+        0 0 12px;
+
+    color:
+        #ffffff !important;
+
+    font-size:
+        clamp(
+            34px,
+            4vw,
+            50px
+        );
+
+    line-height: 1.08;
+}
+
+
+.rr-shorts-header p {
+    max-width: 620px;
+
+    margin: 0;
+
+    color:
+        #b9c5d5 !important;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+.rr-shorts-view-all {
+    flex-shrink: 0;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    opacity: .82;
+}
+
+
+.rr-shorts-view-all:hover {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.rr-shorts-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0,1fr)
+        );
+
+    gap: 19px;
+}
+
+
+/* =========================================================
+   SHORT CARD
+========================================================= */
+
+.rr-short-card {
+    position: relative;
+
+    overflow: hidden;
+
+    display: block;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    border-radius: 23px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.20);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.rr-short-card:hover {
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(155,178,255,.40);
+
+    box-shadow:
+        0 24px 55px
+        rgba(0,0,0,.32);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.rr-short-image {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio:
+        9 / 13;
+
+    overflow: hidden;
+
+    background: #080d15;
+}
+
+
+.rr-short-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .45s ease;
+}
+
+
+.rr-short-card:hover
+.rr-short-image img {
+
+    transform:
+        scale(1.05);
+}
+
+
+.rr-short-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 45%,
+            rgba(3,8,15,.72) 100%
+        );
+}
+
+
+/* SHORT BADGE */
+
+.rr-short-badge {
+    position: absolute;
+
+    top: 16px;
+    left: 16px;
+
+    padding:
+        7px 10px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(7,12,20,.78);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+/* PLAY BUTTON */
+
+.rr-short-play {
+    position: absolute;
+
+    left: 18px;
+    bottom: 18px;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.95);
+
+    color: #101827;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.30);
+
+    transition:
+        transform .2s ease;
+}
+
+
+.rr-short-card:hover
+.rr-short-play {
+
+    transform:
+        scale(1.08);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.rr-short-content {
+    padding:
+        20px 20px 22px;
+}
+
+
+.rr-short-brand {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #8fa5c4;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.7px;
+}
+
+
+.rr-short-content h3 {
+    margin:
+        0 0 16px;
+
+    color:
+        #ffffff !important;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+.rr-short-meta {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    color: #aeb9c8;
+
+    font-size: 11px;
+}
+
+
+.rr-short-watch {
+    color: #dce5ff;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.rr-shorts-empty {
+    padding: 40px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    text-align: center;
+}
+
+
+.rr-shorts-empty strong {
+    font-size: 20px;
+}
+
+
+.rr-shorts-empty p {
+    color: #b8c3d1;
+
+    line-height: 1.6;
+}
+
+
+.rr-shorts-empty a {
+    display: inline-flex;
+
+    margin-top: 8px;
+
+    padding:
+        12px 18px;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #111827;
+
+    text-decoration: none;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .rr-shorts-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 620px) {
+
+    .rr-shorts-spotlight {
+        padding:
+            70px 18px;
+    }
+
+    .rr-shorts-container {
+        width: 100%;
+    }
+
+    .rr-shorts-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .rr-shorts-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+
+        gap: 12px;
+    }
+
+    .rr-short-content {
+        padding:
+            15px;
+    }
+
+    .rr-short-content h3 {
+        font-size: 14px;
+    }
+
+    .rr-short-play {
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+
+/* Extra-small phone */
+
+@media (max-width: 410px) {
+
+    .rr-shorts-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* RR SHORTS SPOTLIGHT STYLE */
+
+</style>
+
+
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/favicon.svg"
+>
+<link rel="stylesheet" href="/static/css/brand_avatar.css">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/live_dark_global.css') }}">
+</head>
+
+
+<body>
+
+<!-- RR GLOBAL SCROLL EXPERIENCE -->
+
+<div
+    class="rr-scroll-progress"
+    aria-hidden="true"
+>
+    <span></span>
+</div>
+
+
+
+<!-- =========================================================
+     RAJ PROFESSIONAL NAVIGATION
+========================================================= -->
+
+<header class="raj-pro-header">
+
+    <div class="raj-pro-nav">
+
+        <a
+            class="raj-pro-logo"
+            href="/"
+            aria-label="Raj Raushan Official Home"
+        >
+
+            <span class="raj-logo-mark">
+                RR
+            </span>
+
+            <span class="raj-logo-text">
+
+                <strong>
+                    Raj Raushan
+                </strong>
+
+                <small>
+                    OFFICIAL
+                </small>
+
+            </span>
+
+        </a>
+
+
+        <nav
+            class="raj-pro-links"
+            aria-label="Main navigation"
+        >
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="#vlogs">
+                Vlogs
+            </a>
+
+            <a href="#shorts">
+                Shorts
+            </a>
+
+            <a href="#destinations">
+                Destinations
+            </a>
+
+            <a href="/playlists">
+                Playlists
+            </a>
+
+            <a href="/gallery">
+                Gallery
+            </a>
+
+            <a href="/about">
+                About
+            </a>
+
+            <a href="#media-kit">
+                Media Kit
+            </a>
+
+            <a href="/collaborate">
+                Collaborate
+            </a>
+
+        </nav>
+
+
+        <div class="raj-nav-actions">
+
+            <a
+                class="raj-subscribe-nav"
+                href="https://www.youtube.com/@rajraushanofficial?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Subscribe
+            </a>
+
+            <button
+                class="raj-menu-btn"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- RAJ PROFESSIONAL NAVIGATION -->
+
+
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    
+
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="rr-premium-hero hero">
+
+        <h1>
+            Welcome to Raj Raushan Official
+        </h1>
+
+        <p>
+            Explore • Watch • Connect
+        </p>
+
+        <a href="#vlogs">
+
+            <button>
+                Watch Latest Vlog
+            </button>
+
+        </a>
+
+    </section>
+
+<!-- =========================================================
+     RR CREATOR HIGHLIGHTS
+========================================================= -->
+
+<section class="rr-creator-highlights">
+
+    <div class="rr-highlight-container">
+
+        <div class="rr-highlight-heading">
+
+            <span>
+                RAJ RAUSHAN OFFICIAL
+            </span>
+
+            <h2>
+                Stories Beyond the Screen
+            </h2>
+
+            <p>
+                Travel, culture, destinations and original
+                experiences presented through a modern
+                creator platform.
+            </p>
+
+        </div>
+
+
+        <div class="rr-highlight-grid">
+
+
+            <article class="rr-highlight-card rr-clickable-card" data-href="#vlogs" tabindex="0" role="link">
+
+                <div class="rr-highlight-icon">
+                    &#127909;
+                </div>
+
+                <span class="rr-highlight-number">
+                    01
+                </span>
+
+                <h3>
+                    Original Content
+                </h3>
+
+                <p>
+                    Videos created around genuine
+                    journeys, experiences and places.
+                </p>
+
+            </article>
+
+
+            <article class="rr-highlight-card rr-clickable-card" data-href="#destinations" tabindex="0" role="link">
+
+                <div class="rr-highlight-icon">
+                    &#128205;
+                </div>
+
+                <span class="rr-highlight-number">
+                    02
+                </span>
+
+                <h3>
+                    Real Locations
+                </h3>
+
+                <p>
+                    Discover destinations through
+                    authentic on-location storytelling.
+                </p>
+
+            </article>
+
+
+            <article class="rr-highlight-card rr-clickable-card" data-href="/about" tabindex="0" role="link">
+
+                <div class="rr-highlight-icon">
+                    &#127758;
+                </div>
+
+                <span class="rr-highlight-number">
+                    03
+                </span>
+
+                <h3>
+                    Growing Journey
+                </h3>
+
+                <p>
+                    From local discoveries to a
+                    broader vision of exploring the world.
+                </p>
+
+            </article>
+
+
+            <article class="rr-highlight-card rr-clickable-card" data-href="/dashboard" tabindex="0" role="link">
+
+                <div class="rr-highlight-icon">
+                    &#129302;
+                </div>
+
+                <span class="rr-highlight-number">
+                    04
+                </span>
+
+                <h3>
+                    Creator Technology
+                </h3>
+
+                <p>
+                    Analytics and machine learning
+                    support smarter creator decisions.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- MOVING TRAVEL STRIP -->
+
+    <div class="rr-travel-marquee">
+
+        <div class="rr-marquee-track">
+
+            <span>INDIA</span>
+            <b>&bull;</b>
+
+            <span>BIHAR</span>
+            <b>&bull;</b>
+
+            <span>TRAVEL STORIES</span>
+            <b>&bull;</b>
+
+            <span>HERITAGE</span>
+            <b>&bull;</b>
+
+            <span>NATURE</span>
+            <b>&bull;</b>
+
+            <span>ADVENTURE</span>
+            <b>&bull;</b>
+
+            <span>CULTURE</span>
+            <b>&bull;</b>
+
+            <span>ORIGINAL VLOGS</span>
+            <b>&bull;</b>
+
+            <span>INDIA</span>
+            <b>&bull;</b>
+
+            <span>BIHAR</span>
+            <b>&bull;</b>
+
+            <span>TRAVEL STORIES</span>
+            <b>&bull;</b>
+
+            <span>HERITAGE</span>
+            <b>&bull;</b>
+
+            <span>NATURE</span>
+            <b>&bull;</b>
+
+            <span>ADVENTURE</span>
+            <b>&bull;</b>
+
+            <span>CULTURE</span>
+            <b>&bull;</b>
+
+            <span>ORIGINAL VLOGS</span>
+            <b>&bull;</b>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- RR CREATOR HIGHLIGHTS -->
+
+
+
+    <!-- ================= MY YOUTUBE CHANNELS ================= -->
+
+<section class="channels-section">
+
+    <h2>My YouTube Channels</h2>
+
+    <div class="channels-container">
+
+        <!-- FIRST CHANNEL -->
+        {% if channel1 %}
+
+        <div class="channel-card">
+
+            <img
+                src="{{ channel1.profile_image }}"
+                alt="{{ channel1.name }}"
+                class="channel-image"
+            >
+
+            <h2>{{ channel1.name }}</h2>
+
+            <p>{{ channel1.handle }}</p>
+
+            <div class="channel-stats">
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel1.subscribers|int) }}
+                    </strong>
+                    <span>Subscribers</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel1.views|int) }}
+                    </strong>
+                    <span>Total Views</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel1.videos|int) }}
+                    </strong>
+                    <span>Videos</span>
+                </div>
+
+            </div>
+
+            <a
+                href="{{ channel1.url }}"
+                target="_blank"
+                class="channel-btn"
+            >
+                Visit Channel
+            </a>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- SECOND CHANNEL -->
+        {% if channel2 %}
+
+        <div class="channel-card">
+
+            <img
+                src="{{ channel2.profile_image }}"
+                alt="{{ channel2.name }}"
+                class="channel-image"
+            >
+
+            <h2>{{ channel2.name }}</h2>
+
+            <p>{{ channel2.handle }}</p>
+
+            <div class="channel-stats">
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel2.subscribers|int) }}
+                    </strong>
+                    <span>Subscribers</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel2.views|int) }}
+                    </strong>
+                    <span>Total Views</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel2.videos|int) }}
+                    </strong>
+                    <span>Videos</span>
+                </div>
+
+            </div>
+
+            <a
+                href="{{ channel2.url }}"
+                target="_blank"
+                class="channel-btn"
+            >
+                Visit Channel
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+
+    <!-- ================= CHANNEL PROFILE ================= -->
+
+    {% if channel %}
+
+    <section class="channel-profile">
+
+        <img
+            src="{{ channel.profile_image }}"
+            alt="Raj Raushan Official"
+            class="channel-image"
+        >
+
+
+        <div class="channel-details">
+
+            <h2>
+                {{ channel.name }}
+            </h2>
+
+            <p>
+                @rajraushanofficial
+            </p>
+
+
+            <div class="channel-stats">
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.subscribers|int) }}
+                    </strong>
+
+                    <span>
+                        Subscribers
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.views|int) }}
+                    </strong>
+
+                    <span>
+                        Total Views
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.videos|int) }}
+                    </strong>
+
+                    <span>
+                        Videos
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <a
+                href="https://www.youtube.com/@rajraushanofficial"
+                target="_blank"
+                class="channel-btn"
+            >
+                Visit YouTube Channel
+            </a>
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+
+    <!-- ================= VLOGS ================= -->
+
+    <section
+        class="videos"
+        id="vlogs"
+    >
+
+        <h2>
+            🎬 Latest Vlogs
+        </h2>
+
+
+        <div class="video-container">
+
+
+            {% if vlogs %}
+
+
+                {% for video in vlogs %}
+
+
+                <div class="video-card">
+
+
+                    <a
+                        href="https://www.youtube.com/@RajRaushanOfficial"
+                        target="_blank"
+                    >
+
+                        <img
+                            src="{{ video.thumbnail }}"
+                            alt="{{ video.title }}"
+                        >
+
+                    </a>
+
+
+                    <div class="video-info">
+
+
+                        <h3>
+                            {{ video.title }}
+                        </h3>
+
+
+                        <p>
+                            Raj Raushan Official
+                        </p>
+
+
+                        <div class="video-meta">
+
+                            <span>
+                                👁
+                                {{ "{:,}".format(video.views|int) }}
+                                views
+                            </span>
+
+                            <span>
+                                📅
+                                {{ video.published_at }}
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="{{ video.url }}"
+                            target="_blank"
+                            class="watch-btn"
+                        >
+                            Watch Vlog
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+                {% endfor %}
+
+
+            {% else %}
+
+
+                <div class="no-videos">
+
+                    <h3>
+                        🎬 No Vlogs Found
+                    </h3>
+
+                    <p>
+                        New vlogs will appear here automatically.
+                    </p>
+
+                </div>
+
+
+            {% endif %}
+
+
+        </div>
+
+    </section>
+
+
+
+   <!-- ================= SHORTS ================= -->
+
+<section class="shorts-section" id="shorts">
+
+    <h2>📱 Latest Shorts</h2>
+
+    <div class="shorts-container">
+
+        {% if shorts %}
+
+            {% for video in shorts %}
+
+            <div class="short-card">
+
+                <a
+                    href="{{ video.url }}"
+                    target="_blank"
+                    class="short-thumbnail"
+                >
+
+                    <img
+                        src="{{ video.thumbnail }}"
+                        alt="{{ video.title }}"
+                    >
+
+                    <div class="short-play">
+                        ▶
+                    </div>
+
+                </a>
+
+
+                <div class="short-info">
+
+                    <h3>
+                        {{ video.title }}
+                    </h3>
+
+                    <div class="short-meta">
+
+                        <span>
+                            👁 {{ "{:,}".format(video.views|int) }}
+                        </span>
+
+                        <span>
+                            📅 {{ video.published_at }}
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+
+        {% else %}
+
+            <div class="no-videos">
+
+                <h3>📱 No Shorts Found</h3>
+
+                <p>
+                    New Shorts will appear here automatically.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+    <!-- ================= EXPLORE ================= -->
+
+    <section
+        class="social-section"
+        id="explore"
+    >
+
+        <h2>
+            Explore Raj Raushan Official
+        </h2>
+
+        <p>
+            Travel • Vlogs • Shorts • Life • Adventures
+        </p>
+
+    </section>
+
+
+
+   <!-- ================= SOCIAL MEDIA HUB ================= -->
+
+<section class="social-dark-fix social-hub" id="about">
+
+    <h2>🌐 Connect With Me</h2>
+
+    <p class="social-subtitle">
+        Follow and connect with me across all platforms.
+    </p>
+
+    <div class="social-grid">
+
+        <a href="https://www.youtube.com/@rajraushanofficial"
+           target="_blank"
+           class="social-card">
+            <h3>▶ YouTube</h3>
+            <p>Raj Raushan Official</p>
+            <span>Visit Channel →</span>
+        </a>
+
+        <a href="https://www.youtube.com/@rajraushanofficial02"
+           target="_blank"
+           class="social-card">
+            <h3>▶ YouTube 02</h3>
+            <p>Raj Raushan Official 02</p>
+            <span>Visit Channel →</span>
+        </a>
+
+        <a href="https://www.instagram.com/rajraushanofficial/"
+           target="_blank"
+           class="social-card">
+            <h3>📸 Instagram</h3>
+            <p>@rajraushanofficial</p>
+            <span>Follow →</span>
+        </a>
+
+        <a href="https://www.instagram.com/rajraushanofficial/"
+           class="social-card">
+            <h3>📘 Facebook</h3>
+            <p>Coming Soon</p>
+            <span>Connect →</span>
+        </a>
+
+        <a href="https://www.facebook.com/rajraushanofficial/"
+           class="social-card">
+            <h3>💼 LinkedIn</h3>
+            <p>Professional Profile</p>
+            <span>Connect →</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/rajraushankumar/"
+           class="social-card">
+            <h3>💻 GitHub</h3>
+            <p>Projects & Code</p>
+            <span>View Projects →</span>
+        </a>
+
+    </div>
+
+</section>
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Raj Raushan Official
+        </p>
+
+        <p>
+            Explore • Watch • Connect
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}">
+    </script>
+
+
+
+
+
+
+<!-- =========================================================
+     GLOBAL CREATOR PHASE 2
+========================================================= -->
+
+
+
+<!-- =========================================================
+     RR FEATURED TRAVEL STORIES
+========================================================= -->
+
+<section
+    class="rr-featured-stories"
+    id="featured-stories"
+>
+
+    <div class="rr-stories-container">
+
+        <div class="rr-stories-header">
+
+            <div>
+
+                <span class="rr-stories-label">
+                    FEATURED STORIES
+                </span>
+
+                <h2>
+                    Journeys Worth Watching
+                </h2>
+
+                <p>
+                    Selected recent travel stories from
+                    Raj Raushan Official.
+                </p>
+
+            </div>
+
+            <a
+                href="#vlogs"
+                class="rr-view-all"
+            >
+                View All Vlogs ?
+            </a>
+
+        </div>
+
+
+        <div class="rr-featured-grid">
+
+            {% set featured_vlogs =
+                vlogs|default([]) %}
+
+            {% for video in featured_vlogs[:3] %}
+
+            <article class="rr-story-card">
+
+                <a
+                    href="{{ video.url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="rr-story-image"
+                >
+
+                    <img
+                        src="{{ video.thumbnail }}"
+                        alt="{{ video.title }}"
+                        loading="lazy"
+                    >
+
+                    <span class="rr-play-button">
+                        ?
+                    </span>
+
+                </a>
+
+
+                <div class="rr-story-content">
+
+                    <div class="rr-story-meta">
+                        RAJ RAUSHAN OFFICIAL
+                    </div>
+
+                    <h3>
+                        {{ video.title }}
+                    </h3>
+
+                    <div class="rr-story-info">
+
+                        <span>
+                            {{ video.views|default("0") }} views
+                        </span>
+
+                        {% if video.published_at %}
+                        <span>
+                            {{ video.published_at }}
+                        </span>
+                        {% endif %}
+
+                    </div>
+
+
+                    <a
+                        href="{{ video.url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="rr-watch-story"
+                    >
+                        Watch Story ?
+                    </a>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+
+        {% if not featured_vlogs %}
+
+        <div class="rr-story-empty">
+
+            <strong>
+                New travel stories are on the way.
+            </strong>
+
+            <p>
+                Follow Raj Raushan Official on YouTube
+                for the latest journeys.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+<!-- RR FEATURED TRAVEL STORIES -->
+
+
+
+
+<!-- =========================================================
+     RR SHORTS SPOTLIGHT
+========================================================= -->
+
+<section
+    class="rr-shorts-spotlight"
+    id="shorts-spotlight"
+>
+
+    <div class="rr-shorts-container">
+
+
+        <div class="rr-shorts-header">
+
+            <div>
+
+                <span class="rr-shorts-label">
+                    SHORT-FORM STORIES
+                </span>
+
+                <h2>
+                    Shorts Spotlight
+                </h2>
+
+                <p>
+                    Quick moments, destinations and
+                    experiences from Raj Raushan Official.
+                </p>
+
+            </div>
+
+
+            <a
+                href="#shorts"
+                class="rr-shorts-view-all"
+            >
+                Explore All Shorts &rarr;
+            </a>
+
+        </div>
+
+
+        {% set spotlight_shorts =
+            shorts|default([]) %}
+
+
+        {% if spotlight_shorts %}
+
+        <div class="rr-shorts-grid">
+
+            {% for video in spotlight_shorts[:4] %}
+
+            <a
+                href="{{ video.url }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rr-short-card"
+                aria-label="Watch {{ video.title }}"
+            >
+
+                <div class="rr-short-image">
+
+                    <img
+                        src="{{ video.thumbnail }}"
+                        alt="{{ video.title }}"
+                        loading="lazy"
+                    >
+
+                    <div class="rr-short-overlay"></div>
+
+                    <span class="rr-short-badge">
+                        SHORT
+                    </span>
+
+                    <span class="rr-short-play">
+                        &#9654;
+                    </span>
+
+                </div>
+
+
+                <div class="rr-short-content">
+
+                    <span class="rr-short-brand">
+                        RAJ RAUSHAN OFFICIAL
+                    </span>
+
+                    <h3>
+                        {{ video.title }}
+                    </h3>
+
+                    <div class="rr-short-meta">
+
+                        <span>
+                            {{ video.views|default("0") }}
+                            views
+                        </span>
+
+                        <span class="rr-short-watch">
+                            Watch &nearr;
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            {% endfor %}
+
+        </div>
+
+
+        {% else %}
+
+        <div class="rr-shorts-empty">
+
+            <strong>
+                Shorts are coming soon.
+            </strong>
+
+            <p>
+                Follow Raj Raushan Official on YouTube
+                for the latest short-form travel stories.
+            </p>
+
+            <a
+                href="https://www.youtube.com/@RajRaushanOfficial"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Visit YouTube Channel
+            </a>
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+</section>
+
+<!-- RR SHORTS SPOTLIGHT -->
+
+
+<section class="world-section" id="destinations">
+
+    <div class="world-container">
+
+        <div class="world-heading">
+
+            <span class="world-label">
+                DISCOVER
+            </span>
+
+            <h2>
+                Explore Destinations & Stories
+            </h2>
+
+            <p>
+                Travel experiences built around places,
+                culture, history, nature and real journeys.
+            </p>
+
+        </div>
+
+
+        <div class="destination-grid">
+
+
+            <article class="destination-card destination-clickable-card" data-href="#vlogs" role="link" tabindex="0">
+
+                <div class="destination-icon">
+                    &#127758;
+                </div>
+
+                <h3>
+                    Bihar
+                </h3>
+
+                <p>
+                    Discover local destinations,
+                    heritage, culture and hidden
+                    travel experiences.
+                </p>
+
+            </article>
+
+
+            <article class="destination-card destination-clickable-card" data-href="#featured-stories" role="link" tabindex="0">
+
+                <div class="destination-icon">
+                    &#127984;
+                </div>
+
+                <h3>
+                    Heritage & History
+                </h3>
+
+                <p>
+                    Explore forts, monuments,
+                    historic places and stories
+                    connected with India's past.
+                </p>
+
+            </article>
+
+
+            <article class="destination-card destination-clickable-card" data-href="#featured-stories" role="link" tabindex="0">
+
+                <div class="destination-icon">
+                    &#9968;
+                </div>
+
+                <h3>
+                    Nature & Adventure
+                </h3>
+
+                <p>
+                    Hills, waterfalls, roads,
+                    landscapes and outdoor
+                    travel experiences.
+                </p>
+
+            </article>
+
+
+            <article class="destination-card destination-clickable-card" data-href="https://www.youtube.com/@rajraushanofficial" role="link" tabindex="0">
+
+                <div class="destination-icon">
+                    &#9992;
+                </div>
+
+                <h3>
+                    India & Beyond
+                </h3>
+
+                <p>
+                    A growing journey toward
+                    discovering destinations
+                    across India and the world.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="creator-about" id="creator-about">
+
+    <div class="world-container about-grid">
+
+        <div>
+
+            <span class="world-label">
+                ABOUT THE CREATOR
+            </span>
+
+            <h2>
+                Raj Raushan Official
+            </h2>
+
+            <p class="about-lead">
+                A travel-focused creator platform
+                sharing destinations, cultures,
+                experiences and visual stories.
+            </p>
+
+            <p>
+                Raj Raushan Official is built around
+                one simple idea: explore more,
+                experience places personally and
+                share those journeys through
+                meaningful videos.
+            </p>
+
+            <p>
+                The platform combines travel
+                storytelling with technology,
+                creator analytics and data-driven
+                content development.
+            </p>
+
+        </div>
+
+
+        <div class="creator-identity-card">
+
+            <span style="color:#dbe4f0 !important; opacity:1 !important;">
+                CREATOR PLATFORM
+            </span>
+
+            <h3 style="color:#ffffff !important;">
+                Explore
+                <br>
+                Watch
+                <br>
+                Connect
+            </h3>
+
+            <p style="color:#d5deeb !important; opacity:1 !important;">
+                Original travel videos,
+                Shorts and digital experiences.
+            </p>
+
+            <a
+                href="https://www.youtube.com/@rajraushanofficial?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+             style="background:#ffffff !important; color:#0b1220 !important;">
+                Subscribe to the Journey
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="brand-collaboration" id="collaboration">
+
+    <div class="collaboration-inner">
+
+        <span class="world-label">
+            WORK WITH RAJ RAUSHAN OFFICIAL
+        </span>
+
+        <h2>
+            Sponsorships & Collaborations
+        </h2>
+
+        <p>
+            Open to suitable travel,
+            destination, tourism,
+            hospitality and creator
+            collaborations that fit
+            the Raj Raushan Official audience
+            and content style.
+        </p>
+
+
+        <div class="collaboration-types">
+
+            <span>Travel Partnerships</span>
+            <span>Destination Features</span>
+            <span>Brand Collaborations</span>
+            <span>Creator Campaigns</span>
+
+        </div>
+
+
+        <div class="collaboration-actions">
+
+            <a
+                class="collaboration-primary"
+                href="https://www.youtube.com/@rajraushanofficial/about"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Collaboration Enquiries
+            </a>
+
+            <a
+                class="collaboration-secondary"
+                href="https://www.youtube.com/@rajraushanofficial"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                View YouTube Channel
+            </a>
+
+        </div>
+
+
+        <small>
+            Partnerships are considered based on
+            relevance, audience value and content fit.
+        </small>
+
+    </div>
+
+</section>
+
+<!-- GLOBAL CREATOR PHASE 2 -->
+
+
+
+<!-- =========================================================
+     RAJ CREATOR MEDIA KIT
+========================================================= -->
+
+<section
+    class="raj-media-kit"
+    id="media-kit"
+>
+
+    <div class="raj-media-container">
+
+
+        <div class="raj-media-intro">
+
+            <span class="raj-section-label">
+                CREATOR MEDIA KIT
+            </span>
+
+            <h2>
+                Partner with
+                <span>
+                    Raj Raushan Official
+                </span>
+            </h2>
+
+            <p>
+                A travel-focused digital creator platform
+                combining authentic journeys, destination
+                storytelling, short-form content and
+                technology-driven creator insights.
+            </p>
+
+        </div>
+
+
+        <div class="raj-media-grid">
+
+
+            <article class="raj-media-card">
+
+                <div class="raj-media-number">
+                    01
+                </div>
+
+                <h3>
+                    Travel & Destinations
+                </h3>
+
+                <p>
+                    Travel videos covering destinations,
+                    roads, heritage, culture, nature
+                    and real on-location experiences.
+                </p>
+
+            </article>
+
+
+            <article class="raj-media-card">
+
+                <div class="raj-media-number">
+                    02
+                </div>
+
+                <h3>
+                    Short-Form Content
+                </h3>
+
+                <p>
+                    Mobile-first Shorts and visual
+                    storytelling designed for quick
+                    discovery and social engagement.
+                </p>
+
+            </article>
+
+
+            <article class="raj-media-card">
+
+                <div class="raj-media-number">
+                    03
+                </div>
+
+                <h3>
+                    Local Storytelling
+                </h3>
+
+                <p>
+                    Authentic coverage of places,
+                    communities, history and experiences
+                    that are often missed by mainstream
+                    travel content.
+                </p>
+
+            </article>
+
+
+            <article class="raj-media-card">
+
+                <div class="raj-media-number">
+                    04
+                </div>
+
+                <h3>
+                    Creator Technology
+                </h3>
+
+                <p>
+                    Data analytics and machine-learning
+                    tools are used to understand content
+                    performance and improve creator strategy.
+                </p>
+
+            </article>
+
+
+        </div>
+
+
+        <div class="raj-media-profile">
+
+
+            <div class="raj-profile-main">
+
+                <span class="raj-profile-label">
+                    CREATOR PROFILE
+                </span>
+
+                <h3>
+                    Raj Raushan Official
+                </h3>
+
+                <p>
+                    Travel &bull; Stories &bull; Experiences &bull; Technology
+                </p>
+
+
+                <div class="raj-profile-tags">
+
+                    <span>
+                        Travel Creator
+                    </span>
+
+                    <span>
+                        YouTube Vlogs
+                    </span>
+
+                    <span>
+                        Shorts
+                    </span>
+
+                    <span>
+                        India Travel
+                    </span>
+
+                    <span>
+                        Heritage
+                    </span>
+
+                    <span>
+                        Nature
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="raj-media-fit">
+
+                <span>
+                    IDEAL PARTNERSHIPS
+                </span>
+
+                <ul>
+
+                    <li>
+                        Tourism & destination campaigns
+                    </li>
+
+                    <li>
+                        Hotels, stays & hospitality
+                    </li>
+
+                    <li>
+                        Travel products & services
+                    </li>
+
+                    <li>
+                        Creator and digital campaigns
+                    </li>
+
+                    <li>
+                        Culture and heritage projects
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="raj-partner-promise">
+
+            <div>
+
+                <span class="raj-section-label">
+                    PARTNERSHIP APPROACH
+                </span>
+
+                <h3>
+                    Audience value comes first.
+                </h3>
+
+                <p>
+                    Collaborations are considered when
+                    they naturally fit the channel,
+                    the destination and the audience.
+                </p>
+
+            </div>
+
+
+            <a
+                href="/collaborate"
+                class="raj-partner-button"
+            >
+                Explore Collaboration
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+<!-- RAJ CREATOR MEDIA KIT -->
+
+<!-- =========================================================
+     GLOBAL CREATOR CTA
+========================================================= -->
+
+<section class="global-creator-cta">
+
+    <div class="global-creator-inner">
+
+        <span class="creator-eyebrow">
+            TRAVEL &bull; STORIES &bull; EXPERIENCES
+        </span>
+
+        <h2>
+            Explore the World with
+            <span>Raj Raushan Official</span>
+        </h2>
+
+        <p>
+            Discover destinations, cultures and real travel
+            experiences through original vlogs, shorts and
+            visual stories from India and beyond.
+        </p>
+
+        <div class="global-creator-actions">
+
+            <a
+                class="creator-primary-btn"
+                href="https://www.youtube.com/@rajraushanofficial?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Subscribe on YouTube
+            </a>
+
+            <a
+                class="creator-secondary-btn"
+                href="#vlogs"
+            >
+                Explore Vlogs
+            </a>
+
+        </div>
+
+        <div class="creator-brand-line">
+            Raj Raushan Official
+            <span>?</span>
+            Explore &bull; Watch &bull; Connect
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GLOBAL CREATOR CTA -->
+
+
+
+<!-- =========================================================
+     RAJ RAUSHAN PROFESSIONAL FOOTER
+========================================================= -->
+
+<footer class="creator-footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <h3>
+                Raj Raushan Official
+            </h3>
+
+            <p>
+                Explore &bull; Watch &bull; Connect
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="#vlogs">
+                Vlogs
+            </a>
+
+            <a href="#shorts">
+                Shorts
+            </a>
+
+            <a href="#destinations">
+                Destinations
+            </a>
+
+            <a href="/about">
+                About
+            </a>
+
+            <a href="/collaborate">
+                Collaborations
+            </a>
+
+        </div>
+
+
+        <div class="footer-youtube">
+
+            <span>
+                Follow the Journey
+            </span>
+
+            <a
+                href="https://www.youtube.com/@rajraushanofficial?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                YouTube
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            &copy; Raj Raushan Official.
+            All rights reserved.
+        </span>
+
+        <span>
+            Travel ? Stories ? Technology
+        </span>
+
+    </div>
+
+</footer>
+
+<!-- RAJ RAUSHAN PROFESSIONAL FOOTER -->
+
+
+
+<script>
+
+/* =========================================================
+   RAJ MOBILE NAVIGATION SCRIPT
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const menuButton =
+            document.querySelector(
+                ".raj-menu-btn"
+            );
+
+        const menu =
+            document.querySelector(
+                ".raj-pro-links"
+            );
+
+        if (!menuButton || !menu) {
+            return;
+        }
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                const opened =
+                    menu.classList.toggle(
+                        "raj-menu-open"
+                    );
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    opened
+                        ? "true"
+                        : "false"
+                );
+
+            }
+        );
+
+
+        menu.querySelectorAll("a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            menu.classList.remove(
+                                "raj-menu-open"
+                            );
+
+                            menuButton.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+    }
+);
+
+/* RAJ MOBILE NAVIGATION SCRIPT */
+
+</script>
+
+
+
+<style>
+
+/* FORCED ABOUT CARD FINAL FIX */
+
+body #creator-about .creator-identity-card {
+    background: #162945 !important;
+    color: #ffffff !important;
+}
+
+body #creator-about .creator-identity-card > span {
+    color: #dbe4f0 !important;
+    opacity: 1 !important;
+}
+
+body #creator-about .creator-identity-card h3 {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+body #creator-about .creator-identity-card p {
+    color: #d5deeb !important;
+    opacity: 1 !important;
+}
+
+body #creator-about .creator-identity-card a {
+    background: #ffffff !important;
+    color: #0b1220 !important;
+}
+
+/* FORCED ABOUT CARD FINAL FIX */
+
+</style>
+
+
+
+<script>
+
+/* RR CLICKABLE CARD SCRIPT */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        document
+            .querySelectorAll(
+                ".rr-clickable-card"
+            )
+            .forEach(function(card) {
+
+                function openCard() {
+
+                    const target =
+                        card.dataset.href;
+
+                    if (!target) {
+                        return;
+                    }
+
+                    if (
+                        target.startsWith("#")
+                    ) {
+
+                        const section =
+                            document.querySelector(
+                                target
+                            );
+
+                        if (section) {
+
+                            section.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+
+                        }
+
+                    } else {
+
+                        window.location.href =
+                            target;
+
+                    }
+
+                }
+
+
+                card.addEventListener(
+                    "click",
+                    openCard
+                );
+
+
+                card.addEventListener(
+                    "keydown",
+                    function(event) {
+
+                        if (
+                            event.key === "Enter"
+                            ||
+                            event.key === " "
+                        ) {
+
+                            event.preventDefault();
+
+                            openCard();
+
+                        }
+
+                    }
+                );
+
+            });
+
+    }
+);
+
+/* RR CLICKABLE CARD SCRIPT */
+
+</script>
+
+
+
+<script>
+
+/* DESTINATION CLICKABLE CARDS SCRIPT */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        document
+            .querySelectorAll(
+                ".destination-clickable-card"
+            )
+            .forEach(function(card) {
+
+                function openDestination() {
+
+                    const target =
+                        card.dataset.href;
+
+                    if (!target) {
+                        return;
+                    }
+
+
+                    if (
+                        target.startsWith("#")
+                    ) {
+
+                        const section =
+                            document.querySelector(
+                                target
+                            );
+
+                        if (section) {
+
+                            section.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+
+                        }
+
+                    } else {
+
+                        window.open(
+                            target,
+                            "_blank",
+                            "noopener"
+                        );
+
+                    }
+
+                }
+
+
+                card.addEventListener(
+                    "click",
+                    openDestination
+                );
+
+
+                card.addEventListener(
+                    "keydown",
+                    function(event) {
+
+                        if (
+                            event.key === "Enter"
+                            ||
+                            event.key === " "
+                        ) {
+
+                            event.preventDefault();
+
+                            openDestination();
+
+                        }
+
+                    }
+                );
+
+            });
+
+    }
+);
+
+/* DESTINATION CLICKABLE CARDS SCRIPT */
+
+</script>
+
+
+
+<button
+    class="rr-back-top"
+    type="button"
+    aria-label="Back to top"
+>&#8593;</button>
+
+<!-- RR GLOBAL SCROLL EXPERIENCE -->
+
+
+
+<script>
+
+/* =========================================================
+   RR PREMIUM NAVIGATION UX SCRIPT
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const progressBar =
+            document.querySelector(
+                ".rr-scroll-progress span"
+            );
+
+        const backTop =
+            document.querySelector(
+                ".rr-back-top"
+            );
+
+        const header =
+            document.querySelector(
+                ".raj-pro-header"
+            );
+
+        const navLinks =
+            document.querySelectorAll(
+                '.raj-pro-links a[href^="#"]'
+            );
+
+
+        /* -----------------------------------------
+           SCROLL UI
+        ----------------------------------------- */
+
+        function updateScrollUI() {
+
+            const scrollTop =
+                window.scrollY;
+
+            const pageHeight =
+                document.documentElement.scrollHeight
+                - window.innerHeight;
+
+
+            if (
+                progressBar
+                &&
+                pageHeight > 0
+            ) {
+
+                const percentage =
+                    (
+                        scrollTop
+                        / pageHeight
+                    )
+                    * 100;
+
+                progressBar.style.width =
+                    percentage + "%";
+
+            }
+
+
+            if (backTop) {
+
+                if (scrollTop > 450) {
+
+                    backTop.classList.add(
+                        "rr-show"
+                    );
+
+                } else {
+
+                    backTop.classList.remove(
+                        "rr-show"
+                    );
+
+                }
+
+            }
+
+
+            if (header) {
+
+                if (scrollTop > 20) {
+
+                    header.classList.add(
+                        "rr-nav-scrolled"
+                    );
+
+                } else {
+
+                    header.classList.remove(
+                        "rr-nav-scrolled"
+                    );
+
+                }
+
+            }
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateScrollUI,
+            {
+                passive: true
+            }
+        );
+
+        updateScrollUI();
+
+
+        /* -----------------------------------------
+           BACK TO TOP
+        ----------------------------------------- */
+
+        if (backTop) {
+
+            backTop.addEventListener(
+                "click",
+                function () {
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                }
+            );
+
+        }
+
+
+        /* -----------------------------------------
+           ACTIVE NAV SECTION
+        ----------------------------------------- */
+
+        const sectionMap = [];
+
+        navLinks.forEach(
+            function (link) {
+
+                const target =
+                    link.getAttribute(
+                        "href"
+                    );
+
+                if (
+                    !target
+                    ||
+                    target === "#"
+                ) {
+                    return;
+                }
+
+                const section =
+                    document.querySelector(
+                        target
+                    );
+
+                if (section) {
+
+                    sectionMap.push({
+                        section: section,
+                        link: link
+                    });
+
+                }
+
+            }
+        );
+
+
+        if (
+            "IntersectionObserver"
+            in window
+        ) {
+
+            const observer =
+                new IntersectionObserver(
+
+                    function (entries) {
+
+                        entries.forEach(
+                            function (entry) {
+
+                                if (
+                                    !entry.isIntersecting
+                                ) {
+                                    return;
+                                }
+
+                                navLinks.forEach(
+                                    function (link) {
+
+                                        link.classList.remove(
+                                            "rr-active-link"
+                                        );
+
+                                    }
+                                );
+
+
+                                const match =
+                                    sectionMap.find(
+                                        function (item) {
+
+                                            return (
+                                                item.section
+                                                === entry.target
+                                            );
+
+                                        }
+                                    );
+
+                                if (match) {
+
+                                    match.link.classList.add(
+                                        "rr-active-link"
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                    },
+
+                    {
+                        rootMargin:
+                            "-25% 0px -60% 0px",
+
+                        threshold:
+                            0
+                    }
+
+                );
+
+
+            sectionMap.forEach(
+                function (item) {
+
+                    observer.observe(
+                        item.section
+                    );
+
+                }
+            );
+
+        }
+
+    }
+);
+
+/* RR PREMIUM NAVIGATION UX SCRIPT */
+
+</script>
+
+<script src="/static/js/brand_avatar.js"></script>
+
+<!-- RR PRODUCTION DARK THEME FIX -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/render_dark_force.css') }}?v=20260917b">
+
+<script src="{{ url_for('static', filename='js/render_dark_force.js') }}?v=20260917b"></script>
+
+<!-- RR PREMIUM VISUAL POLISH V2 -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/premium_visual_polish_v2.css') }}?v=20260917">
+
+<script src="{{ url_for('static', filename='js/premium_visual_polish_v2.js') }}?v=20260917"></script>
+</body>
+
+</html>
+

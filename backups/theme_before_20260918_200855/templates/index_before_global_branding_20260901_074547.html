@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Raj Raushan Official</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/favicon.svg"
+>
+<link rel="stylesheet" href="/static/css/brand_avatar.css">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/live_dark_global.css') }}">
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <h2>Raj Raushan Official</h2>
+
+      <div class="nav-links">
+
+    <a href="/">Home</a>
+    <a href="#vlogs">Vlogs</a>
+    <a href="#shorts">Shorts</a>
+    <a href="#explore">Explore</a>
+    <a href="#about">About</a>
+
+    <a href="/dashboard">Dashboard</a>
+
+</div>
+    </nav>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>
+            Welcome to Raj Raushan Official
+        </h1>
+
+        <p>
+            Explore • Watch • Connect
+        </p>
+
+        <a href="#vlogs">
+
+            <button>
+                Watch Latest Vlog
+            </button>
+
+        </a>
+
+    </section>
+
+    <!-- ================= MY YOUTUBE CHANNELS ================= -->
+
+<section class="channels-section">
+
+    <h2>My YouTube Channels</h2>
+
+    <div class="channels-container">
+
+        <!-- FIRST CHANNEL -->
+        {% if channel1 %}
+
+        <div class="channel-card">
+
+            <img
+                src="{{ channel1.profile_image }}"
+                alt="{{ channel1.name }}"
+                class="channel-image"
+            >
+
+            <h2>{{ channel1.name }}</h2>
+
+            <p>{{ channel1.handle }}</p>
+
+            <div class="channel-stats">
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel1.subscribers|int) }}
+                    </strong>
+                    <span>Subscribers</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel1.views|int) }}
+                    </strong>
+                    <span>Total Views</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel1.videos|int) }}
+                    </strong>
+                    <span>Videos</span>
+                </div>
+
+            </div>
+
+            <a
+                href="{{ channel1.url }}"
+                target="_blank"
+                class="channel-btn"
+            >
+                Visit Channel
+            </a>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- SECOND CHANNEL -->
+        {% if channel2 %}
+
+        <div class="channel-card">
+
+            <img
+                src="{{ channel2.profile_image }}"
+                alt="{{ channel2.name }}"
+                class="channel-image"
+            >
+
+            <h2>{{ channel2.name }}</h2>
+
+            <p>{{ channel2.handle }}</p>
+
+            <div class="channel-stats">
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel2.subscribers|int) }}
+                    </strong>
+                    <span>Subscribers</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel2.views|int) }}
+                    </strong>
+                    <span>Total Views</span>
+                </div>
+
+                <div>
+                    <strong>
+                        {{ "{:,}".format(channel2.videos|int) }}
+                    </strong>
+                    <span>Videos</span>
+                </div>
+
+            </div>
+
+            <a
+                href="{{ channel2.url }}"
+                target="_blank"
+                class="channel-btn"
+            >
+                Visit Channel
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+
+    <!-- ================= CHANNEL PROFILE ================= -->
+
+    {% if channel %}
+
+    <section class="channel-profile">
+
+        <img
+            src="{{ channel.profile_image }}"
+            alt="Raj Raushan Official"
+            class="channel-image"
+        >
+
+
+        <div class="channel-details">
+
+            <h2>
+                {{ channel.name }}
+            </h2>
+
+            <p>
+                @rajraushanofficial
+            </p>
+
+
+            <div class="channel-stats">
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.subscribers|int) }}
+                    </strong>
+
+                    <span>
+                        Subscribers
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.views|int) }}
+                    </strong>
+
+                    <span>
+                        Total Views
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        {{ "{:,}".format(channel.videos|int) }}
+                    </strong>
+
+                    <span>
+                        Videos
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <a
+                href="https://www.youtube.com/@rajraushanofficial"
+                target="_blank"
+                class="channel-btn"
+            >
+                Visit YouTube Channel
+            </a>
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+
+    <!-- ================= VLOGS ================= -->
+
+    <section
+        class="videos"
+        id="vlogs"
+    >
+
+        <h2>
+            🎬 Latest Vlogs
+        </h2>
+
+
+        <div class="video-container">
+
+
+            {% if vlogs %}
+
+
+                {% for video in vlogs %}
+
+
+                <div class="video-card">
+
+
+                    <a
+                        href="{{ video.url }}"
+                        target="_blank"
+                    >
+
+                        <img
+                            src="{{ video.thumbnail }}"
+                            alt="{{ video.title }}"
+                        >
+
+                    </a>
+
+
+                    <div class="video-info">
+
+
+                        <h3>
+                            {{ video.title }}
+                        </h3>
+
+
+                        <p>
+                            Raj Raushan Official
+                        </p>
+
+
+                        <div class="video-meta">
+
+                            <span>
+                                👁
+                                {{ "{:,}".format(video.views|int) }}
+                                views
+                            </span>
+
+                            <span>
+                                📅
+                                {{ video.published_at }}
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="{{ video.url }}"
+                            target="_blank"
+                            class="watch-btn"
+                        >
+                            Watch Vlog
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+                {% endfor %}
+
+
+            {% else %}
+
+
+                <div class="no-videos">
+
+                    <h3>
+                        🎬 No Vlogs Found
+                    </h3>
+
+                    <p>
+                        New vlogs will appear here automatically.
+                    </p>
+
+                </div>
+
+
+            {% endif %}
+
+
+        </div>
+
+    </section>
+
+
+
+   <!-- ================= SHORTS ================= -->
+
+<section class="shorts-section" id="shorts">
+
+    <h2>📱 Latest Shorts</h2>
+
+    <div class="shorts-container">
+
+        {% if shorts %}
+
+            {% for video in shorts %}
+
+            <div class="short-card">
+
+                <a
+                    href="{{ video.url }}"
+                    target="_blank"
+                    class="short-thumbnail"
+                >
+
+                    <img
+                        src="{{ video.thumbnail }}"
+                        alt="{{ video.title }}"
+                    >
+
+                    <div class="short-play">
+                        ▶
+                    </div>
+
+                </a>
+
+
+                <div class="short-info">
+
+                    <h3>
+                        {{ video.title }}
+                    </h3>
+
+                    <div class="short-meta">
+
+                        <span>
+                            👁 {{ "{:,}".format(video.views|int) }}
+                        </span>
+
+                        <span>
+                            📅 {{ video.published_at }}
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+
+        {% else %}
+
+            <div class="no-videos">
+
+                <h3>📱 No Shorts Found</h3>
+
+                <p>
+                    New Shorts will appear here automatically.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+    <!-- ================= EXPLORE ================= -->
+
+    <section
+        class="social-section"
+        id="explore"
+    >
+
+        <h2>
+            Explore Raj Raushan Official
+        </h2>
+
+        <p>
+            Travel • Vlogs • Shorts • Life • Adventures
+        </p>
+
+    </section>
+
+
+
+   <!-- ================= SOCIAL MEDIA HUB ================= -->
+
+<section class="social-hub" id="about">
+
+    <h2>🌐 Connect With Me</h2>
+
+    <p class="social-subtitle">
+        Follow and connect with me across all platforms.
+    </p>
+
+    <div class="social-grid">
+
+        <a href="https://www.youtube.com/@rajraushanofficial"
+           target="_blank"
+           class="social-card">
+            <h3>▶ YouTube</h3>
+            <p>Raj Raushan Official</p>
+            <span>Visit Channel →</span>
+        </a>
+
+        <a href="https://www.youtube.com/@rajraushanofficial02"
+           target="_blank"
+           class="social-card">
+            <h3>▶ YouTube 02</h3>
+            <p>Raj Raushan Official 02</p>
+            <span>Visit Channel →</span>
+        </a>
+
+        <a href="https://www.instagram.com/rajraushanofficial/"
+           target="_blank"
+           class="social-card">
+            <h3>📸 Instagram</h3>
+            <p>@rajraushanofficial</p>
+            <span>Follow →</span>
+        </a>
+
+        <a href="#"
+           class="social-card">
+            <h3>📘 Facebook</h3>
+            <p>Coming Soon</p>
+            <span>Connect →</span>
+        </a>
+
+        <a href="#"
+           class="social-card">
+            <h3>💼 LinkedIn</h3>
+            <p>Professional Profile</p>
+            <span>Connect →</span>
+        </a>
+
+        <a href="#"
+           class="social-card">
+            <h3>💻 GitHub</h3>
+            <p>Projects & Code</p>
+            <span>View Projects →</span>
+        </a>
+
+    </div>
+
+</section>
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Raj Raushan Official
+        </p>
+
+        <p>
+            Explore • Watch • Connect
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}">
+    </script>
+
+
+<script src="/static/js/brand_avatar.js"></script>
+
+<!-- RR PRODUCTION DARK THEME FIX -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/render_dark_force.css') }}?v=20260917b">
+
+<script src="{{ url_for('static', filename='js/render_dark_force.js') }}?v=20260917b"></script>
+
+<!-- RR PREMIUM VISUAL POLISH V2 -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/premium_visual_polish_v2.css') }}?v=20260917">
+
+<script src="{{ url_for('static', filename='js/premium_visual_polish_v2.js') }}?v=20260917"></script>
+</body>
+
+</html>
+

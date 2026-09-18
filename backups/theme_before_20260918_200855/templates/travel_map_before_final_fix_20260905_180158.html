@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Travel Map | Raj Raushan Official
+</title>
+
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/favicon.svg"
+>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+>
+
+<link
+    rel="stylesheet"
+    href="/static/css/travel_map.css"
+>
+
+<link rel="stylesheet" href="/static/css/brand_avatar.css">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/live_dark_global.css') }}">
+</head>
+
+
+<body>
+
+
+<header class="travel-nav">
+
+    <a
+        href="/"
+        class="travel-brand"
+    >
+
+        <span class="travel-logo">
+            RR
+        </span>
+
+        <span>
+
+            <strong>
+                Raj Raushan
+            </strong>
+
+            <small>
+                OFFICIAL
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="/destinations">
+            Destinations
+        </a>
+
+        <a href="/playlists">
+            Playlists
+        </a>
+
+        <a href="/gallery">
+            Gallery
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="map-hero">
+
+    <div>
+
+        <span class="eyebrow">
+            REAL TRAVEL LOCATIONS
+        </span>
+
+        <h1>
+            Travel Map Explorer
+        </h1>
+
+        <p>
+            Explore confirmed major destinations
+            from Raj Raushan Official's actual
+            YouTube travel collections.
+        </p>
+
+    </div>
+
+</section>
+
+
+<main class="map-layout">
+
+
+    <aside class="map-sidebar">
+
+        <span class="section-label">
+            DESTINATIONS
+        </span>
+
+        <h2>
+            Places on the Journey
+        </h2>
+
+
+        {% for destination
+           in destinations %}
+
+        <button
+            class="map-place-card"
+            data-slug="{{ destination.slug }}"
+            data-lat="{{ destination.lat }}"
+            data-lng="{{ destination.lng }}"
+        >
+
+            <strong>
+                {{ destination.title }}
+            </strong>
+
+            <small>
+                {{ destination.region }}
+            </small>
+
+        </button>
+
+        {% endfor %}
+
+
+        <a
+            href="/destinations"
+            class="all-destinations"
+        >
+            View All Destinations ?
+        </a>
+
+    </aside>
+
+
+    <section class="map-panel">
+
+        <div id="travelMap"></div>
+
+    </section>
+
+
+</main>
+
+
+<script
+    type="application/json"
+    id="destinationMapData"
+>
+{{ destinations|tojson }}
+</script>
+
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+<script
+    src="/static/js/travel_map.js"
+></script>
+
+<script src="/static/js/brand_avatar.js"></script>
+
+<!-- RR PRODUCTION DARK THEME FIX -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/render_dark_force.css') }}?v=20260917b">
+
+<script src="{{ url_for('static', filename='js/render_dark_force.js') }}?v=20260917b"></script>
+
+<!-- RR PREMIUM VISUAL POLISH V2 -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/premium_visual_polish_v2.css') }}?v=20260917">
+
+<script src="{{ url_for('static', filename='js/premium_visual_polish_v2.js') }}?v=20260917"></script>
+</body>
+
+</html>

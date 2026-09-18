@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en" data-rr-theme="dark">
+
+<head>
+<script src="{{ url_for('static', filename='js/theme_boot.js') }}?v=20"></script>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Monetization Dashboard | Raj Raushan Official
+</title>
+
+<link
+    rel="icon"
+    href="/static/favicon.svg"
+>
+
+<link
+    rel="stylesheet"
+    href="/static/css/monetization_dashboard.css"
+>
+
+<meta
+    name="csrf-token"
+    content="{{ csrf_token }}"
+>
+
+<link rel="stylesheet" href="/static/css/monetization_reply.css">
+<link rel="stylesheet" href="/static/css/monetization_pro_v2.css">
+<link rel="stylesheet" href="/static/css/monetization_proposal.css">
+<link rel="stylesheet" href="/static/css/monetization_earnings.css">
+<link rel="stylesheet" href="/static/css/revenue_analytics.css">
+<link rel="stylesheet" href="/static/css/business_notifications.css">
+<link rel="stylesheet" href="/static/css/brand_avatar.css">
+
+<!-- RR CANONICAL REFERENCE THEME -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/site_theme_final.css') }}?v=20">
+</head>
+
+
+<body>
+
+
+<header class="admin-nav">
+
+    <a href="/">
+
+        <strong>
+            RR
+        </strong>
+
+        <span>
+
+            Raj Raushan Official
+
+            <small>
+                MONETIZATION ADMIN
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <div>
+
+        <a href="/work-with-me">
+            Public Page
+        </a>
+
+        <a href="/monetization-logout">
+            Exit
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="dashboard">
+
+
+<section class="dashboard-heading">
+
+    <div>
+
+        <span>
+            PRIVATE CREATOR ANALYTICS
+        </span>
+
+        <h1>
+            Monetization Dashboard
+        </h1>
+
+        <p>
+            Leads, campaign value and
+            automated follow-up intelligence.
+        </p>
+
+    </div>
+
+
+    <input
+        id="leadSearch"
+        type="search"
+        placeholder="Search leads..."
+    >
+
+</section>
+
+
+<section class="stats-grid">
+
+    <article>
+        <span>TOTAL LEADS</span>
+        <strong>{{ total }}</strong>
+    </article>
+
+    <article>
+        <span>NEW</span>
+        <strong>{{ new_count }}</strong>
+    </article>
+
+    <article>
+        <span>CONTACTED</span>
+        <strong>{{ contacted_count }}</strong>
+    </article>
+
+    <article>
+        <span>NEGOTIATING</span>
+        <strong>{{ negotiating_count }}</strong>
+    </article>
+
+    <article>
+        <span>WON</span>
+        <strong>{{ won_count }}</strong>
+    </article>
+
+</section>
+
+
+<section class="money-grid">
+
+    <article>
+
+        <span>
+            POTENTIAL PIPELINE
+        </span>
+
+        <strong>
+            ₹{{ "{:,.0f}".format(potential_value) }}
+        </strong>
+
+        <p>
+            Includes automatic budget estimates.
+        </p>
+
+    </article>
+
+
+    <article class="won-card">
+
+        <span>
+            WON VALUE
+        </span>
+
+        <strong>
+            ₹{{ "{:,.0f}".format(won_value) }}
+        </strong>
+
+        <p>
+            Estimated value of won deals.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <span>
+            AUTO-ESTIMATED
+        </span>
+
+        <strong>
+            {{ auto_estimated_count }}
+        </strong>
+
+        <p>
+            Leads automatically valued
+            from their budget range.
+        </p>
+
+    </article>
+
+</section>
+
+
+{% if follow_up_lead %}
+
+<section class="intelligence-panel">
+
+    <div class="intelligence-copy">
+
+        <span>
+            AUTO LEAD INTELLIGENCE
+        </span>
+
+        <h2>
+            Follow Up First
+        </h2>
+
+        <p>
+            This recommendation is based on
+            budget, service type, lead freshness
+            and pipeline stage.
+        </p>
+
+    </div>
+
+
+    <div class="priority-lead">
+
+        <div class="priority-top">
+
+            <span
+                class="
+                    priority-pill
+                    priority-{{ follow_up_lead.priority_label }}
+                "
+            >
+                PRIORITY
+                {{ follow_up_lead.priority_score }}/100
+            </span>
+
+            <span>
+                Lead #{{ follow_up_lead.id }}
+            </span>
+
+        </div>
+
+
+        <h3>
+            {{ follow_up_lead.name }}
+        </h3>
+
+        <p>
+            {{ follow_up_lead.company or "Company not specified" }}
+        </p>
+
+
+        <div class="priority-details">
+
+            <div>
+
+                <span>
+                    SERVICE
+                </span>
+
+                <strong>
+                    {{ follow_up_lead.service }}
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    ESTIMATED VALUE
+                </span>
+
+                <strong>
+                    ₹{{ "{:,.0f}".format(follow_up_lead.effective_value) }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="next-action">
+
+            <span>
+                RECOMMENDED NEXT ACTION
+            </span>
+
+            <strong>
+                {{ follow_up_lead.recommended_action }}
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}
+
+
+
+
+<section class="real-earnings-section">
+
+    <div class="real-earnings-heading">
+
+        <div>
+
+            <span>
+                REAL EARNINGS
+            </span>
+
+            <h2>
+                Revenue & Payments
+            </h2>
+
+        </div>
+
+
+        <span class="earnings-live-badge">
+            ACTUAL PAYMENTS
+        </span>
+
+    </div>
+
+
+    <div class="real-earnings-grid">
+
+        <article>
+
+            <span>
+                TOTAL RECEIVED
+            </span>
+
+            <strong id="rrTotalReceived">
+                ?0
+            </strong>
+
+            <p>
+                Actual recorded payments.
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <span>
+                THIS MONTH
+            </span>
+
+            <strong id="rrMonthReceived">
+                ?0
+            </strong>
+
+            <p>
+                Revenue received this month.
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <span>
+                PAYMENT PENDING
+            </span>
+
+            <strong id="rrPendingBalance">
+                ?0
+            </strong>
+
+            <p>
+                Remaining amount from active deals.
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <span>
+                FULLY PAID DEALS
+            </span>
+
+            <strong id="rrFullyPaid">
+                0
+            </strong>
+
+            <p>
+                Deals with full payment recorded.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+
+<section class="revenue-analytics-pro">
+
+    <div class="revenue-pro-heading">
+
+        <div>
+
+            <span>
+                REVENUE INTELLIGENCE
+            </span>
+
+            <h2>
+                Earnings Analytics
+            </h2>
+
+            <p>
+                Actual payment data only.
+                Potential pipeline is not counted here.
+            </p>
+
+        </div>
+
+
+        <a
+            href="/monetization/export-payments.csv"
+            class="export-revenue-btn"
+        >
+            Export CSV
+        </a>
+
+    </div>
+
+
+    <div class="revenue-pro-stats">
+
+        <article>
+
+            <span>
+                TOTAL REVENUE
+            </span>
+
+            <strong id="raTotalRevenue">
+                ?0
+            </strong>
+
+        </article>
+
+
+        <article>
+
+            <span>
+                PAYMENTS
+            </span>
+
+            <strong id="raPaymentCount">
+                0
+            </strong>
+
+        </article>
+
+
+        <article>
+
+            <span>
+                AVERAGE PAYMENT
+            </span>
+
+            <strong id="raAveragePayment">
+                ?0
+            </strong>
+
+        </article>
+
+
+        <article>
+
+            <span>
+                TOP EARNING SERVICE
+            </span>
+
+            <strong
+                id="raTopService"
+                class="ra-service-name"
+            >
+                No data yet
+            </strong>
+
+        </article>
+
+    </div>
+
+
+    <div class="revenue-pro-layout">
+
+        <article class="monthly-revenue-card">
+
+            <div class="revenue-card-heading">
+
+                <span>
+                    MONTHLY PERFORMANCE
+                </span>
+
+                <strong>
+                    Revenue Trend
+                </strong>
+
+            </div>
+
+
+            <div
+                class="monthly-chart"
+                id="raMonthlyChart"
+            >
+
+                <div class="revenue-empty">
+                    No payment history yet.
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="payment-method-card">
+
+            <div class="revenue-card-heading">
+
+                <span>
+                    PAYMENT CHANNELS
+                </span>
+
+                <strong>
+                    Payment Methods
+                </strong>
+
+            </div>
+
+
+            <div
+                id="raPaymentMethods"
+                class="payment-method-list"
+            >
+
+                <div class="revenue-empty">
+                    No payment data.
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <article class="recent-revenue-card">
+
+        <div class="revenue-card-heading">
+
+            <span>
+                TRANSACTION HISTORY
+            </span>
+
+            <strong>
+                Recent Payments
+            </strong>
+
+        </div>
+
+
+        <div
+            id="raRecentPayments"
+            class="recent-payment-list"
+        >
+
+            <div class="revenue-empty">
+                No payments recorded.
+            </div>
+
+        </div>
+
+    </article>
+
+</section>
+
+
+<section class="leads-section">
+
+
+    <div class="leads-title">
+
+        <div>
+
+            <span class="tiny-label">
+                BUSINESS PIPELINE
+            </span>
+
+            <h2>
+                Brand Enquiries
+            </h2>
+
+        </div>
+
+
+        <select id="statusFilter" autocomplete="off">
+
+            <option value="all">
+                All Status
+            </option>
+
+            <option value="new">
+                New
+            </option>
+
+            <option value="contacted">
+                Contacted
+            </option>
+
+            <option value="negotiating">
+                Negotiating
+            </option>
+
+            <option value="won">
+                Won
+            </option>
+
+            <option value="closed">
+                Closed
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div id="leadList">
+
+
+        {% for lead in leads %}
+
+        <article
+            class="lead-card"
+            data-lead-id="{{ lead.id }}"
+            data-lead-name="{{ lead.name }}"
+            data-status="{{ lead.status }}"
+            data-search="
+                {{ lead.name|lower }}
+                {{ lead.email|lower }}
+                {{ lead.company|default('', true)|lower }}
+                {{ lead.service|lower }}
+            "
+        >
+
+
+            <div class="lead-header">
+
+                <div>
+
+                    <span>
+                        LEAD #{{ lead.id }}
+                    </span>
+
+                    <h3>
+                        {{ lead.name }}
+                    </h3>
+
+                    <p>
+                        {{ lead.company or "Company not specified" }}
+                    </p>
+
+                </div>
+
+
+                <div class="lead-badges">
+
+                    {% if lead.status not in ["won", "closed"] %}
+
+                    <b
+                        class="
+                            priority-pill
+                            priority-{{ lead.priority_label }}
+                        "
+                    >
+                        {{ lead.priority_score }}/100
+                    </b>
+
+                    {% endif %}
+
+
+                    <b class="status status-{{ lead.status }}">
+                        {{ lead.status|upper }}
+                    </b>
+
+                </div>
+
+            </div>
+
+
+            <div class="lead-info">
+
+
+                <div>
+
+                    <span>
+                        EMAIL
+                    </span>
+
+                    <a href="mailto:{{ lead.email }}">
+                        {{ lead.email }}
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        SERVICE
+                    </span>
+
+                    <strong>
+                        {{ lead.service }}
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        BUDGET
+                    </span>
+
+                    <strong>
+                        {{ lead.budget or "Not specified" }}
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        ESTIMATED VALUE
+                    </span>
+
+                    <strong>
+                        ₹{{ "{:,.0f}".format(lead.effective_value) }}
+                    </strong>
+
+                    {% if lead.auto_estimated %}
+
+                    <small class="auto-value-note">
+                        AUTO ESTIMATE
+                    </small>
+
+                    {% endif %}
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        NEXT ACTION
+                    </span>
+
+                    <strong>
+                        {{ lead.recommended_action }}
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        RECEIVED
+                    </span>
+
+                    <strong>
+                        {{ lead.created_at }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="campaign-message">
+
+                <span>
+                    CAMPAIGN DETAILS
+                </span>
+
+                <p>
+                    {{ lead.message }}
+                </p>
+
+            </div>
+
+
+            
+
+            
+
+            
+
+            <section class="lead-payment-box">
+
+                <div class="payment-box-heading">
+
+                    <div>
+
+                        <span>
+                            EARNINGS & PAYMENTS
+                        </span>
+
+                        <strong>
+                            Deal Payment Tracker
+                        </strong>
+
+                    </div>
+
+
+                    <span
+                        class="payment-status-badge payment-unpaid"
+                    >
+                        UNPAID
+                    </span>
+
+                </div>
+
+
+                <div class="payment-summary-grid">
+
+                    <div>
+
+                        <span>
+                            DEAL VALUE
+                        </span>
+
+                        <strong
+                            class="payment-target"
+                        >
+                            ?0
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            RECEIVED
+                        </span>
+
+                        <strong
+                            class="payment-received"
+                        >
+                            ?0
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            OUTSTANDING
+                        </span>
+
+                        <strong
+                            class="payment-outstanding"
+                        >
+                            ?0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="payment-form-grid">
+
+                    <label>
+
+                        Amount Received ?
+
+                        <input
+                            type="number"
+                            class="payment-amount"
+                            min="1"
+                            step="1"
+                            placeholder="e.g. 5000"
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        Payment Method
+
+                        <select
+                            class="payment-method"
+                        >
+
+                            <option value="UPI">
+                                UPI
+                            </option>
+
+                            <option value="Bank Transfer">
+                                Bank Transfer
+                            </option>
+
+                            <option value="Cash">
+                                Cash
+                            </option>
+
+                            <option value="PayPal">
+                                PayPal
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+                    <label>
+
+                        Payment Date
+
+                        <input
+                            type="date"
+                            class="payment-date"
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        Reference / Transaction ID
+
+                        <input
+                            type="text"
+                            class="payment-reference"
+                            maxlength="150"
+                            placeholder="Optional"
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <label class="payment-notes-label">
+
+                    Payment Notes
+
+                    <input
+                        type="text"
+                        class="payment-notes"
+                        maxlength="1000"
+                        placeholder="Optional note"
+                    >
+
+                </label>
+
+
+                <button
+                    type="button"
+                    class="add-payment"
+                >
+                    Record Payment
+                </button>
+
+
+                <div class="payment-message"></div>
+
+
+                <div class="payment-history">
+
+                    <strong>
+                        Payment History
+                    </strong>
+
+                    <div
+                        class="payment-history-list"
+                    >
+                        No payments recorded.
+                    </div>
+
+                </div>
+
+            </section>
+
+
+<section class="proposal-generator">
+
+                <div class="proposal-heading">
+
+                    <div>
+
+                        <span>
+                            DEAL CONVERSION ASSISTANT
+                        </span>
+
+                        <strong>
+                            Proposal & Quotation
+                        </strong>
+
+                    </div>
+
+                    <span class="proposal-badge">
+                        AUTO
+                    </span>
+
+                </div>
+
+
+                <div class="proposal-summary">
+
+                    <div>
+
+                        <span>
+                            SUGGESTED QUOTE
+                        </span>
+
+                        <strong
+                            class="proposal-quote"
+                        >
+                            Generate to view
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            TIMELINE
+                        </span>
+
+                        <strong
+                            class="proposal-timeline"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="proposal-deliverables"
+                ></div>
+
+
+                <textarea
+                    class="proposal-text"
+                    readonly
+                    placeholder="Generate a professional collaboration proposal..."
+                ></textarea>
+
+
+                <div class="proposal-actions">
+
+                    <button
+                        type="button"
+                        class="generate-proposal"
+                    >
+                        Generate Proposal
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="copy-proposal"
+                        disabled
+                    >
+                        Copy Proposal
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="print-proposal"
+                        disabled
+                    >
+                        Print / Save PDF
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="mark-proposal-sent"
+                        disabled
+                    >
+                        Mark Proposal Sent
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="proposal-status"
+                ></div>
+
+            </section>
+
+
+<section class="smart-reply-box">
+
+                <div class="smart-reply-heading">
+
+                    <div>
+
+                        <span>
+                            SMART REPLY ASSISTANT
+                        </span>
+
+                        <strong>
+                            Professional Brand Reply
+                        </strong>
+
+                    </div>
+
+
+                    <select
+                        class="reply-tone"
+                    >
+
+                        <option value="professional">
+                            Professional
+                        </option>
+
+                        <option value="warm">
+                            Warm
+                        </option>
+
+                        <option value="concise">
+                            Concise
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <textarea
+                    class="generated-reply"
+                    placeholder="Generate a professional reply for this lead..."
+                    readonly
+                ></textarea>
+
+
+                <div class="reply-actions">
+
+                    <button
+                        type="button"
+                        class="generate-reply"
+                    >
+                        Generate Reply
+                    </button>
+
+                    <button
+                        type="button"
+                        class="copy-reply"
+                        disabled
+                    >
+                        Copy Reply
+                    </button>
+
+                    <button
+                        type="button"
+                        class="open-email"
+                        disabled
+                    >
+                        Open Email
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="reply-status"
+                ></div>
+
+            </section>
+
+
+
+
+            <section class="pro-lead-actions">
+
+                <div class="pro-action-heading">
+
+                    <div>
+
+                        <span>
+                            QUICK ACTIONS
+                        </span>
+
+                        <strong>
+                            Update this lead faster
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="pro-action-buttons">
+
+                    <button
+                        type="button"
+                        class="quick-status"
+                        data-quick-status="contacted"
+                    >
+                        Contacted
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="quick-status"
+                        data-quick-status="negotiating"
+                    >
+                        Negotiating
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="quick-status quick-won"
+                        data-quick-status="won"
+                    >
+                        Won Deal
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="quick-status"
+                        data-quick-status="closed"
+                    >
+                        Closed
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="delete-lead"
+                    >
+                        Delete Lead
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="pro-action-status"
+                ></div>
+
+            </section>
+
+
+<div class="lead-controls">
+
+
+                <label>
+
+                    Status
+
+                    <select class="lead-status">
+
+                        {% for option in [
+                            "new",
+                            "contacted",
+                            "negotiating",
+                            "won",
+                            "closed"
+                        ] %}
+
+                        <option
+                            value="{{ option }}"
+                            {% if option == lead.status %}selected{% endif %}
+                        >
+                            {{ option|capitalize }}
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </label>
+
+
+                <label>
+
+                    Manual Deal Value ₹
+
+                    <input
+                        class="lead-value"
+                        type="number"
+                        min="0"
+                        step="100"
+                        value="{{ lead.estimated_value or 0 }}"
+                        placeholder="{{ lead.effective_value }}"
+                    >
+
+                </label>
+
+
+                <label>
+
+                    Private Notes
+
+                    <textarea
+                        class="lead-notes"
+                        placeholder="Follow-up notes..."
+                    >{{ lead.notes or "" }}</textarea>
+
+                </label>
+
+
+                <button
+                    class="save-lead"
+                    type="button"
+                >
+                    Save Lead
+                </button>
+
+
+                <div class="save-status"></div>
+
+            </div>
+
+
+        </article>
+
+        {% else %}
+
+        <div class="empty-leads">
+            No brand enquiries yet.
+        </div>
+
+        {% endfor %}
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<script
+    src="/static/js/monetization_dashboard.js"
+></script>
+
+<script src="/static/js/monetization_reply.js"></script>
+<script src="/static/js/lead_filter_reset.js"></script>
+<script src="/static/js/monetization_proposal.js"></script>
+<script src="/static/js/monetization_earnings.js"></script>
+<script src="/static/js/revenue_analytics.js"></script>
+<script src="/static/js/business_notifications.js"></script>
+<script src="/static/js/brand_avatar.js"></script>
+
+<!-- RR PRODUCTION DARK THEME FIX -->
+<!-- RR PREMIUM VISUAL POLISH V2 -->
+
+<!-- RR CANONICAL REFERENCE THEME -->
+<script src="{{ url_for('static', filename='js/site_theme_final.js') }}?v=20"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Travel Gallery | Raj Raushan Official
+</title>
+
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/favicon.svg"
+>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #f5f7fb;
+
+    color:
+        #101827;
+}
+
+.gallery-nav {
+    padding:
+        20px 5%;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    background:
+        #090f19;
+
+    color: white;
+}
+
+.gallery-nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 800;
+}
+
+.gallery-hero {
+    padding:
+        75px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0c1421,
+            #19304e
+        );
+}
+
+.gallery-hero h1 {
+    margin:
+        0 0 12px;
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            68px
+        );
+}
+
+.gallery-hero p {
+    color:
+        #c8d2df;
+}
+
+.gallery-section {
+    padding:
+        70px 20px 90px;
+}
+
+.gallery-grid {
+    width: 92%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+
+    gap: 16px;
+}
+
+.gallery-item {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    aspect-ratio:
+        16 / 10;
+
+    background:
+        #101827;
+
+    color: white;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 12px 35px
+        rgba(15,23,42,.10);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .4s ease;
+}
+
+.gallery-item:hover img {
+    transform:
+        scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items:
+        flex-end;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            transparent 35%,
+            rgba(3,7,13,.85)
+        );
+}
+
+.gallery-overlay strong {
+    font-size: 15px;
+
+    line-height: 1.4;
+}
+
+@media (max-width: 850px) {
+
+    .gallery-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .gallery-grid {
+        width: 100%;
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .gallery-section {
+        padding:
+            55px 18px;
+    }
+
+}
+
+</style>
+
+<link rel="stylesheet" href="/static/css/public_mobile_nav.css">
+
+<link rel="stylesheet" href="/static/css/global_search.css">
+<link rel="stylesheet" href="/static/css/brand_avatar.css">
+
+<!-- RR_FINAL_THEME_BOOT -->
+<script>
+(function () {
+    try {
+        var keys = [
+            "rr_site_theme_final",
+            "rr_clean_theme",
+            "rr_master_theme",
+            "rr_theme_v3",
+            "rr_site_theme"
+        ];
+
+        var theme = null;
+
+        for (var i = 0; i < keys.length; i++) {
+            var value = localStorage.getItem(keys[i]);
+
+            if (
+                value === "dark"
+                ||
+                value === "light"
+            ) {
+                theme = value;
+                break;
+            }
+        }
+
+        document.documentElement
+            .setAttribute(
+                "data-rr-theme",
+                theme || "light"
+            );
+
+    } catch (error) {
+
+        document.documentElement
+            .setAttribute(
+                "data-rr-theme",
+                "light"
+            );
+    }
+})();
+</script>
+<!-- /RR_FINAL_THEME_BOOT -->
+
+<link rel="stylesheet" href="/static/css/site_theme_final.css?v=1">
+<link rel="stylesheet" href="/static/css/professional_travel_theme.css?v=42">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/live_dark_global.css') }}">
+</head>
+
+
+<body>
+
+
+<nav class="gallery-nav">
+
+    <a href="/">
+        RR &bull; Raj Raushan Official
+    </a>
+
+    <a href="/explore">
+                Explore
+            </a>
+
+            <a href="/destinations">
+        Destinations
+    </a>
+
+</nav>
+
+
+<section class="gallery-hero">
+
+    <h1>
+        Travel Gallery
+    </h1>
+
+    <p>
+        Visual moments from the
+        Raj Raushan Official journey.
+    </p>
+
+</section>
+
+
+<section class="gallery-section">
+
+
+{% if gallery_videos %}
+
+<div class="gallery-grid">
+
+    {% for video in gallery_videos %}
+
+    <a
+        class="gallery-item"
+        href="{{ video.url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+
+        <img
+            src="{{ video.thumbnail }}"
+            alt="{{ video.title }}"
+            loading="lazy"
+        >
+
+        <div class="gallery-overlay">
+
+            <strong>
+                {{ video.title }}
+            </strong>
+
+        </div>
+
+    </a>
+
+    {% endfor %}
+
+</div>
+
+
+{% else %}
+
+<div style="
+    text-align:center;
+    padding:50px;
+">
+
+    Gallery content is currently unavailable.
+
+</div>
+
+{% endif %}
+
+
+</section>
+
+<script src="/static/js/public_mobile_nav.js"></script>
+
+<script src="/static/js/global_search.js"></script>
+
+<script src="/static/js/global_search_tracking.js"></script>
+<script src="/static/js/brand_avatar.js"></script>
+<script src="/static/js/site_theme_final.js?v=1"></script>
+<script src="/static/js/search_nav_position.js?v=38"></script>
+
+<!-- RR PRODUCTION DARK THEME FIX -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/render_dark_force.css') }}?v=20260917b">
+
+<script src="{{ url_for('static', filename='js/render_dark_force.js') }}?v=20260917b"></script>
+
+<!-- RR PREMIUM VISUAL POLISH V2 -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/premium_visual_polish_v2.css') }}?v=20260917">
+
+<script src="{{ url_for('static', filename='js/premium_visual_polish_v2.js') }}?v=20260917"></script>
+</body>
+
+</html>
+
+
+

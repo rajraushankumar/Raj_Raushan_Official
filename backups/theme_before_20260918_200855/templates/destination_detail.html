@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    {{ destination.title }} | Raj Raushan Official
+</title>
+
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/favicon.svg"
+>
+
+<link
+    rel="stylesheet"
+    href="/static/css/destination_detail.css"
+>
+
+<link rel="stylesheet" href="/static/css/public_mobile_nav.css">
+
+<link rel="stylesheet" href="/static/css/global_search.css">
+<link rel="stylesheet" href="/static/css/brand_avatar.css">
+
+<!-- RR_FINAL_THEME_BOOT -->
+<script>
+(function () {
+    try {
+        var keys = [
+            "rr_site_theme_final",
+            "rr_clean_theme",
+            "rr_master_theme",
+            "rr_theme_v3",
+            "rr_site_theme"
+        ];
+
+        var theme = null;
+
+        for (var i = 0; i < keys.length; i++) {
+            var value = localStorage.getItem(keys[i]);
+
+            if (
+                value === "dark"
+                ||
+                value === "light"
+            ) {
+                theme = value;
+                break;
+            }
+        }
+
+        document.documentElement
+            .setAttribute(
+                "data-rr-theme",
+                theme || "light"
+            );
+
+    } catch (error) {
+
+        document.documentElement
+            .setAttribute(
+                "data-rr-theme",
+                "light"
+            );
+    }
+})();
+</script>
+<!-- /RR_FINAL_THEME_BOOT -->
+
+<link rel="stylesheet" href="/static/css/site_theme_final.css?v=1">
+<link rel="stylesheet" href="/static/css/professional_travel_theme.css?v=42">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/live_dark_global.css') }}">
+</head>
+
+
+<body>
+
+
+<header class="travel-nav">
+
+    <a
+        href="/"
+        class="travel-brand"
+    >
+
+        <span class="travel-logo">
+            RR
+        </span>
+
+        <span>
+
+            <strong>
+                Raj Raushan
+            </strong>
+
+            <small>
+                OFFICIAL
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="/explore">
+                Explore
+            </a>
+
+            <a href="/destinations">
+            Destinations
+        </a>
+
+        <a href="/playlists">
+            Playlists
+        </a>
+
+        <a href="/travel-map">
+            Travel Map
+        </a>
+
+        <a href="/gallery">
+            Gallery
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="detail-hero">
+
+    <div>
+
+        <span class="detail-region">
+
+            {{ destination.region }}
+            &bull;
+            {{ destination.category }}
+
+        </span>
+
+        <h1>
+            {{ destination.title }}
+        </h1>
+
+        <p>
+            {{ destination.intro }}
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="detail-story">
+
+    <div class="story-grid">
+
+
+        <div>
+
+            <span class="section-label">
+                DESTINATION STORY
+            </span>
+
+            <h2>
+                Explore the Journey
+            </h2>
+
+            <p>
+                {{ destination.story }}
+            </p>
+
+        </div>
+
+
+        <aside class="highlights-card">
+
+            <h3>
+                Highlights
+            </h3>
+
+            <div>
+
+                {% for item
+                   in destination.highlights %}
+
+                <span>
+                    {{ item }}
+                </span>
+
+                {% endfor %}
+
+            </div>
+
+        </aside>
+
+
+    </div>
+
+</section>
+
+
+<section class="playlist-collection">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            YOUTUBE COLLECTIONS
+        </span>
+
+        <h2>
+            Playlists from {{ destination.title }}
+        </h2>
+
+    </div>
+
+
+    {% if destination_playlists %}
+
+    <div class="playlist-grid">
+
+        {% for playlist
+           in destination_playlists %}
+
+        <a
+            class="playlist-card"
+            href="{{ playlist.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            {% if playlist.thumbnail %}
+
+            <img
+                src="{{ playlist.thumbnail }}"
+                alt="{{ playlist.title }}"
+                loading="lazy"
+            >
+
+            {% endif %}
+
+            <div>
+
+                <span>
+                    YOUTUBE PLAYLIST
+                </span>
+
+                <h3>
+                    {{ playlist.title }}
+                </h3>
+
+                <p>
+                    {{ playlist.video_count }}
+                    videos
+                </p>
+
+                <strong>
+                    Open Playlist &nearr;
+                </strong>
+
+            </div>
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+
+    {% else %}
+
+    <div class="empty-state">
+        Playlist data is currently unavailable.
+    </div>
+
+    {% endif %}
+
+</section>
+
+
+<section class="detail-cta">
+
+    <h2>
+        Continue Exploring
+    </h2>
+
+    <a href="/destinations">
+        All Destinations
+    </a>
+
+    <a href="/playlists">
+        All Playlists
+    </a>
+
+</section>
+
+
+<script src="/static/js/public_mobile_nav.js"></script>
+
+<script src="/static/js/global_search.js"></script>
+
+<script src="/static/js/global_search_tracking.js"></script>
+<script src="/static/js/brand_avatar.js"></script>
+<script src="/static/js/site_theme_final.js?v=1"></script>
+<script src="/static/js/search_nav_position.js?v=38"></script>
+
+<!-- RR PRODUCTION DARK THEME FIX -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/render_dark_force.css') }}?v=20260917b">
+
+<script src="{{ url_for('static', filename='js/render_dark_force.js') }}?v=20260917b"></script>
+
+<!-- RR PREMIUM VISUAL POLISH V2 -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/premium_visual_polish_v2.css') }}?v=20260917">
+
+<script src="{{ url_for('static', filename='js/premium_visual_polish_v2.js') }}?v=20260917"></script>
+</body>
+
+</html>
+
+
+

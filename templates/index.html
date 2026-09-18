@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-rr-theme="dark">
 
 <head>
+<script src="{{ url_for('static', filename='js/theme_boot.js') }}?v=20"></script>
 
     <meta charset="UTF-8">
 
@@ -4965,54 +4966,6 @@ and
 <link rel="stylesheet" href="/static/css/brand_avatar.css">
 <link rel="stylesheet" href="/static/css/creator_home.css?v=8">
 <link rel="stylesheet" href="/static/css/hero_spacing_fix.css?v=2">
-
-
-<!-- RR_FINAL_THEME_BOOT -->
-<script>
-(function () {
-    try {
-        var keys = [
-            "rr_site_theme_final",
-            "rr_clean_theme",
-            "rr_master_theme",
-            "rr_theme_v3",
-            "rr_site_theme"
-        ];
-
-        var theme = null;
-
-        for (var i = 0; i < keys.length; i++) {
-            var value = localStorage.getItem(keys[i]);
-
-            if (
-                value === "dark"
-                ||
-                value === "light"
-            ) {
-                theme = value;
-                break;
-            }
-        }
-
-        document.documentElement
-            .setAttribute(
-                "data-rr-theme",
-                theme || "light"
-            );
-
-    } catch (error) {
-
-        document.documentElement
-            .setAttribute(
-                "data-rr-theme",
-                "light"
-            );
-    }
-})();
-</script>
-<!-- /RR_FINAL_THEME_BOOT -->
-
-<link rel="stylesheet" href="/static/css/site_theme_final.css?v=10">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -5054,7 +5007,7 @@ and
     content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 >
 
-<meta name="theme-color" content="#08172a">
+<meta name="theme-color" content="#101010">
 
 <link
     rel="icon"
@@ -5187,8 +5140,25 @@ and
     rel="stylesheet"
     href="/static/css/mobile_menu_clean.css?v=2"
 >
+
+<!-- RR CANONICAL REFERENCE THEME -->
+
+<!-- RR CANONICAL REFERENCE THEME -->
+<!-- RR_FINAL_THEME_BOOT -->
+<script>
+document.documentElement.setAttribute(
+    "data-rr-theme",
+    "dark"
+);
+
+document.documentElement.setAttribute(
+    "data-theme",
+    "dark"
+);
+</script>
+<!-- /RR_FINAL_THEME_BOOT -->
 <link rel="stylesheet"
-      href="{{ url_for('static', filename='css/live_dark_global.css') }}">
+      href="{{ url_for('static', filename='css/site_theme_final.css') }}?v=20260918-final">
 </head>
 
 
@@ -8464,44 +8434,6 @@ document.addEventListener(
 /* RAJ MOBILE NAVIGATION SCRIPT */
 
 </script>
-
-
-
-<style>
-
-/* FORCED ABOUT CARD FINAL FIX */
-
-body #creator-about .creator-identity-card {
-    background: #162945 !important;
-    color: #ffffff !important;
-}
-
-body #creator-about .creator-identity-card > span {
-    color: #dbe4f0 !important;
-    opacity: 1 !important;
-}
-
-body #creator-about .creator-identity-card h3 {
-    color: #ffffff !important;
-    opacity: 1 !important;
-}
-
-body #creator-about .creator-identity-card p {
-    color: #d5deeb !important;
-    opacity: 1 !important;
-}
-
-body #creator-about .creator-identity-card a {
-    background: #ffffff !important;
-    color: #0b1220 !important;
-}
-
-/* FORCED ABOUT CARD FINAL FIX */
-
-</style>
-
-
-
 <script>
 
 /* RR CLICKABLE CARD SCRIPT */
@@ -9039,7 +8971,6 @@ document.addEventListener(
 <script src="/static/js/global_search_tracking.js"></script>
 <script src="/static/js/brand_avatar.js"></script>
 <script src="/static/js/creator_home.js?v=10"></script>
-<script src="/static/js/site_theme_final.js?v=1"></script>
 <script src="/static/js/creator_stats_counter.js?v=36"></script>
 <script src="/static/js/search_nav_position.js?v=38"></script>
 <script src="/static/js/channel_pair_layout.js?v=45"></script>
@@ -9441,16 +9372,12 @@ document.addEventListener(
 ></script>
 
 <!-- RR PRODUCTION DARK THEME FIX -->
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='css/render_dark_force.css') }}?v=20260917b">
-
-<script src="{{ url_for('static', filename='js/render_dark_force.js') }}?v=20260917b"></script>
-
 <!-- RR PREMIUM VISUAL POLISH V2 -->
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='css/premium_visual_polish_v2.css') }}?v=20260917">
 
-<script src="{{ url_for('static', filename='js/premium_visual_polish_v2.js') }}?v=20260917"></script>
+<!-- RR CANONICAL REFERENCE THEME -->
+
+<!-- RR CANONICAL REFERENCE THEME -->
+<script src="{{ url_for('static', filename='js/site_theme_final.js') }}?v=20260918-final"></script>
 </body>
 
 </html>
