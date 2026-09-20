@@ -3150,3 +3150,57 @@ body {
 
 
 /* RR_DESTINATIONS_EXACT_FIX_END */
+
+/* RR_SUBSCRIBE_FINAL_FIX_START */
+
+/* FINAL SUBSCRIBE BUTTON FIX */
+.raj-pro-header .raj-subscribe-nav,
+.raj-subscribe-nav,
+a.raj-subscribe-nav {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 132px !important;
+    min-height: 56px !important;
+
+    padding: 0 24px !important;
+
+    background: #ff202d !important;
+    background-color: #ff202d !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    font-size: 16px !important;
+    font-weight: 800 !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    border: 1px solid #ff202d !important;
+    border-radius: 16px !important;
+
+    text-decoration: none !important;
+
+    box-shadow:
+        0 12px 28px rgba(255, 32, 45, .22) !important;
+}
+
+.raj-subscribe-nav *,
+.raj-pro-header .raj-subscribe-nav * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.raj-subscribe-nav:hover {
+    background: #e91c28 !important;
+    background-color: #e91c28 !important;
+    border-color: #e91c28 !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+/* RR_SUBSCRIBE_FINAL_FIX_END */
