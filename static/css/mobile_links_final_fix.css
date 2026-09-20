@@ -1,0 +1,71 @@
+/* ============================================================
+   FINAL MOBILE CLICK / LINK FIX
+   ============================================================ */
+
+@media (max-width: 800px) {
+
+    /* ---------------- CLEAN MENU ---------------- */
+
+    #rr-clean-menu-overlay:not(.open),
+    #rr-clean-menu-panel:not(.open) {
+        pointer-events: none !important;
+    }
+
+    #rr-clean-menu-overlay.open,
+    #rr-clean-menu-panel.open {
+        pointer-events: auto !important;
+    }
+
+
+    /* ---------------- PUBLIC MOBILE MENU ---------------- */
+
+    .rr-mobile-menu-backdrop:not(.active),
+    .rr-mobile-menu-panel:not(.active) {
+        pointer-events: none !important;
+    }
+
+    .rr-mobile-menu-backdrop.active,
+    .rr-mobile-menu-panel.active {
+        pointer-events: auto !important;
+    }
+
+
+    /* ---------------- OLD STATIC MOBILE MENU ---------------- */
+
+    #rr-mobile-nav-overlay:not(.rr-mobile-visible),
+    #rr-mobile-nav-panel:not(.rr-mobile-visible) {
+        pointer-events: none !important;
+    }
+
+    #rr-mobile-nav-overlay.rr-mobile-visible,
+    #rr-mobile-nav-panel.rr-mobile-visible {
+        pointer-events: auto !important;
+    }
+
+
+    /* Menu links always clickable */
+
+    #rr-clean-menu-panel a,
+    .rr-mobile-menu-panel a,
+    #rr-mobile-nav-panel a {
+
+        position: relative !important;
+
+        pointer-events: auto !important;
+
+        cursor: pointer !important;
+
+        z-index: 5 !important;
+    }
+
+
+    /* Normal website links/buttons should remain clickable */
+
+    main a,
+    main button,
+    section a,
+    section button {
+
+        pointer-events: auto;
+    }
+}
