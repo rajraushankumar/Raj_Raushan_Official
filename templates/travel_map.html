@@ -57,13 +57,14 @@ document.documentElement.setAttribute(
 </script>
 <!-- /RR_FINAL_THEME_BOOT -->
 <link rel="stylesheet"
-      href="{{ url_for('static', filename='css/site_theme_final.css') }}?v=20260918-final">
-
-<link rel="stylesheet"
       href="/static/css/mobile_click_fix.css?v=20260918">
 
 <link rel="stylesheet"
       href="{{ url_for('static', filename='css/mobile_links_final_fix.css') }}?v=20260918">
+
+<!-- RR CANONICAL THEME - MUST LOAD LAST -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/site_theme_final.css') }}?v=20260920-final">
 </head>
 
 

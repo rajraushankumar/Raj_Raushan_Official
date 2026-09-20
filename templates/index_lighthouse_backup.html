@@ -5012,7 +5012,6 @@ and
 </script>
 <!-- /RR_FINAL_THEME_BOOT -->
 
-<link rel="stylesheet" href="/static/css/site_theme_final.css?v=10">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -5187,8 +5186,10 @@ and
     rel="stylesheet"
     href="/static/css/mobile_menu_clean.css?v=2"
 >
+
+<!-- RR CANONICAL THEME - MUST LOAD LAST -->
 <link rel="stylesheet"
-      href="{{ url_for('static', filename='css/live_dark_global.css') }}">
+      href="{{ url_for('static', filename='css/site_theme_final.css') }}?v=20260920-final">
 </head>
 
 
@@ -9441,15 +9442,9 @@ document.addEventListener(
 ></script>
 
 <!-- RR PRODUCTION DARK THEME FIX -->
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='css/render_dark_force.css') }}?v=20260917b">
-
 <script src="{{ url_for('static', filename='js/render_dark_force.js') }}?v=20260917b"></script>
 
 <!-- RR PREMIUM VISUAL POLISH V2 -->
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='css/premium_visual_polish_v2.css') }}?v=20260917">
-
 <script src="{{ url_for('static', filename='js/premium_visual_polish_v2.js') }}?v=20260917"></script>
 </body>
 
