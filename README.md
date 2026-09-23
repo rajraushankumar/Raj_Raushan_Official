@@ -112,4 +112,4 @@ The `.env` file is excluded from Git through `.gitignore`.
 
 **Raj Raushan Official**
 
-Travel • Culture • Stories
+Travel • Culture • Stories 2026
