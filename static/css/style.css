@@ -2361,3 +2361,16 @@ header {
 }
 
 
+
+/* FINAL HERO SPACING ONLY */
+.hero-intro {
+    margin-bottom: 30px !important;
+}
+
+.hero-tags {
+    margin-bottom: 42px !important;
+}
+
+.hero-actions {
+    margin-top: 0 !important;
+}
