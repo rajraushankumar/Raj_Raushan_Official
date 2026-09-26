@@ -3204,3 +3204,28 @@ a.raj-subscribe-nav {
 }
 
 /* RR_SUBSCRIBE_FINAL_FIX_END */
+/* FINAL - SUBSCRIBE SAME AT TOP AND AFTER SCROLL */
+body .raj-pro-header .raj-subscribe-nav,
+body .raj-pro-header.rr-nav-scrolled .raj-subscribe-nav {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #ff0000 !important;
+    background-color: #ff0000 !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    border-color: #ff0000 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    pointer-events: auto !important;
+}
+
+body .raj-pro-header .raj-subscribe-nav *,
+body .raj-pro-header.rr-nav-scrolled .raj-subscribe-nav * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
