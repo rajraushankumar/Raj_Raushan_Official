@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-rr-theme="dark">
 
 <head>
@@ -5166,6 +5166,130 @@ document.documentElement.setAttribute(
 <!-- RR CANONICAL THEME - MUST LOAD LAST -->
 <link rel="stylesheet"
       href="{{ url_for('static', filename='css/site_theme_final.css') }}?v=20260920-final">
+<!-- RR MOBILE TOP SUBSCRIBE FIX START -->
+<style>
+/* =========================================================
+   MOBILE TOP SUBSCRIBE - FINAL
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .raj-pro-header {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 999999 !important;
+    }
+
+    .raj-pro-nav {
+        position: relative !important;
+        z-index: 1000000 !important;
+    }
+
+    .raj-nav-actions {
+        position: relative !important;
+        z-index: 1000001 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .raj-pro-header .raj-subscribe-nav,
+    .raj-subscribe-nav {
+        display: inline-flex !important;
+        position: relative !important;
+        z-index: 1000002 !important;
+
+        min-width: 92px !important;
+        min-height: 40px !important;
+
+        padding: 0 13px !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        background: #ff0000 !important;
+        background-color: #ff0000 !important;
+
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+
+        border: 1px solid #ff0000 !important;
+        border-radius: 10px !important;
+
+        font-size: 12px !important;
+        font-weight: 800 !important;
+        line-height: 1 !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        text-decoration: none !important;
+        box-shadow: 0 5px 15px rgba(255,0,0,.22) !important;
+
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+    }
+
+    .raj-pro-header .raj-subscribe-nav::before {
+        content: "YouTube " !important;
+    }
+
+    .raj-pro-header .raj-subscribe-nav {
+        font-size: 0 !important;
+    }
+
+    .raj-pro-header .raj-subscribe-nav::before {
+        font-size: 12px !important;
+    }
+
+    .raj-menu-btn {
+        position: relative !important;
+        z-index: 1000003 !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+
+    .raj-pro-nav {
+        width: 96% !important;
+        gap: 6px !important;
+    }
+
+    .raj-pro-header .raj-subscribe-nav {
+        min-width: 82px !important;
+        min-height: 38px !important;
+        padding: 0 10px !important;
+        border-radius: 9px !important;
+    }
+
+    .raj-pro-header .raj-subscribe-nav::before {
+        font-size: 11px !important;
+    }
+}
+
+/* =========================================================
+   MOBILE TOP LAYER - DO NOT BLOCK SUBSCRIBE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .raj-pro-header,
+    .raj-pro-nav,
+    .raj-nav-actions,
+    .raj-subscribe-nav,
+    .raj-menu-btn {
+        pointer-events: auto !important;
+    }
+
+    .raj-subscribe-nav * {
+        pointer-events: none !important;
+    }
+}
+</style>
+<!-- RR MOBILE TOP SUBSCRIBE FIX END -->
 </head>
 
 
@@ -5213,7 +5337,7 @@ document.documentElement.setAttribute(
 
 
         <p class="rr-loader-subtitle">
-            Travel • Culture • Stories
+            Travel â€¢ Culture â€¢ Stories
         </p>
 
 
@@ -5965,7 +6089,7 @@ document.documentElement.setAttribute(
                     rel="noopener noreferrer"
                 >
                     Watch My Vlogs
-                    <span aria-hidden="true">→</span>
+                    <span aria-hidden="true">â†’</span>
                 </a>
 
                 <a
@@ -5999,7 +6123,7 @@ document.documentElement.setAttribute(
                 </span>
 
                 <span class="rr-pro-chip rr-pro-chip-two">
-                    India 🇮🇳
+                    India ðŸ‡®ðŸ‡³
                 </span>
 
             </div>
@@ -6037,7 +6161,7 @@ document.documentElement.setAttribute(
                 rel="noopener noreferrer"
             >
                 Explore All Videos
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">â†’</span>
             </a>
 
         </div>
@@ -6083,7 +6207,7 @@ document.documentElement.setAttribute(
             </span>
 
             <h2>
-                Let’s create something worth remembering.
+                Letâ€™s create something worth remembering.
             </h2>
 
             <p>
@@ -6104,7 +6228,7 @@ document.documentElement.setAttribute(
                 rel="noopener noreferrer"
             >
                 Instagram
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">â†’</span>
             </a>
 
             <a
@@ -6464,7 +6588,7 @@ document.documentElement.setAttribute(
                     </p>
 
                     <span class="rr-destination-link">
-                        Explore Videos →
+                        Explore Videos â†’
                     </span>
 
                 </div>
@@ -6499,7 +6623,7 @@ document.documentElement.setAttribute(
                     </p>
 
                     <span class="rr-destination-link">
-                        Watch Journey →
+                        Watch Journey â†’
                     </span>
 
                 </div>
@@ -6535,7 +6659,7 @@ document.documentElement.setAttribute(
                     </p>
 
                     <span class="rr-destination-link">
-                        Discover More →
+                        Discover More â†’
                     </span>
 
                 </div>
@@ -6570,7 +6694,7 @@ document.documentElement.setAttribute(
                     </p>
 
                     <span class="rr-destination-link">
-                        Watch Shorts →
+                        Watch Shorts â†’
                     </span>
 
                 </div>
@@ -6657,7 +6781,7 @@ document.documentElement.setAttribute(
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Visit YouTube →
+                Visit YouTube â†’
             </a>
 
         </div>
@@ -6814,19 +6938,19 @@ document.documentElement.setAttribute(
             <div class="rr-media-benefits">
 
                 <div class="rr-media-benefit">
-                    ✓ Travel-focused audience
+                    âœ“ Travel-focused audience
                 </div>
 
                 <div class="rr-media-benefit">
-                    ✓ Long-form videos
+                    âœ“ Long-form videos
                 </div>
 
                 <div class="rr-media-benefit">
-                    ✓ Short-form content
+                    âœ“ Short-form content
                 </div>
 
                 <div class="rr-media-benefit">
-                    ✓ Multi-platform presence
+                    âœ“ Multi-platform presence
                 </div>
 
             </div>
@@ -7123,7 +7247,7 @@ document.documentElement.setAttribute(
     >
 
         <h2>
-            🎬 Latest Vlogs
+            ðŸŽ¬ Latest Vlogs
         </h2>
 
 
@@ -7168,13 +7292,13 @@ document.documentElement.setAttribute(
                         <div class="video-meta">
 
                             <span>
-                                👁
+                                ðŸ‘
                                 {{ "{:,}".format(video.views|int) }}
                                 views
                             </span>
 
                             <span>
-                                📅
+                                ðŸ“…
                                 {{ video.published_at }}
                             </span>
 
@@ -7205,7 +7329,7 @@ document.documentElement.setAttribute(
                 <div class="no-videos">
 
                     <h3>
-                        🎬 No Vlogs Found
+                        ðŸŽ¬ No Vlogs Found
                     </h3>
 
                     <p>
@@ -7228,7 +7352,7 @@ document.documentElement.setAttribute(
 
 <section class="shorts-section" id="shorts">
 
-    <h2>📱 Latest Shorts</h2>
+    <h2>ðŸ“± Latest Shorts</h2>
 
     <div class="shorts-container">
 
@@ -7250,7 +7374,7 @@ document.documentElement.setAttribute(
                     >
 
                     <div class="short-play">
-                        ▶
+                        â–¶
                     </div>
 
                 </a>
@@ -7265,11 +7389,11 @@ document.documentElement.setAttribute(
                     <div class="short-meta">
 
                         <span>
-                            👁 {{ "{:,}".format(video.views|int) }}
+                            ðŸ‘ {{ "{:,}".format(video.views|int) }}
                         </span>
 
                         <span>
-                            📅 {{ video.published_at }}
+                            ðŸ“… {{ video.published_at }}
                         </span>
 
                     </div>
@@ -7285,7 +7409,7 @@ document.documentElement.setAttribute(
 
             <div class="no-videos">
 
-                <h3>📱 No Shorts Found</h3>
+                <h3>ðŸ“± No Shorts Found</h3>
 
                 <p>
                     New Shorts will appear here automatically.
@@ -9192,7 +9316,7 @@ document.addEventListener(
 
         <p class="rr-footer-copy">
 
-            ©
+            Â©
             <span id="rr-footer-year"></span>
 
             <strong>
@@ -9210,7 +9334,7 @@ document.addEventListener(
             type="button"
             aria-label="Back to top"
         >
-            ↑ Back to Top
+            â†‘ Back to Top
         </button>
 
     </div>
@@ -9293,7 +9417,7 @@ document.addEventListener(
                 </p>
 
                 <span class="rr-journey-social-action">
-                    Watch on YouTube →
+                    Watch on YouTube â†’
                 </span>
 
             </div>
@@ -9354,7 +9478,7 @@ document.addEventListener(
                 </p>
 
                 <span class="rr-journey-social-action">
-                    Follow on Instagram →
+                    Follow on Instagram â†’
                 </span>
 
             </div>
@@ -9392,6 +9516,7 @@ document.addEventListener(
 </body>
 
 </html>
+
 
 
 
