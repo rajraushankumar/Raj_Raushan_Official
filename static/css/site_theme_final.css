@@ -3242,3 +3242,29 @@ body .raj-pro-header.rr-nav-scrolled .raj-subscribe-nav * {
 .rr-creator-actions {
     margin-top: 36px !important;
 }
+
+/* =========================================================
+   FINAL HERO SPACING - SPACING ONLY
+========================================================= */
+
+body .rr-creator-location {
+    margin-bottom: 28px !important;
+}
+
+body .rr-creator-intro {
+    margin-top: 0 !important;
+    margin-bottom: 30px !important;
+}
+
+body .rr-creator-tags {
+    margin-top: 0 !important;
+    margin-bottom: 38px !important;
+}
+
+body .rr-creator-actions {
+    margin-top: 0 !important;
+}
+
+/* =========================================================
+   END HERO SPACING
+========================================================= */
