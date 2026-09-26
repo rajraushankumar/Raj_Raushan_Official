@@ -88,3 +88,147 @@
         z-index: 2;
     }
 }
+/* ==========================================================
+   RR FINAL INVISIBLE OVERLAY PROTECTION V2
+   Mobile links / touch protection
+========================================================== */
+
+@media (max-width: 950px) {
+
+    /*
+       Normal links must receive touch events.
+    */
+
+    html body a[href],
+    html body button:not([disabled]),
+    html body [role="link"],
+    html body [data-href] {
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: rgba(255,255,255,.12);
+    }
+
+
+    /*
+       The Follow Journey cards shown on homepage
+       must always be touchable.
+    */
+
+    html body .rr-journey-social-card {
+        position: relative !important;
+        z-index: 20 !important;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+    }
+
+
+    html body .rr-journey-social-card * {
+        pointer-events: none !important;
+    }
+
+
+    /*
+       The clickable anchor itself receives the tap.
+    */
+
+    html body .rr-journey-social-card {
+        cursor: pointer !important;
+    }
+
+
+    /*
+       Decorative pseudo-elements can NEVER block taps.
+    */
+
+    html body .rr-journey-social-card::before,
+    html body .rr-journey-social-card::after {
+        pointer-events: none !important;
+    }
+
+
+    /*
+       Hidden search / menu / loader layers.
+    */
+
+    html body .rr-search-overlay:not(.active),
+    html body #rr-clean-menu-overlay:not(.open),
+    html body #rr-clean-menu-panel:not(.open),
+    html body .rr-mobile-menu-backdrop:not(.active),
+    html body .rr-mobile-menu-panel:not(.active),
+    html body #rr-mobile-nav-overlay:not(.open):not(.rr-mobile-visible),
+    html body #rr-mobile-nav-panel:not(.open):not(.rr-mobile-visible),
+    html body #rr-site-loader.rr-loader-hide {
+        pointer-events: none !important;
+    }
+
+
+    /*
+       Any hidden overlay/backdrop must not capture taps.
+    */
+
+    html body [aria-hidden="true"] {
+        pointer-events: none !important;
+    }
+
+}
+
+/* =========================================================
+   RR FINAL MOBILE TOUCH FIX V3
+   Remove accidental full-screen touch blockers
+========================================================= */
+
+@media (max-width: 950px) {
+
+    /* Existing real links must always receive touch */
+    a[href],
+    button:not([disabled]),
+    [role="link"],
+    [data-href] {
+        touch-action: manipulation !important;
+    }
+
+    /* Social cards */
+    .rr-journey-social-card {
+        position: relative !important;
+        z-index: 2147483000 !important;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+    }
+
+    .rr-journey-social-card *,
+    .rr-journey-social-card::before,
+    .rr-journey-social-card::after {
+        pointer-events: none !important;
+    }
+
+    /* Known closed overlays */
+    #rr-clean-menu-overlay:not(.open),
+    #rr-clean-menu-panel:not(.open),
+    .rr-mobile-menu-backdrop:not(.active),
+    .rr-mobile-menu-panel:not(.active),
+    .rr-mobile-nav-overlay:not(.rr-mobile-visible),
+    .rr-mobile-nav-panel:not(.rr-mobile-visible),
+    .rr-search-overlay:not(.active),
+    #rr-site-loader.rr-loader-hide {
+        pointer-events: none !important;
+    }
+
+    /* Accessibility-hidden layers must never block touch */
+    [aria-hidden="true"] {
+        pointer-events: none !important;
+    }
+
+    /*
+       IMPORTANT:
+       Normal page content and links stay above decorative layers.
+    */
+    main,
+    main a,
+    main button,
+    section a,
+    section button,
+    footer a,
+    footer button {
+        touch-action: manipulation;
+    }
+}
+
