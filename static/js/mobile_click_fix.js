@@ -191,3 +191,101 @@
     );
 
 })();
+/* FINAL MOBILE LINK SAFETY */
+
+(function () {
+    "use strict";
+
+    function protectMobileLinks() {
+
+        if (window.innerWidth > 950) {
+            return;
+        }
+
+        const hiddenSelectors = [
+            "#rr-clean-menu-overlay:not(.open)",
+            "#rr-clean-menu-panel:not(.open)",
+            ".rr-mobile-menu-backdrop:not(.active)",
+            ".rr-mobile-menu-panel:not(.active)",
+            ".rr-mobile-nav-overlay:not(.rr-mobile-visible)",
+            ".rr-mobile-nav-panel:not(.rr-mobile-visible)",
+            "#rr-mobile-nav-overlay:not(.rr-mobile-visible)",
+            "#rr-mobile-nav-panel:not(.rr-mobile-visible)",
+            ".rr-search-overlay:not(.active)",
+            "#rr-site-loader.rr-loader-hide"
+        ];
+
+        hiddenSelectors.forEach(function (selector) {
+
+            document.querySelectorAll(selector).forEach(function (el) {
+
+                el.style.setProperty(
+                    "pointer-events",
+                    "none",
+                    "important"
+                );
+
+            });
+
+        });
+
+        /* If loader is invisible, it can never block a tap */
+
+        const loader =
+            document.getElementById("rr-site-loader");
+
+        if (loader) {
+
+            const style =
+                window.getComputedStyle(loader);
+
+            if (
+                loader.classList.contains("rr-loader-hide") ||
+                style.visibility === "hidden" ||
+                Number(style.opacity) === 0
+            ) {
+                loader.style.setProperty(
+                    "pointer-events",
+                    "none",
+                    "important"
+                );
+            }
+        }
+    }
+
+    function startProtection() {
+
+        protectMobileLinks();
+
+        setTimeout(protectMobileLinks, 100);
+        setTimeout(protectMobileLinks, 500);
+        setTimeout(protectMobileLinks, 1500);
+        setTimeout(protectMobileLinks, 3000);
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            startProtection
+        );
+    } else {
+        startProtection();
+    }
+
+    window.addEventListener(
+        "pageshow",
+        startProtection
+    );
+
+    window.addEventListener(
+        "resize",
+        protectMobileLinks,
+        { passive: true }
+    );
+
+    window.addEventListener(
+        "orientationchange",
+        protectMobileLinks
+    );
+
+})();
