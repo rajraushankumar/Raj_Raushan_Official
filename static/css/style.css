@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -2299,7 +2299,7 @@ header {
 }
 
 
-/* Scroll shadow only — size change nahi */
+/* Scroll shadow only â€” size change nahi */
 
 .raj-pro-header.rr-nav-scrolled {
     height: 74px !important;
@@ -2359,4 +2359,5 @@ header {
     }
 
 }
+
 
