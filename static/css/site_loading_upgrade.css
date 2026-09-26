@@ -277,3 +277,17 @@ button:focus-visible {
     }
 
 }
+
+/* FINAL LOADER OVERRIDE */
+#rr-site-loader {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+#rr-site-loader *,
+.rr-site-loader,
+.rr-loader {
+    pointer-events: none !important;
+}
