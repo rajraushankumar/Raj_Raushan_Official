@@ -1,0 +1,148 @@
+﻿/* =========================================
+   RANCHI TRAVEL GUIDE
+   ========================================= */
+
+.rr-ranchi-guide {
+    width: 100%;
+    max-width: 1100px;
+    margin: 55px auto;
+    padding: 0 20px;
+}
+
+.rr-ranchi-guide-inner {
+    border-radius: 24px;
+    padding: 34px;
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: 0 18px 50px rgba(0,0,0,.12);
+}
+
+.rr-ranchi-guide-heading {
+    margin-bottom: 28px;
+}
+
+.rr-ranchi-guide-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: .7;
+}
+
+.rr-ranchi-guide-heading h2 {
+    margin: 0 0 10px;
+    font-size: clamp(28px, 5vw, 42px);
+    line-height: 1.1;
+}
+
+.rr-ranchi-guide-heading p {
+    margin: 0;
+    max-width: 720px;
+    line-height: 1.7;
+    opacity: .78;
+}
+
+.rr-ranchi-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.rr-ranchi-guide-item {
+    padding: 20px;
+    border-radius: 17px;
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.rr-ranchi-guide-item h3 {
+    margin: 0 0 9px;
+    font-size: 17px;
+}
+
+.rr-ranchi-guide-item p {
+    margin: 0;
+    line-height: 1.65;
+    font-size: 14px;
+    opacity: .82;
+}
+
+.rr-ranchi-guide-item strong {
+    opacity: 1;
+}
+
+.rr-ranchi-guide-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.rr-ranchi-guide-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 45px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none !important;
+    font-size: 13px;
+    font-weight: 800;
+    border: 1px solid rgba(255,255,255,.16);
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+.rr-ranchi-guide-btn:hover {
+    transform: translateY(-2px);
+    opacity: .9;
+}
+
+.rr-ranchi-guide-btn-map {
+    background: #ff0000;
+    color: #fff !important;
+    border-color: #ff0000;
+}
+
+.rr-ranchi-guide-btn-youtube {
+    background: rgba(255,255,255,.07);
+    color: inherit !important;
+}
+
+.rr-ranchi-guide-note {
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.6;
+    opacity: .62;
+}
+
+@media (max-width: 700px) {
+
+    .rr-ranchi-guide {
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+
+    .rr-ranchi-guide-inner {
+        padding: 23px 18px;
+        border-radius: 19px;
+    }
+
+    .rr-ranchi-guide-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .rr-ranchi-guide-item {
+        padding: 17px;
+    }
+
+    .rr-ranchi-guide-actions {
+        flex-direction: column;
+    }
+
+    .rr-ranchi-guide-btn {
+        width: 100%;
+    }
+}

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-rr-theme="dark">
 
 <head>
@@ -277,129 +277,7 @@ document.documentElement.setAttribute(
 
 <section class="detail-cta">
 
-    
-<!-- =========================================
-     RANCHI TRAVEL GUIDE
-     ========================================= -->
-<section class="rr-ranchi-guide" id="ranchi-travel-guide">
-
-    <div class="rr-ranchi-guide-inner">
-
-        <div class="rr-ranchi-guide-heading">
-
-            <span class="rr-ranchi-guide-label">
-                🧭 Travel Guide
-            </span>
-
-            <h2>Plan Your Ranchi Journey</h2>
-
-            <p>
-                A simple guide to help you understand what to explore,
-                how to reach Ranchi, what to carry and where to find
-                more information before your journey.
-            </p>
-
-        </div>
-
-
-        <div class="rr-ranchi-guide-grid">
-
-            <div class="rr-ranchi-guide-item">
-                <h3>📍 Location</h3>
-                <p>
-                    <strong>Ranchi, Jharkhand, India</strong><br>
-                    The capital city of Jharkhand and a gateway to
-                    waterfalls, hills, lakes and nature destinations.
-                </p>
-            </div>
-
-
-            <div class="rr-ranchi-guide-item">
-                <h3>🌿 What to Explore</h3>
-                <p>
-                    Ranchi offers a mix of city attractions and nature.
-                    Nearby places include waterfalls, dams, hills,
-                    gardens and other outdoor destinations.
-                </p>
-            </div>
-
-
-            <div class="rr-ranchi-guide-item">
-                <h3>🗓️ Best Time</h3>
-                <p>
-                    The best time depends on the place you plan to visit.
-                    For waterfall and outdoor trips, always check the
-                    latest local conditions before travelling.
-                </p>
-            </div>
-
-
-            <div class="rr-ranchi-guide-item">
-                <h3>🚗 How to Reach</h3>
-                <p>
-                    Ranchi is connected by road, rail and air.
-                    Birsa Munda Airport serves Ranchi, and the city
-                    has railway and local road connectivity.
-                </p>
-            </div>
-
-
-            <div class="rr-ranchi-guide-item">
-                <h3>💰 Travel Budget</h3>
-                <p>
-                    Your total cost depends on your starting city,
-                    transport, food, local travel and stay.
-                    Plan the budget according to your travel style.
-                </p>
-            </div>
-
-
-            <div class="rr-ranchi-guide-item">
-                <h3>🎒 What to Carry</h3>
-                <p>
-                    Carry comfortable shoes, drinking water, a power bank,
-                    weather-appropriate clothes and basic travel essentials.
-                    For outdoor trips, check the weather before leaving.
-                </p>
-            </div>
-
-        </div>
-
-
-        <div class="rr-ranchi-guide-actions">
-
-            <a
-                class="rr-ranchi-guide-btn rr-ranchi-guide-btn-map"
-                href="https://www.google.com/maps/search/?api=1&query=Ranchi%2C%20Jharkhand"
-                target="_blank"
-                rel="noopener noreferrer">
-                🗺️ View Ranchi on Google Maps
-            </a>
-
-
-            <a
-                class="rr-ranchi-guide-btn rr-ranchi-guide-btn-youtube"
-                href="https://www.youtube.com/@RajRaushanOfficial"
-                target="_blank"
-                rel="noopener noreferrer">
-                🎥 Watch Ranchi Vlogs
-            </a>
-
-        </div>
-
-
-        <div class="rr-ranchi-guide-note">
-            Travel information can change with weather, local conditions,
-            transport schedules and destination rules. Check the latest
-            information before starting your journey.
-        </div>
-
-    </div>
-
-</section>
-<!-- END RANCHI TRAVEL GUIDE -->
-
-<h2>
+    <h2>
         Continue Exploring
     </h2>
 
@@ -436,7 +314,6 @@ document.documentElement.setAttribute(
 </body>
 
 </html>
-
 
 
 
