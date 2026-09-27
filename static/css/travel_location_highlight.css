@@ -1,0 +1,89 @@
+﻿/* ============================================================
+   RAJ RAUSHAN OFFICIAL
+   TRAVEL LOCATION HIGHLIGHT
+   ------------------------------------------------------------
+   Styling only.
+   Does NOT change location names or page content.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Destination / Playlist location labels
+   ------------------------------------------------------------ */
+
+.rr-location-highlight,
+.destination-location,
+.playlist-location,
+.rr-destination-location,
+.rr-playlist-location {
+    font-weight: 800 !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0.2px !important;
+    opacity: 1 !important;
+}
+
+/* ------------------------------------------------------------
+   Location text inside common meta sections
+   ------------------------------------------------------------ */
+
+.destination-meta .destination-location,
+.destination-meta .location,
+.playlist-meta .playlist-location,
+.playlist-meta .location {
+    font-weight: 800 !important;
+    opacity: 1 !important;
+}
+
+/* ------------------------------------------------------------
+   Location links
+   ------------------------------------------------------------ */
+
+.destination-location a,
+.playlist-location a,
+.rr-location-highlight a,
+.rr-destination-location a,
+.rr-playlist-location a {
+    font-weight: 800 !important;
+    text-decoration: none !important;
+}
+
+/* ------------------------------------------------------------
+   Location text inside cards
+   ------------------------------------------------------------ */
+
+.destination-card .destination-location,
+.destination-card .rr-destination-location,
+.playlist-card .playlist-location,
+.playlist-card .rr-playlist-location,
+.destination-item .destination-location,
+.playlist-item .playlist-location {
+    font-weight: 800 !important;
+    opacity: 1 !important;
+}
+
+/* ------------------------------------------------------------
+   Small location / metadata text
+   ------------------------------------------------------------ */
+
+.destination-meta,
+.playlist-meta {
+    line-height: 1.5;
+}
+
+/* ------------------------------------------------------------
+   Mobile
+   ------------------------------------------------------------ */
+
+@media (max-width: 700px) {
+
+    .rr-location-highlight,
+    .destination-location,
+    .playlist-location,
+    .rr-destination-location,
+    .rr-playlist-location {
+        font-weight: 800 !important;
+        font-size: 14px !important;
+        line-height: 1.45 !important;
+    }
+
+}

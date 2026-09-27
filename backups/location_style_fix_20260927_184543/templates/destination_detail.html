@@ -60,9 +60,6 @@ document.documentElement.setAttribute(
 <!-- RR CANONICAL THEME - MUST LOAD LAST -->
 <link rel="stylesheet"
       href="{{ url_for('static', filename='css/site_theme_final.css') }}?v=20260920-final">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/travel_location_highlight.css') }}?v=20260927">
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/final_universal_travel_guide.css') }}?v=20260927">
 </head>
 
 
@@ -281,224 +278,126 @@ document.documentElement.setAttribute(
 <section class="detail-cta">
 
     
-
-
-
 <!-- =========================================
-     UNIVERSAL TRAVEL GUIDE
+     RANCHI TRAVEL GUIDE
      ========================================= -->
+<section class="rr-ranchi-guide" id="ranchi-travel-guide">
 
-<section class="rr-universal-travel-guide">
+    <div class="rr-ranchi-guide-inner">
 
-    <div class="rr-universal-guide-inner">
+        <div class="rr-ranchi-guide-heading">
 
-        <div class="rr-universal-guide-heading">
-
-            <span class="rr-universal-guide-label">
+            <span class="rr-ranchi-guide-label">
                 🧭 Travel Guide
             </span>
 
-            <h2>
-                Plan Your {{ destination.title }} Journey
-            </h2>
+            <h2>Plan Your Ranchi Journey</h2>
 
             <p>
-                A simple guide to help you explore
-                {{ destination.title }}
-                {% if destination.region %}
-                in {{ destination.region }}
-                {% endif %}
-                and prepare for your journey.
+                A simple guide to help you understand what to explore,
+                how to reach Ranchi, what to carry and where to find
+                more information before your journey.
             </p>
 
         </div>
 
 
-        <div class="rr-universal-guide-grid">
+        <div class="rr-ranchi-guide-grid">
 
-
-            <!-- LOCATION -->
-
-            <div class="rr-universal-guide-item">
-
-                <h3>
-                    📍 Location
-                </h3>
-
+            <div class="rr-ranchi-guide-item">
+                <h3>📍 Location</h3>
                 <p>
-
-                    <strong>
-                        {{ destination.title }}
-                    </strong>
-
-                    {% if destination.region %}
-                        <br>
-                        {{ destination.region }}
-                    {% endif %}
-
+                    <strong>Ranchi, Jharkhand, India</strong><br>
+                    The capital city of Jharkhand and a gateway to
+                    waterfalls, hills, lakes and nature destinations.
                 </p>
-
-                <span>
-                    Check the exact destination point and
-                    nearby places before starting your journey.
-                </span>
-
             </div>
 
 
-            <!-- WHAT TO EXPLORE -->
-
-            <div class="rr-universal-guide-item">
-
-                <h3>
-                    🌿 What to Explore
-                </h3>
-
+            <div class="rr-ranchi-guide-item">
+                <h3>🌿 What to Explore</h3>
                 <p>
-                    Explore the main attractions, local places,
-                    nature spots, historical locations and
-                    experiences around
-                    <strong>
-                        {{ destination.title }}
-                    </strong>.
+                    Ranchi offers a mix of city attractions and nature.
+                    Nearby places include waterfalls, dams, hills,
+                    gardens and other outdoor destinations.
                 </p>
-
-                <span>
-                    Explore the available videos and playlists
-                    to discover places covered in the journey.
-                </span>
-
             </div>
 
 
-            <!-- BEST TIME -->
-
-            <div class="rr-universal-guide-item">
-
-                <h3>
-                    🗓️ Best Time
-                </h3>
-
+            <div class="rr-ranchi-guide-item">
+                <h3>🗓️ Best Time</h3>
                 <p>
-                    The best time depends on the type of
-                    destination and the activities you want
-                    to enjoy.
+                    The best time depends on the place you plan to visit.
+                    For waterfall and outdoor trips, always check the
+                    latest local conditions before travelling.
                 </p>
-
-                <span>
-                    For outdoor trips, check current weather
-                    and local conditions before travelling.
-                </span>
-
             </div>
 
 
-            <!-- HOW TO REACH -->
-
-            <div class="rr-universal-guide-item">
-
-                <h3>
-                    🚗 How to Reach
-                </h3>
-
+            <div class="rr-ranchi-guide-item">
+                <h3>🚗 How to Reach</h3>
                 <p>
-                    Plan your route according to your starting
-                    point, available transport and the exact
-                    destination.
+                    Ranchi is connected by road, rail and air.
+                    Birsa Munda Airport serves Ranchi, and the city
+                    has railway and local road connectivity.
                 </p>
-
-                <span>
-                    Use Google Maps for the latest route,
-                    distance and navigation.
-                </span>
-
             </div>
 
 
-            <!-- BUDGET -->
-
-            <div class="rr-universal-guide-item">
-
-                <h3>
-                    💰 Travel Budget
-                </h3>
-
+            <div class="rr-ranchi-guide-item">
+                <h3>💰 Travel Budget</h3>
                 <p>
-                    Your total cost depends on transport,
-                    food, local travel and accommodation.
+                    Your total cost depends on your starting city,
+                    transport, food, local travel and stay.
+                    Plan the budget according to your travel style.
                 </p>
-
-                <span>
-                    Plan your budget according to your travel
-                    style and distance from your starting location.
-                </span>
-
             </div>
 
 
-            <!-- WHAT TO CARRY -->
-
-            <div class="rr-universal-guide-item">
-
-                <h3>
-                    🎒 What to Carry
-                </h3>
-
+            <div class="rr-ranchi-guide-item">
+                <h3>🎒 What to Carry</h3>
                 <p>
-                    Carry comfortable footwear, drinking water,
-                    a power bank and weather-appropriate clothes.
+                    Carry comfortable shoes, drinking water, a power bank,
+                    weather-appropriate clothes and basic travel essentials.
+                    For outdoor trips, check the weather before leaving.
                 </p>
-
-                <span>
-                    For outdoor destinations, check the weather
-                    before leaving.
-                </span>
-
             </div>
 
         </div>
 
 
-        <!-- ACTION BUTTONS -->
-
-        <div class="rr-universal-guide-actions">
+        <div class="rr-ranchi-guide-actions">
 
             <a
-                class="rr-universal-guide-map"
-                href="https://www.google.com/maps/search/?api=1&query={{ destination.title|urlencode }}{% if destination.region %},{{ destination.region|urlencode }}{% endif %}"
+                class="rr-ranchi-guide-btn rr-ranchi-guide-btn-map"
+                href="https://www.google.com/maps/search/?api=1&query=Ranchi%2C%20Jharkhand"
                 target="_blank"
-                rel="noopener noreferrer"
-            >
-                🗺️ View {{ destination.title }} on Google Maps
+                rel="noopener noreferrer">
+                🗺️ View Ranchi on Google Maps
             </a>
 
 
             <a
-                class="rr-universal-guide-youtube"
+                class="rr-ranchi-guide-btn rr-ranchi-guide-btn-youtube"
                 href="https://www.youtube.com/@RajRaushanOfficial"
                 target="_blank"
-                rel="noopener noreferrer"
-            >
-                🎥 Watch {{ destination.title }} Vlogs
+                rel="noopener noreferrer">
+                🎥 Watch Ranchi Vlogs
             </a>
 
         </div>
 
 
-        <div class="rr-universal-guide-note">
-
-            Travel information can change with weather,
-            local conditions, transport schedules and
-            destination rules. Check the latest information
-            before starting your journey.
-
+        <div class="rr-ranchi-guide-note">
+            Travel information can change with weather, local conditions,
+            transport schedules and destination rules. Check the latest
+            information before starting your journey.
         </div>
 
     </div>
 
 </section>
-
-<!-- END UNIVERSAL TRAVEL GUIDE -->
+<!-- END RANCHI TRAVEL GUIDE -->
 
 <h2>
         Continue Exploring
@@ -537,10 +436,6 @@ document.documentElement.setAttribute(
 </body>
 
 </html>
-
-
-
-
 
 
 
