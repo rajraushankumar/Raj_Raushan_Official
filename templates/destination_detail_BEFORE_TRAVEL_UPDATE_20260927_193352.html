@@ -1,0 +1,548 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-rr-theme="dark">
+
+<head>
+<script src="{{ url_for('static', filename='js/theme_boot.js') }}?v=20"></script>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    {{ destination.title }} | Raj Raushan Official
+</title>
+
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/favicon.svg"
+>
+
+<link
+    rel="stylesheet"
+    href="/static/css/destination_detail.css"
+>
+
+<link rel="stylesheet" href="/static/css/public_mobile_nav.css">
+
+<link rel="stylesheet" href="/static/css/global_search.css">
+<link rel="stylesheet" href="/static/css/brand_avatar.css">
+<link rel="stylesheet" href="/static/css/professional_travel_theme.css?v=42">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- RR CANONICAL REFERENCE THEME -->
+
+<!-- RR CANONICAL REFERENCE THEME -->
+<!-- RR_FINAL_THEME_BOOT -->
+<script>
+document.documentElement.setAttribute(
+    "data-rr-theme",
+    "dark"
+);
+
+document.documentElement.setAttribute(
+    "data-theme",
+    "dark"
+);
+</script>
+<!-- /RR_FINAL_THEME_BOOT -->
+<link rel="stylesheet"
+      href="/static/css/mobile_click_fix.css?v=20260918">
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/mobile_links_final_fix.css') }}?v=20260918">
+
+<!-- RR CANONICAL THEME - MUST LOAD LAST -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/site_theme_final.css') }}?v=20260920-final">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/travel_location_highlight.css') }}?v=20260927">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/final_universal_travel_guide.css') }}?v=20260927">
+</head>
+
+
+<body>
+
+
+<header class="travel-nav">
+
+    <a
+        href="/"
+        class="travel-brand"
+    >
+
+        <span class="travel-logo">
+            RR
+        </span>
+
+        <span>
+
+            <strong>
+                Raj Raushan
+            </strong>
+
+            <small>
+                OFFICIAL
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="/explore">
+                Explore
+            </a>
+
+            <a href="/destinations">
+            Destinations
+        </a>
+
+        <a href="/playlists">
+            Playlists
+        </a>
+
+        <a href="/travel-map">
+            Travel Map
+        </a>
+
+        <a href="/gallery">
+            Gallery
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="detail-hero">
+
+    <div>
+
+        <span class="detail-region">
+
+            {{ destination.region }}
+            &bull;
+            {{ destination.category }}
+
+        </span>
+
+        <h1>
+            {{ destination.title }}
+        </h1>
+
+        <p>
+            {{ destination.intro }}
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="detail-story">
+
+    <div class="story-grid">
+
+
+        <div>
+
+            <span class="section-label">
+                DESTINATION STORY
+            </span>
+
+            <h2>
+                Explore the Journey
+            </h2>
+
+            <p>
+                {{ destination.story }}
+            </p>
+
+        </div>
+
+
+        <aside class="highlights-card">
+
+            <h3>
+                Highlights
+            </h3>
+
+            <div>
+
+                {% for item
+                   in destination.highlights %}
+
+                <span>
+                    {{ item }}
+                </span>
+
+                {% endfor %}
+
+            </div>
+
+        </aside>
+
+
+    </div>
+
+</section>
+
+
+<section class="playlist-collection">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            YOUTUBE COLLECTIONS
+        </span>
+
+        <h2>
+            Playlists from {{ destination.title }}
+        </h2>
+
+    </div>
+
+
+    {% if destination_playlists %}
+
+    <div class="playlist-grid">
+
+        {% for playlist
+           in destination_playlists %}
+
+        <a
+            class="playlist-card"
+            href="{{ playlist.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            {% if playlist.thumbnail %}
+
+            <img
+                src="{{ playlist.thumbnail }}"
+                alt="{{ playlist.title }}"
+                loading="lazy"
+            >
+
+            {% endif %}
+
+            <div>
+
+                <span>
+                    YOUTUBE PLAYLIST
+                </span>
+
+                <h3>
+                    {{ playlist.title }}
+                </h3>
+
+                <p>
+                    {{ playlist.video_count }}
+                    videos
+                </p>
+
+                <strong>
+                    Open Playlist &nearr;
+                </strong>
+
+            </div>
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+
+    {% else %}
+
+    <div class="empty-state">
+        Playlist data is currently unavailable.
+    </div>
+
+    {% endif %}
+
+</section>
+
+
+<section class="detail-cta">
+
+    
+
+
+
+<!-- =========================================
+     UNIVERSAL TRAVEL GUIDE
+     ========================================= -->
+
+<section class="rr-universal-travel-guide">
+
+    <div class="rr-universal-guide-inner">
+
+        <div class="rr-universal-guide-heading">
+
+            <span class="rr-universal-guide-label">
+                🧭 Travel Guide
+            </span>
+
+            <h2>
+                Plan Your {{ destination.title }} Journey
+            </h2>
+
+            <p>
+                A simple guide to help you explore
+                {{ destination.title }}
+                {% if destination.region %}
+                in {{ destination.region }}
+                {% endif %}
+                and prepare for your journey.
+            </p>
+
+        </div>
+
+
+        <div class="rr-universal-guide-grid">
+
+
+            <!-- LOCATION -->
+
+            <div class="rr-universal-guide-item">
+
+                <h3>
+                    📍 Location
+                </h3>
+
+                <p>
+
+                    <strong>
+                        {{ destination.title }}
+                    </strong>
+
+                    {% if destination.region %}
+                        <br>
+                        {{ destination.region }}
+                    {% endif %}
+
+                </p>
+
+                <span>
+                    Check the exact destination point and
+                    nearby places before starting your journey.
+                </span>
+
+            </div>
+
+
+            <!-- WHAT TO EXPLORE -->
+
+            <div class="rr-universal-guide-item">
+
+                <h3>
+                    🌿 What to Explore
+                </h3>
+
+                <p>
+                    Explore the main attractions, local places,
+                    nature spots, historical locations and
+                    experiences around
+                    <strong>
+                        {{ destination.title }}
+                    </strong>.
+                </p>
+
+                <span>
+                    Explore the available videos and playlists
+                    to discover places covered in the journey.
+                </span>
+
+            </div>
+
+
+            <!-- BEST TIME -->
+
+            <div class="rr-universal-guide-item">
+
+                <h3>
+                    🗓️ Best Time
+                </h3>
+
+                <p>
+                    The best time depends on the type of
+                    destination and the activities you want
+                    to enjoy.
+                </p>
+
+                <span>
+                    For outdoor trips, check current weather
+                    and local conditions before travelling.
+                </span>
+
+            </div>
+
+
+            <!-- HOW TO REACH -->
+
+            <div class="rr-universal-guide-item">
+
+                <h3>
+                    🚗 How to Reach
+                </h3>
+
+                <p>
+                    Plan your route according to your starting
+                    point, available transport and the exact
+                    destination.
+                </p>
+
+                <span>
+                    Use Google Maps for the latest route,
+                    distance and navigation.
+                </span>
+
+            </div>
+
+
+            <!-- BUDGET -->
+
+            <div class="rr-universal-guide-item">
+
+                <h3>
+                    💰 Travel Budget
+                </h3>
+
+                <p>
+                    Your total cost depends on transport,
+                    food, local travel and accommodation.
+                </p>
+
+                <span>
+                    Plan your budget according to your travel
+                    style and distance from your starting location.
+                </span>
+
+            </div>
+
+
+            <!-- WHAT TO CARRY -->
+
+            <div class="rr-universal-guide-item">
+
+                <h3>
+                    🎒 What to Carry
+                </h3>
+
+                <p>
+                    Carry comfortable footwear, drinking water,
+                    a power bank and weather-appropriate clothes.
+                </p>
+
+                <span>
+                    For outdoor destinations, check the weather
+                    before leaving.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="rr-universal-guide-actions">
+
+            <a
+                class="rr-universal-guide-map"
+                href="https://www.google.com/maps/search/?api=1&query={{ destination.title|urlencode }}{% if destination.region %},{{ destination.region|urlencode }}{% endif %}"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                🗺️ View {{ destination.title }} on Google Maps
+            </a>
+
+
+            <a
+                class="rr-universal-guide-youtube"
+                href="https://www.youtube.com/@RajRaushanOfficial"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                🎥 Watch {{ destination.title }} Vlogs
+            </a>
+
+        </div>
+
+
+        <div class="rr-universal-guide-note">
+
+            Travel information can change with weather,
+            local conditions, transport schedules and
+            destination rules. Check the latest information
+            before starting your journey.
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- END UNIVERSAL TRAVEL GUIDE -->
+
+<h2>
+        Continue Exploring
+    </h2>
+
+    <a href="/destinations">
+        All Destinations
+    </a>
+
+    <a href="/playlists">
+        All Playlists
+    </a>
+
+</section>
+
+
+<script src="/static/js/public_mobile_nav.js"></script>
+
+<script src="/static/js/global_search.js"></script>
+
+<script src="/static/js/global_search_tracking.js"></script>
+<script src="/static/js/brand_avatar.js"></script>
+<script src="/static/js/search_nav_position.js?v=38"></script>
+
+<!-- RR PRODUCTION DARK THEME FIX -->
+<!-- RR PREMIUM VISUAL POLISH V2 -->
+
+<!-- RR CANONICAL REFERENCE THEME -->
+
+<!-- RR CANONICAL REFERENCE THEME -->
+<script src="{{ url_for('static', filename='js/site_theme_final.js') }}?v=20260918-final"></script>
+
+<script src="/static/js/mobile_click_fix.js?v=20260918"></script>
+
+<script src="{{ url_for('static', filename='js/mobile_links_final_fix.js') }}?v=20260918"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
