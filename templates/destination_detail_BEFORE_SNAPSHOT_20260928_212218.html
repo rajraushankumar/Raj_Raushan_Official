@@ -63,7 +63,6 @@ document.documentElement.setAttribute(
 <link rel="stylesheet" href="{{ url_for('static', filename='css/travel_location_highlight.css') }}?v=20260927">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/final_universal_travel_guide.css') }}?v=20260927">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/quick_travel_snapshot.css') }}?v=20260928">
 </head>
 
 
@@ -285,174 +284,6 @@ document.documentElement.setAttribute(
 
 
 
-
-<!-- ============================================================
-     RR QUICK TRAVEL SNAPSHOT
-     ============================================================ -->
-
-<section class="rr-quick-snapshot">
-
-    <div class="rr-quick-snapshot-inner">
-
-        <div class="rr-snapshot-heading">
-
-            <span class="rr-snapshot-label">
-                ✦ QUICK TRAVEL SNAPSHOT
-            </span>
-
-            <h2>
-                {{ destination.title }}
-                <span>at a glance</span>
-            </h2>
-
-            <p>
-                Everything you need to know before exploring
-                {{ destination.title }}.
-            </p>
-
-        </div>
-
-
-        <div class="rr-snapshot-grid">
-
-            <!-- DESTINATION -->
-            <div class="rr-snapshot-card">
-
-                <div class="rr-snapshot-icon">
-                    📍
-                </div>
-
-                <div>
-                    <span class="rr-snapshot-small">
-                        DESTINATION
-                    </span>
-
-                    <strong>
-                        {{ destination.title }}
-                    </strong>
-
-                    {% if destination.region %}
-                    <p>
-                        {{ destination.region }}
-                    </p>
-                    {% endif %}
-                </div>
-
-            </div>
-
-
-            <!-- EXPERIENCE -->
-            <div class="rr-snapshot-card">
-
-                <div class="rr-snapshot-icon">
-                    🌿
-                </div>
-
-                <div>
-                    <span class="rr-snapshot-small">
-                        EXPERIENCE
-                    </span>
-
-                    <strong>
-                        {{ destination.category }}
-                    </strong>
-
-                    <p>
-                        Explore & experience
-                    </p>
-                </div>
-
-            </div>
-
-
-            <!-- DISCOVER -->
-            <div class="rr-snapshot-card">
-
-                <div class="rr-snapshot-icon">
-                    🧭
-                </div>
-
-                <div>
-                    <span class="rr-snapshot-small">
-                        DISCOVER
-                    </span>
-
-                    <strong>
-                        Places & Stories
-                    </strong>
-
-                    <p>
-                        Travel • Nature • Culture
-                    </p>
-                </div>
-
-            </div>
-
-
-            <!-- WATCH -->
-            <div class="rr-snapshot-card">
-
-                <div class="rr-snapshot-icon">
-                    ▶️
-                </div>
-
-                <div>
-                    <span class="rr-snapshot-small">
-                        WATCH
-                    </span>
-
-                    <strong>
-                        Travel Vlogs
-                    </strong>
-
-                    <p>
-                        Real journeys & experiences
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="rr-snapshot-bottom">
-
-            <div class="rr-snapshot-tip">
-
-                <span>💡</span>
-
-                <div>
-                    <strong>
-                        Travel Tip
-                    </strong>
-
-                    <p>
-                        Check weather, local conditions and
-                        destination timings before you start
-                        your journey.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <a
-                href="https://www.google.com/maps/search/?api=1&query={{ destination.title|urlencode }}{% if destination.region %},{{ destination.region|urlencode }}{% endif %}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="rr-snapshot-map"
-            >
-                🗺️ Explore Location
-                <span>↗</span>
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- END RR QUICK TRAVEL SNAPSHOT -->
 <!-- =========================================
      UNIVERSAL TRAVEL GUIDE
      ========================================= -->
@@ -706,8 +537,6 @@ document.documentElement.setAttribute(
 </body>
 
 </html>
-
-
 
 
 

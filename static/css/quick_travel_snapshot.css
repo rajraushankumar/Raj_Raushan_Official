@@ -1,0 +1,486 @@
+﻿/* ============================================================
+   RR QUICK TRAVEL SNAPSHOT
+   Premium Professional Destination Section
+   ============================================================ */
+
+.rr-quick-snapshot {
+
+    width: min(1180px, calc(100% - 32px));
+
+    margin: 35px auto 25px;
+
+    padding: 32px;
+
+    position: relative;
+
+    border-radius: 26px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(239,68,68,.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.18);
+
+    backdrop-filter: blur(14px);
+}
+
+
+/* TOP ACCENT */
+
+.rr-quick-snapshot::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ef4444,
+            #f59e0b,
+            #ef4444
+        );
+}
+
+
+.rr-quick-snapshot-inner {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* HEADING */
+
+.rr-snapshot-heading {
+
+    margin-bottom: 24px;
+}
+
+
+.rr-snapshot-label {
+
+    display: inline-flex;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(239,68,68,.10);
+
+    border:
+        1px solid rgba(239,68,68,.20);
+
+    color: #f87171;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: .14em;
+}
+
+
+.rr-snapshot-heading h2 {
+
+    margin: 12px 0 7px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(27px, 4vw, 38px);
+
+    line-height: 1.15;
+
+    font-weight: 900;
+
+    letter-spacing: -.02em;
+}
+
+
+.rr-snapshot-heading h2 span {
+
+    color: rgba(255,255,255,.45);
+
+    font-weight: 600;
+}
+
+
+.rr-snapshot-heading p {
+
+    margin: 0;
+
+    color: rgba(255,255,255,.58);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* GRID */
+
+.rr-snapshot-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0,1fr));
+
+    gap: 13px;
+}
+
+
+/* CARD */
+
+.rr-snapshot-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-height: 105px;
+
+    padding: 17px;
+
+    border-radius: 17px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid rgba(255,255,255,.075);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.rr-snapshot-card:hover {
+
+    transform: translateY(-4px);
+
+    background:
+        rgba(255,255,255,.075);
+
+    border-color:
+        rgba(239,68,68,.28);
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.16);
+}
+
+
+/* ICON */
+
+.rr-snapshot-icon {
+
+    flex-shrink: 0;
+
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        rgba(239,68,68,.10);
+
+    border:
+        1px solid rgba(239,68,68,.16);
+
+    font-size: 19px;
+}
+
+
+/* CARD TEXT */
+
+.rr-snapshot-small {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color:
+        rgba(255,255,255,.38);
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: .12em;
+}
+
+
+.rr-snapshot-card strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+.rr-snapshot-card p {
+
+    margin: 3px 0 0;
+
+    color:
+        rgba(255,255,255,.48);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* BOTTOM */
+
+.rr-snapshot-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-top: 16px;
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
+}
+
+
+/* TRAVEL TIP */
+
+.rr-snapshot-tip {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.rr-snapshot-tip > span {
+
+    font-size: 21px;
+}
+
+
+.rr-snapshot-tip strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+.rr-snapshot-tip p {
+
+    margin: 2px 0 0;
+
+    color:
+        rgba(255,255,255,.45);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* MAP BUTTON */
+
+.rr-snapshot-map {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 44px;
+
+    padding: 10px 17px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #dc2626
+        );
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 8px 22px rgba(220,38,38,.22);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.rr-snapshot-map:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(220,38,38,.30);
+}
+
+
+.rr-snapshot-map span {
+
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 950px) {
+
+    .rr-snapshot-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+    }
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 650px) {
+
+    .rr-quick-snapshot {
+
+        width: calc(100% - 20px);
+
+        margin: 30px auto 20px;
+
+        padding: 23px 15px;
+
+        border-radius: 21px;
+    }
+
+
+    .rr-snapshot-heading h2 {
+
+        font-size: 28px;
+    }
+
+
+    .rr-snapshot-heading p {
+
+        font-size: 13px;
+    }
+
+
+    .rr-snapshot-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    .rr-snapshot-card {
+
+        min-height: 84px;
+
+        padding: 14px;
+    }
+
+
+    .rr-snapshot-bottom {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+
+    .rr-snapshot-map {
+
+        width: 100%;
+    }
+}
+
+
+/* SMALL PHONE */
+
+@media (max-width: 400px) {
+
+    .rr-quick-snapshot {
+
+        width: calc(100% - 14px);
+
+        padding: 21px 13px;
+    }
+
+
+    .rr-snapshot-heading h2 {
+
+        font-size: 25px;
+    }
+}
