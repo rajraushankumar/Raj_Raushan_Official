@@ -1274,7 +1274,7 @@ html body .rr-universal-travel-guide
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        ▶️ Watch {{ destination.title }} Playlist
+                        ▶️ Watch Aurangabad Playlist
                     </a>
 
                     <a
@@ -2487,7 +2487,6 @@ html body .rr-universal-travel-guide
 </body>
 
 </html>
-
 
 
 
