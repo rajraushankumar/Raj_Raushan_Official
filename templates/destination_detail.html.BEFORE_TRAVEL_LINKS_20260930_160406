@@ -1265,28 +1265,6 @@ html body .rr-universal-travel-guide
                     </span>
                 </div>
 
-                {% if destination_playlists %}
-                <div class="travel-story-actions">
-
-                    <a
-                        class="travel-story-btn"
-                        href="{{ destination_playlists[0].url }}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        ▶️ Watch Aurangabad Playlist
-                    </a>
-
-                    <a
-                        class="travel-story-btn"
-                        href="/playlists"
-                    >
-                        🎬 View All Playlists
-                    </a>
-
-                </div>
-                {% endif %}
-
                 
 
             </div>
@@ -1330,31 +1308,6 @@ html body .rr-universal-travel-guide
                     <span class="travel-story-tag">
                         ✈️ New Places
                     </span>
-
-                </div>
-
-                <div class="travel-story-actions">
-
-                    <a
-                        class="travel-story-btn"
-                        href="/travel-planner"
-                    >
-                        🗺️ Travel Planner
-                    </a>
-
-                    <a
-                        class="travel-story-btn"
-                        href="/destinations"
-                    >
-                        🌍 Explore Destinations
-                    </a>
-
-                    <a
-                        class="travel-story-btn"
-                        href="/playlists"
-                    >
-                        🎬 All Playlists
-                    </a>
 
                 </div>
 
@@ -2487,7 +2440,6 @@ html body .rr-universal-travel-guide
 </body>
 
 </html>
-
 
 
 
