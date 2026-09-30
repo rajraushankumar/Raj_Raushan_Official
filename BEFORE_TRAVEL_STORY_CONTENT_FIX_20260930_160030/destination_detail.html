@@ -1125,197 +1125,70 @@ html body .rr-universal-travel-guide
 <!-- =========================================================
      TRAVEL STORY / JOURNEY TIMELINE
      ========================================================= -->
-<!-- =========================================================
-     TRAVEL STORY - COMPLETE CONTENT
-     ========================================================= -->
 <section class="travel-story-section">
 
     <div class="travel-story-header">
         <span class="travel-story-label">MY JOURNEY</span>
-
         <h2>Travel Story</h2>
-
         <p>
-            Explore the journey, places, memories and experiences
-            from {{ destination.title }}.
+            Follow the journey, memories and experiences from
+            {{ destination.title }}.
         </p>
     </div>
 
     <div class="travel-story-timeline">
 
-        <!-- STORY 1 -->
+        {% for story in travel_story %}
+
         <article class="travel-story-item">
 
             <div class="travel-story-dot">
-                📍
+                {{ story.icon }}
             </div>
 
             <div class="travel-story-card">
 
                 <div class="travel-story-date">
-                    January 2026
+                    {{ story.date }}
                 </div>
 
-                <h3>
-                    The Journey Begins
-                </h3>
+                <h3>{{ story.title }}</h3>
 
-                <p>
-                    The journey through {{ destination.title }}
-                    started with curiosity, excitement and a
-                    desire to explore new places and create
-                    unforgettable memories.
-                </p>
+                <p>{{ story.text }}</p>
 
+                {% if story.tags %}
                 <div class="travel-story-meta">
+                    {% for tag in story.tags %}
                     <span class="travel-story-tag">
-                        📍 {{ destination.title }}
+                        {{ tag }}
                     </span>
-
-                    <span class="travel-story-tag">
-                        🧳 Travel
-                    </span>
-
-                    <span class="travel-story-tag">
-                        🌍 Explore
-                    </span>
+                    {% endfor %}
                 </div>
+                {% endif %}
+
+                {% if loop.last %}
+                <div class="travel-story-actions">
+                    <a
+                        class="travel-story-btn"
+                        href="{{ url_for('playlists') }}"
+                    >
+                        🎥 Watch More Journeys
+                    </a>
+
+                    <a
+                        class="travel-story-btn"
+                        href="{{ url_for('travel_planner') }}"
+                    >
+                        🗺️ Plan Your Trip
+                    </a>
+                </div>
+                {% endif %}
 
             </div>
 
         </article>
 
-
-        <!-- STORY 2 -->
-        <article class="travel-story-item">
-
-            <div class="travel-story-dot">
-                🏞️
-            </div>
-
-            <div class="travel-story-card">
-
-                <div class="travel-story-date">
-                    On The Way
-                </div>
-
-                <h3>
-                    Exploring New Places
-                </h3>
-
-                <p>
-                    From roads and beautiful surroundings to local
-                    places and peaceful moments, every part of the
-                    journey became a new memory.
-                </p>
-
-                <div class="travel-story-meta">
-                    <span class="travel-story-tag">
-                        🛣️ Road Trip
-                    </span>
-
-                    <span class="travel-story-tag">
-                        🏞️ Nature
-                    </span>
-
-                    <span class="travel-story-tag">
-                        📸 Memories
-                    </span>
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- STORY 3 -->
-        <article class="travel-story-item">
-
-            <div class="travel-story-dot">
-                🎥
-            </div>
-
-            <div class="travel-story-card">
-
-                <div class="travel-story-date">
-                    Captured The Moments
-                </div>
-
-                <h3>
-                    From Journey To YouTube
-                </h3>
-
-                <p>
-                    The best moments of the journey are captured
-                    through videos and shared on Raj Raushan Official
-                    so that you can experience the journey too.
-                </p>
-
-                <div class="travel-story-meta">
-                    <span class="travel-story-tag">
-                        🎥 Vlog
-                    </span>
-
-                    <span class="travel-story-tag">
-                        ▶️ YouTube
-                    </span>
-
-                    <span class="travel-story-tag">
-                        ❤️ Memories
-                    </span>
-                </div>
-
-                
-
-            </div>
-
-        </article>
-
-
-        <!-- STORY 4 -->
-        <article class="travel-story-item">
-
-            <div class="travel-story-dot">
-                📸
-            </div>
-
-            <div class="travel-story-card">
-
-                <div class="travel-story-date">
-                    More To Come
-                </div>
-
-                <h3>
-                    More Memories Coming Soon
-                </h3>
-
-                <p>
-                    This travel story will continue to grow with
-                    more photographs, videos, destinations and
-                    real travel experiences.
-                </p>
-
-                <div class="travel-story-meta">
-
-                    <span class="travel-story-tag">
-                        📸 Photos
-                    </span>
-
-                    <span class="travel-story-tag">
-                        🎬 Videos
-                    </span>
-
-                    <span class="travel-story-tag">
-                        ✈️ New Places
-                    </span>
-
-                </div>
-
-                
-
-            </div>
-
-        </article>
+        {% endfor %}
 
     </div>
 
@@ -2440,8 +2313,6 @@ html body .rr-universal-travel-guide
 </body>
 
 </html>
-
-
 
 
 

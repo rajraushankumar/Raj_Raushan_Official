@@ -1265,7 +1265,16 @@ html body .rr-universal-travel-guide
                     </span>
                 </div>
 
-                
+                <div class="travel-story-actions">
+
+                    <a
+                        class="travel-story-btn"
+                        href="{{ url_for('playlists') }}"
+                    >
+                        ▶️ Watch My Journeys
+                    </a>
+
+                </div>
 
             </div>
 
@@ -1311,7 +1320,23 @@ html body .rr-universal-travel-guide
 
                 </div>
 
-                
+                <div class="travel-story-actions">
+
+                    <a
+                        class="travel-story-btn"
+                        href="{{ url_for('travel_planner') }}"
+                    >
+                        🗺️ Plan Your Trip
+                    </a>
+
+                    <a
+                        class="travel-story-btn"
+                        href="{{ url_for('destinations') }}"
+                    >
+                        🌍 Explore Destinations
+                    </a>
+
+                </div>
 
             </div>
 
@@ -2440,7 +2465,6 @@ html body .rr-universal-travel-guide
 </body>
 
 </html>
-
 
 
 

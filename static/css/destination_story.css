@@ -1,0 +1,265 @@
+﻿/* ============================================================
+   RAJ RAUSHAN OFFICIAL - TRAVEL STORY
+   ============================================================ */
+
+.travel-story-section {
+    margin: 48px auto;
+    max-width: 1100px;
+    padding: 0 20px;
+}
+
+.travel-story-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.travel-story-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    opacity: .7;
+}
+
+.travel-story-header h2 {
+    margin: 0 0 10px;
+    font-size: clamp(26px, 4vw, 40px);
+}
+
+.travel-story-header p {
+    margin: 0 auto;
+    max-width: 680px;
+    line-height: 1.7;
+    opacity: .75;
+}
+
+.travel-story-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 35px auto 0;
+}
+
+.travel-story-timeline::before {
+    content: "";
+    position: absolute;
+    left: 24px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: currentColor;
+    opacity: .15;
+}
+
+.travel-story-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 18px;
+    margin-bottom: 26px;
+}
+
+.travel-story-dot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-bg, #fff);
+    border: 2px solid currentColor;
+    position: relative;
+    z-index: 2;
+    font-size: 20px;
+}
+
+.travel-story-card {
+    border: 1px solid rgba(127,127,127,.18);
+    border-radius: 18px;
+    padding: 22px;
+    background: var(--card-bg, rgba(255,255,255,.8));
+    box-shadow: 0 8px 28px rgba(0,0,0,.06);
+}
+
+.travel-story-date {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: .6;
+    margin-bottom: 7px;
+}
+
+.travel-story-card h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+}
+
+.travel-story-card p {
+    margin: 0;
+    line-height: 1.7;
+    opacity: .78;
+}
+
+.travel-story-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.travel-story-tag {
+    padding: 7px 11px;
+    border-radius: 999px;
+    background: rgba(127,127,127,.1);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.travel-story-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.travel-story-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid rgba(127,127,127,.2);
+}
+
+.travel-story-btn:hover {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    .travel-story-section {
+        padding: 0 14px;
+        margin: 34px auto;
+    }
+
+    .travel-story-item {
+        grid-template-columns: 42px 1fr;
+        gap: 12px;
+    }
+
+    .travel-story-timeline::before {
+        left: 20px;
+    }
+
+    .travel-story-dot {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .travel-story-card {
+        padding: 17px;
+        border-radius: 15px;
+    }
+
+    .travel-story-card h3 {
+        font-size: 18px;
+    }
+}
+
+/* ============================================================
+   TRAVEL STORY - VISIBILITY & CONTRAST FIX
+   ============================================================ */
+
+.travel-story-section {
+    color: #ffffff !important;
+}
+
+.travel-story-header {
+    color: #ffffff !important;
+}
+
+.travel-story-header h2 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,.35);
+}
+
+.travel-story-header p {
+    color: #d8d8d8 !important;
+    opacity: 1 !important;
+}
+
+.travel-story-label {
+    color: #f0f0f0 !important;
+    opacity: 1 !important;
+}
+
+.travel-story-card {
+    background: #181818 !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 35px rgba(0,0,0,.28) !important;
+}
+
+.travel-story-card h3 {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+.travel-story-card p {
+    color: #d8d8d8 !important;
+    opacity: 1 !important;
+}
+
+.travel-story-date {
+    color: #bdbdbd !important;
+    opacity: 1 !important;
+}
+
+.travel-story-tag {
+    background: #292929 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,.10) !important;
+}
+
+.travel-story-dot {
+    background: #ffffff !important;
+    color: #111111 !important;
+    border-color: #d8d8d8 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,.25);
+}
+
+.travel-story-timeline::before {
+    background: #ffffff !important;
+    opacity: .22 !important;
+}
+
+.travel-story-btn {
+    background: #292929 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,.18) !important;
+}
+
+.travel-story-btn:hover {
+    background: #3a3a3a !important;
+    color: #ffffff !important;
+}
+
+/* Mobile readability */
+@media (max-width: 600px) {
+
+    .travel-story-card {
+        background: #181818 !important;
+    }
+
+    .travel-story-card p {
+        color: #d6d6d6 !important;
+    }
+
+    .travel-story-date {
+        color: #c5c5c5 !important;
+    }
+}
