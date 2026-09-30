@@ -3392,49 +3392,18 @@ def destination_detail_page(slug):
         )
 
 
-    # ========================================================
-    # DESTINATION PLAYLIST MATCHING
-    # Match using playlist title + destination keywords.
-    # This fixes cases where the playlist exists on /playlists
-    # but does not appear on the destination detail page.
-    # ========================================================
-
     terms = [
-        str(term).strip().lower()
-        for term in destination.get(
+        str(term).lower()
+        for term
+        in destination.get(
             "playlist_terms",
             []
         )
-        if str(term).strip()
     ]
 
-    destination_title = str(
-        destination.get("title", "")
-    ).strip().lower()
-
-    destination_slug_normalized = str(
-        slug
-    ).strip().lower().replace("-", " ")
-
-    # Add safe destination keywords automatically.
-    match_terms = set(terms)
-
-    if destination_title:
-        match_terms.add(destination_title)
-
-    if destination_slug_normalized:
-        match_terms.add(destination_slug_normalized)
-
-    # Special handling for Aurangabad destination.
-    # We know the playlist is already available on YouTube.
-    if slug == "aurangabad-bihar":
-        match_terms.update({
-            "aurangabad",
-            "aurangabad bihar",
-            "aurangabad, bihar"
-        })
 
     destination_playlists = []
+
 
     for playlist in playlists:
 
@@ -3443,58 +3412,14 @@ def destination_detail_page(slug):
                 "title",
                 ""
             )
-        ).strip().lower()
+        ).lower()
 
-        playlist_description = str(
-            playlist.get(
-                "description",
-                ""
-            )
-        ).strip().lower()
 
-        # Normalize separators so:
-        # Aurangabad-Bihar
-        # Aurangabad, Bihar
-        # Aurangabad Bihar
-        # can all match.
-        normalized_title = (
-            playlist_title
-            .replace("-", " ")
-            .replace("_", " ")
-            .replace(",", " ")
-        )
+        if any(
+            term in playlist_title
+            for term in terms
+        ):
 
-        normalized_description = (
-            playlist_description
-            .replace("-", " ")
-            .replace("_", " ")
-            .replace(",", " ")
-        )
-
-        matched = False
-
-        for term in match_terms:
-
-            normalized_term = (
-                str(term)
-                .strip()
-                .lower()
-                .replace("-", " ")
-                .replace("_", " ")
-                .replace(",", " ")
-            )
-
-            if not normalized_term:
-                continue
-
-            if (
-                normalized_term in normalized_title
-                or normalized_term in normalized_description
-            ):
-                matched = True
-                break
-
-        if matched:
             destination_playlists.append(
                 playlist
             )

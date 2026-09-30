@@ -200,3 +200,93 @@ select {
         grid-template-columns: 1fr;
     }
 }
+
+/* ================================
+   TRAVEL RECOMMENDATIONS
+================================ */
+
+.travel-recommendations {
+    margin: 45px 0;
+}
+
+.recommendations-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.recommendations-heading h2 {
+    margin: 10px 0;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.recommendations-heading p {
+    color: #657084;
+    line-height: 1.6;
+}
+
+.recommendation-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.recommendation-card {
+    background: #ffffff;
+    border: 1px solid #e5e8ee;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.04);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0,0,0,.08);
+}
+
+.recommendation-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.recommendation-card h3 {
+    margin: 0 0 10px;
+}
+
+.recommendation-card p {
+    color: #657084;
+    line-height: 1.6;
+    min-height: 78px;
+}
+
+.recommendation-card a {
+    display: inline-block;
+    margin-top: 8px;
+    color: #172033;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+@media (max-width: 900px) {
+
+    .recommendation-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .recommendation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recommendation-card {
+        padding: 22px;
+    }
+
+    .recommendation-card p {
+        min-height: auto;
+    }
+
+}
