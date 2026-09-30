@@ -1,4 +1,4 @@
-﻿from flask import request
+from flask import request
 import time
 import joblib
 import os
@@ -30,39 +30,123 @@ SECOND_CHANNEL = "@rajraushanofficial02"
 # GET LATEST VIDEOS
 # ==========================================
 
+
 def get_latest_videos():
 
     if not API_KEY:
-        print("YouTube API key not found")
+
+        print(
+            "YouTube API key not found"
+        )
+
         return []
+
 
     try:
 
-        # ----------------------------------
-        # GET CHANNEL UPLOAD PLAYLIST
-        # ----------------------------------
+        import re
+
+
+        # ======================================
+        # DURATION CONVERTER
+        # PT1M30S -> 90 seconds
+        # ======================================
+
+        def duration_to_seconds(
+            value
+        ):
+
+            value = str(
+                value or ""
+            ).strip()
+
+
+            match = re.fullmatch(
+                r"P"
+                r"(?:(\d+)D)?"
+                r"(?:T"
+                r"(?:(\d+)H)?"
+                r"(?:(\d+)M)?"
+                r"(?:(\d+)S)?"
+                r")?",
+                value
+            )
+
+
+            if not match:
+                return 0
+
+
+            days = int(
+                match.group(1) or 0
+            )
+
+            hours = int(
+                match.group(2) or 0
+            )
+
+            minutes = int(
+                match.group(3) or 0
+            )
+
+            seconds = int(
+                match.group(4) or 0
+            )
+
+
+            return (
+                days * 86400
+                + hours * 3600
+                + minutes * 60
+                + seconds
+            )
+
+
+        # ======================================
+        # CHANNEL UPLOAD PLAYLIST
+        # ======================================
 
         channel_url = (
-            "https://www.googleapis.com/youtube/v3/channels"
+            "https://www.googleapis.com/"
+            "youtube/v3/channels"
         )
 
+
         channel_params = {
-            "part": "contentDetails",
-            "forHandle": MAIN_CHANNEL,
-            "key": API_KEY
+
+            "part":
+                "contentDetails",
+
+            "forHandle":
+                MAIN_CHANNEL,
+
+            "key":
+                API_KEY
         }
+
 
         channel_response = requests.get(
             channel_url,
             params=channel_params,
-            timeout=10
+            timeout=15
         )
 
-        channel_data = channel_response.json()
 
-        if not channel_data.get("items"):
+        channel_response.raise_for_status()
 
-            print("Main channel not found")
+
+        channel_data = (
+            channel_response.json()
+        )
+
+
+        if not channel_data.get(
+            "items"
+        ):
+
+            print(
+                "Main channel not found"
+            )
 
             return []
 
@@ -75,45 +159,76 @@ def get_latest_videos():
         )
 
 
-        # ----------------------------------
-        # GET LATEST 12 VIDEOS
-        # ----------------------------------
+        # ======================================
+        # FETCH LATEST 50 VIDEOS
+        #
+        # We need enough videos so that after
+        # Shorts are removed, 6 real long
+        # videos are still available.
+        # ======================================
 
         playlist_url = (
-            "https://www.googleapis.com/youtube/v3/playlistItems"
+            "https://www.googleapis.com/"
+            "youtube/v3/playlistItems"
         )
 
+
         playlist_params = {
-            "part": "snippet",
-            "playlistId": playlist_id,
-            "maxResults": 30,
-            "key": API_KEY
+
+            "part":
+                "snippet",
+
+            "playlistId":
+                playlist_id,
+
+            "maxResults":
+                50,
+
+            "key":
+                API_KEY
         }
+
 
         playlist_response = requests.get(
             playlist_url,
             params=playlist_params,
-            timeout=10
+            timeout=15
         )
 
-        playlist_data = playlist_response.json()
+
+        playlist_response.raise_for_status()
+
+
+        playlist_data = (
+            playlist_response.json()
+        )
 
 
         videos = []
+
         video_ids = []
 
 
-        for item in playlist_data.get("items", []):
+        # ======================================
+        # BASIC VIDEO INFORMATION
+        # ======================================
+
+        for item in playlist_data.get(
+            "items",
+            []
+        ):
 
             snippet = item.get(
                 "snippet",
                 {}
             )
 
+
             resource_id = snippet.get(
                 "resourceId",
                 {}
             )
+
 
             video_id = resource_id.get(
                 "videoId"
@@ -129,22 +244,22 @@ def get_latest_videos():
             )
 
 
-            # ------------------------------
-            # UPLOAD DATE
-            # ------------------------------
-
             raw_date = snippet.get(
                 "publishedAt",
                 ""
             )
 
+
             try:
 
-                upload_date = datetime.strptime(
-                    raw_date,
-                    "%Y-%m-%dT%H:%M:%SZ"
-                ).strftime(
-                    "%d %b %Y"
+                upload_date = (
+                    datetime.strptime(
+                        raw_date,
+                        "%Y-%m-%dT%H:%M:%SZ"
+                    )
+                    .strftime(
+                        "%d %b %Y"
+                    )
                 )
 
             except ValueError:
@@ -152,42 +267,42 @@ def get_latest_videos():
                 upload_date = raw_date
 
 
-            # ------------------------------
-            # THUMBNAIL
-            # ------------------------------
-
             thumbnails = snippet.get(
                 "thumbnails",
                 {}
             )
 
 
-            if "high" in thumbnails:
-
-                thumbnail = (
-                    thumbnails["high"]["url"]
-                )
-
-            elif "medium" in thumbnails:
-
-                thumbnail = (
-                    thumbnails["medium"]["url"]
-                )
-
-            elif "default" in thumbnails:
-
-                thumbnail = (
-                    thumbnails["default"]["url"]
-                )
-
-            else:
-
-                thumbnail = ""
+            thumbnail = ""
 
 
-            # ------------------------------
-            # SAVE VIDEO DATA
-            # ------------------------------
+            for quality in (
+                "maxres",
+                "standard",
+                "high",
+                "medium",
+                "default"
+            ):
+
+                if (
+                    quality
+                    in thumbnails
+                    and
+                    thumbnails[
+                        quality
+                    ].get(
+                        "url"
+                    )
+                ):
+
+                    thumbnail = (
+                        thumbnails[
+                            quality
+                        ]["url"]
+                    )
+
+                    break
+
 
             videos.append({
 
@@ -204,120 +319,229 @@ def get_latest_videos():
                     video_id,
 
                 "url":
-                    f"https://www.youtube.com/watch?v={video_id}",
+                    (
+                        "https://www.youtube.com/"
+                        f"watch?v={video_id}"
+                    ),
 
                 "published_at":
                     upload_date,
 
-                                
                 "published_raw":
-                    raw_date,   
+                    raw_date,
 
                 "views":
                     "0",
 
-                "likes":
-                    "0",
+                "duration_seconds":
+                    0,
 
-                "comments":
-                    "0"
+                "is_short":
+                    False
             })
 
 
-        # ==================================
-        # GET VIDEO VIEW COUNTS
-        # ==================================
+        # ======================================
+        # GET VIEWS + VIDEO DURATION
+        # ======================================
 
         if video_ids:
 
-            stats_url = (
-                "https://www.googleapis.com/youtube/v3/videos"
+            details_url = (
+                "https://www.googleapis.com/"
+                "youtube/v3/videos"
             )
 
-            stats_params = {
+
+            details_params = {
 
                 "part":
-                    "statistics",
+                    "statistics,contentDetails",
 
                 "id":
-                    ",".join(video_ids),
+                    ",".join(
+                        video_ids
+                    ),
 
                 "key":
                     API_KEY
             }
 
 
-            stats_response = requests.get(
-                stats_url,
-                params=stats_params,
-                timeout=10
+            details_response = requests.get(
+                details_url,
+                params=details_params,
+                timeout=15
             )
 
-            stats_data = stats_response.json()
+
+            details_response.raise_for_status()
+
+
+            details_data = (
+                details_response.json()
+            )
 
 
             views_map = {}
-            likes_map = {}
-            comments_map = {}
+
+            duration_map = {}
 
 
-            for item in stats_data.get(
+            for item in details_data.get(
                 "items",
                 []
             ):
+
+                video_id = item.get(
+                    "id",
+                    ""
+                )
+
 
                 statistics = item.get(
                     "statistics",
                     {}
                 )
 
-                views_map[item["id"]] = (
-                    statistics.get(
-                        "viewCount",
-                        "0"
-                    )
-                )
 
-                likes_map[item["id"]] = (
-                    statistics.get(
-                        "likeCount",
-                        "0"
-                    )
-                )
-
-                comments_map[item["id"]] = (
-                    statistics.get(
-                        "commentCount",
-                        "0"
-                    )
+                content_details = item.get(
+                    "contentDetails",
+                    {}
                 )
 
 
+                views_map[
+                    video_id
+                ] = statistics.get(
+                    "viewCount",
+                    "0"
+                )
 
-            # Add views to videos
+
+                duration_map[
+                    video_id
+                ] = duration_to_seconds(
+                    content_details.get(
+                        "duration",
+                        ""
+                    )
+                )
+
+
+            # ==================================
+            # CLASSIFY SHORT VS LONG
+            # ==================================
+
+            short_markers = (
+                "#shorts",
+                "#youtubeshorts",
+                "#youtubeshort"
+            )
+
 
             for video in videos:
 
-                video["views"] = views_map.get(
-                    video["video_id"],
-                    "0"
+                video_id = video[
+                    "video_id"
+                ]
+
+
+                video["views"] = (
+                    views_map.get(
+                        video_id,
+                        "0"
+                    )
                 )
 
-                video["likes"] = likes_map.get(
-                    video["video_id"],
-                    "0"
+
+                duration = (
+                    duration_map.get(
+                        video_id,
+                        0
+                    )
                 )
 
-                video["comments"] = comments_map.get(
-                    video["video_id"],
-                    "0"
+
+                video[
+                    "duration_seconds"
+                ] = duration
+
+
+                title = (
+                    video.get(
+                        "title",
+                        ""
+                    )
+                    .lower()
                 )
 
+
+                has_short_tag = any(
+                    marker in title
+                    for marker
+                    in short_markers
+                )
+
+
+                # YouTube Shorts can be
+                # up to 3 minutes.
+                #
+                # So:
+                # hashtag OR <= 180 sec
+                # => Short
+                #
+                # > 180 sec
+                # => Long video
+
+                video[
+                    "is_short"
+                ] = (
+                    has_short_tag
+                    or
+                    (
+                        duration > 0
+                        and
+                        duration <= 180
+                    )
+                )
+
+
+        long_count = sum(
+            1
+            for video in videos
+            if not video.get(
+                "is_short",
+                False
+            )
+        )
+
+
+        short_count = sum(
+            1
+            for video in videos
+            if video.get(
+                "is_short",
+                False
+            )
+        )
 
 
         print(
             "Total videos fetched:",
             len(videos)
+        )
+
+
+        print(
+            "Detected Long Videos:",
+            long_count
+        )
+
+
+        print(
+            "Detected Shorts:",
+            short_count
         )
 
 
@@ -332,6 +556,7 @@ def get_latest_videos():
         )
 
         return []
+
 
 
 # ==========================================
@@ -460,6 +685,7 @@ def get_channel_info(channel_handle):
 # ==========================================
 
 @app.route("/")
+
 def home():
 
     videos = get_latest_videos()
@@ -476,21 +702,19 @@ def home():
 
 
     vlogs = []
+
     shorts = []
 
 
     # ======================================
-    # SEPARATE VLOGS AND SHORTS
+    # TRUE LONG / SHORT SEPARATION
     # ======================================
 
     for video in videos:
 
-        title = video["title"].lower()
-
-
-        if (
-            "#shorts" in title
-            or "#youtubeshorts" in title
+        if video.get(
+            "is_short",
+            False
         ):
 
             shorts.append(
@@ -502,6 +726,30 @@ def home():
             vlogs.append(
                 video
             )
+
+
+    # Latest 6 actual LONG videos only
+
+    vlogs = vlogs[:6]
+
+
+    # Keep Shorts separate.
+    # Template can show first 3/6
+    # depending on its existing design.
+
+    shorts = shorts[:6]
+
+
+    print(
+        "Homepage Long Vlogs:",
+        len(vlogs)
+    )
+
+
+    print(
+        "Homepage Shorts:",
+        len(shorts)
+    )
 
 
     return render_template(
@@ -516,6 +764,7 @@ def home():
 
         channel2=channel2
     )
+
 
 
 # ==========================================
@@ -1592,7 +1841,7 @@ def dashboard():
             )
 
         if recommendation_parts:
-            creator_recommendation = " â€¢ ".join(
+            creator_recommendation = " • ".join(
                 recommendation_parts
             )
 
@@ -1729,16 +1978,16 @@ def dashboard():
                     )
 
                     if recent_average > old_average:
-                        trend_status = "Improving ðŸ“ˆ"
+                        trend_status = "Improving 📈"
 
                     elif recent_average < old_average:
-                        trend_status = "Declining ðŸ“‰"
+                        trend_status = "Declining 📉"
 
                     else:
-                        trend_status = "Stable âž¡ï¸"
+                        trend_status = "Stable ➡️"
 
                 else:
-                    trend_status = "Stable âž¡ï¸"
+                    trend_status = "Stable ➡️"
 
 
         # ==================================
@@ -2737,7 +2986,7 @@ TRAVEL_DESTINATION_CATALOG = {
             "Local Travel"
         ],
         "playlist_terms": [
-            "Aurangabad, Bihar"
+            "aurangabad bihar"
         ],
         "filter_tags": [
             "bihar",
@@ -4234,4 +4483,3 @@ if __name__ == "__main__":
     app.run(
         debug=True
     )
-

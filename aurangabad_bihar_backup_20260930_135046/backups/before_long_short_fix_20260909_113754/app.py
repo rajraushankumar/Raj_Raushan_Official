@@ -1,4 +1,4 @@
-﻿from flask import request
+from flask import request
 import time
 import joblib
 import os
@@ -1592,7 +1592,7 @@ def dashboard():
             )
 
         if recommendation_parts:
-            creator_recommendation = " â€¢ ".join(
+            creator_recommendation = " • ".join(
                 recommendation_parts
             )
 
@@ -1729,16 +1729,16 @@ def dashboard():
                     )
 
                     if recent_average > old_average:
-                        trend_status = "Improving ðŸ“ˆ"
+                        trend_status = "Improving 📈"
 
                     elif recent_average < old_average:
-                        trend_status = "Declining ðŸ“‰"
+                        trend_status = "Declining 📉"
 
                     else:
-                        trend_status = "Stable âž¡ï¸"
+                        trend_status = "Stable ➡️"
 
                 else:
-                    trend_status = "Stable âž¡ï¸"
+                    trend_status = "Stable ➡️"
 
 
         # ==================================
@@ -2737,7 +2737,7 @@ TRAVEL_DESTINATION_CATALOG = {
             "Local Travel"
         ],
         "playlist_terms": [
-            "Aurangabad, Bihar"
+            "aurangabad bihar"
         ],
         "filter_tags": [
             "bihar",
@@ -4234,4 +4234,3 @@ if __name__ == "__main__":
     app.run(
         debug=True
     )
-
