@@ -4474,6 +4474,11 @@ app.register_blueprint(
 )
 
 
+
+@app.route("/travel-planner")
+def travel_planner():
+    return render_template("travel_planner.html")
+
 if __name__ == "__main__":
 
     print(
@@ -4483,4 +4488,5 @@ if __name__ == "__main__":
     app.run(
         debug=True
     )
+
 

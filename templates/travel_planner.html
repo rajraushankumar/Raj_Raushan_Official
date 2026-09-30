@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Travel Planner | Raj Raushan Official</title>
+
+    <meta name="description"
+          content="Plan your next journey with Raj Raushan Official Travel Planner.">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/travel_planner.css') }}">
+</head>
+
+<body>
+
+<header class="planner-header">
+    <a href="/" class="brand">Raj Raushan Official</a>
+
+    <a href="/" class="back-home">← Home</a>
+</header>
+
+<main>
+
+    <section class="planner-hero">
+        <span class="eyebrow">PLAN YOUR JOURNEY</span>
+
+        <h1>Travel Planner</h1>
+
+        <p>
+            Choose your trip style and create a simple travel plan
+            before you start your journey.
+        </p>
+    </section>
+
+
+    <section class="planner-card">
+
+        <div class="form-group">
+            <label for="destination">Where do you want to explore?</label>
+
+            <select id="destination">
+                <option value="nature">Nature & Waterfalls</option>
+                <option value="history">Historical Places</option>
+                <option value="temple">Temples & Spiritual Places</option>
+                <option value="city">City & Local Exploration</option>
+                <option value="mixed">Mixed Travel Experience</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="days">Trip duration</label>
+
+            <select id="days">
+                <option value="1">1 Day</option>
+                <option value="2">2 Days</option>
+                <option value="3">3 Days</option>
+                <option value="5">5 Days</option>
+                <option value="7">7 Days</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="budget">Approximate budget</label>
+
+            <select id="budget">
+                <option value="low">Budget Friendly</option>
+                <option value="medium">Comfort</option>
+                <option value="high">Premium</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="transport">Travel mode</label>
+
+            <select id="transport">
+                <option value="bike">Bike</option>
+                <option value="car">Car</option>
+                <option value="train">Train</option>
+                <option value="bus">Bus</option>
+                <option value="mixed">Mixed Transport</option>
+            </select>
+        </div>
+
+
+        <button id="generatePlan" type="button">
+            ✈️ Create My Travel Plan
+        </button>
+
+    </section>
+
+
+    <section id="result" class="result-card" hidden>
+
+        <span class="eyebrow">YOUR JOURNEY PLAN</span>
+
+        <h2 id="resultTitle"></h2>
+
+        <p id="resultIntro"></p>
+
+        <div class="plan-grid">
+
+            <div>
+                <span>🗓️ Duration</span>
+                <strong id="resultDays"></strong>
+            </div>
+
+            <div>
+                <span>💰 Budget</span>
+                <strong id="resultBudget"></strong>
+            </div>
+
+            <div>
+                <span>🚗 Transport</span>
+                <strong id="resultTransport"></strong>
+            </div>
+
+        </div>
+
+
+        <div class="checklist">
+
+            <h3>Travel Checklist</h3>
+
+            <ul id="checklist"></ul>
+
+        </div>
+
+
+        <div class="travel-tip">
+
+            <strong>Travel Tip</strong>
+
+            <p id="travelTip"></p>
+
+        </div>
+
+    </section>
+
+
+    <section class="planner-note">
+
+        <h2>Explore. Experience. Remember.</h2>
+
+        <p>
+            Every destination has a story. Plan your route,
+            respect the local culture and enjoy the journey.
+        </p>
+
+        <a href="/destinations">Explore Destinations →</a>
+
+    </section>
+
+</main>
+
+
+<script src="{{ url_for('static', filename='js/travel_planner.js') }}"></script>
+
+</body>
+</html>
