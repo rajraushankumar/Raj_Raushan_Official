@@ -321,3 +321,1355 @@
     font-weight: 800 !important;
 }
 
+
+/* ============================================================
+   FINAL TRAVEL GUIDE — CLEAN PROFESSIONAL THEME
+   Remove yellow/gold + improve visibility
+   ============================================================ */
+
+/* Remove yellow accent */
+.rr-universal-travel-guide::before {
+    background: linear-gradient(
+        90deg,
+        #111827,
+        #ef4444,
+        #111827
+    ) !important;
+}
+
+/* Make Travel Guide background cleaner */
+.rr-universal-travel-guide {
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(239, 68, 68, 0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f8fafc
+        ) !important;
+}
+
+/* Strong readable heading */
+.rr-universal-guide-heading h2 {
+    color: #0f172a !important;
+}
+
+/* Better paragraph visibility */
+.rr-universal-guide-heading p {
+    color: #475569 !important;
+}
+
+/* Cards */
+.rr-universal-guide-item {
+    background: #ffffff !important;
+
+    border: 1px solid
+        rgba(15, 23, 42, 0.09) !important;
+
+    box-shadow:
+        0 8px 25px
+        rgba(15, 23, 42, 0.07) !important;
+}
+
+/* Card hover */
+.rr-universal-guide-item:hover {
+    border-color:
+        rgba(239, 68, 68, 0.28) !important;
+
+    box-shadow:
+        0 15px 35px
+        rgba(15, 23, 42, 0.12) !important;
+}
+
+/* Card title */
+.rr-universal-guide-item h3 {
+    color: #111827 !important;
+}
+
+/* Card description */
+.rr-universal-guide-item p {
+    color: #334155 !important;
+}
+
+/* Card secondary text */
+.rr-universal-guide-item span {
+    color: #64748b !important;
+}
+
+/* Click hint */
+.rr-guide-click-hint {
+    color: #dc2626 !important;
+}
+
+/* Travel label */
+.rr-universal-guide-label {
+    color: #dc2626 !important;
+
+    background:
+        rgba(239, 68, 68, 0.08) !important;
+
+    border-color:
+        rgba(239, 68, 68, 0.16) !important;
+}
+
+/* Mobile visibility */
+@media (max-width: 800px) {
+
+    .rr-universal-guide-item {
+        background: #ffffff !important;
+    }
+
+    .rr-universal-guide-heading h2 {
+        color: #0f172a !important;
+    }
+
+}
+
+/* ============================================================
+   FINAL TRAVEL GUIDE THEME
+   YELLOW / GOLD REMOVE - HIGH VISIBILITY
+   ============================================================ */
+
+.rr-universal-travel-guide {
+    background: #f8fafc !important;
+    color: #111827 !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+/* REMOVE ALL YELLOW / GOLD ACCENTS */
+.rr-universal-travel-guide::before {
+    background: #ef4444 !important;
+}
+
+/* Heading */
+.rr-universal-travel-guide h2,
+.rr-universal-guide-heading h2 {
+    color: #111827 !important;
+}
+
+/* Description */
+.rr-universal-travel-guide p,
+.rr-universal-guide-heading p {
+    color: #475569 !important;
+}
+
+/* ALL GUIDE CARDS */
+.rr-universal-guide-item {
+    background: #ffffff !important;
+    color: #111827 !important;
+
+    border: 1px solid #e2e8f0 !important;
+
+    box-shadow:
+        0 6px 20px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Card hover */
+.rr-universal-guide-item:hover {
+    background: #ffffff !important;
+
+    border-color: #ef4444 !important;
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.14) !important;
+}
+
+/* Card headings */
+.rr-universal-guide-item h3,
+.rr-universal-guide-item strong {
+    color: #111827 !important;
+}
+
+/* Card text */
+.rr-universal-guide-item p {
+    color: #334155 !important;
+}
+
+/* Secondary text */
+.rr-universal-guide-item span {
+    color: #64748b !important;
+}
+
+/* Labels */
+.rr-universal-guide-label {
+    color: #dc2626 !important;
+    background: #fef2f2 !important;
+    border-color: #fecaca !important;
+}
+
+/* Clickable hint */
+.rr-guide-click-hint {
+    color: #dc2626 !important;
+}
+
+/* Remove possible yellow text/background from nested elements */
+.rr-universal-travel-guide * {
+    text-shadow: none !important;
+}
+
+.rr-universal-travel-guide [style*="yellow"],
+.rr-universal-travel-guide [style*="#f59e0b"],
+.rr-universal-travel-guide [style*="#fbbf24"],
+.rr-universal-travel-guide [style*="#facc15"] {
+    color: #111827 !important;
+    background: #ffffff !important;
+}
+
+/* Buttons */
+.rr-universal-travel-guide a {
+    text-decoration: none;
+}
+
+.rr-universal-travel-guide a:hover {
+    color: inherit;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+
+    .rr-universal-travel-guide {
+        background: #f8fafc !important;
+    }
+
+    .rr-universal-guide-item {
+        background: #ffffff !important;
+        color: #111827 !important;
+    }
+
+    .rr-universal-guide-item h3 {
+        color: #111827 !important;
+    }
+
+    .rr-universal-guide-item p {
+        color: #334155 !important;
+    }
+}
+
+
+/* ============================================================
+   TRAVEL GUIDE CONTENT — FINAL COLOR FIX
+   ============================================================ */
+
+/* Main Travel Guide text */
+.rr-universal-travel-guide,
+.rr-universal-travel-guide * {
+    color: #111827 !important;
+}
+
+/* Main description */
+.rr-universal-travel-guide p {
+    color: #334155 !important;
+}
+
+/* Section headings */
+.rr-universal-travel-guide h2,
+.rr-universal-travel-guide h3 {
+    color: #0f172a !important;
+    font-weight: 800 !important;
+}
+
+/* Location / destination name */
+.rr-universal-travel-guide strong {
+    color: #111827 !important;
+    font-weight: 800 !important;
+}
+
+/* Links */
+.rr-universal-travel-guide a {
+    color: #111827 !important;
+}
+
+/* Link hover */
+.rr-universal-travel-guide a:hover {
+    color: #dc2626 !important;
+}
+
+/* Click/Open text */
+.rr-universal-travel-guide .rr-guide-click-hint {
+    color: #dc2626 !important;
+    font-weight: 700 !important;
+}
+
+/* Label */
+.rr-universal-travel-guide .rr-universal-guide-label {
+    color: #dc2626 !important;
+    background: #fef2f2 !important;
+}
+
+/* Cards */
+.rr-universal-travel-guide .rr-universal-guide-item {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* Card text */
+.rr-universal-travel-guide .rr-universal-guide-item p {
+    color: #334155 !important;
+}
+
+/* Card secondary text */
+.rr-universal-travel-guide .rr-universal-guide-item span {
+    color: #475569 !important;
+}
+
+/* Bottom buttons */
+.rr-universal-travel-guide a[href*="google.com/maps"] {
+    color: #ffffff !important;
+    background: #111827 !important;
+}
+
+.rr-universal-travel-guide a[href*="youtube.com"] {
+    color: #ffffff !important;
+    background: #dc2626 !important;
+}
+
+/* Continue Exploring */
+.rr-universal-travel-guide + * a {
+    color: #111827 !important;
+}
+
+/* Remove yellow/gold text */
+.rr-universal-travel-guide [style*="#f59e0b"],
+.rr-universal-travel-guide [style*="#fbbf24"],
+.rr-universal-travel-guide [style*="#facc15"],
+.rr-universal-travel-guide [style*="yellow"] {
+    color: #111827 !important;
+    background-color: transparent !important;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    .rr-universal-travel-guide * {
+        color: #111827 !important;
+    }
+
+    .rr-universal-travel-guide p {
+        color: #334155 !important;
+    }
+
+    .rr-universal-travel-guide .rr-guide-click-hint {
+        color: #dc2626 !important;
+    }
+}
+
+
+/* ============================================================
+   FINAL — REMOVE YELLOW BACKGROUND FROM TRAVEL GUIDE
+   ============================================================ */
+
+/* MAIN TRAVEL GUIDE */
+body .rr-universal-travel-guide {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+/* REMOVE TOP YELLOW/GOLD LINE */
+body .rr-universal-travel-guide::before {
+    background: #ef4444 !important;
+    background-image: none !important;
+}
+
+/* REMOVE DECORATIVE BACKGROUND */
+body .rr-universal-travel-guide::after {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+/* INNER AREA */
+body .rr-universal-travel-guide .rr-universal-guide-inner {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* ALL CARDS — PURE WHITE */
+body .rr-universal-travel-guide .rr-universal-guide-item {
+    background: #ffffff !important;
+    background-image: none !important;
+
+    border: 1px solid #e2e8f0 !important;
+
+    box-shadow: 0 8px 25px rgba(15,23,42,.08) !important;
+}
+
+/* REMOVE ANY YELLOW ON HOVER */
+body .rr-universal-travel-guide .rr-universal-guide-item:hover {
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+/* ALL CONTENT */
+body .rr-universal-travel-guide .rr-universal-guide-item *,
+body .rr-universal-travel-guide .rr-universal-guide-heading * {
+    background-image: none !important;
+}
+
+/* LINKS / CLICKABLE CARDS */
+body .rr-universal-travel-guide .rr-universal-guide-item a {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* CLICK HINT */
+body .rr-universal-travel-guide .rr-guide-click-hint {
+    background: transparent !important;
+    color: #dc2626 !important;
+}
+
+/* LABEL */
+body .rr-universal-travel-guide .rr-universal-guide-label {
+    background: #fef2f2 !important;
+    background-image: none !important;
+    color: #dc2626 !important;
+}
+
+/* REMOVE YELLOW FROM INLINE STYLES */
+body .rr-universal-travel-guide [style*="yellow"],
+body .rr-universal-travel-guide [style*="#f59e0b"],
+body .rr-universal-travel-guide [style*="#fbbf24"],
+body .rr-universal-travel-guide [style*="#facc15"],
+body .rr-universal-travel-guide [style*="rgb(245, 158, 11)"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* TEXT */
+body .rr-universal-travel-guide h2,
+body .rr-universal-travel-guide h3 {
+    color: #0f172a !important;
+}
+
+body .rr-universal-travel-guide p {
+    color: #334155 !important;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+
+    body .rr-universal-travel-guide {
+        background: #f8fafc !important;
+        background-image: none !important;
+    }
+
+    body .rr-universal-travel-guide .rr-universal-guide-item {
+        background: #ffffff !important;
+        background-image: none !important;
+    }
+}
+
+
+/* ============================================================
+   FINAL TRAVEL GUIDE CLEAN BACKGROUND FIX
+   ============================================================ */
+
+body .rr-universal-travel-guide {
+    background: #f8fafc !important;
+    background-image: none !important;
+    color: #111827 !important;
+}
+
+body .rr-universal-travel-guide::before {
+    background: linear-gradient(90deg, #111827, #ef4444, #111827) !important;
+    background-image: linear-gradient(90deg, #111827, #ef4444, #111827) !important;
+}
+
+body .rr-universal-travel-guide::after {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+body .rr-universal-travel-guide .rr-universal-guide-inner {
+    background: transparent !important;
+}
+
+body .rr-universal-travel-guide .rr-universal-guide-heading {
+    background: transparent !important;
+}
+
+body .rr-universal-travel-guide .rr-universal-guide-grid {
+    background: transparent !important;
+}
+
+body .rr-universal-travel-guide .rr-universal-guide-item {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #111827 !important;
+}
+
+
+/* ============================================================
+   FINAL FIX — TRAVEL GUIDE FULL BACKGROUND
+   ============================================================ */
+
+html body section.rr-universal-travel-guide {
+    background: #ffffff !important;
+    background-image: none !important;
+    background-color: #ffffff !important;
+}
+
+/* Remove decorative yellow/gold background */
+html body section.rr-universal-travel-guide::before {
+    background: #111827 !important;
+    background-image: none !important;
+}
+
+html body section.rr-universal-travel-guide::after {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* Keep complete inside area clean */
+html body section.rr-universal-travel-guide .rr-universal-guide-inner {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* Heading area */
+html body section.rr-universal-travel-guide .rr-universal-guide-heading {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* Cards */
+html body section.rr-universal-travel-guide .rr-universal-guide-grid {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+html body section.rr-universal-travel-guide .rr-universal-guide-item {
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+/* Remove any yellow/gold shadow/glow */
+html body section.rr-universal-travel-guide,
+html body section.rr-universal-travel-guide * {
+    box-shadow: none !important;
+}
+
+/* Keep clickable cards working */
+html body section.rr-universal-travel-guide a {
+    pointer-events: auto !important;
+}
+
+
+
+
+
+
+
+
+/* ============================================================
+   RR TRAVEL GUIDE — FINAL ISOLATED PREMIUM LIGHT THEME
+   Global gold/yellow themes must NOT affect this section
+   ============================================================ */
+
+body .rr-universal-travel-guide {
+    position: relative !important;
+    width: min(1180px, calc(100% - 32px)) !important;
+    margin: 60px auto 55px !important;
+    padding: 38px !important;
+
+    background: #ffffff !important;
+    background-image: none !important;
+
+    border: 1px solid #e5e7eb !important;
+    border-radius: 28px !important;
+
+    box-shadow:
+        0 24px 60px rgba(15, 23, 42, 0.10),
+        0 6px 18px rgba(15, 23, 42, 0.05) !important;
+
+    color: #111827 !important;
+    overflow: hidden !important;
+}
+
+/* Remove ALL decorative yellow/gold effects */
+body .rr-universal-travel-guide::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 4px !important;
+
+    background: linear-gradient(
+        90deg,
+        #111827 0%,
+        #ef4444 50%,
+        #111827 100%
+    ) !important;
+
+    background-image: linear-gradient(
+        90deg,
+        #111827 0%,
+        #ef4444 50%,
+        #111827 100%
+    ) !important;
+}
+
+body .rr-universal-travel-guide::after {
+    content: "" !important;
+    position: absolute !important;
+
+    width: 220px !important;
+    height: 220px !important;
+    right: -100px !important;
+    top: -100px !important;
+
+    border-radius: 50% !important;
+
+    background: rgba(239, 68, 68, 0.035) !important;
+    background-image: none !important;
+
+    box-shadow: none !important;
+    pointer-events: none !important;
+}
+
+/* Kill inherited backgrounds inside Travel Guide */
+body .rr-universal-travel-guide .rr-universal-guide-inner,
+body .rr-universal-travel-guide .rr-universal-guide-heading,
+body .rr-universal-travel-guide .rr-universal-guide-grid {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* Heading */
+body .rr-universal-travel-guide
+.rr-universal-guide-heading h2 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+body .rr-universal-travel-guide
+.rr-universal-guide-heading p {
+    color: #475569 !important;
+}
+
+/* Label */
+body .rr-universal-travel-guide
+.rr-universal-guide-label {
+    background: rgba(239, 68, 68, 0.08) !important;
+    background-image: none !important;
+
+    border: 1px solid rgba(239, 68, 68, 0.15) !important;
+
+    color: #dc2626 !important;
+    -webkit-text-fill-color: #dc2626 !important;
+}
+
+/* ============================================================
+   TRAVEL GUIDE CARDS
+   ============================================================ */
+
+body .rr-universal-travel-guide
+.rr-universal-guide-item {
+    position: relative !important;
+
+    background: #ffffff !important;
+    background-image: none !important;
+
+    border: 1px solid #e5e7eb !important;
+    border-radius: 20px !important;
+
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important;
+
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.07),
+        0 2px 8px rgba(15, 23, 42, 0.035) !important;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease !important;
+
+    overflow: hidden !important;
+}
+
+/* Shiny hover */
+body .rr-universal-travel-guide
+.rr-universal-guide-item:hover {
+    background: #ffffff !important;
+    background-image: none !important;
+
+    border-color: rgba(239, 68, 68, 0.28) !important;
+
+    transform: translateY(-4px) !important;
+
+    box-shadow:
+        0 18px 38px rgba(15, 23, 42, 0.12),
+        0 4px 12px rgba(239, 68, 68, 0.07) !important;
+}
+
+/* Card shine */
+body .rr-universal-travel-guide
+.rr-universal-guide-item::before {
+    content: "" !important;
+    position: absolute !important;
+
+    left: -120% !important;
+    top: 0 !important;
+
+    width: 80% !important;
+    height: 100% !important;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.65),
+        transparent
+    ) !important;
+
+    transform: skewX(-20deg) !important;
+    transition: left 0.6s ease !important;
+
+    pointer-events: none !important;
+}
+
+body .rr-universal-travel-guide
+.rr-universal-guide-item:hover::before {
+    left: 140% !important;
+}
+
+/* Card text */
+body .rr-universal-travel-guide
+.rr-universal-guide-item h3,
+body .rr-universal-travel-guide
+.rr-universal-guide-item h4 {
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important;
+}
+
+body .rr-universal-travel-guide
+.rr-universal-guide-item p,
+body .rr-universal-travel-guide
+.rr-universal-guide-item span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+}
+
+/* Icons / accent */
+body .rr-universal-travel-guide
+.rr-universal-guide-item .rr-guide-icon {
+    color: #ef4444 !important;
+    -webkit-text-fill-color: #ef4444 !important;
+}
+
+/* Buttons / links */
+body .rr-universal-travel-guide
+a {
+    text-decoration: none !important;
+}
+
+body .rr-universal-travel-guide
+a:hover {
+    text-decoration: none !important;
+}
+
+/* ============================================================
+   ABSOLUTE YELLOW/GOLD KILL INSIDE TRAVEL GUIDE
+   ============================================================ */
+
+body .rr-universal-travel-guide [style*="yellow"],
+body .rr-universal-travel-guide [style*="gold"],
+body .rr-universal-travel-guide [style*="#f59e0b"],
+body .rr-universal-travel-guide [style*="#fbbf24"],
+body .rr-universal-travel-guide [style*="#facc15"],
+body .rr-universal-travel-guide [style*="#f4c451"],
+body .rr-universal-travel-guide [style*="#ffd66b"] {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    body .rr-universal-travel-guide {
+        width: calc(100% - 20px) !important;
+        margin: 35px auto 35px !important;
+        padding: 22px !important;
+        border-radius: 22px !important;
+    }
+
+    body .rr-universal-travel-guide
+    .rr-universal-guide-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+
+
+
+/* ============================================================
+   RR — FINAL FULL TRAVEL GUIDE PREMIUM CARD THEME
+   ============================================================ */
+
+body .rr-universal-travel-guide {
+    position: relative !important;
+    width: min(1180px, calc(100% - 32px)) !important;
+    margin: 55px auto !important;
+    padding: 34px !important;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #f8fafc 55%,
+        #f1f5f9 100%
+    ) !important;
+    background-image: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #f8fafc 55%,
+        #f1f5f9 100%
+    ) !important;
+
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 28px !important;
+
+    box-shadow:
+        0 25px 65px rgba(15,23,42,.10),
+        0 8px 25px rgba(15,23,42,.06) !important;
+
+    color: #111827 !important;
+    overflow: hidden !important;
+}
+
+
+/* TOP PREMIUM LINE — NO YELLOW */
+body .rr-universal-travel-guide::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 4px !important;
+
+    background: linear-gradient(
+        90deg,
+        #111827,
+        #ef4444,
+        #111827
+    ) !important;
+
+    background-image: linear-gradient(
+        90deg,
+        #111827,
+        #ef4444,
+        #111827
+    ) !important;
+}
+
+
+/* REMOVE GOLD DECORATION */
+body .rr-universal-travel-guide::after {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+
+/* INNER */
+body .rr-universal-travel-guide
+.rr-universal-guide-inner {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+body .rr-universal-travel-guide
+.rr-universal-guide-heading {
+    background: transparent !important;
+    background-image: none !important;
+    margin-bottom: 28px !important;
+}
+
+body .rr-universal-travel-guide
+.rr-universal-guide-heading h2 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    font-weight: 900 !important;
+}
+
+body .rr-universal-travel-guide
+.rr-universal-guide-heading p {
+    color: #64748b !important;
+    -webkit-text-fill-color: #64748b !important;
+}
+
+
+/* LABEL */
+body .rr-universal-travel-guide
+.rr-universal-guide-label {
+    background: rgba(239,68,68,.08) !important;
+    background-image: none !important;
+
+    border: 1px solid rgba(239,68,68,.15) !important;
+
+    color: #dc2626 !important;
+    -webkit-text-fill-color: #dc2626 !important;
+}
+
+
+/* ============================================================
+   GRID
+   ============================================================ */
+
+body .rr-universal-travel-guide
+.rr-universal-guide-grid {
+    background: transparent !important;
+    background-image: none !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+    gap: 20px !important;
+}
+
+
+/* ============================================================
+   EVERY TRAVEL GUIDE BOX
+   ============================================================ */
+
+body .rr-universal-travel-guide
+.rr-universal-guide-item {
+    position: relative !important;
+
+    display: block !important;
+
+    padding: 24px !important;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #ffffff 60%,
+        #f8fafc 100%
+    ) !important;
+
+    background-image: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #ffffff 60%,
+        #f8fafc 100%
+    ) !important;
+
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 20px !important;
+
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important;
+
+    box-shadow:
+        0 10px 28px rgba(15,23,42,.07),
+        0 2px 8px rgba(15,23,42,.04) !important;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease !important;
+
+    overflow: hidden !important;
+}
+
+
+/* SHINY HOVER */
+body .rr-universal-travel-guide
+.rr-universal-guide-item:hover {
+    background: #ffffff !important;
+    background-image: none !important;
+
+    transform: translateY(-5px) !important;
+
+    border-color: rgba(239,68,68,.30) !important;
+
+    box-shadow:
+        0 20px 40px rgba(15,23,42,.12),
+        0 5px 15px rgba(239,68,68,.06) !important;
+}
+
+
+/* CARD SHINE */
+body .rr-universal-travel-guide
+.rr-universal-guide-item::before {
+    content: "" !important;
+    position: absolute !important;
+
+    top: 0 !important;
+    left: -120% !important;
+
+    width: 70% !important;
+    height: 100% !important;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.75),
+        transparent
+    ) !important;
+
+    transform: skewX(-20deg) !important;
+    transition: left .6s ease !important;
+
+    pointer-events: none !important;
+}
+
+body .rr-universal-travel-guide
+.rr-universal-guide-item:hover::before {
+    left: 140% !important;
+}
+
+
+/* CARD HEADINGS */
+body .rr-universal-travel-guide
+.rr-universal-guide-item h3,
+body .rr-universal-travel-guide
+.rr-universal-guide-item h4 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    font-weight: 850 !important;
+}
+
+
+/* CARD TEXT */
+body .rr-universal-travel-guide
+.rr-universal-guide-item p {
+    color: #64748b !important;
+    -webkit-text-fill-color: #64748b !important;
+    line-height: 1.7 !important;
+}
+
+
+/* CARD LINKS */
+body .rr-universal-travel-guide
+.rr-universal-guide-item a {
+    color: #dc2626 !important;
+    -webkit-text-fill-color: #dc2626 !important;
+}
+
+
+/* ============================================================
+   BOTTOM MAP / YOUTUBE BUTTONS
+   ============================================================ */
+
+body .rr-universal-travel-guide
+.rr-guide-clickable {
+    cursor: pointer !important;
+}
+
+body .rr-universal-travel-guide
+.rr-guide-clickable:hover {
+    text-decoration: none !important;
+}
+
+
+/* ============================================================
+   REMOVE GOLD/YELLOW EVERYWHERE INSIDE GUIDE
+   ============================================================ */
+
+body .rr-universal-travel-guide [style*="yellow"],
+body .rr-universal-travel-guide [style*="gold"],
+body .rr-universal-travel-guide [style*="#f59e0b"],
+body .rr-universal-travel-guide [style*="#fbbf24"],
+body .rr-universal-travel-guide [style*="#facc15"],
+body .rr-universal-travel-guide [style*="#f4c451"],
+body .rr-universal-travel-guide [style*="#ffd66b"] {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #111827 !important;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    body .rr-universal-travel-guide {
+        width: calc(100% - 20px) !important;
+        padding: 20px !important;
+        margin: 35px auto !important;
+        border-radius: 22px !important;
+    }
+
+    body .rr-universal-travel-guide
+    .rr-universal-guide-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    body .rr-universal-travel-guide
+    .rr-universal-guide-item {
+        padding: 20px !important;
+        border-radius: 18px !important;
+    }
+}
+
+/* ============================================================
+   RR TRAVEL GUIDE — FINAL PREMIUM LIGHT THEME
+   ============================================================ */
+
+body .rr-universal-travel-guide {
+    position: relative !important;
+    width: min(1180px, calc(100% - 32px)) !important;
+    margin: 55px auto !important;
+    padding: 32px !important;
+
+    background: #ffffff !important;
+    background-image: none !important;
+
+    border: 1px solid rgba(15,23,42,.08) !important;
+    border-radius: 26px !important;
+
+    box-shadow:
+        0 20px 55px rgba(15,23,42,.10),
+        0 4px 14px rgba(15,23,42,.05) !important;
+
+    color: #111827 !important;
+    overflow: hidden !important;
+}
+
+/* Premium top accent */
+body .rr-universal-travel-guide::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 4px !important;
+
+    background: linear-gradient(
+        90deg,
+        #111827,
+        #ef4444,
+        #111827
+    ) !important;
+
+    background-image: linear-gradient(
+        90deg,
+        #111827,
+        #ef4444,
+        #111827
+    ) !important;
+}
+
+/* Soft glow */
+body .rr-universal-travel-guide::after {
+    content: "" !important;
+    position: absolute !important;
+    right: -90px !important;
+    top: -90px !important;
+    width: 210px !important;
+    height: 210px !important;
+    border-radius: 50% !important;
+
+    background: rgba(239,68,68,.035) !important;
+    background-image: none !important;
+
+    box-shadow: none !important;
+    pointer-events: none !important;
+}
+
+/* Inner areas */
+body .rr-universal-travel-guide .rr-universal-guide-inner,
+body .rr-universal-travel-guide .rr-universal-guide-heading,
+body .rr-universal-travel-guide .rr-universal-guide-grid {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* Label */
+body .rr-universal-travel-guide
+.rr-universal-guide-label {
+    background: rgba(239,68,68,.08) !important;
+    background-image: none !important;
+    border: 1px solid rgba(239,68,68,.16) !important;
+    color: #dc2626 !important;
+    -webkit-text-fill-color: #dc2626 !important;
+}
+
+/* Heading */
+body .rr-universal-travel-guide
+.rr-universal-guide-heading h2 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+body .rr-universal-travel-guide
+.rr-universal-guide-heading p {
+    color: #64748b !important;
+    -webkit-text-fill-color: #64748b !important;
+}
+
+/* Grid */
+body .rr-universal-travel-guide
+.rr-universal-guide-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+    gap: 18px !important;
+}
+
+/* Cards */
+body .rr-universal-travel-guide
+.rr-universal-guide-item {
+    position: relative !important;
+
+    display: block !important;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #f8fafc 100%
+    ) !important;
+
+    background-image: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #f8fafc 100%
+    ) !important;
+
+    border: 1px solid #e5e7eb !important;
+    border-radius: 20px !important;
+
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important;
+
+    box-shadow:
+        0 10px 28px rgba(15,23,42,.07),
+        inset 0 1px 0 rgba(255,255,255,.9) !important;
+
+    overflow: hidden !important;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease !important;
+}
+
+/* Hover */
+body .rr-universal-travel-guide
+.rr-universal-guide-item:hover {
+    transform: translateY(-5px) !important;
+
+    background: #ffffff !important;
+    background-image: none !important;
+
+    border-color: rgba(239,68,68,.28) !important;
+
+    box-shadow:
+        0 18px 40px rgba(15,23,42,.12),
+        0 5px 15px rgba(239,68,68,.06) !important;
+}
+
+/* Card text */
+body .rr-universal-travel-guide
+.rr-universal-guide-item h3,
+body .rr-universal-travel-guide
+.rr-universal-guide-item h4,
+body .rr-universal-travel-guide
+.rr-universal-guide-item strong {
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important;
+}
+
+body .rr-universal-travel-guide
+.rr-universal-guide-item p,
+body .rr-universal-travel-guide
+.rr-universal-guide-item span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+}
+
+/* Icons */
+body .rr-universal-travel-guide
+.rr-universal-guide-item svg,
+body .rr-universal-travel-guide
+.rr-universal-guide-item i {
+    color: #ef4444 !important;
+}
+
+/* Links remain clickable */
+body .rr-universal-travel-guide a {
+    text-decoration: none !important;
+}
+
+/* Action buttons */
+body .rr-universal-travel-guide
+.rr-guide-action,
+body .rr-universal-travel-guide
+.rr-guide-button {
+    background: #111827 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border: 1px solid #111827 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 7px 18px rgba(15,23,42,.12) !important;
+}
+
+body .rr-universal-travel-guide
+.rr-guide-action:hover,
+body .rr-universal-travel-guide
+.rr-guide-button:hover {
+    background: #ef4444 !important;
+    border-color: #ef4444 !important;
+}
+
+/* Notes */
+body .rr-universal-travel-guide
+.rr-guide-tip,
+body .rr-universal-travel-guide
+.rr-guide-note {
+    background: #f8fafc !important;
+    background-image: none !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 16px !important;
+    color: #475569 !important;
+}
+
+/* Kill yellow/gold inside Travel Guide */
+body .rr-universal-travel-guide [style*="yellow"],
+body .rr-universal-travel-guide [style*="gold"],
+body .rr-universal-travel-guide [style*="#f59e0b"],
+body .rr-universal-travel-guide [style*="#fbbf24"],
+body .rr-universal-travel-guide [style*="#facc15"],
+body .rr-universal-travel-guide [style*="#f4c451"],
+body .rr-universal-travel-guide [style*="#ffd66b"] {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #111827 !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    body .rr-universal-travel-guide {
+        width: calc(100% - 20px) !important;
+        margin: 35px auto !important;
+        padding: 20px !important;
+        border-radius: 22px !important;
+    }
+
+    body .rr-universal-travel-guide
+    .rr-universal-guide-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+
+    body .rr-universal-travel-guide
+    .rr-universal-guide-item {
+        border-radius: 17px !important;
+    }
+}

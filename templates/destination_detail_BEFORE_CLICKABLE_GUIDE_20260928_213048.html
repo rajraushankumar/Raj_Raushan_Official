@@ -64,268 +64,6 @@ document.documentElement.setAttribute(
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/final_universal_travel_guide.css') }}?v=20260927">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/quick_travel_snapshot.css') }}?v=20260928">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/clickable_travel_guide.css') }}?v=20260928">
-<!-- RR FINAL TRAVEL GUIDE OVERRIDE START -->
-<style id="rr-final-travel-guide-override">
-
-/* =========================================================
-   FINAL TRAVEL GUIDE VISUAL FIX
-   Yellow/gold completely removed
-   ========================================================= */
-
-html body section.rr-universal-travel-guide {
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    background-image: none !important;
-
-    color: #111827 !important;
-
-    border: 1px solid #e5e7eb !important;
-    border-radius: 28px !important;
-
-    box-shadow:
-        0 20px 55px rgba(15,23,42,.10),
-        0 5px 16px rgba(15,23,42,.05) !important;
-
-    overflow: hidden !important;
-}
-
-/* Top accent */
-html body section.rr-universal-travel-guide::before {
-    background: linear-gradient(
-        90deg,
-        #111827,
-        #ef4444,
-        #111827
-    ) !important;
-
-    background-image: linear-gradient(
-        90deg,
-        #111827,
-        #ef4444,
-        #111827
-    ) !important;
-}
-
-/* Remove glow */
-html body section.rr-universal-travel-guide::after {
-    background: transparent !important;
-    background-image: none !important;
-    box-shadow: none !important;
-}
-
-/* Inner containers */
-html body section.rr-universal-travel-guide
-.rr-universal-guide-inner,
-
-html body section.rr-universal-travel-guide
-.rr-universal-guide-heading,
-
-html body section.rr-universal-travel-guide
-.rr-universal-guide-grid {
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
-}
-
-
-/* =========================================================
-   HEADING
-   ========================================================= */
-
-html body section.rr-universal-travel-guide
-.rr-universal-guide-label {
-    background: #fef2f2 !important;
-    background-color: #fef2f2 !important;
-    background-image: none !important;
-
-    color: #dc2626 !important;
-    -webkit-text-fill-color: #dc2626 !important;
-
-    border: 1px solid rgba(239,68,68,.16) !important;
-}
-
-html body section.rr-universal-travel-guide
-.rr-universal-guide-heading h2 {
-    color: #0f172a !important;
-    -webkit-text-fill-color: #0f172a !important;
-}
-
-html body section.rr-universal-travel-guide
-.rr-universal-guide-heading p {
-    color: #64748b !important;
-    -webkit-text-fill-color: #64748b !important;
-}
-
-
-/* =========================================================
-   ALL SIX TRAVEL GUIDE CARDS
-   ========================================================= */
-
-html body section.rr-universal-travel-guide
-.rr-universal-guide-item {
-    background: linear-gradient(
-        145deg,
-        #ffffff 0%,
-        #f8fafc 100%
-    ) !important;
-
-    background-color: #ffffff !important;
-
-    background-image: linear-gradient(
-        145deg,
-        #ffffff 0%,
-        #f8fafc 100%
-    ) !important;
-
-    color: #111827 !important;
-    -webkit-text-fill-color: #111827 !important;
-
-    border: 1px solid #e2e8f0 !important;
-    border-radius: 20px !important;
-
-    box-shadow:
-        0 10px 28px rgba(15,23,42,.07),
-        inset 0 1px 0 rgba(255,255,255,.9) !important;
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease !important;
-}
-
-
-/* Hover */
-html body section.rr-universal-travel-guide
-.rr-universal-guide-item:hover {
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    background-image: none !important;
-
-    border-color: rgba(239,68,68,.30) !important;
-
-    transform: translateY(-5px) !important;
-
-    box-shadow:
-        0 18px 40px rgba(15,23,42,.12),
-        0 5px 15px rgba(239,68,68,.06) !important;
-}
-
-
-/* =========================================================
-   CARD TEXT
-   ========================================================= */
-
-html body section.rr-universal-travel-guide
-.rr-universal-guide-item h3,
-
-html body section.rr-universal-travel-guide
-.rr-universal-guide-item strong {
-    color: #111827 !important;
-    -webkit-text-fill-color: #111827 !important;
-}
-
-html body section.rr-universal-travel-guide
-.rr-universal-guide-item p,
-
-html body section.rr-universal-travel-guide
-.rr-universal-guide-item span {
-    color: #475569 !important;
-    -webkit-text-fill-color: #475569 !important;
-}
-
-html body section.rr-universal-travel-guide
-.rr-guide-click-hint {
-    color: #dc2626 !important;
-    -webkit-text-fill-color: #dc2626 !important;
-}
-
-
-/* =========================================================
-   BOTTOM MAP + YOUTUBE BUTTONS
-   ========================================================= */
-
-html body section.rr-universal-travel-guide
-.rr-universal-guide-map,
-
-html body section.rr-universal-travel-guide
-.rr-universal-guide-youtube {
-    border-radius: 13px !important;
-
-    box-shadow:
-        0 8px 20px rgba(15,23,42,.10) !important;
-}
-
-
-/* =========================================================
-   TRAVEL NOTE
-   ========================================================= */
-
-html body section.rr-universal-travel-guide
-.rr-universal-guide-note {
-    background: #f8fafc !important;
-    background-color: #f8fafc !important;
-    background-image: none !important;
-
-    color: #475569 !important;
-
-    border: 1px solid #e2e8f0 !important;
-    border-radius: 16px !important;
-}
-
-
-/* =========================================================
-   ABSOLUTE YELLOW/GOLD OVERRIDE
-   ========================================================= */
-
-html body section.rr-universal-travel-guide
-[style*="yellow"],
-
-html body section.rr-universal-travel-guide
-[style*="gold"],
-
-html body section.rr-universal-travel-guide
-[style*="#f59e0b"],
-
-html body section.rr-universal-travel-guide
-[style*="#fbbf24"],
-
-html body section.rr-universal-travel-guide
-[style*="#facc15"],
-
-html body section.rr-universal-travel-guide
-[style*="#f4c451"],
-
-html body section.rr-universal-travel-guide
-[style*="#ffd66b"] {
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    background-image: none !important;
-
-    color: #111827 !important;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    html body section.rr-universal-travel-guide {
-        width: calc(100% - 20px) !important;
-        padding: 20px !important;
-        border-radius: 22px !important;
-    }
-
-    html body section.rr-universal-travel-guide
-    .rr-universal-guide-item {
-        border-radius: 18px !important;
-    }
-}
-
-</style>
-<!-- RR FINAL TRAVEL GUIDE OVERRIDE END -->
 </head>
 
 
@@ -719,7 +457,7 @@ html body section.rr-universal-travel-guide
      UNIVERSAL TRAVEL GUIDE
      ========================================= -->
 
-<section class="rr-universal-travel-guide" style="background:#f8fafc !important; background-image:none !important; color:#111827 !important;">
+<section class="rr-universal-travel-guide">
 
     <div class="rr-universal-guide-inner">
 
@@ -750,15 +488,7 @@ html body section.rr-universal-travel-guide
 
             <!-- LOCATION -->
 
-            <!-- RR CLICKABLE TRAVEL GUIDE -->
-
-            <a
-                class="rr-universal-guide-item rr-guide-clickable"
-                href="https://www.google.com/maps/search/?api=1&query={{ destination.title|urlencode }}{% if destination.region %},{{ destination.region|urlencode }}{% endif %}"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Open {{ destination.title }} on Google Maps"
-            >
+            <div class="rr-universal-guide-item">
 
                 <h3>
                     📍 Location
@@ -782,22 +512,12 @@ html body section.rr-universal-travel-guide
                     nearby places before starting your journey.
                 </span>
 
-                <small class="rr-guide-click-hint">
-                    Open Location ↗
-                </small>
-
-            </a>
+            </div>
 
 
             <!-- WHAT TO EXPLORE -->
 
-            <a
-                class="rr-universal-guide-item rr-guide-clickable"
-                href="https://www.youtube.com/results?search_query={{ destination.title|urlencode }}+travel+places"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Explore {{ destination.title }} travel places"
-            >
+            <div class="rr-universal-guide-item">
 
                 <h3>
                     🌿 What to Explore
@@ -813,26 +533,16 @@ html body section.rr-universal-travel-guide
                 </p>
 
                 <span>
-                    Explore videos and discover places covered
-                    in the journey.
+                    Explore the available videos and playlists
+                    to discover places covered in the journey.
                 </span>
 
-                <small class="rr-guide-click-hint">
-                    Explore Places ↗
-                </small>
-
-            </a>
+            </div>
 
 
             <!-- BEST TIME -->
 
-            <a
-                class="rr-universal-guide-item rr-guide-clickable"
-                href="https://www.google.com/search?q={{ destination.title|urlencode }}+best+time+to+visit"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Search best time to visit {{ destination.title }}"
-            >
+            <div class="rr-universal-guide-item">
 
                 <h3>
                     🗓️ Best Time
@@ -845,26 +555,16 @@ html body section.rr-universal-travel-guide
                 </p>
 
                 <span>
-                    Check weather and local conditions before
-                    planning your outdoor trip.
+                    For outdoor trips, check current weather
+                    and local conditions before travelling.
                 </span>
 
-                <small class="rr-guide-click-hint">
-                    Check Best Time ↗
-                </small>
-
-            </a>
+            </div>
 
 
             <!-- HOW TO REACH -->
 
-            <a
-                class="rr-universal-guide-item rr-guide-clickable"
-                href="https://www.google.com/maps/search/?api=1&query={{ destination.title|urlencode }}{% if destination.region %},{{ destination.region|urlencode }}{% endif %}"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Get directions to {{ destination.title }}"
-            >
+            <div class="rr-universal-guide-item">
 
                 <h3>
                     🚗 How to Reach
@@ -877,26 +577,16 @@ html body section.rr-universal-travel-guide
                 </p>
 
                 <span>
-                    Use Google Maps for route, distance and
-                    navigation.
+                    Use Google Maps for the latest route,
+                    distance and navigation.
                 </span>
 
-                <small class="rr-guide-click-hint">
-                    Get Directions ↗
-                </small>
-
-            </a>
+            </div>
 
 
             <!-- BUDGET -->
 
-            <a
-                class="rr-universal-guide-item rr-guide-clickable"
-                href="https://www.google.com/search?q={{ destination.title|urlencode }}+travel+budget"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Search travel budget for {{ destination.title }}"
-            >
+            <div class="rr-universal-guide-item">
 
                 <h3>
                     💰 Travel Budget
@@ -908,26 +598,16 @@ html body section.rr-universal-travel-guide
                 </p>
 
                 <span>
-                    Explore current travel costs and plan
-                    according to your travel style.
+                    Plan your budget according to your travel
+                    style and distance from your starting location.
                 </span>
 
-                <small class="rr-guide-click-hint">
-                    Check Budget ↗
-                </small>
-
-            </a>
+            </div>
 
 
             <!-- WHAT TO CARRY -->
 
-            <a
-                class="rr-universal-guide-item rr-guide-clickable"
-                href="https://www.google.com/search?q={{ destination.title|urlencode }}+travel+tips+what+to+carry"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Travel tips for {{ destination.title }}"
-            >
+            <div class="rr-universal-guide-item">
 
                 <h3>
                     🎒 What to Carry
@@ -939,15 +619,11 @@ html body section.rr-universal-travel-guide
                 </p>
 
                 <span>
-                    Check weather and destination conditions
+                    For outdoor destinations, check the weather
                     before leaving.
                 </span>
 
-                <small class="rr-guide-click-hint">
-                    Travel Tips ↗
-                </small>
-
-            </a>
+            </div>
 
         </div>
 
@@ -1030,10 +706,6 @@ html body section.rr-universal-travel-guide
 </body>
 
 </html>
-
-
-
-
 
 
 
