@@ -273,3 +273,76 @@
     border-color: #f6c453;
 }
 
+
+/* ============================================================
+   CLEAN STATS CARDS - NO EMOJI / NO BROKEN ICONS
+============================================================ */
+
+.rr-live-stat-card {
+    position: relative;
+}
+
+.rr-live-stat-card::before {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 4px;
+    margin: 0 auto 22px;
+    border-radius: 20px;
+    background: #f6c453;
+}
+
+.rr-live-stat-number {
+    color: #ffffff !important;
+    font-weight: 900 !important;
+}
+
+.rr-live-stat-title {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+}
+
+.rr-live-stat-arrow {
+    display: inline-block;
+    margin-top: 18px;
+    color: #f6c453 !important;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.rr-live-stat-card:hover .rr-live-stat-arrow {
+    color: #ffffff !important;
+}
+
+
+/* =========================================
+   SAFE SVG ICONS
+   ========================================= */
+
+.rr-live-stat-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    color: #f6c453;
+    background: rgba(246, 196, 83, 0.10);
+    border: 1px solid rgba(246, 196, 83, 0.25);
+    transition: all 0.25s ease;
+}
+
+.rr-live-stat-icon svg {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.rr-live-stat-card:hover .rr-live-stat-icon {
+    color: #ffffff;
+    background: rgba(246, 196, 83, 0.18);
+    border-color: #f6c453;
+    transform: translateY(-3px);
+}
+
