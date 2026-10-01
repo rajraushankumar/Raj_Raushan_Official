@@ -6810,3 +6810,40 @@ html body .channels-section
     }
 
 }
+
+/* ==========================================================
+   RR COLLABORATION CARD VISIBILITY FIX
+   Added: 2026-10-01
+========================================================== */
+
+body .rr-brand-point strong {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    opacity: 1 !important;
+}
+
+body .rr-brand-point p {
+    color: #d7dde7 !important;
+    font-weight: 500 !important;
+    opacity: 1 !important;
+}
+
+body .rr-brand-point b {
+    color: #6f8cff !important;
+    font-weight: 900 !important;
+    opacity: 1 !important;
+}
+
+body .rr-brand-point:hover strong {
+    color: #ffffff !important;
+}
+
+body .rr-brand-point:hover p {
+    color: #eef2f7 !important;
+}
+
+/* Keep collaboration card text readable on dark theme */
+body .rr-brand-point > div {
+    color: #ffffff !important;
+}
+
