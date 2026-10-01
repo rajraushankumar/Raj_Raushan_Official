@@ -1,115 +1,55 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
 
-    const destinationEl =
-        document.getElementById("rrStatDestinations");
+    const cards = document.querySelectorAll(".rr-live-stat-card");
 
-    const playlistEl =
-        document.getElementById("rrStatPlaylists");
-
-    const videoEl =
-        document.getElementById("rrStatVideos");
-
-    const statusEl =
-        document.getElementById("rrStatsStatus");
-
-    if (
-        !destinationEl ||
-        !playlistEl ||
-        !videoEl
-    ) {
+    if (!cards.length) {
+        console.warn("Live travel stat cards not found.");
         return;
     }
 
-    function formatNumber(value) {
+    cards.forEach(function (card) {
 
-        const number = Number(value || 0);
+        const text = card.innerText.toLowerCase();
 
-        return number.toLocaleString("en-IN");
-    }
+        let target = null;
 
-    fetch("/api/travel-stats", {
-        method: "GET",
-        headers: {
-            "Accept": "application/json"
-        },
-        cache: "no-store"
-    })
-
-    .then(function (response) {
-
-        if (!response.ok) {
-            throw new Error(
-                "Stats request failed"
-            );
+        if (text.includes("destinations")) {
+            target = "/destinations";
+        }
+        else if (text.includes("public playlists")) {
+            target = "/playlists";
+        }
+        else if (text.includes("playlist videos")) {
+            target = "/vlogs";
         }
 
-        return response.json();
-    })
+        if (!target) return;
 
-    .then(function (data) {
+        card.style.cursor = "pointer";
 
-        if (
-            !data ||
-            data.status !== "success"
-        ) {
-            throw new Error(
-                "Invalid stats response"
-            );
-        }
+        card.addEventListener("click", function (event) {
 
-        destinationEl.textContent =
-            formatNumber(
-                data.destinations
-            );
+            // If an actual link/button inside the card was clicked,
+            // allow that normal link to work.
+            if (event.target.closest("a, button")) {
+                return;
+            }
 
-        playlistEl.textContent =
-            formatNumber(
-                data.public_playlists
-            );
+            window.location.href = target;
+        });
 
-        videoEl.textContent =
-            formatNumber(
-                data.playlist_videos
-            );
+        card.setAttribute("role", "link");
+        card.setAttribute("tabindex", "0");
 
-        if (statusEl) {
+        card.addEventListener("keydown", function (event) {
 
-            statusEl.textContent =
-                "Live data • Updated " +
-                new Date().toLocaleTimeString(
-                    "en-IN",
-                    {
-                        hour: "2-digit",
-                        minute: "2-digit"
-                    }
-                );
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                window.location.href = target;
+            }
 
-        }
+        });
 
-    })
-
-    .catch(function () {
-
-        /*
-         * Do not break the homepage if the
-         * YouTube/API service is temporarily
-         * unavailable.
-         */
-
-        destinationEl.textContent = "—";
-        playlistEl.textContent = "—";
-        videoEl.textContent = "—";
-
-        if (statusEl) {
-
-            statusEl.textContent =
-                "Travel stats are temporarily unavailable.";
-
-            statusEl.classList.add(
-                "rr-stats-error"
-            );
-        }
-
+        console.log("Stats card linked:", target);
     });
-
 });
