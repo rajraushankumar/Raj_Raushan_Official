@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-rr-theme="dark">
 
 <head>
@@ -5166,6 +5166,10 @@ document.documentElement.setAttribute(
 <!-- RR CANONICAL THEME - MUST LOAD LAST -->
 <link rel="stylesheet"
       href="{{ url_for('static', filename='css/site_theme_final.css') }}?v=20260920-final">
+<link
+    rel="stylesheet"
+    href="/static/css/live_travel_stats.css?v=1"
+>
 </head>
 
 
@@ -9389,9 +9393,120 @@ document.addEventListener(
 <script src="/static/js/mobile_click_fix.js?v=20260918"></script>
 
 <script src="{{ url_for('static', filename='js/mobile_links_final_fix.js') }}?v=20260918"></script>
+
+<!-- RR LIVE TRAVEL STATS -->
+
+<section
+    class="rr-live-stats-section"
+    id="travel-stats"
+>
+
+    <div class="rr-live-stats-container">
+
+        <div class="rr-live-stats-heading">
+
+            <span class="rr-live-stats-label">
+                LIVE TRAVEL DATA
+            </span>
+
+            <h2>
+                The Journey So Far
+            </h2>
+
+            <p>
+                Explore destinations, playlists and
+                travel videos from Raj Raushan Official.
+            </p>
+
+        </div>
+
+
+        <div class="rr-live-stats-grid">
+
+            <article class="rr-live-stat-card">
+
+                <div class="rr-live-stat-icon">
+                    ??
+                </div>
+
+                <div
+                    class="rr-live-stat-number"
+                    id="rrStatDestinations"
+                >
+                    �
+                </div>
+
+                <div class="rr-live-stat-title">
+                    Destinations
+                </div>
+
+            </article>
+
+
+            <article class="rr-live-stat-card">
+
+                <div class="rr-live-stat-icon">
+                    ??
+                </div>
+
+                <div
+                    class="rr-live-stat-number"
+                    id="rrStatPlaylists"
+                >
+                    �
+                </div>
+
+                <div class="rr-live-stat-title">
+                    Public Playlists
+                </div>
+
+            </article>
+
+
+            <article class="rr-live-stat-card">
+
+                <div class="rr-live-stat-icon">
+                    ??
+                </div>
+
+                <div
+                    class="rr-live-stat-number"
+                    id="rrStatVideos"
+                >
+                    �
+                </div>
+
+                <div class="rr-live-stat-title">
+                    Playlist Videos
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div
+            class="rr-live-stats-status"
+            id="rrStatsStatus"
+        >
+            Loading live travel data...
+        </div>
+
+    </div>
+
+</section>
+
+<!-- END RR LIVE TRAVEL STATS -->
+
+<script
+    src="/static/js/live_travel_stats.js?v=1"
+    defer
+></script>
 </body>
 
 </html>
+
+
 
 
 

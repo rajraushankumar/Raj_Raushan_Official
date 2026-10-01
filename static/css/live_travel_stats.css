@@ -1,0 +1,130 @@
+﻿/* ============================================================
+   LIVE TRAVEL STATS
+============================================================ */
+
+.rr-live-stats-section {
+    width: 100%;
+    padding: 75px 20px;
+    background: #f7f9fc;
+}
+
+.rr-live-stats-container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.rr-live-stats-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px;
+}
+
+.rr-live-stats-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #3554d1;
+}
+
+.rr-live-stats-heading h2 {
+    margin: 0 0 14px;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.12;
+    color: #111827;
+}
+
+.rr-live-stats-heading p {
+    margin: 0;
+    line-height: 1.7;
+    color: #667085;
+}
+
+.rr-live-stats-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.rr-live-stat-card {
+    padding: 30px 24px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid #e7eaf0;
+    box-shadow:
+        0 10px 35px rgba(23, 32, 51, .06);
+    text-align: center;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.rr-live-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 16px 42px rgba(23, 32, 51, .10);
+}
+
+.rr-live-stat-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.rr-live-stat-number {
+    min-height: 48px;
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #111827;
+}
+
+.rr-live-stat-title {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #667085;
+}
+
+.rr-live-stats-status {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 12px;
+    color: #667085;
+}
+
+.rr-live-stats-status.rr-stats-error {
+    color: #b42318;
+}
+
+@media (max-width: 800px) {
+
+    .rr-live-stats-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 520px) {
+
+    .rr-live-stats-section {
+        padding: 55px 16px;
+    }
+
+    .rr-live-stats-container {
+        width: 100%;
+    }
+
+    .rr-live-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rr-live-stat-card {
+        padding: 26px 20px;
+    }
+
+}

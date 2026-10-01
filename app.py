@@ -1841,7 +1841,7 @@ def dashboard():
             )
 
         if recommendation_parts:
-            creator_recommendation = " â€¢ ".join(
+            creator_recommendation = " • ".join(
                 recommendation_parts
             )
 
@@ -1978,16 +1978,16 @@ def dashboard():
                     )
 
                     if recent_average > old_average:
-                        trend_status = "Improving ðŸ“ˆ"
+                        trend_status = "Improving 📈"
 
                     elif recent_average < old_average:
-                        trend_status = "Declining ðŸ“‰"
+                        trend_status = "Declining 📉"
 
                     else:
-                        trend_status = "Stable âž¡ï¸"
+                        trend_status = "Stable ➡️"
 
                 else:
-                    trend_status = "Stable âž¡ï¸"
+                    trend_status = "Stable ➡️"
 
 
         # ==================================
@@ -3364,28 +3364,28 @@ TRAVEL_STORIES = {
     "aurangabad-bihar": [
         {
             "date": "January 2026",
-            "icon": "📍",
+            "icon": "??",
             "title": "Started the Aurangabad Journey",
             "text": "A memorable journey through Aurangabad, Bihar, exploring local places, nature and the surrounding travel experience.",
             "tags": ["Aurangabad", "Bihar", "Travel"]
         },
         {
             "date": "Journey Highlight",
-            "icon": "🏞️",
+            "icon": "???",
             "title": "Exploring Local Places",
             "text": "The journey was about discovering the beauty of the place, enjoying the surroundings and capturing memories along the way.",
             "tags": ["Nature", "Exploration", "Memories"]
         },
         {
             "date": "Travel Memory",
-            "icon": "🎥",
+            "icon": "??",
             "title": "Captured the Journey",
             "text": "The experience was captured through videos and stories so that others can explore the destination virtually.",
             "tags": ["YouTube", "Vlog", "Story"]
         },
         {
             "date": "Next Chapter",
-            "icon": "📸",
+            "icon": "??",
             "title": "More Memories Coming Soon",
             "text": "This journey will grow with more photos, videos and travel memories as the collection gets updated.",
             "tags": ["Photos", "Videos", "Coming Soon"]
@@ -3398,7 +3398,7 @@ def get_travel_story(slug):
     return TRAVEL_STORIES.get(slug, [
         {
             "date": "Travel Story",
-            "icon": "📍",
+            "icon": "??",
             "title": "Journey Begins",
             "text": "Explore the travel story, places and memories from this destination.",
             "tags": ["Travel", "Explore"]
@@ -4614,6 +4614,7 @@ if __name__ == "__main__":
     app.run(
         debug=True
     )
+
 
 
 
