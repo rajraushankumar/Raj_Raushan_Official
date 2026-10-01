@@ -1,11 +1,19 @@
 ﻿/* ============================================================
-   LIVE TRAVEL STATS
+   RAJ RAUSHAN OFFICIAL
+   LIVE TRAVEL STATS - DARK THEME
 ============================================================ */
 
 .rr-live-stats-section {
     width: 100%;
-    padding: 75px 20px;
-    background: #f7f9fc;
+    padding: 90px 20px;
+    background:
+        radial-gradient(
+            circle at top center,
+            rgba(255, 196, 65, 0.08),
+            transparent 38%
+        ),
+        #101010;
+    color: #ffffff;
 }
 
 .rr-live-stats-container {
@@ -16,89 +24,182 @@
 
 .rr-live-stats-heading {
     text-align: center;
-    max-width: 760px;
-    margin: 0 auto 40px;
+    max-width: 800px;
+    margin: 0 auto 45px;
 }
 
 .rr-live-stats-label {
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 2.5px;
+    font-weight: 900;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: #3554d1;
+    color: #f6c453;
 }
 
 .rr-live-stats-heading h2 {
-    margin: 0 0 14px;
-    font-size: clamp(30px, 4vw, 48px);
-    line-height: 1.12;
-    color: #111827;
+    margin: 0 0 16px;
+    font-size: clamp(32px, 5vw, 54px);
+    line-height: 1.05;
+    font-weight: 900;
+    color: #ffffff;
 }
 
 .rr-live-stats-heading p {
     margin: 0;
     line-height: 1.7;
-    color: #667085;
+    font-size: 16px;
+    color: #b8bec9;
 }
+
+/* ============================================================
+   GRID
+============================================================ */
 
 .rr-live-stats-grid {
     display: grid;
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    gap: 22px;
 }
 
+/* ============================================================
+   CLICKABLE CARD
+============================================================ */
+
 .rr-live-stat-card {
-    padding: 30px 24px;
-    border-radius: 20px;
-    background: #ffffff;
-    border: 1px solid #e7eaf0;
+    display: block;
+    padding: 34px 25px;
+    min-height: 205px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1d1d1d,
+            #151515
+        );
+
+    border: 1px solid #333333;
+
     box-shadow:
-        0 10px 35px rgba(23, 32, 51, .06);
+        0 15px 45px rgba(0, 0, 0, .28);
+
     text-align: center;
+
+    text-decoration: none !important;
+
     transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
 }
 
 .rr-live-stat-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-7px);
+
+    border-color: #f6c453;
+
+    background:
+        linear-gradient(
+            145deg,
+            #242424,
+            #181818
+        );
+
     box-shadow:
-        0 16px 42px rgba(23, 32, 51, .10);
+        0 22px 55px rgba(0, 0, 0, .42);
 }
 
-.rr-live-stat-icon {
-    font-size: 32px;
-    margin-bottom: 12px;
+.rr-live-stat-card:focus-visible {
+    outline: 3px solid #f6c453;
+    outline-offset: 4px;
 }
+
+/* ============================================================
+   ICON
+============================================================ */
+
+.rr-live-stat-icon {
+    font-size: 34px;
+    margin-bottom: 14px;
+}
+
+/* ============================================================
+   NUMBER
+============================================================ */
 
 .rr-live-stat-number {
     min-height: 48px;
-    font-size: 38px;
+
+    font-size: 42px;
+    line-height: 1.05;
+
     font-weight: 900;
-    line-height: 1.1;
-    color: #111827;
+
+    color: #ffffff !important;
 }
+
+/* ============================================================
+   TITLE
+============================================================ */
 
 .rr-live-stat-title {
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #667085;
+    margin-top: 10px;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    color: #d8dde5 !important;
 }
 
+/* ============================================================
+   CARD ARROW
+============================================================ */
+
+.rr-live-stat-arrow {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    color: #f6c453;
+
+    transition:
+        transform .2s ease;
+}
+
+.rr-live-stat-card:hover .rr-live-stat-arrow {
+    transform: translateX(5px);
+}
+
+/* ============================================================
+   STATUS
+============================================================ */
+
 .rr-live-stats-status {
-    margin-top: 25px;
+    margin-top: 28px;
+
     text-align: center;
+
     font-size: 12px;
-    color: #667085;
+    font-weight: 600;
+
+    color: #8f98a6;
 }
 
 .rr-live-stats-status.rr-stats-error {
-    color: #b42318;
+    color: #ff8d8d;
 }
+
+/* ============================================================
+   MOBILE
+============================================================ */
 
 @media (max-width: 800px) {
 
@@ -109,10 +210,10 @@
 
 }
 
-@media (max-width: 520px) {
+@media (max-width: 560px) {
 
     .rr-live-stats-section {
-        padding: 55px 16px;
+        padding: 65px 16px;
     }
 
     .rr-live-stats-container {
@@ -121,10 +222,54 @@
 
     .rr-live-stats-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .rr-live-stat-card {
-        padding: 26px 20px;
+        min-height: auto;
+        padding: 28px 20px;
+    }
+
+    .rr-live-stats-heading h2 {
+        font-size: 34px;
     }
 
 }
+
+/* ============================================================
+   STATS SVG ICONS
+   No emoji = no encoding problems
+============================================================ */
+
+.rr-live-stat-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    color: #f6c453;
+
+    background: rgba(246, 196, 83, 0.10);
+
+    border: 1px solid rgba(246, 196, 83, 0.25);
+}
+
+.rr-live-stat-icon svg {
+    width: 29px;
+    height: 29px;
+
+    display: block;
+}
+
+.rr-live-stat-card:hover .rr-live-stat-icon {
+    color: #111111;
+    background: #f6c453;
+    border-color: #f6c453;
+}
+
